@@ -3,6 +3,16 @@ body {
     margin: auto;
 }
 
+.login_container {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    margin: auto;
+}
+
 form {
     width: 500px;
     padding: 3rem;

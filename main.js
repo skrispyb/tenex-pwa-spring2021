@@ -1,6 +1,6 @@
 $("button").on("click", function showValues(e) {
   e.preventDefault();
-  let title = $('input[type="text"]').val();
+  let title = $('reqTitle').val();
   let description = $('textarea').val();
   let reqForm = {
     title: `${title}`,
