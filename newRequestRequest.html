@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Request - Request</title>
+
+    <link rel="stylesheet" href="assets/css/newRequestRequest.css" />
+  </head>
+  <body>
+    <header>
+      <div class="back_btn">Back</div>
+      <h1>Request</h1>
+      <button class="sendRequest_btn" form="requestForm">
+        <svg
+          width="39"
+          height="34"
+          viewBox="0 0 39 34"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_d)">
+            <path
+              d="M7.01 23L28 14L7.01 5L7 12L22 14L7 16L7.01 23Z"
+              fill="#BDBDBD"
+            />
+            <path
+              d="M5.51 23.0021L5.51325 25.2738L7.60112 24.3786L28.5911 15.3786L31.8064 14L28.5911 12.6214L7.60112 3.62138L5.51325 2.72616L5.51 4.99786L5.5 11.9979L5.49812 13.313L6.80175 13.4868L10.6504 14L6.80175 14.5132L5.49812 14.687L5.5 16.0021L5.51 23.0021Z"
+              stroke="white"
+              stroke-width="3"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_d"
+              x="0.996094"
+              y="0.452148"
+              width="37.6165"
+              height="33.0954"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              />
+              <feOffset dy="3" />
+              <feGaussianBlur stdDeviation="1.5" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+        <small>SEND</small>
+      </button>
+    </header>
+
+    <main class="requestForm_main">
+      <form action="" id="requestForm">
+        <select name="requestCategory" id="requestCategory" required>
+          <option disabled selected hidden value="">Select Category</option>
+          <option value="service">Service</option>
+          <option value="complaint">Complaint</option>
+          <option value="general">General</option>
+        </select>
+        <input type="text" name="otherrequestCategory" id="otherrequestCategory" placeholder="Type subcategory here..." required>
+      
+        <div class="descriptionAttachment">
+          <h2>Description</h2>
+          <div class="attachment">
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4.81802 13.8671L12.9497 5.73534C14.5125 4.17264 17.0439 4.17264 18.6066 5.73534C20.1693 7.29805 20.1693 9.82949 18.6066 11.3922L9.76777 20.231C8.79196 21.2068 7.20804 21.2068 6.23223 20.231C5.25643 19.2552 5.25643 17.6713 6.23223 16.6955L13.6569 9.27088C14.0458 8.88197 14.6822 8.88197 15.0711 9.27088C15.46 9.65978 15.46 10.2962 15.0711 10.6851L8.35355 17.4026L9.41421 18.4633L16.1317 11.7457C17.1075 10.7699 17.1075 9.18602 16.1317 8.21021C15.1559 7.23441 13.572 7.23441 12.5962 8.21021L5.17157 15.6348C3.60887 17.1975 3.60887 19.729 5.17157 21.2917C6.73428 22.8544 9.26572 22.8544 10.8284 21.2917L19.6673 12.4529C21.8169 10.3033 21.8169 6.82429 19.6673 4.67468C17.5177 2.52508 14.0387 2.52508 11.8891 4.67468L3.75736 12.8064L4.81802 13.8671Z"
+                fill="#828282"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="detailsTextArea">
+          <textarea
+            name="description"
+            id="description"
+            cols="auto"
+            rows="15"
+            placeholder="Type ypur description here..."
+          ></textarea>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

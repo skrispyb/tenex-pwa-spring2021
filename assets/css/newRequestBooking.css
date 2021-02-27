@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    padding: 3rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F4F4;
+    /* box-shadow: 0 3px 3px rgba(0,0,0,0.1); */
+    border-bottom: 1px solid #BDBDBD;
+}
+
+.back_btn {
+    color: #BDBDBD;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.sendBooking_btn {
+    display: flex;
+    flex-direction: column;
+}
+
+.sendBooking_btn small {
+    font-size: 0.6rem;
+    text-align: center;
+    color: #BDBDBD;
+}
+
+main {
+    height: calc(100vh - 109px);
+    background: #f4f4f4;
+}
+
+main form {
+    padding: 1rem 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+}
+
+main form > select, #otherBooking {
+    grid-column: 1 / -1;
+    padding: 1rem;
+    line-height: 150%;
+}
+
+.startDateInput {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+select:required:invalid, input[type=date]:invalid::-webkit-datetime-edit {
+    color: #BDBDBD;
+}
+
+#startDate {
+    padding: 1rem;
+    width: 100%;
+}
+
+.timeSlots {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+#timeSlotSelect {
+    padding: 1rem;
+    width: 100%;
+}
+
+h2 {
+    margin: 0;
+}
+
+.descriptionAttachment {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+}
+
+.detailsTextArea {
+    /* width: 100%; */
+}
+
+.detailsTextArea textarea {
+    border: 0;
+    padding: 1rem;
+    width: 100%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #BDBDBD;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #BDBDBD;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #BDBDBD;
+  }
+
+

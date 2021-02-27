@@ -11,4 +11,3 @@ $("button").on("click", function showValues(e) {
   $("p").removeClass("hidden");
   $("p").append(`<br>Title: ${reqForm.title} <br>Description: ${reqForm.description}`);
 });
-
