@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="onboarding.css" />
+    <script src="onboarding.js" defer></script>
+  </head>
+  <body>
+    <div class="slideshow-container" id="slideshow-container">
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="images/unsplash-person-01.jpg" style="width: 100%" />
+        <h2>SEND REQUESTS</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
+          deleniti suscipit!
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="images/unsplash-person-02.jpg" style="width: 100%" />
+        <h2>STAY UPDATED</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
+          deleniti suscipit!
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="images/unsplash-person-03.jpg" style="width: 100%" />
+        <h2>BUIDING INFO</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
+          deleniti suscipit!
+        </p>
+      </div>
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div class="firstbutton">
+        <button type="button" id="btn" value="Show Div" onclick="showDiv()">
+          SIGN IN
+        </button>
+      </div>
+    </div>
+    <br />
+
+    <div class="tenexform" style="display: none" id="tenexform">
+      <h2 id ="welcome" onclick="mainpage()">Welcome!</h2>
+      <form>
+        <label for="Username"
+          ><input type="email" placeholder="Enter Emal" name="email" required
+        /></label>
+        <label for="password"
+          ><input
+            type="password"
+            placeholder="Enter Password"
+            name="psw"
+            required
+        /></label>
+      </form>
+
+      <p>Forgot Password?</p>
+      <div><button type="button" id="btn">SIGN IN</button></div>
+      <p>New user?</p>
+      <p>Contact your building manager</p>
+    </div>
+  </body>
+</html>
