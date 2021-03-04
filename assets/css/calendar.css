@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  padding: 3rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f4f4;
+  /* box-shadow: 0 3px 3px rgba(0,0,0,0.1); */
+  border-bottom: 1px solid #bdbdbd;
+}
+
+.back_btn {
+  color: #bdbdbd;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.cal_nav_wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.cal_nav_wrapper > div {
+    padding: 0 0.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td,
+th {
+  /* border: 1px solid black; */
+  padding: 0.8rem;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  /* background-color: #e6e6e6; */
+}
+
+table tr td button {
+    background: none;
+    border: 0;
+}
+
+/* bootstrap datetimepicker start */
+.timepicker {
+    display: none;
+}
+
+.picker-switch {
+    text-align: center;
+}
+
+.table-condensed thead tr .next:after {
+    content: ">";
+}
+
+.table-condensed thead tr .next, .table-condensed thead tr .prev {
+    text-align: center;
+}
+
+.table-condensed thead tr .prev:before {
+    content: "<";
+}
+
+#calendarMonthlyTwo {
+    border-bottom: 1px solid black;
+}
+
+/* bootstrap datetimepicker end */
