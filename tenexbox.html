@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenexbox</title>
+    <link rel="stylesheet" href="tenexbox.css">
+    <script src="tenexbox.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="topHeader">
+            <h1 id="headerTitle" class="headerTitle">Tenexbox</h1>
+            <form action="" id="searchBar" class="searchBar">
+                <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search" name="search" placeholder="Search">
+                <button id="search_btn" class="search_btn" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                        fill="#AAAAAA" />
+                </svg></button>
+            </form>
+        </div>
+        <div class="bottomHeader">
+            <button id="alert_btn" class="textFilter_btn">Bookings</button>
+            <button id="notif_btn" class="textFilter_btn">Requests</button>
+        </div>
+    </header>
+    <main>
+        <div id="requestCards">
+        </div>
+        <!-- <div class="newRequestCard">
+            <h2 class="requestTitle">Meeting Room Booking</h2>
+            <p class="newRequestDate">FEB 15, 2021</p>
+            <p class="newRequestStatus">BOOKED</p>
+            <p class="bookingDate">FEB 21, 2021</p>
+            <p class="bookingTime">14:00 - 15:00</p>
+        </div>
+        <div class="newRequestCard">
+            <h2 class="requestTitle">Manager Meeting Booking</h2>
+            <p class="newRequestDate">FEB 12, 2021</p>
+            <p class="newRequestStatus">BOOKED</p>
+            <p class="bookingDate">FEB 13, 2021</p>
+            <p class="bookingTime">10:00 - 10:30</p>
+        </div>
+        <div class="newRequestCard">
+            <h2 class="requestTitle">Key Fob Price?</h2>
+            <p class="newRequestDate">FEB 10, 2021</p>
+            <p class="newRequestStatus">PENDING</p>
+            <p class="newRequestExerpt">Hi Dwight, I remember you mentioned that I can find the key fob price in the Tenex app. Where can I find that information in the app? Thanks, Michael
+            </p>
+        </div>
+        <div class="newRequestCard">
+            <h2 class="requestTitle">Noise Complaint</h2>
+            <p class="newRequestDate">FEB 05, 2021</p>
+            <p class="newRequestStatus">REJECTED</p>
+            <p class="newRequestExerpt">Hi Dwight, My neighbor has been playing the drums non-stop during the day. It's too loud. I can't focus on my work. Please ask him/her to stop. Thanks, Michael
+            </p>
+        </div>
+        <div class="newRequestCard">
+            <h2 class="requestTitle">Building Corridor Maintenance</h2>
+            <p class="newRequestDate">FEB 01, 2021</p>
+            <p class="newRequestStatus">MESSAGE</p>
+            <p class="newRequestExerpt">Hi Dwight, The building corridor, especially on my floor, is getting a little too dirty. Please ask the cleaning crew to clean the building corridor more often. Thanks, Michael
+            </p>
+        </div> -->
+    </main>
+</body>
+</html>

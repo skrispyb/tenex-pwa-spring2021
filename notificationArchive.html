@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notificationArchive</title>
+    <link rel="stylesheet" href="notificationArchive.css">
+    <script src="notificationArchive.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="topHeader">
+            <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <h1 id="headerTitle" class="headerTitle">Notification Archive</h1>
+            <form action="" id="searchBar" class="searchBar">
+                <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search"
+                    name="search" placeholder="Search">
+                <button id="search_btn" class="search_btn" type="button"><svg width="18" height="18" viewBox="0 0 18 18"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                            fill="#AAAAAA" />
+                    </svg></button>
+            </form>
+        </div>
+        <div class="bottomHeader">
+            <button id="alert_btn" class="filter_btn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.7188 9C17.7188 13.8163 13.8149 17.7188 9 17.7188C4.18511 17.7188 0.28125 13.8163 0.28125 9C0.28125 4.18651 4.18511 0.28125 9 0.28125C13.8149 0.28125 17.7188 4.18651 17.7188 9ZM9 10.7578C8.10686 10.7578 7.38281 11.4819 7.38281 12.375C7.38281 13.2681 8.10686 13.9922 9 13.9922C9.89314 13.9922 10.6172 13.2681 10.6172 12.375C10.6172 11.4819 9.89314 10.7578 9 10.7578ZM7.46462 4.94487L7.72541 9.72612C7.73761 9.94985 7.9226 10.125 8.14665 10.125H9.85335C10.0774 10.125 10.2624 9.94985 10.2746 9.72612L10.5354 4.94487C10.5486 4.7032 10.3562 4.5 10.1141 4.5H7.88583C7.64381 4.5 7.45144 4.7032 7.46462 4.94487V4.94487Z"
+                        fill="#AAAAAA" />
+                </svg></button>
+            <button id="notif_btn" class="filter_btn"><svg width="16" height="20" viewBox="0 0 16 20" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8 19.5C9.1 19.5 10 18.6 10 17.5H6C6 18.6 6.89 19.5 8 19.5ZM14 13.5V8.5C14 5.43 12.36 2.86 9.5 2.18V1.5C9.5 0.67 8.83 0 8 0C7.17 0 6.5 0.67 6.5 1.5V2.18C3.63 2.86 2 5.42 2 8.5V13.5L0 15.5V16.5H16V15.5L14 13.5Z"
+                        fill="#AAAAAA" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <main>
+        <div class="monthHeader">
+            <h2>This Month</h2>
+        </div>
+        <div class="dayHeader">
+            <h3>Thursday 11</h3>
+        </div>
+        <div class="archiveDaySection">
+            <div id="notifCard">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
