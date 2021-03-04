@@ -8,53 +8,6 @@
 
 /* Text-level Semantics
    ========================================================================= */
-/* navigation bottom styling */
-.app-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 3.5rem;
-    background-color: #454545;
-}
-
-.app-nav .nav {
-    height: 100%;
-}
-.app-nav .nav ul {
-    height: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0;
-}
-.app-nav .nav ul li {
-    list-style-type: none;
-}
-
-.app-nav .nav ul li button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.6rem;
-    color: white;
-    background: none;
-    border: 0;
-}
-
-.app-nav .nav ul li button:active {
-    outline: 0;
-}
-
-.app-nav .nav ul li button svg {
-    margin-bottom: 0.3rem;
-}
-
-/* navigation bottom styling end */
 
 h1 {
     font-size: 1.5rem;
@@ -75,33 +28,32 @@ h1 {
     font-weight: 400;
     margin: 0 0 0.33rem 0;
     color: white;
-    /* white-space: normal;
+    white-space: normal;
+    -webkit-line-clamp: 1;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical; */
+    -webkit-box-orient: vertical;
 }
 
 .alertPostedDate {
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(255, 255, 255, 0.5)
+    margin: 0.25rem 0;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .alertExerpt {
-    font-size: 0.875rem;
+    font-size: 14px;
     font-weight: 300;
-    white-space: normal;
-    overflow: hidden;
-    /* text-overflow: ellipsis; */
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-height: 2.5rem;
-    line-height: 1.5;
     margin: 0;
-    color: rgba(255, 255, 255, 0.8)
+    color: rgba(255, 255, 255, 0.8);
+    white-space: normal;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    
 }
 
 .notificationCardTitle {
@@ -120,7 +72,7 @@ h1 {
     font-size: 0.875rem;
     font-weight: 300;
     margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .notificationExerpt {
@@ -138,7 +90,7 @@ h1 {
     color: rgba(0, 0, 0, 0.8)
 }
 
-.requestTitle {
+.bookingTitle {
     font-size: 1rem;
     font-weight: 400;
     margin: 0 0 0.33rem 0;
@@ -214,41 +166,33 @@ main {
 }
 
 .alertCard {
-    width: 288px;
+    width: 18rem;
+    height: 100%;
     background-color: #4F4F4F;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-    margin-right: 0.5rem;
-    /* display: inline-block; */
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12); */
+    /* margin-right: 0.5rem; */
+    display: inline-block;
+    text-align: center;
 }
-
+/* 
 .alertViewMore {
     align-self: center;
     padding-right: 1rem;
-}
+} */
 
-.alertViewMoreButton {
-    width: 288px;
-    height: 122.5px;
-    background-color: #4F4F4F;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-    border-radius: 0.5rem;
-    align-self: center;
-    border: none;
+.alertViewMore {
+    text-decoration: none;
+    width: 100%;
     color: white;
-    font-size: 1rem;
 }
 
 .horizontalScroll {
-    padding: 0 0 1rem 1rem;
-    width: 100%;
+    background-color: cyan;
+    padding: 1rem;
     overflow-x: scroll;
     white-space: nowrap;
-    /* position: relative; */
-    display: flex;
-    flex-flow: row nowrap;
 }
 
 
@@ -264,11 +208,6 @@ main {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
     margin-right: 0.5rem;
-}
-
-.notificationCardHome {
-    width: 234px;
-    margin: 0 0.5rem 0.125rem 0;
 }
 
 .notificationViewMore {
