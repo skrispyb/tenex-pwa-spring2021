@@ -17,6 +17,10 @@ h1 {
     margin: 1rem 0;
 }
 
+.headerTitle {
+    margin: 0;
+}
+
 h2 {
     font-size: 1rem;
     font-weight: 600;
@@ -25,19 +29,17 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
-    font-size: 1rem;
+p {
+    font-size: 0.875rem;
     font-weight: 300;
-    color: rgba(0, 0, 0, 0.45);
-    padding: 0 1rem;
-    margin: 0.75rem 0;
+    line-height: 1.5;
+    color: #4F4F4F;
 }
 
 .requestTitle {
     font-size: 1rem;
     font-weight: 400;
     margin: 0 0 0.33rem 0;
-    padding: 0;
     color: #4F4F4F;
 }
 
@@ -46,21 +48,6 @@ h3 {
     font-weight: 300;
     margin: 0 0 0.33rem 0;
     color: rgba(0, 0, 0, 0.4)
-}
-
-.newRequestExerpt {
-    font-size: 0.875rem;
-    font-weight: 300;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-height: 2.5rem;
-    line-height: 1.5;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.8)
 }
 
 .newRequestStatus {
@@ -84,7 +71,6 @@ h3 {
     color: rgba(0, 0, 0, 0.4)
 }
 
-
 /* Embedded Content
    ========================================================================= */
 
@@ -105,15 +91,15 @@ header {
     padding: 2rem 1rem 1rem 1rem;
 }
 
+.headerEdit {
+    padding: 1.4rem 1rem 0.4rem 1rem;
+}
+
 .topHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0.25rem 0;
-}
-
-main {
-    padding: 0 1rem;
 }
 
 button {
@@ -122,80 +108,24 @@ button {
 
 button svg {
     display: flex;
-}
-
-svg {
     margin: auto;
 }
 
-.activeFilterBackground {
-    background-color: #AAAAAA;
-}
-
-.activeFilterIcon {
-    fill: white;
-}
-
-.searchBar {
-    display: flex;
-    justify-content:flex-end;
-    align-self: center;
-    grid-column: 3/4;
-    margin: 0.75rem 0;
-}
-
-.searchBarExpand {
-    width: 100%;
-}
-
-.searchBarInput {
-    height: 40px;
-    border-radius: 40px;
-    border: 1px solid rgba(170, 170, 170, 0.25);
-    -moz-box-shadow:    inset 0 0 4px rgba(0,0,0,0.15);
-    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.15);;
-    box-shadow:         inset 0 0 4px rgba(0,0,0,0.15);;
-    padding: 0 1rem;
-    margin-right: 0.25rem;
-    width: 88%;
-}
-
-::-webkit-input-placeholder {
-    color: #AAAAAA;
-    font-size: 1rem;
-    font-weight: 300;
-}
-
-.search_btn {
+.back_btn {
     width: 40px;
     height: 40px;
-    border-radius: 40px;
-    border: 1px solid rgba(170, 170, 170, 0.25);
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
+    grid-row: 1/1;
 }
 
-.textFilter_btn {
-    height: 32px;
-    padding: 0 1rem;
-    margin-right: 0.25rem;
-    border-radius: 32px;
-    border: 1px solid rgba(170, 170, 170, 0.25);
-    background-color: white;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: #AAAAAA;
+.cancel_btn {
+    background-color:rgba(0,0,0,0);
+    color: #4f4f4f;
+    font-size: 0.75rem;
 }
 
-.activeFilterBackground {
-    background-color: #AAAAAA;
-}
-
-.activeFilterIcon {
-    fill: white;
-}
-
-main {
-    margin-top: 10.75rem;
+.detailCardSection {
+    margin: 7.5rem 1rem 0 1rem;
 }
 
 .newRequestCard {
@@ -205,12 +135,28 @@ main {
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    margin-right: 0.5rem;
 }
 
-.hidden {
-    display: none;
+.tipsInfoSection {
+    margin: auto;
+    margin: 0 1rem;
+    padding-top: 1.5rem;
+    text-align: center;
 }
 
-button:focus {
-    outline: none;
+.tipsInfoSection p {
+    padding: 0 3rem;
+}
+
+.imagePlaceholderArea {
+    width: fit-content;
+    margin: auto;
+}
+
+.imagePlaceholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
 }
