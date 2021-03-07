@@ -6,179 +6,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenex - Calender</title>
     <link rel="stylesheet" href="assets/css/calendar.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
-  <!-- Link to manifest file -->
-  <link rel="manifest" href="app.webmanifest" />
-
-  
+    <!-- Link to manifest file -->
+    <link rel="manifest" href="app.webmanifest" />
   </head>
   <body>
     <!-- Navigation bar at bottom of screen -->
     <div class="app-nav">
       <div class="nav">
-          <ul>
-              <li><button id="nav_home"><svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
-                              fill="white" />
-                      </svg>
-                      Navigation</button></li>
-              <li><button id="nav_cal"><svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
-                              fill="#848484" />
-                      </svg>
-                      Calendar</button></li>
-              <li><button id="nav_tbox"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                              d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
-                              fill="#848484" />
-                      </svg>Tenex Box</button></li>
-              <li><button id="nav_more"><svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
-                          <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
-                          <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
-                          <rect x="6.00012" width="16" height="3" rx="1.5" fill="#848484" />
-                          <rect x="6.00012" y="7" width="16" height="3" rx="1.5" fill="#848484" />
-                          <rect x="6.00012" y="14" width="16" height="3" rx="1.5" fill="#848484" />
-                      </svg>
-                      More</button></li>
-          </ul>
+        <ul>
+          <li>
+            <button id="nav_home">
+              <svg
+                width="16"
+                height="20"
+                viewBox="0 0 16 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
+                  fill="white"
+                />
+              </svg>
+              Navigation
+            </button>
+          </li>
+          <li>
+            <button id="nav_cal">
+              <svg
+                width="21"
+                height="22"
+                viewBox="0 0 21 22"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
+                  fill="#848484"
+                />
+              </svg>
+              Calendar
+            </button>
+          </li>
+          <li>
+            <button id="nav_tbox">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
+                  fill="#848484"
+                /></svg>
+                Tenex Box
+            </button>
+          </li>
+          <li>
+            <button id="nav_more">
+              <svg
+                width="22"
+                height="17"
+                viewBox="0 0 22 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
+                <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
+                <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
+                <rect
+                  x="6.00012"
+                  width="16"
+                  height="3"
+                  rx="1.5"
+                  fill="#848484"
+                />
+                <rect
+                  x="6.00012"
+                  y="7"
+                  width="16"
+                  height="3"
+                  rx="1.5"
+                  fill="#848484"
+                />
+                <rect
+                  x="6.00012"
+                  y="14"
+                  width="16"
+                  height="3"
+                  rx="1.5"
+                  fill="#848484"
+                />
+              </svg>
+              More
+            </button>
+          </li>
+        </ul>
       </div>
-  </div>
+    </div>
     <header>
       <h1>Calendar</h1>
     </header>
 
     <main class="calendarMain">
-      <!-- <div class="cal_nav_wrapper">
-        <div id="cal_nav_prev">
-          <svg
-            width="17"
-            height="19"
-            viewBox="0 0 17 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9.5 17L2 9.5L9.5 2"
-              stroke="#BDBDBD"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-        <div id="cal_curr_month"></div>
-        <div id="cal_nav_next">
-          <svg
-            width="17"
-            height="19"
-            viewBox="0 0 17 19"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.5 2L15 9.5L7.5 17"
-              stroke="#BDBDBD"
-              stroke-width="3"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </div>
-      </div> -->
-
-      <!-- <div id="calendarMonthly"></div> -->
-
-      <div id="calendarMonthlyTwo">
-        <div style="overflow: hidden">
-          <div class="form-group">
-            <div class="row">
-              <div class="col-md-8">
-                <div id="datetimepicker"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="date_select_wrapper">
+        <input type="date" name="calender_date" id="calenderDate" />
       </div>
       <div class="selected_date_cards_wrapper">
-          <!-- This view is same as archive section -->
-            <div class="date_selected">2021 January 12</div>
-          <!-- If the selected date have no cards -->
-          <p>Looks Like you have no notification for this day.</p>
-          <div class="empty_illustration">Insert Illustration here</div>
+          <div class="newRequestCard">
+            <h2 class="requestTitle">Meeting Room Booking</h2>
+            <p class="newRequestDate">FEB 12, 2021</p>
+            <p class="newRequestStatus">BOOKED</p>
+            <p class="bookingDate">FEB 21, 2021</p>
+            <p class="bookingTime">14:00 - 15:00</p>
+          </div>
+          <div class="newRequestCard">
+            <h2 class="requestTitle">New Key Fob Request</h2>
+            <p class="newRequestDate">FEB 18, 2021</p>
+            <p class="newRequestStatus">SENT</p>
+            <p class="newRequestExerpt">
+              Hi Dwight, I accidentally broke my key fob this morning when I was
+              grilling bacon on my George Foreman Grill. Can you help me get a new
+              one? Thanks, Micheal
+            </p>
+          </div>
+          <div class="newRequestCard">
+            <h2 class="requestTitle">Updated Key Fob Price?</h2>
+            <p class="newRequestDate">FEB 19, 2021</p>
+            <p class="newRequestStatus">READ</p>
+            <p class="newRequestExerpt">
+              Hi Dwight, Is the key fob price shown in the building regulations
+              section of the Tenex app the updated price? Thanks, Micheal
+            </p>
+          </div>
+
+        <!-- If the selected date have no cards -->
+        <p>IF EMPTY<br>Looks Like you have no notification for this day.</p>
+        <div class="empty_illustration">Insert Illustration here</div>
       </div>
     </main>
     <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-<!-- Script for pwa -->
-<script>
-  // does the browser support service workers?
-  if ("serviceWorker" in navigator) {
-    // fires when the service worker is ready
-    navigator.serviceWorker.ready.then((reg) => {
-      // we have an active service worker working for us
-      console.log(`Service Worker ready (Scope: ${reg.scope})`);
-      // do something interesting, if you want...
-    });
-    // then register our service worker
-    navigator.serviceWorker
-      .register("./sw.js", { scope: "/" })
-      .then(function (reg) {
-        // display a success message
-        console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-      })
-      .catch(function (error) {
-        // display an error message
-        console.log(`Service Worker Error (${error})`);
-      });
-  } else {
-    // happens when the app isn't served over a TLS connection (HTTPS)
-    console.warn("Service Worker not available");
-  }
-</script>
-  <!-- Link to handlebars js cdn -->
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-  <!-- Initialize Firebase -->
-  <script src="/__/firebase/init.js"></script>
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script for pwa -->
     <script>
+      // does the browser support service workers?
+      if ("serviceWorker" in navigator) {
+        // fires when the service worker is ready
+        navigator.serviceWorker.ready.then((reg) => {
+          // we have an active service worker working for us
+          console.log(`Service Worker ready (Scope: ${reg.scope})`);
+          // do something interesting, if you want...
+        });
+        // then register our service worker
+        navigator.serviceWorker
+          .register("./sw.js", { scope: "/" })
+          .then(function (reg) {
+            // display a success message
+            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+          })
+          .catch(function (error) {
+            // display an error message
+            console.log(`Service Worker Error (${error})`);
+          });
+      } else {
+        // happens when the app isn't served over a TLS connection (HTTPS)
+        console.warn("Service Worker not available");
+      }
+    </script>
+    <!-- Link to handlebars js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script>
       // TODO: Replace the following with your app's Firebase project configuration
       // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
       const firebaseConfig = {
-  apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-  authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-  projectId: "tenex-pwa-spring2021",
-  storageBucket: "tenex-pwa-spring2021.appspot.com",
-  messagingSenderId: "874020516286",
-  appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-  measurementId: "G-BB18XSR7K4"
-};
-  
+        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+        projectId: "tenex-pwa-spring2021",
+        storageBucket: "tenex-pwa-spring2021.appspot.com",
+        messagingSenderId: "874020516286",
+        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+        measurementId: "G-BB18XSR7K4",
+      };
+
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
-    <!-- Link to datetimepicker library -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-
+    
     <!-- Link to Calendar JS -->
     <script src="assets/js/calendar.js"></script>
     <!-- <script src="assets/js/onboarding.js" defer></script> -->

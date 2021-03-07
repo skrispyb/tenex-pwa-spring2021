@@ -26,63 +26,130 @@ header h1 {
   margin: 0;
 }
 
-.cal_nav_wrapper {
-    display: flex;
-    flex-direction: row nowrap;
-    justify-content: center;
-    margin-top: 1rem;
+/* navigation bottom styling start */
+.app-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #454545;
 }
 
-.cal_nav_wrapper > div {
-    padding: 0 0.5rem;
+.app-nav .nav {
+  height: 100%;
+}
+.app-nav .nav ul {
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+.app-nav .nav ul li {
+  list-style-type: none;
 }
 
-table {
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
+.app-nav .nav ul li button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: white;
+  background: none;
+  border: 0;
 }
 
-td,
-th {
-  /* border: 1px solid black; */
-  padding: 0.8rem;
-  text-align: center;
+.app-nav .nav ul li button:active {
+  outline: 0;
 }
 
-th {
-  font-weight: bold;
-  /* background-color: #e6e6e6; */
+.app-nav .nav ul li button svg {
+  margin-bottom: 0.3rem;
 }
 
-table tr td button {
-    background: none;
-    border: 0;
+/* navigation bottom styling end */
+
+main {
+  padding-bottom: 10rem;
+  background: #eee;
 }
 
-/* bootstrap datetimepicker start */
-.timepicker {
-    display: none;
+.date_select_wrapper {
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid black;
 }
 
-.picker-switch {
-    text-align: center;
+.selected_date_cards_wrapper {
+  margin: 1rem 1rem;
 }
 
-.table-condensed thead tr .next:after {
-    content: ">";
+.requestUpdates {
+  margin: 1rem;
+  padding-bottom: 2rem;
 }
 
-.table-condensed thead tr .next, .table-condensed thead tr .prev {
-    text-align: center;
+.newRequestCard {
+  background-color: white;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin-right: 0.5rem;
 }
 
-.table-condensed thead tr .prev:before {
-    content: "<";
+.requestTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 0.33rem 0;
+  color: #4f4f4f;
 }
 
-#calendarMonthlyTwo {
-    border-bottom: 1px solid black;
+.newRequestDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
 }
 
-/* bootstrap datetimepicker end */
+.newRequestExerpt {
+  font-size: 0.875rem;
+  font-weight: 300;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 2.5rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.newRequestStatus {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.bookingDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.bookingTime {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
+}

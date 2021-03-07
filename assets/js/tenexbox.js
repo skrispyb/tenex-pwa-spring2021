@@ -166,3 +166,16 @@ displaySearchResultUI = () => {
     // }
   }
 };
+
+
+// Navigating through pages
+
+$("#nav_home").click(function() {
+  window.location.pathname = "/notificationHome.html";
+});
+$("#nav_cal").click(function() {
+  window.location.pathname = "/calendar.html";
+});
+// $("#nav_more").click(function() {
+//   window.location.pathname = "/more.html";
+// });

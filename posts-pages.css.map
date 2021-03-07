@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "sass/partials/posts-pages.scss"
+    ],
+    "names": [],
+    "file": "posts-pages.css"
+}

@@ -37,7 +37,22 @@ function signOut() {
     });
 }
 
+// Accessing cloud firestore db
+// db = firebase.firestore();
+// // console.log(db);
+// db.collection("alerts").add({
+//   "title" : "covid alert"
+// });
 
+// Adding document while also assigning an id to it
+// db.collection("data").doc("one").set(docData).then(() => {
+//   console.log("Document successfully written!");
+// });
+
+// Updating and existing document using its id
+// db.collection("alerts").doc("0w3iioZfKRVTrcFwUpJc").update({
+//   "title" : "Heavy snowfall"
+// });
 
 
 

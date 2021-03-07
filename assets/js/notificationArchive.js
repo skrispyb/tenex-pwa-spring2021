@@ -145,3 +145,7 @@ for (i = 0; i < notifArray.length; i++) {
 //   }
 // });
 
+// Back button
+$("#back_btn").click(function goBack() {
+  window.history.back();
+});
