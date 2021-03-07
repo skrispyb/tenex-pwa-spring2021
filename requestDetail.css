@@ -1,0 +1,163 @@
+/* Fonts
+   ========================================================================= */
+
+* {
+    font-family: "roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+/* Text-level Semantics
+   ========================================================================= */
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4F4F4F;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.headerTitle {
+    margin: 0;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.45);
+    margin: 1.25rem 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #4F4F4F;
+}
+
+.requestTitle {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 0.33rem 0;
+    color: #4F4F4F;
+}
+
+.newRequestDate {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin: 0 0 0.33rem 0;
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.newRequestStatus {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0 0 0.33rem 0;
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.description {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.8)
+}
+
+/* Embedded Content
+   ========================================================================= */
+
+/* Grouping Content
+   ========================================================================= */
+
+body {
+    background-color: #E8E8E8;
+    margin: 0;
+}
+
+header {
+    background-color: #f4f4f4;
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.headerEdit {
+    padding: 1.4rem 1rem 0.4rem 1rem;
+}
+
+.topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem 0;
+}
+
+button {
+    border: none;
+}
+
+button svg {
+    display: flex;
+    margin: auto;
+}
+
+.back_btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    grid-row: 1/1;
+}
+
+.edit_btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #4f4f4f;
+    font-size: 0.75rem;
+}
+
+.detailCardSection {
+    margin: 7.5rem 1rem 0 1rem;
+}
+
+.newRequestCard {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    margin-right: 0.5rem;
+}
+
+.tipsInfoSection {
+    margin: auto;
+    margin: 0 1rem;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.tipsInfoSection p {
+    padding: 0 3rem;
+}
+
+.imagePlaceholderArea {
+    width: fit-content;
+    margin: auto;
+}
+
+.imagePlaceholder {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+}
+
+.main_btn {
+    background-color: rgba(0,0,0,0);
+    right: 0;
+    bottom: 3.75rem;
+    position: fixed;
+}

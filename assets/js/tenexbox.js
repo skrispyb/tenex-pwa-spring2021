@@ -129,9 +129,7 @@ document.getElementById("search_btn").addEventListener("click", function () {
   document
     .getElementById("search_btn")
     .children[0].children[0].classList.toggle("activeFilterIcon");
-  document
-    .getElementById("searchBarInput")
-    .classList.toggle("searchBarExpand");
+  document.getElementById("searchBarInput").classList.toggle("searchBarExpand");
   document.getElementById("searchBar").classList.toggle("searchBarExpand");
   document.getElementById("headerTitle").classList.toggle("hidden");
 });
@@ -141,9 +139,9 @@ displaySearchResultUI = () => {
   clearRequestsUI();
 
   for (i = 0; i < tenexboxArray.length; i++) {
-      for (let property in tenexboxArray[i]) {
-          console.log(tenexboxArray[i][property]);
-      }
+    for (let property in tenexboxArray[i]) {
+      console.log(tenexboxArray[i][property]);
+    }
     // if (
     //   tenexboxArray[i].infoType === "Booking" &&
     //   (tenexboxArray[i].infoType.toUpperCase() ===
