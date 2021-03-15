@@ -27,7 +27,7 @@
 }
 
 .alertCard:not(:last-of-type) {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .alertCard h2,
@@ -82,6 +82,7 @@ h2 {
   overflow: auto;
   white-space: nowrap;
   margin-top: 0.5rem;
+  padding: 0 0.25rem 0.25rem 0;
 }
 
 .notificationCard {
@@ -92,10 +93,11 @@ h2 {
   height: 8.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 .notificationCard:not(:last-of-type) {
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .notificationCard h2,
@@ -195,7 +197,7 @@ h2 {
   justify-content: center;
   align-items: center;
   font-size: 0.6rem;
-  color: white;
+  color: #848484;
   background: none;
   border: 0;
 }
@@ -209,6 +211,64 @@ h2 {
 }
 
 /* navigation bottom styling end */
+
+
+/* New request button styling */
+#newRequest_btn {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0;
+}
+
+
+/* New request booking popup styling */
+
+.new_req_book_wrapper {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(0.5rem);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.new_req_book_card {
+  padding: 2rem 1rem;
+  height: 13rem;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.new_req_book_wrapper .new_req_book_card button {
+  background: white;
+  border: 1px solid lightgray;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+  background-color: #444;
+}
+
+
+.show_popup {
+  display: flex;
+}
+
+button:active, button:focus {
+  outline: none;
+}
 
 h1 {
   font-size: 1.5rem;

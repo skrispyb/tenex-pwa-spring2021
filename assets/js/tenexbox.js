@@ -1,5 +1,45 @@
+// Check if the user is logged in or not
+const auth = firebase.auth();
+let CUid;
+window.addEventListener("load", function () {
+  $("#nav_tbox").css("color", "white");
+  $("#nav_tbox > svg").children().css("fill", "white");
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      console.log("user is logged in");
+      CUid = auth.currentUser.uid;
+      console.log(CUid);
+      (async () => {
+        const response = await DBRetreiveTenexBox();
+      })().then(() => {
+        // Display notification object information on cards
+        displayAll();
+      });
+    } else {
+      // No user is signed in.
+      console.log("user is not logged in");
+      window.location.pathname = "/index.html";
+    }
+  });
+});
+
+// Navigating through pages
+$("#nav_home").click(function () {
+  window.location.pathname = "/notificationHome.html";
+});
+$("#nav_cal").click(function () {
+  window.location.pathname = "/calendar.html";
+});
+$("#nav_more").click(function () {
+  window.location.pathname = "/more.html";
+});
+
 //Request objects
-let tenexboxArray = [
+let requestArray = [];
+
+//Booking objects
+let bookingArray = [
   {
     infoType: "Booking",
     title: "Meeting Room Booking",
@@ -16,105 +56,127 @@ let tenexboxArray = [
     bookingDate: "FEB 13, 2021",
     bookingTime: "10:00 - 10:30",
   },
-  {
-    infoType: "Request",
-    title: "Key Fob Price?",
-    submittedDate: "FEB 10, 2021",
-    requestStatus: "PENDING",
-    description:
-      "Hi Dwight, I remember you mentioned that I can find the key fob price in the Tenex app. Where can I find that information in the app? Thanks, Michael",
-  },
-  {
-    infoType: "Request",
-    title: "Noise Complaint",
-    submittedDate: "FEB 05, 2021",
-    requestStatus: "REJECTED",
-    description:
-      "Hi Dwight, My neighbor has been playing the drums non-stop during the day. It's too loud. I can't focus on my work. Please ask him/her to stop. Thanks, Michael",
-  },
-  {
-    infoType: "Request",
-    title: "Building Corridor Maintenance",
-    submittedDate: "FEB 01, 2021",
-    requestStatus: "MESSAGE",
-    description:
-      "Hi Dwight, The building corridor, especially on my floor, is getting a little too dirty. Please ask the cleaning crew to clean the building corridor more often. Thanks, Michael",
-  },
 ];
+
+// Array for date formatting
+const months = [
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
+];
+
+// Accessing cloud firestore db
+const db = firebase.firestore();
+
+// Calling db
+function DBRetreiveTenexBox() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(
+        db
+          .collection("newRequests")
+          .where("ReqUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
+          .get()
+          .then((doc) => {
+            doc.forEach((fields) => {
+              requestArray.push(fields.data());
+            });
+          })
+      );
+    }, 300);
+  });
+}
 
 //Variable Declarations
 let temp;
 let i = 0;
+let allArray = [];
 
 //Function to display booking cards
-displayBookingUI = (i) => {
+displayBookingUI = (i, array) => {
   temp = document.createElement("div");
   temp.classList.add("newRequestCard");
   document.getElementById("requestCards").appendChild(temp);
 
   temp = document.createElement("h2");
   temp.classList.add("requestTitle");
-  temp.innerText = `${tenexboxArray[i].title}`;
+  temp.innerText = `${array[i].title}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("newRequestDate");
-  temp.innerText = `${tenexboxArray[i].submittedDate}`;
+  temp.innerText = `${array[i].submittedDate}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("newRequestStatus");
-  temp.innerText = `${tenexboxArray[i].bookingStatus}`;
+  temp.innerText = `${array[i].bookingStatus}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("bookingDate");
-  temp.innerText = `${tenexboxArray[i].bookingDate}`;
+  temp.innerText = `${array[i].bookingDate}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("bookingTime");
-  temp.innerText = `${tenexboxArray[i].bookingTime}`;
+  temp.innerText = `${array[i].bookingTime}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 };
 
 //Function to display request cards
-displayRequestUI = (i) => {
+displayRequestUI = (i, array) => {
   temp = document.createElement("div");
   temp.classList.add("newRequestCard");
   document.getElementById("requestCards").appendChild(temp);
 
   temp = document.createElement("h2");
   temp.classList.add("requestTitle");
-  temp.innerText = `${tenexboxArray[i].title}`;
+  temp.innerText = `${array[i].title}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("newRequestDate");
-  temp.innerText = `${tenexboxArray[i].submittedDate}`;
+  const postDate = array[i].submittedDate.toDate();
+  console.log(postDate.getDate());
+  temp.innerText = `${months[postDate.getMonth()]} ${postDate.getDate()}, ${postDate.getFullYear()}`;
+  // temp.innerText = `${tenexboxArray[i].submittedDate}`;
+  // console.log(postDate);
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("newRequestStatus");
-  temp.innerText = `${tenexboxArray[i].requestStatus}`;
+  temp.innerText = `${array[i].requestStatus}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("newRequestExerpt");
-  temp.innerText = `${tenexboxArray[i].description}`;
+  temp.innerText = `${array[i].description}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 };
 
-// Display notification object information on cards
-for (i = 0; i < tenexboxArray.length; i++) {
-  if (tenexboxArray[i].infoType === "Booking") {
-    displayBookingUI(i);
-  } else {
-    displayRequestUI(i);
+// Display booking and alert information on cards
+function displayAll() {
+  allArray = bookingArray.concat(requestArray);
+  for (i = 0; i < allArray.length; i++) {
+    if (allArray[i].infoType === "Booking") {
+      displayBookingUI(i, allArray);
+    } else {
+      displayRequestUI(i, allArray);
+    }
   }
 }
 
-//Function to clear notification archive cards
+// Clear UI before every update
 clearRequestsUI = () => {
   document.getElementById("requestCards").innerHTML = "";
 };
@@ -122,7 +184,6 @@ clearRequestsUI = () => {
 //Dispaly search bar
 document.getElementById("search_btn").addEventListener("click", function () {
   document.getElementById("searchBarInput").classList.toggle("hidden");
-
   document
     .getElementById("search_btn")
     .classList.toggle("activeFilterBackground");
@@ -135,45 +196,106 @@ document.getElementById("search_btn").addEventListener("click", function () {
 });
 
 // Function to filter cards with search input
-displaySearchResultUI = () => {
+// displaySearchResultUI = () => {
+//   clearRequestsUI();
+// for (i = 0; i < tenexboxArray.length; i++) {
+//   for (let property in tenexboxArray[i]) {
+//     console.log(tenexboxArray[i][property]);
+//   }
+// if (
+//   tenexboxArray[i].infoType === "Booking" &&
+//   (tenexboxArray[i].infoType.toUpperCase() ===
+//     document.getElementById("searchBarInput").value.toUpperCase() ||
+//     tenexboxArray[i].title.toUpperCase() ===
+//       document.getElementById("searchBarInput").value.toUpperCase() ||
+//     tenexboxArray[i].submittedDate.toUpperCase() ===
+//       document.getElementById("searchBarInput").value.toUpperCase())
+// ) {
+//   displayBookingUI(i);
+// } else if (
+//   tenexboxArray[i].infoType.toUpperCase() ===
+//     document.getElementById("searchBarInput").value.toUpperCase() ||
+//   tenexboxArray[i].title.toUpperCase() ===
+//     document.getElementById("searchBarInput").value.toUpperCase() ||
+//   tenexboxArray[i].submittedDate.toUpperCase() ===
+//     document.getElementById("searchBarInput").value.toUpperCase()
+// ) {
+//   displayRequestUI(i);
+// }
+//   }
+// };
+
+// Tag filtering
+document.getElementById("requests_btn").addEventListener("click", function () {
   clearRequestsUI();
-
-  for (i = 0; i < tenexboxArray.length; i++) {
-    for (let property in tenexboxArray[i]) {
-      console.log(tenexboxArray[i][property]);
+  if (
+    !document
+      .getElementById("requests_btn")
+      .classList.contains("activeFilterBackground")
+  ) {
+    document
+      .getElementById("requests_btn")
+      .classList.add("activeFilterBackground");
+    document.getElementById("requests_btn").classList.add("activeFilterText");
+    document
+      .getElementById("bookings_btn")
+      .classList.remove("activeFilterBackground");
+    document
+      .getElementById("bookings_btn")
+      .classList.remove("activeFilterText");
+    for (i = 0; i < requestArray.length; i++) {
+      displayRequestUI(i, requestArray);
     }
-    // if (
-    //   tenexboxArray[i].infoType === "Booking" &&
-    //   (tenexboxArray[i].infoType.toUpperCase() ===
-    //     document.getElementById("searchBarInput").value.toUpperCase() ||
-    //     tenexboxArray[i].title.toUpperCase() ===
-    //       document.getElementById("searchBarInput").value.toUpperCase() ||
-    //     tenexboxArray[i].submittedDate.toUpperCase() ===
-    //       document.getElementById("searchBarInput").value.toUpperCase())
-    // ) {
-    //   displayBookingUI(i);
-    // } else if (
-    //   tenexboxArray[i].infoType.toUpperCase() ===
-    //     document.getElementById("searchBarInput").value.toUpperCase() ||
-    //   tenexboxArray[i].title.toUpperCase() ===
-    //     document.getElementById("searchBarInput").value.toUpperCase() ||
-    //   tenexboxArray[i].submittedDate.toUpperCase() ===
-    //     document.getElementById("searchBarInput").value.toUpperCase()
-    // ) {
-    //   displayRequestUI(i);
-    // }
+  } else {
+    document
+      .getElementById("requests_btn")
+      .classList.remove("activeFilterBackground");
+    document
+      .getElementById("requests_btn")
+      .classList.remove("activeFilterText");
+    for (i = 0; i < allArray.length; i++) {
+      if (allArray[i].infoType === "Booking") {
+        displayBookingUI(i, allArray);
+      } else {
+        displayRequestUI(i, allArray);
+      }
+    }
   }
-};
-
-
-// Navigating through pages
-
-$("#nav_home").click(function() {
-  window.location.pathname = "/notificationHome.html";
 });
-$("#nav_cal").click(function() {
-  window.location.pathname = "/calendar.html";
+
+document.getElementById("bookings_btn").addEventListener("click", function () {
+  clearRequestsUI();
+  if (
+    !document
+      .getElementById("bookings_btn")
+      .classList.contains("activeFilterBackground")
+  ) {
+    document
+      .getElementById("bookings_btn")
+      .classList.add("activeFilterBackground");
+    document.getElementById("bookings_btn").classList.add("activeFilterText");
+    document
+      .getElementById("requests_btn")
+      .classList.remove("activeFilterBackground");
+    document
+      .getElementById("requests_btn")
+      .classList.remove("activeFilterText");
+    for (i = 0; i < bookingArray.length; i++) {
+      displayBookingUI(i, bookingArray);
+    }
+  } else {
+    document
+      .getElementById("bookings_btn")
+      .classList.remove("activeFilterBackground");
+    document
+      .getElementById("bookings_btn")
+      .classList.remove("activeFilterText");
+    for (i = 0; i < allArray.length; i++) {
+      if (allArray[i].infoType === "Booking") {
+        displayBookingUI(i, allArray);
+      } else {
+        displayRequestUI(i, allArray);
+      }
+    }
+  }
 });
-// $("#nav_more").click(function() {
-//   window.location.pathname = "/more.html";
-// });

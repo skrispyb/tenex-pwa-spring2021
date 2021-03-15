@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>notificationHome</title>
+    <title>Tenex - Notification Home</title>
     <link rel="stylesheet" href="assets/css/notificationHome.css" />
 
     <!-- Link to manifest file -->
@@ -31,7 +31,7 @@
                   fill-rule="evenodd"
                   clip-rule="evenodd"
                   d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
-                  fill="white"
+                  fill="#848484"
                 />
               </svg>
               Navigation
@@ -112,10 +112,46 @@
         </ul>
       </div>
     </div>
+    <div class="btn_to_newRequest">
+      <svg id="newRequest_btn" width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_ddd)">
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="#333333"/>
+        </g>
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="white" fill-opacity="0.04"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M42 35H36V41H34V35H28V33H34V27H36V33H42V35Z" fill="white"/>
+        <defs>
+        <filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="2"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation="5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+        <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2.5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0"/>
+        <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
+        </filter>
+        </defs>
+        </svg>
+    </div>
+    <div class="new_req_book_wrapper" id="newReqBookPopupWrapper">
+      <div class="new_req_book_card">
+        <button id="new_booking">BOOKING</button>
+        <button id="new_request">REQUEST</button>
+      </div>
+    </div>
     <header class="notification_home_header">
       <h1>Alerts</h1>
-      <div class="alerts_wrapper">
-        <div class="alertCard">
+      <div class="alerts_wrapper" id="alertCards">
+        <!-- <div class="alertCard">
           <h2 class="alertCardTitle">Two COVID-19 Cases In Our Building</h2>
           <p class="alertPostedDate">Posted FEB 05, 2021</p>
           <p class="alertExerpt">
@@ -140,14 +176,14 @@
           <div class="view_more_alert">
             <a href="./notificationArchive.html">View Past Alerts</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </header>
     <main>
       <section class="notificationSection">
         <h1 class="scrollHeaderTitle">Notifications</h1>
-        <div class="notifications_wrapper">
-          <div class="notificationCard">
+        <div class="notifications_wrapper" id="notificationCards">
+          <!-- <div class="notificationCard">
             <h2 class="notificationCardTitle">
               Two COVID-19 Cases In Our Building
             </h2>
@@ -173,12 +209,14 @@
             <div class="view_more_notification">
               <a href="./notificationArchive.html">View Past Notifications</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="requestUpdates">
         <h1>Request Updates</h1>
-        <div class="newRequestCard">
+        <div id="requestCards">
+        </div>
+        <!-- <div class="newRequestCard">
           <h2 class="requestTitle">Meeting Room Booking</h2>
           <p class="newRequestDate">FEB 12, 2021</p>
           <p class="newRequestStatus">BOOKED</p>
@@ -203,7 +241,7 @@
             Hi Dwight, Is the key fob price shown in the building regulations
             section of the Tenex app the updated price? Thanks, Micheal
           </p>
-        </div>
+        </div> -->
       </section>
     </main>
     <script

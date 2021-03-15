@@ -3,39 +3,58 @@ const auth = firebase.auth();
 let email;
 let password;
 $("#loginForm").submit(function () {
-  email = $("#username").val();
-  password = $("#password").val();
+  htmlEmail = $("#username").val();
+  htmlPassword = $("#password").val();
 
-  firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in 
-    var user = userCredential.user;
-    console.log("logged in");
-    window.location.pathname = "/notificationHome.html";
-    console.log("still logged in");
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log("wrong creds");
-  });
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(htmlEmail, htmlPassword)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+
+      console.log("logged in");
+      window.location.pathname = "/notificationHome.html";
+      // console.log("still logged in");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      // var errorMessage = error.message;
+      console.log(`GOT ERROR: ` + errorCode);
+      if (errorCode == "auth/weak-password") return; // password to weak. Minimal 6 characters
+      if (errorCode == "auth/email-already-in-use") return; // Return a email already in use error
+    });
 
   return false;
 });
 
+//*****************************************************************************
+// When a manager creates a new user account
+//*****************************************************************************
+// htmlEmail = $("#username").val();
+// htmlPassword = $("#password").val();
+// htmlFirstName = $("#firstname").val();
+// htmlbuilding = $("#building").val();
+// htmlLeaseStartDate = $("#leasestartdate").val();
+// htmlPhoneNum = $("#phone").val();
+// htmlTenantID = $("#tenantID").val();
+// htmlUnit = $("#unit").val();
+// {
+//   var userUid = auth.currentUser.uid;
+//   var db = firebase.firestore();
 
-// Sign out function
-function signOut() {
-  firebase
-    .auth()
-    .signOut()
-    .then(() => {
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-    });
-}
+//   db.collection("users").doc(userUid).set({
+//     email: htmlEmail,
+//     password: htmlPassword,
+//     building: htmlBuilding,
+//     firstName: htmlFirstName,
+//     lastName: htmlLastName,
+//     leaseStartDate: htmlLeaseStartDate,
+//     phone: htmlPhoneNum,
+//     tenantID: htmlTenantID,
+//     unit: htmlUnit,
+//   });
+// }
 
 // Accessing cloud firestore db
 // db = firebase.firestore();
@@ -53,12 +72,6 @@ function signOut() {
 // db.collection("alerts").doc("0w3iioZfKRVTrcFwUpJc").update({
 //   "title" : "Heavy snowfall"
 // });
-
-
-
-
-
-
 
 // Onboarding transition manipulation with js
 var slideIndex = 1;

@@ -116,6 +116,10 @@ main {
     padding: 0 1rem;
 }
 
+#requestCards {
+    padding-bottom: 4rem;
+}
+
 button {
     border: none;
 }
@@ -186,6 +190,10 @@ svg {
     color: #AAAAAA;
 }
 
+.activeFilterText {
+    color: white;
+}
+
 .activeFilterBackground {
     background-color: #AAAAAA;
 }
@@ -249,7 +257,7 @@ button:focus {
     justify-content: center;
     align-items: center;
     font-size: 0.6rem;
-    color: white;
+    color: #848484;
     background: none;
     border: 0;
   }
