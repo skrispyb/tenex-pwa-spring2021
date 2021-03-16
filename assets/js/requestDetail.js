@@ -1,3 +1,23 @@
+// Check if the user is logged in or not
+const auth = firebase.auth();
+
+window.addEventListener("load", function () {
+  $("#nav_home").css("color", "white");
+  $("#nav_home > svg").children().css("fill", "white");
+
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      console.log("user is logged in");
+      CUid = auth.currentUser.uid;
+      console.log("current user id:", CUid);
+    } else {
+      // No user is signed in.
+      console.log("user is not logged in");
+      window.location.pathname = "/index.html";
+    }
+  });
+});
+
 // request object
 let requestArray = [
     {
