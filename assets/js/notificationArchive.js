@@ -26,7 +26,7 @@ let notifArray = [
     title: "Two COVID-19 Cases In Our Building",
     durationDate: "",
     durationTime: "",
-    postedDate: "FEB 15, 2021",
+    onDate: "FEB 15, 2021",
     description:
       "Dear Owners/Residents, We were recently notified that there were two new COVID-19 cases in our building. Please continue to wear masks in public areas of the building, follow the social distancing protocols, and protect yourselves from COVID-19. The gym, sauna room, and swimming pool will be temporary closed due to the new COVID-19 outbreak. Should you have any questions, feel free to contact me. Thank you for your attention. Stay safe! Dwight",
   },
@@ -35,7 +35,7 @@ let notifArray = [
     title: "One COVID-19 Case In Our Building",
     durationDate: "",
     durationTime: "",
-    postedDate: "JAN 02, 2021",
+    onDate: "JAN 02, 2021",
     description:
       "Dear Owners/Residents, We were recently notified that there was one new COVID-19 cases in our building. Please continue to wear masks in public areas of the building, follow the social distancing protocols, and protect yourselves from COVID-19. The gym, sauna room, and swimming pool will be temporary closed due to the new COVID-19 outbreak. Should you have any questions, feel free to contact me. Thank you for your attention. Stay safe! Dwight",
   },
@@ -102,8 +102,8 @@ displayAlertUI = (i) => {
   document.getElementById("notifCard").children[i].appendChild(temp);
 
   temp = document.createElement("p");
-  temp.classList.add("alertPostedDate");
-  temp.innerText = `${notifArray[i].postedDate}`;
+  temp.classList.add("alertonDate");
+  temp.innerText = `${notifArray[i].onDate}`;
   document.getElementById("notifCard").children[i].appendChild(temp);
 
   temp = document.createElement("p");

@@ -7,14 +7,16 @@ $("#back_btn").click(function goBack() {
 // let newReqs = [];
 
 class NewReq {
-  constructor(category, subCategory, description, date, userID) {
+  constructor(category, subCategory, description, date, userID, Rid) {
     this.ReqCategory = category;
     this.title = subCategory;
     this.description = description;
-    this.submittedDate = date;
+    this.onDate = date;
     this.ReqUid = userID;
-    this.infoType = "request";
+    this.cardType = "Request";
     this.requestStatus = "sent";
+    this.requestID = Rid;
+    this.statusChangeTime = date;
   }
 }
 
@@ -48,18 +50,19 @@ function DBCall() {
 
 $("#requestForm").submit(function () {
   //   $("#submit_btn").attr("disabled", "disabled");
-  let docNameNum = "request#";
-  const RCat = $("#requestCategory").val();
-  const RSCat = $("#otherrequestCategory").val();
-  const RDesc = $("#description").val();
-  const RDate = new Date();
-  const RUid = auth.currentUser.uid;
-  let reqObj = new NewReq(RCat, RSCat, RDesc, RDate, RUid);
+  let docNameNum = "request";
   (async () => {
     const response = await DBCall();
     docNameNum += len;
   })().then(() => {
-    console.log(docNameNum);
+    // console.log(docNameNum);
+    const RCat = $("#requestCategory").val();
+  const RSCat = $("#otherrequestCategory").val();
+  const RDesc = $("#description").val();
+  const RDate = new Date();
+  const RUid = auth.currentUser.uid;
+  const Rid = docNameNum;
+  let reqObj = new NewReq(RCat, RSCat, RDesc, RDate, RUid, Rid);
     // Adding document while also assigning an id to it
     try {
       db.collection("newRequests")
@@ -67,7 +70,7 @@ $("#requestForm").submit(function () {
         .set(Object.assign({}, reqObj))
         .then(() => {
           console.log("Document successfully written!");
-          setTimeout((window.location.pathname = "/notificationHome.html"),2000);
+          setTimeout((window.location.pathname = "/notificationHome.html"),300);
         });
     } catch (err) {
       console.error(err);

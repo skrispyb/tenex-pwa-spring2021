@@ -10,115 +10,115 @@
     <link rel="manifest" href="app.webmanifest" />
   </head>
   <body>
-    <!-- Navigation bar at bottom of screen -->
-    <div class="app-nav">
-      <div class="nav">
-        <ul>
-          <li>
-            <button id="nav_home">
-              <svg
-                width="16"
-                height="20"
-                viewBox="0 0 16 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
-                  fill="#848484"
-                />
-              </svg>
-              Navigation
-            </button>
-          </li>
-          <li>
-            <button id="nav_cal">
-              <svg
-                width="21"
-                height="22"
-                viewBox="0 0 21 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
-                  fill="#848484"
-                />
-              </svg>
-              Calendar
-            </button>
-          </li>
-          <li>
-            <button id="nav_tbox">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
-                  fill="#848484"
-                /></svg>
+    <div class="body_wrapper_calendar">
+      <!-- Navigation bar at bottom of screen -->
+      <div class="app-nav">
+        <div class="nav">
+          <ul>
+            <li>
+              <button id="nav_home">
+                <svg
+                  width="16"
+                  height="20"
+                  viewBox="0 0 16 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
+                    fill="#848484"
+                  />
+                </svg>
+                Navigation
+              </button>
+            </li>
+            <li>
+              <button id="nav_cal">
+                <svg
+                  width="21"
+                  height="22"
+                  viewBox="0 0 21 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
+                    fill="#848484"
+                  />
+                </svg>
+                Calendar
+              </button>
+            </li>
+            <li>
+              <button id="nav_tbox">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
+                    fill="#848484"
+                  />
+                </svg>
                 Tenex Box
-            </button>
-          </li>
-          <li>
-            <button id="nav_more">
-              <svg
-                width="22"
-                height="17"
-                viewBox="0 0 22 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
-                <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
-                <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
-                <rect
-                  x="6.00012"
-                  width="16"
-                  height="3"
-                  rx="1.5"
-                  fill="#848484"
-                />
-                <rect
-                  x="6.00012"
-                  y="7"
-                  width="16"
-                  height="3"
-                  rx="1.5"
-                  fill="#848484"
-                />
-                <rect
-                  x="6.00012"
-                  y="14"
-                  width="16"
-                  height="3"
-                  rx="1.5"
-                  fill="#848484"
-                />
-              </svg>
-              More
-            </button>
-          </li>
-        </ul>
+              </button>
+            </li>
+            <li>
+              <button id="nav_more">
+                <svg
+                  width="22"
+                  height="17"
+                  viewBox="0 0 22 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
+                  <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
+                  <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
+                  <rect
+                    x="6.00012"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#848484"
+                  />
+                  <rect
+                    x="6.00012"
+                    y="7"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#848484"
+                  />
+                  <rect
+                    x="6.00012"
+                    y="14"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#848484"
+                  />
+                </svg>
+                More
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <header>
-      <h1 class="calendar_header">Calendar</h1>
-      <div class="date_select_wrapper">
-        <input type="date" name="calendar_date" id="calendarDate" />
-      </div>
-    </header>
-
-    <main class="calendarMain">
-      
-      <div class="selected_date_cards_wrapper">
-          <div class="newRequestCard">
+      <header>
+        <h1 class="calendar_header">Calendar</h1>
+        <div class="date_select_wrapper">
+          <input type="date" name="calendar_date" id="calendarDate" />
+        </div>
+      </header>
+      <main class="calendarMain">
+        <div class="selected_date_cards_wrapper" id="allCards">
+          <!-- <div class="newRequestCard">
             <h2 class="requestTitle">Meeting Room Booking</h2>
             <p class="newRequestDate">FEB 12, 2021</p>
             <p class="newRequestStatus">BOOKED</p>
@@ -143,13 +143,44 @@
               Hi Dwight, Is the key fob price shown in the building regulations
               section of the Tenex app the updated price? Thanks, Micheal
             </p>
+          </div> -->
+      
+        </div>
+         <!-- If the selected date have no cards -->
+         <div class="no_events">
+          <p>IF EMPTY<br />Looks Like you have no notification for this day.</p>
+          <div class="empty_illustration">Insert Illustration here</div>
+        </div>
+      </main>
+    </div>
+    <div class="body_wrapper_notif">
+      <header id="notifDetailHeader">
+          <div class="topHeader">
+              <button class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                  </svg>
+              </button>
+              <h1 id="headerTitle" class="headerTitle">Notification</h1>
+              <form action="" id="searchBar" class="searchBar">
+                <input id="searchBarInput" class="searchBarInput hide_container" type="search"
+                    name="search" placeholder="Search">
+                <button id="search_btn" class="search_btn visuallyHidden" type="button"><svg width="18" height="18"
+                        viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="hidden"
+                            d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                            fill="#AAAAAA" />
+                    </svg></button>
+            </form>
           </div>
-
-        <!-- If the selected date have no cards -->
-        <p>IF EMPTY<br>Looks Like you have no notification for this day.</p>
-        <div class="empty_illustration">Insert Illustration here</div>
-      </div>
-    </main>
+      </header>
+      <main>
+          <section class="detailCardSection">
+              <div id="notifDetailCard">
+          </section>
+      </main>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -192,7 +223,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    
+
     <script>
       // TODO: Replace the following with your app's Firebase project configuration
       // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
@@ -209,9 +240,8 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
-    
+
     <!-- Link to Calendar JS -->
     <script src="assets/js/calendar.js"></script>
-    <!-- <script src="assets/js/onboarding.js" defer></script> -->
   </body>
 </html>
