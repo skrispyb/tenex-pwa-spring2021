@@ -1,32 +1,29 @@
-// Check if the user is logged in or not
-const auth = firebase.auth();
-
 //Variable Declarations
 let temp;
 let i = 0;
-let CUid;
 
 // Variable to store requests from db
 let requestUpdates = [];
 let notifications = [];
 let alerts = [];
 
+// Alert Detail array
+let alertDetail = [];
+// Notification Detail array
+let notifDetail = [];
+
+// Check if the user is logged in or not
+const auth = firebase.auth();
+
 window.addEventListener("load", function () {
   $("#nav_home").css("color", "white");
   $("#nav_home > svg").children().css("fill", "white");
+  $(".body_wrapper_alert").addClass("hide_container");
+  $(".body_wrapper_notif").addClass("hide_container");
 
   auth.onAuthStateChanged((user) => {
     if (user) {
       console.log("user is logged in");
-      CUid = auth.currentUser.uid;
-      console.log("current user id:", CUid);
-      // DBRetreiveAlerts();
-      // DBRetreiveNotifications();
-      // (async () => {
-      //   const response = await DBRetreiveRequestUpdates();
-      // })().then(async () => {
-      //   const response = await DBRetreiveAlerts();
-      // });
     } else {
       // No user is signed in.
       console.log("user is not logged in");
@@ -84,25 +81,6 @@ const months = [
 // Accessing cloud firestore db
 const db = firebase.firestore();
 
-// Calling db
-// function DBRetreiveRequestUpdates() {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve(
-//         db
-//           .collection("newRequests")
-//           .where("ReqUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
-//           .get()
-//           .then((doc) => {
-//             doc.forEach((fields) => {
-//               requestUpdates = [];
-//               requestUpdates.push(fields.data());
-//             });
-//           })
-//       );
-//     }, 300);
-//   });
-// }
 
 // On status change in db update front end
 db.collection("newRequests")
@@ -113,7 +91,6 @@ db.collection("newRequests")
 
     doc.forEach((fields) => {
       requestUpdates.push(fields.data());
-      // console.log(requestUpdates);
       // Sorting array latest posted first
       requestUpdates.sort(function (a, b) {
         if (a.statusChangeTime < b.statusChangeTime) return 1;
@@ -144,7 +121,7 @@ displayBookingUI = (i) => {
 
   temp = document.createElement("p");
   temp.classList.add("newRequestDate");
-  temp.innerText = `${requestUpdates[i].submittedDate}`;
+  temp.innerText = `${requestUpdates[i].onDate}`;
   document.getElementById("requestCards").children[i].appendChild(temp);
 
   temp = document.createElement("p");
@@ -163,7 +140,6 @@ displayBookingUI = (i) => {
   document.getElementById("requestCards").children[i].appendChild(temp);
 };
 
-
 //Function to display request cards
 displayRequestUI = (i) => {
   temp = document.createElement("div");
@@ -177,7 +153,7 @@ displayRequestUI = (i) => {
 
   temp = document.createElement("p");
   temp.classList.add("newRequestDate");
-  const postDate = requestUpdates[i].submittedDate.toDate();
+  const postDate = requestUpdates[i].onDate.toDate();
   temp.innerText = `Posted on ${
     months[postDate.getMonth()]
   } ${postDate.getDate()}, ${postDate.getFullYear()}`;
@@ -206,10 +182,17 @@ clearAlertsUI = () => {
   document.getElementById("alertCards").innerHTML = "";
 };
 
+clearAlertDetailUI = () => {
+  document.getElementById("alertDetailCard").innerHTML = "";
+};
+
 clearNotificationsUI = () => {
   document.getElementById("notificationCards").innerHTML = "";
 };
 
+clearNotifDetailUI = () => {
+  document.getElementById("notifDetailCard").innerHTML = "";
+};
 
 // On status change in db update front end for notifications
 db.collection("notifications").onSnapshot((doc) => {
@@ -217,14 +200,14 @@ db.collection("notifications").onSnapshot((doc) => {
   clearNotificationsUI();
 
   doc.forEach((fields) => {
-      notifications.push(fields.data());
+    notifications.push(fields.data());
 
-      // Sorting array latest posted first
-      notifications.sort(function (a, b) {
-        if (a.postedOn < b.postedOn) return 1;
-        if (a.postedOn > b.postedOn) return -1;
-        return 0;
-      });
+    // Sorting array latest posted first
+    notifications.sort(function (a, b) {
+      if (a.onDate < b.onDate) return 1;
+      if (a.onDate > b.onDate) return -1;
+      return 0;
+    });
   });
   let notificationsLength = notifications.length;
   for (i = 0; i < notificationsLength; i++) {
@@ -250,6 +233,7 @@ db.collection("notifications").onSnapshot((doc) => {
 // Function to display notification cards
 displayNotificationUI = (i) => {
   temp = document.createElement("div");
+  temp.setAttribute("data-number", `${notifications[i].notifID}`);
   temp.classList.add("notificationCard");
   document.getElementById("notificationCards").appendChild(temp);
 
@@ -260,7 +244,7 @@ displayNotificationUI = (i) => {
 
   temp = document.createElement("p");
   temp.classList.add("notificationPostedDate");
-  const postDate = notifications[i].postedOn.toDate();
+  const postDate = notifications[i].onDate.toDate();
   temp.innerText = `Posted on ${
     months[postDate.getMonth()]
   } ${postDate.getDay()}, ${postDate.getFullYear()}`;
@@ -277,7 +261,6 @@ displayNotificationUI = (i) => {
   document.getElementById("notificationCards").children[i].appendChild(temp);
 };
 
-
 // On status change in db update front end for alerts
 db.collection("alerts").onSnapshot((doc) => {
   alerts = [];
@@ -289,18 +272,20 @@ db.collection("alerts").onSnapshot((doc) => {
 
       // Sorting array latest posted first
       alerts.sort(function (a, b) {
-        if (a.postedOn < b.postedOn) return 1;
-        if (a.postedOn > b.postedOn) return -1;
+        if (a.onDate < b.onDate) return 1;
+        if (a.onDate > b.onDate) return -1;
         return 0;
       });
     }
   });
   let alertsLength = alerts.length;
-  for (i = 0; i < alertsLength; i++) {
-    displayAlertUI(i);
-  }
+
   if (alertsLength > 0) {
     // If there is any alert then showing alerts sections and adding view more alerts at the end of alert cards
+    for (i = 0; i < alertsLength; i++) {
+      displayAlertUI(i);
+    }
+
     document.querySelector(".notification_home_header").style.display = "flex";
     temp = document.createElement("div");
     temp.classList.add("alertCard");
@@ -324,6 +309,7 @@ db.collection("alerts").onSnapshot((doc) => {
 // Function to display alert cards
 displayAlertUI = (i) => {
   temp = document.createElement("div");
+  temp.setAttribute("data-number", `${alerts[i].alertID}`);
   temp.classList.add("alertCard");
   document.getElementById("alertCards").appendChild(temp);
 
@@ -334,7 +320,7 @@ displayAlertUI = (i) => {
 
   temp = document.createElement("p");
   temp.classList.add("notificationPostedDate");
-  const postDate = alerts[i].postedOn.toDate();
+  const postDate = alerts[i].onDate.toDate();
   temp.innerText = `Posted on ${
     months[postDate.getMonth()]
   } ${postDate.getDate()}, ${postDate.getFullYear()}`;
@@ -345,3 +331,125 @@ displayAlertUI = (i) => {
   temp.innerText = `${alerts[i].description}`;
   document.getElementById("alertCards").children[i].appendChild(temp);
 };
+
+/******************************************************************************
+      Different Cards Detail view JS starts here
+******************************************************************************/
+// Back button
+$(".back_btn").click(function () {
+  $(".body_wrapper_alert").addClass("hide_container");
+  $(".body_wrapper_notif").addClass("hide_container");
+  $(".body_wrapper_home").removeClass("hide_container");
+  clearAlertDetailUI();
+  clearNotifDetailUI();
+});
+
+// Navigating to card details page
+let cardID;
+
+document.onclick = function (e) {
+  alertDetail = [];
+  notifDetail = [];
+  cardID = undefined;
+  if (e.target.className == "alertCard") {
+    cardID = e.target.getAttribute("data-number");
+  } else if (e.target.parentNode.className == "alertCard") {
+    cardID = e.target.parentNode.getAttribute("data-number");
+  } else if (e.target.className == "notificationCard") {
+    cardID = e.target.getAttribute("data-number");
+  } else if (e.target.parentNode.className == "notificationCard") {
+    cardID = e.target.parentNode.getAttribute("data-number");
+  } else {
+    cardID = undefined;
+  }
+  if (cardID) {
+    if (cardID.includes("alert")) {
+      $(".body_wrapper_home").addClass("hide_container");
+      $(".body_wrapper_alert").removeClass("hide_container");
+      alertDetail.push(alerts.find((element) => element.alertID === cardID));
+      displayAlertDetailUI(0);
+    } else if (cardID.includes("notif")) {
+      $(".body_wrapper_home").addClass("hide_container");
+      $(".body_wrapper_notif").removeClass("hide_container");
+      notifDetail.push(
+        notifications.find((element) => element.notifID === cardID)
+      );
+      displayNotifDetailUI(0);
+    }
+  }
+};
+
+/******************************************************************************
+      Different Cards Detail view JS ends here
+******************************************************************************/
+
+/******************************************************************************
+      Alert Detail view JS starts here
+******************************************************************************/
+
+//Function to display alert detail card
+displayAlertDetailUI = (i) => {
+  temp = document.createElement("div");
+  temp.classList.add("alertDetailCard");
+  document.getElementById("alertDetailCard").appendChild(temp);
+
+  temp = document.createElement("h2");
+  temp.classList.add("alertDetailCardTitle");
+  temp.innerText = `${alertDetail[0].alertHead}`;
+  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("alertDetailPostedDate");
+  const postDate = alerts[i].onDate.toDate();
+  temp.innerText = `Posted on ${
+    months[postDate.getMonth()]
+  } ${postDate.getDate()}, ${postDate.getFullYear()}`;
+  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("alertDetailDescription");
+  temp.innerText = `${alertDetail[i].description}`;
+  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+};
+
+/******************************************************************************
+      Alert Detail view JS ends here
+******************************************************************************/
+
+/******************************************************************************
+      Notification Detail view JS starts here
+******************************************************************************/
+
+//Function to display notification detail card
+displayNotifDetailUI = (i) => {
+  temp = document.createElement("div");
+  temp.classList.add("notifDetailCard");
+  document.getElementById("notifDetailCard").appendChild(temp);
+
+  temp = document.createElement("h2");
+  temp.classList.add("notifDetailCardTitle");
+  temp.innerText = `${notifDetail[i].notifHead}`;
+  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("notifDetailPostedDate");
+  const postDate = notifDetail[i].onDate.toDate();
+  temp.innerText = `Posted on ${
+    months[postDate.getMonth()]
+  } ${postDate.getDay()}, ${postDate.getFullYear()}`;
+  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("notifDetailDuration");
+  temp.innerText = `${notifDetail[i].duration}`;
+  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("notifDetaildescription");
+  temp.innerText = `${notifDetail[i].description}`;
+  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+};
+
+/******************************************************************************
+      Notification Detail view JS ends here
+******************************************************************************/
