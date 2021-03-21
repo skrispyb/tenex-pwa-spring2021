@@ -194,6 +194,10 @@ svg {
     fill: white;
 }
 
+.activeFilterText {
+    color: white;
+}
+
 main {
     margin-top: 10.75rem;
 }
