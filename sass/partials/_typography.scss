@@ -1,15 +1,36 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
-  font-family: $font_sans;
+h2 {
+  font-family: $font_h2;
+  color: $color_h2;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: $font_h3;
+  font-weight: 600;
 }
 
 p {
-  font-family: $font_serif;
+  font-family: $font_date_posted;
+  line-height: 1.5;
+}
+
+.alertCard p, .notifCard p, .newRequestCard p {
+  font-size: 14px;
+}
+
+.newRequestCard .newRequestCard_status {
+  font-size: 0.75rem;
+}
+
+.view_more_alert, .view_more_notif {
+  a {
+    font-family: $font_h3;
+  }
+}
+
+.alertCard_date_wrapper p, .notifCard_date_wrapper p, .newRequestCard_date_wrapper p {
+  font-size: 0.75rem;
+  color: $date_posted;
 }
 
 .slideshow-container {

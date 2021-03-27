@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenex - Notification Home</title>
     <link rel="stylesheet" href="assets/css/notificationHome.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Link to manifest file -->
     <link rel="manifest" href="app.webmanifest" />
@@ -215,16 +216,27 @@
         </div>
       </div>
       <header class="notification_home_header" id="homeHeader">
-        <h1>Alerts</h1>
+        <h2>Alerts</h2>
         <div class="alerts_wrapper" id="alertCards">
-          <!-- <div class="alertCard">
-            <h2 class="alertCardTitle">Two COVID-19 Cases In Our Building</h2>
-            <p class="alertPostedDate">Posted FEB 05, 2021</p>
-            <p class="alertExerpt">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus,
-              nesciunt aliquam tempora distinctio mollitia aperiam?
-            </p>
-          </div>
+          
+          <div class="alertCard">
+            <div class="alertCard_content_wrapper">
+              <h3 class="alert_card_title">Two COVID-19 Cases In Our Building</h3>
+              
+              <p class="alertExerpt">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus,
+                nesciunt aliquam tempora distinctio mollitia aperiam?
+              </p>
+            </div>
+            <div class="alertCard_date_wrapper">
+              <div class="alert_icon">
+                <svg width="35" height="30" viewBox="0 0 35 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.877258 28.4961C0.488375 29.1628 0.969246 30 1.74104 30H33.259C34.0308 30 34.5116 29.1628 34.1227 28.4961L18.3638 1.48077C17.9779 0.81926 17.0221 0.819258 16.6362 1.48076L0.877258 28.4961ZM19.0909 24.2632C19.0909 24.8154 18.6432 25.2632 18.0909 25.2632H16.9091C16.3568 25.2632 15.9091 24.8154 15.9091 24.2632V23.1053C15.9091 22.553 16.3568 22.1053 16.9091 22.1053H18.0909C18.6432 22.1053 19.0909 22.553 19.0909 23.1053V24.2632ZM19.0909 17.9474C19.0909 18.4997 18.6432 18.9474 18.0909 18.9474H16.9091C16.3568 18.9474 15.9091 18.4997 15.9091 17.9474V13.6316C15.9091 13.0793 16.3568 12.6316 16.9091 12.6316H18.0909C18.6432 12.6316 19.0909 13.0793 19.0909 13.6316V17.9474Z" fill="#BE0707"/>
+                </svg>
+              </div>
+              <p>Posted FEB 05, 2021</p>
+            </div>
+          </div><!-- 
           <div class="alertCard">
             <h2 class="alertCardTitle">Two COVID-19 Cases In Our Building</h2>
             <p class="alertPostedDate">Posted FEB 05, 2021</p>
@@ -247,7 +259,7 @@
       </header>
       <main id="homeMain">
         <section class="notificationSection">
-          <h1 class="scrollHeaderTitle">Notifications</h1>
+          <h2 class="scrollHeaderTitle">Notifications</h2>
           <div class="notifications_wrapper" id="notificationCards">
             <!-- <div class="notificationCard">
               <h2 class="notificationCardTitle">
@@ -279,7 +291,7 @@
           </div>
         </section>
         <section class="requestUpdates">
-          <h1>Request Updates</h1>
+          <h2>Request Updates</h2>
           <div id="requestCards"></div>
           <!-- <div class="newRequestCard">
             <h2 class="requestTitle">Meeting Room Booking</h2>
@@ -319,7 +331,7 @@
                           stroke-linejoin="round" />
                   </svg>
               </button>
-              <h1 id="headerTitle" class="headerTitle">Alert</h1>
+              <h2 id="headerTitle" class="headerTitle">Alert</h2>
               <form action="" id="searchBar" class="searchBar">
                   <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search"
                       name="search" placeholder="Search">
@@ -347,7 +359,7 @@
                           stroke-linejoin="round" />
                   </svg>
               </button>
-              <h1 id="headerTitle" class="headerTitle">Notification</h1>
+              <h2 id="headerTitle" class="headerTitle">Notification</h2>
               <form action="" id="searchBar" class="searchBar">
                   <input id="searchBarInput" class="searchBarInput hidden" type="search"
                       name="search" placeholder="Search">

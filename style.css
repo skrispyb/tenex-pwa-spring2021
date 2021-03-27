@@ -15,6 +15,21 @@ Table of Contents
 
 */
 /* 1. Variables =========================================================== */
+@font-face {
+  font-family: futuraMedium;
+  src: url(../../../assets/fonts/futura_medium_bt.ttf);
+}
+
+@font-face {
+  font-family: SFProDisplaySemibold;
+  src: url(../../../assets/fonts/SFProDisplaySemibold.ttf);
+}
+
+@font-face {
+  font-family: SFProDisplayRegular;
+  src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
+}
+
 /* 2. Reset ================================================================ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -365,18 +380,37 @@ template {
 }
 
 /* 3. Typography =========================================================== */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-button {
-  font-family: helvetica, arial, sans-serif;
+h2 {
+  font-family: futuraMedium, serif;
+  color: #828282;
+  font-weight: normal;
+}
+
+h3 {
+  font-family: SFProDisplaySemibold, serif;
+  font-weight: 600;
 }
 
 p {
-  font-family: georgia, times, "times new roman", serif;
+  font-family: SFProDisplayRegular, serif;
+  line-height: 1.5;
+}
+
+.alertCard p, .notifCard p, .newRequestCard p {
+  font-size: 14px;
+}
+
+.newRequestCard .newRequestCard_status {
+  font-size: 0.75rem;
+}
+
+.view_more_alert a, .view_more_notif a {
+  font-family: SFProDisplaySemibold, serif;
+}
+
+.alertCard_date_wrapper p, .notifCard_date_wrapper p, .newRequestCard_date_wrapper p {
+  font-size: 0.75rem;
+  color: #828282;
 }
 
 .slideshow-container .mySlides h2 {
@@ -510,7 +544,531 @@ a {
 /******************************************************************************
             Onboarding page slides styling ends here
 ******************************************************************************/
+/******************************************************************************
+            Navigation bottom styling starts here
+******************************************************************************/
+.app-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #454545;
+}
+
+.app-nav .nav {
+  height: 100%;
+}
+
+.app-nav .nav ul {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+
+.app-nav .nav ul li {
+  list-style-type: none;
+}
+
+.app-nav .nav ul li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.6rem;
+  color: #848484;
+  background: none;
+  border: 0;
+}
+
+.app-nav .nav ul li button:active {
+  outline: 0;
+}
+
+.app-nav .nav ul li button svg {
+  margin-bottom: 0.3rem;
+}
+
+/******************************************************************************
+            Navigation bottom styling ends here
+******************************************************************************/
 /* 5. Posts and Pages ====================================================== */
+/* Alert card home screen starts here */
+.notification_home_header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+}
+
+.notification_home_header > h2 {
+  margin: 0 0 0 1rem;
+}
+
+.alerts_wrapper {
+  margin-top: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.alerts_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.alertCard {
+  background-color: #ffdfdf;
+  display: inline-block;
+  vertical-align: top;
+  width: 20rem;
+  height: 7.5rem;
+  padding: 1rem;
+  margin: 0 0 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.alertCard:first-of-type {
+  margin-left: 1rem;
+}
+
+.alertCard:last-of-type {
+  margin-right: 1rem;
+}
+
+.alertCard:last-of-type .view_more_alert {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertCard:last-of-type .view_more_alert a {
+  color: #be0707;
+}
+
+.alertCard_wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 13rem auto;
+      grid-template-columns: 13rem auto;
+  grid-gap: 0.5rem;
+}
+
+.alertCard_content_wrapper {
+  width: 100%;
+}
+
+.alertCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.alert_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.alertCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Alert Card home screen ends here */
+#homeMain {
+  min-height: 100vh;
+  margin-bottom: 2.5rem;
+  background-color: #f4f4f4;
+}
+
+/* Notification Card Home screen starts here */
+.notificationSection {
+  padding: 1.5rem 0 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+}
+
+.notificationSection h2 {
+  margin: 0 0 0 1rem;
+}
+
+.notifications_wrapper {
+  margin-top: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.notifications_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.notifCard {
+  background-color: #dcebe9;
+  display: inline-block;
+  vertical-align: top;
+  width: 20rem;
+  height: 10.5rem;
+  padding: 1rem;
+  margin: 0 0 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.notifCard:first-of-type {
+  margin-left: 1rem;
+}
+
+.notifCard:last-of-type {
+  margin-right: 1rem;
+}
+
+.notifCard:last-of-type .view_more_notif {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notifCard:last-of-type .view_more_notif a {
+  color: #81b7ae;
+}
+
+.notifCard_wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 13rem auto;
+      grid-template-columns: 13rem auto;
+  grid-gap: 0.5rem;
+}
+
+.notifCard_content_wrapper {
+  width: 100%;
+}
+
+.notifCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.notif_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.notifCard_duration_date_wrapper,
+.notifCard_duration_time_wrapper {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.notifCard_duration_date_wrapper p,
+.notifCard_duration_time_wrapper p {
+  margin: 0;
+}
+
+.notifCard_duration_date_wrapper p svg,
+.notifCard_duration_time_wrapper p svg {
+  margin-bottom: -3px;
+}
+
+.newBookingCard_time_wrapper {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(189, 189, 189, 0.25);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.newBookingCard_time_wrapper p {
+  margin: 0;
+}
+
+.newBookingCard_time_wrapper p svg {
+  margin-bottom: -3px;
+}
+
+.notifCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notifCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Notification Card Home screen ends here */
+/* Recent Cards Home screen starts here */
+.recentSection {
+  margin: 1.5rem 0 0 0;
+  padding: 0 1rem 3rem;
+  width: 100%;
+}
+
+.recentSection h2 {
+  margin: 0;
+}
+
+.recents_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.newRequestCard {
+  z-index: 1;
+  background-color: #ffffff;
+  width: 100%;
+  height: 8rem;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.newRequestCard_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
+}
+
+.newRequestCard_content_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5rem auto;
+      grid-template-columns: 0.5rem auto;
+  grid-gap: 0.25rem 1rem;
+  width: 14rem;
+}
+
+.newRequestCard_status_progress_wrapper {
+  width: 0.5rem;
+}
+
+.newRequestCard_details {
+  display: block;
+}
+
+.newRequestCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.newRequestCard_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.newRequestCard_status {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.newRequestCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newRequestCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Recent Card Home screen ends here */
+/******************************************************************************
+      Alert Detail view style starts here
+******************************************************************************/
+/* Text-level Semantics
+   ========================================================================= */
+#alertDetailHeader h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4f4f4f;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#alertDetailHeader .headerTitle {
+  margin: 0;
+}
+
+.alertDetailCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.alertDetailPostedDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.alertDetailDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Embedded Content
+     ========================================================================= */
+/* Grouping Content
+     ========================================================================= */
+/******************************************************************************
+        Alert Detail view style ends here
+  ******************************************************************************/
+/******************************************************************************
+        Notification Detail view style starts here
+  ******************************************************************************/
+/******************************************************************************
+        Notification Detail view style ends here
+  ******************************************************************************/
 /* 6. Media ================================================================ */
 img {
   max-width: 100%;
@@ -581,6 +1139,10 @@ img {
   width: 1px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* 10. Elements ============================================================= */
 .btn_to_login {
   margin: 0 auto;
@@ -595,6 +1157,138 @@ img {
   border-radius: 1.5rem;
   background-color: black;
   margin-top: 5rem;
+}
+
+/* New request button styling */
+#newRequest_btn {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0;
+}
+
+/* New request booking popup styling */
+.new_req_book_wrapper {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.new_req_book_card {
+  padding: 2rem 1rem;
+  height: 13rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.new_req_book_wrapper .new_req_book_card button {
+  background: white;
+  border: 1px solid lightgray;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: bold;
+  color: white;
+  background-color: #444;
+}
+
+.show_popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4f4f4f;
+  padding: 0;
+  margin: 0;
+}
+
+.notificationCardTitle,
+.requestTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 0.33rem 0;
+  color: #4f4f4f;
+}
+
+.newRequestDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.newRequestExerpt {
+  font-size: 0.875rem;
+  font-weight: 300;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 2.5rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.newRequestStatus {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.bookingDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.bookingTime {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /* 11. hacks =============================================================== */

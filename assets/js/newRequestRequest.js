@@ -14,7 +14,7 @@ class NewReq {
     this.onDate = date;
     this.ReqUid = userID;
     this.cardType = "Request";
-    this.requestStatus = "sent";
+    this.requestStatus = "SENT";
     this.requestID = Rid;
     this.statusChangeTime = date;
   }
@@ -56,7 +56,7 @@ $("#requestForm").submit(function () {
     docNameNum += len;
   })().then(() => {
     // console.log(docNameNum);
-    const RCat = $("#requestCategory").val();
+  const RCat = $("#requestCategory").val();
   const RSCat = $("#otherrequestCategory").val();
   const RDesc = $("#description").val();
   const RDate = new Date();

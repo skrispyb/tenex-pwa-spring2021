@@ -1,1 +1,454 @@
-/* No CSS *//*# sourceMappingURL=posts-pages.css.map */
+/* Alert card home screen starts here */
+.notification_home_header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+}
+
+.notification_home_header > h2 {
+  margin: 0 0 0 1rem;
+}
+
+.alerts_wrapper {
+  margin-top: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.alerts_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.alertCard {
+  background-color: #ffdfdf;
+  display: inline-block;
+  vertical-align: top;
+  width: 20rem;
+  height: 7.5rem;
+  padding: 1rem;
+  margin: 0 0 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.alertCard:first-of-type {
+  margin-left: 1rem;
+}
+
+.alertCard:last-of-type {
+  margin-right: 1rem;
+}
+
+.alertCard:last-of-type .view_more_alert {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertCard:last-of-type .view_more_alert a {
+  color: #be0707;
+}
+
+.alertCard_wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 13rem auto;
+      grid-template-columns: 13rem auto;
+  grid-gap: 0.5rem;
+}
+
+.alertCard_content_wrapper {
+  width: 100%;
+}
+
+.alertCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.alert_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.alertCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.alertCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Alert Card home screen ends here */
+#homeMain {
+  min-height: 100vh;
+  margin-bottom: 2.5rem;
+  background-color: #f4f4f4;
+}
+
+/* Notification Card Home screen starts here */
+.notificationSection {
+  padding: 1.5rem 0 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #ffffff;
+}
+
+.notificationSection h2 {
+  margin: 0 0 0 1rem;
+}
+
+.notifications_wrapper {
+  margin-top: 0.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.notifications_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.notifCard {
+  background-color: #dcebe9;
+  display: inline-block;
+  vertical-align: top;
+  width: 20rem;
+  height: 10.5rem;
+  padding: 1rem;
+  margin: 0 0 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.notifCard:first-of-type {
+  margin-left: 1rem;
+}
+
+.notifCard:last-of-type {
+  margin-right: 1rem;
+}
+
+.notifCard:last-of-type .view_more_notif {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notifCard:last-of-type .view_more_notif a {
+  color: #81b7ae;
+}
+
+.notifCard_wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 13rem auto;
+      grid-template-columns: 13rem auto;
+  grid-gap: 0.5rem;
+}
+
+.notifCard_content_wrapper {
+  width: 100%;
+}
+
+.notifCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.notif_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.notifCard_duration_date_wrapper,
+.notifCard_duration_time_wrapper {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.notifCard_duration_date_wrapper p,
+.notifCard_duration_time_wrapper p {
+  margin: 0;
+}
+
+.notifCard_duration_date_wrapper p svg,
+.notifCard_duration_time_wrapper p svg {
+  margin-bottom: -3px;
+}
+
+.newBookingCard_time_wrapper {
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(189, 189, 189, 0.25);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.newBookingCard_time_wrapper p {
+  margin: 0;
+}
+
+.newBookingCard_time_wrapper p svg {
+  margin-bottom: -3px;
+}
+
+.notifCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.notifCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Notification Card Home screen ends here */
+/* Recent Cards Home screen starts here */
+.recentSection {
+  margin: 1.5rem 0 0 0;
+  padding: 0 1rem 3rem;
+  width: 100%;
+}
+
+.recentSection h2 {
+  margin: 0;
+}
+
+.recents_wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.newRequestCard {
+  z-index: 1;
+  background-color: #ffffff;
+  width: 100%;
+  height: 8rem;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.newRequestCard_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 0.5rem;
+}
+
+.newRequestCard_content_wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5rem auto;
+      grid-template-columns: 0.5rem auto;
+  grid-gap: 0.25rem 1rem;
+  width: 14rem;
+}
+
+.newRequestCard_status_progress_wrapper {
+  width: 0.5rem;
+}
+
+.newRequestCard_details {
+  display: block;
+}
+
+.newRequestCard_title {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.newRequestCard_excerpt {
+  margin: 0.5rem 0 0 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.newRequestCard_status {
+  margin: 0;
+  grid-column: 1 / -1;
+}
+
+.newRequestCard_date_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.newRequestCard_date_wrapper p {
+  text-align: center;
+  margin: 0;
+}
+
+/* Recent Card Home screen ends here */
+/******************************************************************************
+      Alert Detail view style starts here
+******************************************************************************/
+/* Text-level Semantics
+   ========================================================================= */
+#alertDetailHeader h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4f4f4f;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#alertDetailHeader .headerTitle {
+  margin: 0;
+}
+
+.alertDetailCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.alertDetailPostedDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.alertDetailDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Embedded Content
+     ========================================================================= */
+/* Grouping Content
+     ========================================================================= */
+/******************************************************************************
+        Alert Detail view style ends here
+  ******************************************************************************/
+/******************************************************************************
+        Notification Detail view style starts here
+  ******************************************************************************/
+/******************************************************************************
+        Notification Detail view style ends here
+  ******************************************************************************/
+/*# sourceMappingURL=posts-pages.css.map */

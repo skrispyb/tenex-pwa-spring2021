@@ -1,10 +1,10 @@
 /* Fonts
    ========================================================================= */
 
-* {
+/* * {
   font-family: "roboto", sans-serif;
   box-sizing: border-box;
-}
+} */
 
 /******************************************************************************
       Homepage style starts here
@@ -15,19 +15,27 @@
 
 /* ----- Alert scroll ----- */
 .alerts_wrapper {
-  overflow: auto;
-  white-space: nowrap;
+  
   margin-top: 0.5rem;
 }
 
 .alertCard {
-  display: inline-block;
-  vertical-align: top;
-  background-color: #ddd;
-  width: 18rem;
-  height: 5.5rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.alertCard_content_wrapper {
+  width: 13rem;
+  overflow: auto;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.alert_card_title {
+  margin: 0;
 }
 
 .alertCard:first-of-type {
@@ -68,23 +76,8 @@
   font-weight: bold;
 }
 
-.notification_home_header {
-  position: sticky;
-  top: 0;
-  padding: 3rem 0 1rem;
-  display: flex;
-  flex-direction: column;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #bdbdbd;
-  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
-}
-
 .notification_home_header h1 {
   margin: 0 0 0 1rem;
-}
-
-h2 {
-  margin: 0;
 }
 
 /* Alert scroll end */
@@ -176,10 +169,6 @@ h2 {
 main {
   min-height: 100vh;
   margin-bottom: 2.5rem;
-}
-
-h2 {
-  margin: 0;
 }
 
 /* Notif scroll */

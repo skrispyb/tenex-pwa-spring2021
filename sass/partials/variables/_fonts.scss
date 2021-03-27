@@ -1,2 +1,19 @@
-$font_sans: helvetica, arial, sans-serif;
-$font_serif: georgia, times, 'times new roman', serif;
+@font-face {
+  font-family: futuraMedium;
+  src: url(../../../assets/fonts/futura_medium_bt.ttf);
+}
+
+@font-face {
+  font-family: SFProDisplaySemibold;
+  src: url(../../../assets/fonts/SFProDisplaySemibold.ttf);
+}
+
+@font-face {
+  font-family: SFProDisplayRegular;
+  src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
+}
+
+$font_h2: futuraMedium, serif;
+$font_h3: SFProDisplaySemibold, serif;
+$font_date_posted: SFProDisplayRegular, serif;
+// $font_sans: helvetica, arial, sans-serif;
