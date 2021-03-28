@@ -5,7 +5,7 @@ let i = 0;
 // Variable to store requests from db
 let bookings = [];
 let requests = [];
-let recenttUpdates = [];
+let recentUpdates = [];
 let notifications = [];
 let alerts = [];
 
@@ -121,20 +121,20 @@ db.collection("bookings")
 function mergeRecentCards() {
   clearRecentsUI();
 
-  recenttUpdates = [];
+  recentUpdates = [];
   requests.forEach((card) => {
-    recenttUpdates.push(card);
+    recentUpdates.push(card);
   });
   bookings.forEach((card) => {
-    recenttUpdates.push(card);
+    recentUpdates.push(card);
   });
   // Sorting array latest posted first
-  recenttUpdates.sort(function (a, b) {
+  recentUpdates.sort(function (a, b) {
     if (a.statusChangeTime < b.statusChangeTime) return 1;
     if (a.statusChangeTime > b.statusChangeTime) return -1;
     return 0;
   });
-  let recentsLength = recenttUpdates.length;
+  let recentsLength = recentUpdates.length;
   for (i = 0; i < recentsLength; i++) {
     displayRecenttUI(i);
   }
@@ -175,6 +175,11 @@ function mergeRecentCards() {
 //Function to display request cards
 displayRecenttUI = (i) => {
   temp = document.createElement("div");
+  if (recentUpdates[i].cardType === "Booking") {
+    temp.setAttribute("data-number", `${recentUpdates[i].bookingID}`);
+  } else {
+    temp.setAttribute("data-number", `${recentUpdates[i].requestID}`);
+  }
   temp.classList.add("newRequestCard");
   recentCards.appendChild(temp);
 
@@ -189,7 +194,7 @@ displayRecenttUI = (i) => {
   temp = document.createElement("div");
   temp.classList.add("newRequestCard_status_progress_wrapper");
   recentCards.children[i].children[0].children[0].appendChild(temp);
-  if (recenttUpdates[i].requestStatus === "SENT") {
+  if (recentUpdates[i].requestStatus === "SENT") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -197,7 +202,7 @@ displayRecenttUI = (i) => {
     <path d="M4 39.833L4 54.1804L4 68.5277" stroke="#FDAE46" stroke-width="2" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
     <path d="M7.5 70.9969C7.5 72.9324 5.93256 74.5006 4 74.5006C2.06744 74.5006 0.5 72.9324 0.5 70.9969C0.5 69.0614 2.06744 67.4932 4 67.4932C5.93256 67.4932 7.5 69.0614 7.5 70.9969Z" fill="white" stroke="#FDAE46"/>
   </svg>`;
-  } else if (recenttUpdates[i].requestStatus === "READ") {
+  } else if (recentUpdates[i].requestStatus === "READ") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -205,7 +210,7 @@ displayRecenttUI = (i) => {
     <path d="M4 39.833L4 54.1804L4 68.5277" stroke="#FDAE46" stroke-width="2" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
     <path d="M7.5 70.9969C7.5 72.9324 5.93256 74.5006 4 74.5006C2.06744 74.5006 0.5 72.9324 0.5 70.9969C0.5 69.0614 2.06744 67.4932 4 67.4932C5.93256 67.4932 7.5 69.0614 7.5 70.9969Z" fill="white" stroke="#FDAE46"/>
   </svg>`;
-  } else if (recenttUpdates[i].requestStatus === "REJECTED") {
+  } else if (recentUpdates[i].requestStatus === "REJECTED") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -213,7 +218,7 @@ displayRecenttUI = (i) => {
     <path d="M4 39.833L4 54.1804L4 68.5277" stroke="#FDAE46" stroke-width="2" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
     <path d="M7.5 70.9969C7.5 72.9324 5.93256 74.5006 4 74.5006C2.06744 74.5006 0.5 72.9324 0.5 70.9969C0.5 69.0614 2.06744 67.4932 4 67.4932C5.93256 67.4932 7.5 69.0614 7.5 70.9969Z" fill="white" stroke="#FDAE46"/>
   </svg>`;
-  } else if (recenttUpdates[i].requestStatus === "MESSAGE") {
+  } else if (recentUpdates[i].requestStatus === "MESSAGE") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -221,7 +226,7 @@ displayRecenttUI = (i) => {
     <path d="M4 39.833L4 54.1804L4 68.5277" stroke="#FDAE46" stroke-width="2" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
     <path d="M7.5 70.9969C7.5 72.9324 5.93256 74.5006 4 74.5006C2.06744 74.5006 0.5 72.9324 0.5 70.9969C0.5 69.0614 2.06744 67.4932 4 67.4932C5.93256 67.4932 7.5 69.0614 7.5 70.9969Z" fill="white" stroke="#FDAE46"/>
   </svg>`;
-  } else if (recenttUpdates[i].requestStatus === "COMPLETED") {
+  } else if (recentUpdates[i].requestStatus === "COMPLETED") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -229,7 +234,7 @@ displayRecenttUI = (i) => {
     <path d="M4 39.833L4 54.1804L4 68.5277" stroke="#FDAE46" stroke-width="2" stroke-miterlimit="16" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 4"/>
     <path d="M7.5 70.9969C7.5 72.9324 5.93256 74.5006 4 74.5006C2.06744 74.5006 0.5 72.9324 0.5 70.9969C0.5 69.0614 2.06744 67.4932 4 67.4932C5.93256 67.4932 7.5 69.0614 7.5 70.9969Z" fill="white" stroke="#FDAE46"/>
   </svg>`;
-  } else if (recenttUpdates[i].requestStatus === "BOOKED") {
+  } else if (recentUpdates[i].requestStatus === "BOOKED") {
     temp.innerHTML = `<svg width="8" height="75" viewBox="0 0 8 75" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.5 4.00372C7.5 5.9392 5.93256 7.50743 4 7.50743C2.06744 7.50743 0.5 5.9392 0.5 4.00372C0.5 2.06823 2.06744 0.5 4 0.5C5.93256 0.5 7.5 2.06823 7.5 4.00372Z" fill="#FDAE46" stroke="#FDAE46"/>
     <path d="M7.5 37.5008C7.5 39.4363 5.93256 41.0045 4 41.0045C2.06744 41.0045 0.5 39.4363 0.5 37.5008C0.5 35.5653 2.06744 33.9971 4 33.9971C5.93256 33.9971 7.5 35.5653 7.5 37.5008Z" fill="#FDAE46" stroke="#FDAE46"/>
@@ -253,24 +258,28 @@ displayRecenttUI = (i) => {
 
   temp = document.createElement("h3");
   temp.classList.add("newRequestCard_title");
-  temp.innerText = `${recenttUpdates[i].title}`;
+  temp.innerText = `${recentUpdates[i].title}`;
   recentCards.children[i].children[0].children[0].children[1].appendChild(temp);
 
-  if (recenttUpdates[i].cardType === "Booking") {
+  if (recentUpdates[i].cardType === "Booking") {
     temp = document.createElement("div");
     temp.classList.add("newBookingCard_time_wrapper");
-    recentCards.children[i].children[0].children[0].children[1].appendChild(temp);
+    recentCards.children[i].children[0].children[0].children[1].appendChild(
+      temp
+    );
 
     temp = document.createElement("p");
     temp.classList.add("newBookingCard_time");
     temp.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z" fill="#4F4F4F"/>
-    </svg> ${recenttUpdates[i].timeSlot}`;
-    recentCards.children[i].children[0].children[0].children[1].children[1].appendChild(temp);
+    </svg> ${recentUpdates[i].timeSlot}`;
+    recentCards.children[
+      i
+    ].children[0].children[0].children[1].children[1].appendChild(temp);
   } else {
     temp = document.createElement("p");
     temp.classList.add("newRequestCard_excerpt");
-    temp.innerText = `${recenttUpdates[i].description}`;
+    temp.innerText = `${recentUpdates[i].description}`;
     recentCards.children[i].children[0].children[0].children[1].appendChild(
       temp
     );
@@ -278,7 +287,7 @@ displayRecenttUI = (i) => {
 
   temp = document.createElement("p");
   temp.classList.add("newRequestCard_status");
-  temp.innerText = `${recenttUpdates[i].requestStatus}`;
+  temp.innerText = `${recentUpdates[i].requestStatus}`;
   recentCards.children[i].children[0].children[0].appendChild(temp);
 
   temp = document.createElement("div");
@@ -288,13 +297,13 @@ displayRecenttUI = (i) => {
   temp = document.createElement("div");
   temp.classList.add("newRequest_logo");
   recentCards.children[i].children[0].children[1].appendChild(temp);
-  if (recenttUpdates[i].requestStatus !== "REJECTED") {
-    if (recenttUpdates[i].ReqCategory === "Service") {
+  if (recentUpdates[i].requestStatus !== "REJECTED") {
+    if (recentUpdates[i].ReqCategory === "Service") {
       temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2576C28.6011 45.2576 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
       </svg>`;
-    } else if (recenttUpdates[i].ReqCategory === "Complaint") {
+    } else if (recentUpdates[i].ReqCategory === "Complaint") {
       temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <g filter="url(#filter0_d)">
@@ -313,10 +322,18 @@ displayRecenttUI = (i) => {
       </filter>
       </defs>
       </svg>`;
-    } else if (recenttUpdates[i].requestStatus === "BOOKED") {
+    } else if (recentUpdates[i].requestStatus === "BOOKED") {
       temp.innerHTML = `<svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M49.6904 5.45455H48.9404C47.8359 5.45455 46.9404 4.55911 46.9404 3.45455V2C46.9404 0.895431 46.045 0 44.9404 0H43.4404C42.3359 0 41.4404 0.895431 41.4404 2V3.45455C41.4404 4.55911 40.545 5.45455 39.4404 5.45455H15.9404C14.8359 5.45455 13.9404 4.55911 13.9404 3.45455V2C13.9404 0.895431 13.045 0 11.9404 0H10.4404C9.33586 0 8.44043 0.895431 8.44043 2V3.45455C8.44043 4.55911 7.545 5.45455 6.44043 5.45455H5.69043C2.66543 5.45455 0.19043 7.90909 0.19043 10.9091V54.5455C0.19043 57.5455 2.66543 60 5.69043 60H49.6904C52.7154 60 55.1904 57.5455 55.1904 54.5455V10.9091C55.1904 7.90909 52.7154 5.45455 49.6904 5.45455ZM49.6904 52.5455C49.6904 53.65 48.795 54.5455 47.6904 54.5455H7.69043C6.58586 54.5455 5.69043 53.65 5.69043 52.5455V17.2747C5.69043 16.1702 6.58586 15.2747 7.69043 15.2747H47.6904C48.795 15.2747 49.6904 16.1702 49.6904 17.2747V52.5455Z" fill="#4980C1"/>
       </svg>`;
+
+      temp = document.createElement("div");
+      temp.classList.add("newBookingCard_date_for");
+      const bookedFor = recentUpdates[i].bookedFor.toDate();
+      temp.innerHTML = `${
+        months[bookedFor.getMonth()]
+      }<br>${bookedFor.getDate()}`;
+      recentCards.children[i].children[0].children[1].appendChild(temp);
     } else {
       temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
@@ -335,8 +352,8 @@ displayRecenttUI = (i) => {
   }
 
   temp = document.createElement("p");
-  const postDate = recenttUpdates[i].onDate.toDate();
-  if (recenttUpdates[i].requestStatus === "BOOKED") {
+  const postDate = recentUpdates[i].onDate.toDate();
+  if (recentUpdates[i].requestStatus === "BOOKED") {
     temp.innerText = `Booked on ${
       months[postDate.getMonth()]
     } ${postDate.getDate()}, ${postDate.getFullYear()}`;
@@ -581,6 +598,7 @@ displayAlertUI = (i) => {
         Alerts cards retreival and display in order ends here
 ******************************************************************************/
 
+ 
 /******************************************************************************
       Different Cards Detail view JS starts here
 ******************************************************************************/
@@ -595,22 +613,24 @@ $(".back_btn").click(function () {
 
 // Navigating to card details page
 let cardID;
+let getTarget;
 
 document.onclick = function (e) {
+  console.log(e.target);
   alertDetail = [];
   notifDetail = [];
   cardID = undefined;
-  if (e.target.className == "alertCard") {
-    cardID = e.target.getAttribute("data-number");
-  } else if (e.target.parentNode.className == "alertCard") {
-    cardID = e.target.parentNode.getAttribute("data-number");
-  } else if (e.target.className == "notificationCard") {
-    cardID = e.target.getAttribute("data-number");
-  } else if (e.target.parentNode.className == "notificationCard") {
-    cardID = e.target.parentNode.getAttribute("data-number");
+  // getTarget = undefined;
+  if (e.target.closest(".alertCard") != undefined) {
+    cardID = e.target.closest(".alertCard").getAttribute("data-number");
+  } else if (e.target.closest(".notifCard") != undefined) {
+    getTarget = e.target.closest(".notifCard").getAttribute("data-number");
+  } else if (e.target.closest(".newRequestCard") != undefined) {
+    getTarget = e.target.closest(".newReqeustCard").getAttribute("data-number");
   } else {
     cardID = undefined;
   }
+
   if (cardID) {
     if (cardID.includes("alert")) {
       $(".body_wrapper_home").addClass("hidden");
@@ -624,6 +644,20 @@ document.onclick = function (e) {
         notifications.find((element) => element.notifID === cardID)
       );
       displayNotifDetailUI(0);
+    } else if (cardID.includes("book")) {
+      $(".body_wrapper_home").addClass("hidden");
+      $(".body_wrapper_notif").removeClass("hidden");
+      notifDetail.push(
+        notifications.find((element) => element.bookingID === cardID)
+      );
+      displayBookingDetailUI(0);
+    } else if (cardID.includes("request")) {
+      $(".body_wrapper_home").addClass("hidden");
+      $(".body_wrapper_notif").removeClass("hidden");
+      notifDetail.push(
+        notifications.find((element) => element.requestID === cardID)
+      );
+      displayRequestDetailUI(0);
     }
   }
 };
@@ -631,6 +665,7 @@ document.onclick = function (e) {
 /******************************************************************************
       Different Cards Detail view JS ends here
 ******************************************************************************/
+
 
 /******************************************************************************
       Alert Detail view JS starts here
@@ -640,12 +675,12 @@ document.onclick = function (e) {
 displayAlertDetailUI = (i) => {
   temp = document.createElement("div");
   temp.classList.add("alertDetailCard");
-  document.getElementById("alertDetailCard").appendChild(temp);
+  document.getElementById("alertDetail").appendChild(temp);
 
   temp = document.createElement("h2");
   temp.classList.add("alertDetailCardTitle");
   temp.innerText = `${alertDetail[0].alertHead}`;
-  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+  document.getElementById("alertDetail").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("alertDetailPostedDate");
@@ -653,17 +688,18 @@ displayAlertDetailUI = (i) => {
   temp.innerText = `Posted on ${
     months[postDate.getMonth()]
   } ${postDate.getDate()}, ${postDate.getFullYear()}`;
-  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+  document.getElementById("alertDetail").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("alertDetailDescription");
   temp.innerText = `${alertDetail[i].description}`;
-  document.getElementById("alertDetailCard").children[i].appendChild(temp);
+  document.getElementById("alertDetail").children[i].appendChild(temp);
 };
 
 /******************************************************************************
       Alert Detail view JS ends here
 ******************************************************************************/
+
 
 /******************************************************************************
       Notification Detail view JS starts here
@@ -673,12 +709,12 @@ displayAlertDetailUI = (i) => {
 displayNotifDetailUI = (i) => {
   temp = document.createElement("div");
   temp.classList.add("notifDetailCard");
-  document.getElementById("notifDetailCard").appendChild(temp);
+  document.getElementById("notifDetail").appendChild(temp);
 
   temp = document.createElement("h2");
   temp.classList.add("notifDetailCardTitle");
   temp.innerText = `${notifDetail[i].notifHead}`;
-  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+  document.getElementById("notifDetail").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("notifDetailPostedDate");
@@ -686,19 +722,97 @@ displayNotifDetailUI = (i) => {
   temp.innerText = `Posted on ${
     months[postDate.getMonth()]
   } ${postDate.getDay()}, ${postDate.getFullYear()}`;
-  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+  document.getElementById("notifDetail").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("notifDetailDuration");
   temp.innerText = `${notifDetail[i].duration}`;
-  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+  document.getElementById("notifDetail").children[i].appendChild(temp);
 
   temp = document.createElement("p");
   temp.classList.add("notifDetaildescription");
   temp.innerText = `${notifDetail[i].description}`;
-  document.getElementById("notifDetailCard").children[i].appendChild(temp);
+  document.getElementById("notifDetail").children[i].appendChild(temp);
 };
 
 /******************************************************************************
       Notification Detail view JS ends here
+******************************************************************************/
+
+
+/******************************************************************************
+      Request Detail view JS starts here
+******************************************************************************/
+
+//Function to display Request detail card
+displayRequestDetailUI = (i) => {
+  temp = document.createElement("div");
+  temp.classList.add("requestDetailCard");
+  document.getElementById("requestDetail").appendChild(temp);
+
+  temp = document.createElement("h2");
+  temp.classList.add("requestDetailCardTitle");
+  temp.innerText = `${requestDetail[i].requestHead}`;
+  document.getElementById("requestDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("requestDetailPostedDate");
+  const postDate = requestDetail[i].onDate.toDate();
+  temp.innerText = `Posted on ${
+    months[postDate.getMonth()]
+  } ${postDate.getDay()}, ${postDate.getFullYear()}`;
+  document.getElementById("requestDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("requestDetailDuration");
+  temp.innerText = `${requestDetail[i].duration}`;
+  document.getElementById("requestDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("requestDetaildescription");
+  temp.innerText = `${requestDetail[i].description}`;
+  document.getElementById("requestDetail").children[i].appendChild(temp);
+};
+
+/******************************************************************************
+      Request Detail view JS ends here
+******************************************************************************/
+
+
+/******************************************************************************
+      Booking Detail view JS starts here
+******************************************************************************/
+
+//Function to display Booking detail card
+displayBookingDetailUI = (i) => {
+  temp = document.createElement("div");
+  temp.classList.add("bookingDetailCard");
+  document.getElementById("bookingDetail").appendChild(temp);
+
+  temp = document.createElement("h2");
+  temp.classList.add("bookingDetailCardTitle");
+  temp.innerText = `${bookingDetail[i].bookingHead}`;
+  document.getElementById("bookingDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("bookingDetailPostedDate");
+  const postDate = bookingDetail[i].onDate.toDate();
+  temp.innerText = `Posted on ${
+    months[postDate.getMonth()]
+  } ${postDate.getDay()}, ${postDate.getFullYear()}`;
+  document.getElementById("bookingDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("bookingDetailDuration");
+  temp.innerText = `${bookingDetail[i].duration}`;
+  document.getElementById("bookingDetail").children[i].appendChild(temp);
+
+  temp = document.createElement("p");
+  temp.classList.add("bookingDetaildescription");
+  temp.innerText = `${bookingDetail[i].description}`;
+  document.getElementById("bookingDetail").children[i].appendChild(temp);
+};
+
+/******************************************************************************
+      Booking Detail view JS ends here
 ******************************************************************************/

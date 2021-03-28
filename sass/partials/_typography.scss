@@ -14,7 +14,9 @@ p {
   line-height: 1.5;
 }
 
-.alertCard p, .notifCard p, .newRequestCard p {
+.alertCard p,
+.notifCard p,
+.newRequestCard p {
   font-size: 14px;
 }
 
@@ -22,28 +24,42 @@ p {
   font-size: 0.75rem;
 }
 
-.view_more_alert, .view_more_notif {
+.view_more_alert,
+.view_more_notif {
   a {
     font-family: $font_h3;
   }
 }
 
-.alertCard_date_wrapper p, .notifCard_date_wrapper p, .newRequestCard_date_wrapper p {
+.alertCard_date_wrapper p,
+.notifCard_date_wrapper p,
+.newRequestCard_date_wrapper p {
   font-size: 0.75rem;
   color: $date_posted;
+  line-height: 1.25;
+}
+
+.newBookingCard_date_for {
+  font-size: 20px;
+  line-height: 0.9;
+  font-family: $font_h3;
+  color: $booking_card;
+  &::first-line {
+    font-size: 12px;
+  }
 }
 
 .slideshow-container {
   .mySlides {
     h2 {
       text-align: center;
-    //   font-size: 24px;
-    //   font-weight: $font;
+      //   font-size: 24px;
+      //   font-weight: $font;
     }
     p {
       text-align: center;
-    //   font-weight: 300;
-    //   font-size: 16px;
+      //   font-weight: 300;
+      //   font-size: 16px;
     }
   }
 }

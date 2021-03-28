@@ -317,10 +317,17 @@
 }
 
 .newRequestCard_date_wrapper {
+  height: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+}
+
+.newBookingCard_date_for {
+  transform: translateY(-46px);
+  text-align: center;
+  height: 0;
 }
 
 .newRequestCard_date_wrapper p {
@@ -380,70 +387,70 @@
   /* Grouping Content
      ========================================================================= */
   
-  // #alertDetailHeader {
-  //   background-color: #f4f4f4;
-  //   width: 100%;
-  //   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  //   position: fixed;
-  //   top: 0;
-  //   padding: 2rem 1rem 1rem 1rem;
-  // }
+  #alertDetailHeader {
+    background-color: #f4f4f4;
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    padding: 2rem 1rem 1rem 1rem;
+  }
   
-  // .topHeader {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   margin: 0.25rem 0;
-  // }
+  .topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem 0;
+  }
   
-  // button {
-  //   border: none;
-  // }
+  button {
+    border: none;
+  }
   
-  // button svg {
-  //   display: flex;
-  //   margin: auto;
-  // }
+  button svg {
+    display: flex;
+    margin: auto;
+  }
   
-  // svg {
-  //   margin: auto;
-  // }
+  svg {
+    margin: auto;
+  }
   
-  // .search_btn {
-  //   width: 40px;
-  //   height: 40px;
-  //   border-radius: 40px;
-  //   border: 1px solid rgba(170, 170, 170, 0.25);
-  //   background-color: white;
-  // }
+  .search_btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid rgba(170, 170, 170, 0.25);
+    background-color: white;
+  }
   
-  // .back_btn {
-  //   width: 40px;
-  //   height: 40px;
-  //   background-color: rgba(0, 0, 0, 0);
-  //   grid-row: 1/1;
-  // }
+  .back_btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    grid-row: 1/1;
+  }
   
-  // .detailCardSection {
-  //   margin: 7.5rem 1rem 0 1rem;
-  // }
+  .detailCardSection {
+    margin: 7.5rem 1rem 0 1rem;
+  }
   
-  // .alertDetailCard {
-  //   background-color: #4f4f4f;
-  //   width: 100%;
-  //   padding: 1rem;
-  //   border-radius: 0.5rem;
-  //   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-  //   margin: 0.5rem 0;
-  // }
+  .alertDetailCard {
+    background-color: #4f4f4f;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    margin: 0.5rem 0;
+  }
   
-  // .hidden {
-  //   display: none;
-  // }
+  .hidden {
+    display: none;
+  }
   
-  // .visuallyHidden {
-  //   visibility: hidden;
-  // }
+  .visuallyHidden {
+    visibility: hidden;
+  }
   
   /******************************************************************************
         Alert Detail view style ends here
@@ -453,66 +460,60 @@
         Notification Detail view style starts here
   ******************************************************************************/
   
-  // .notifDetailCardTitle {
-  //   font-size: 1rem;
-  //   font-weight: 400;
-  //   padding: 0;
-  //   margin: 0 0 0.33rem 0;
-  //   color: #4f4f4f;
-  //   text-transform: uppercase;
-  // }
+  .notifDetailCardTitle {
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0;
+    margin: 0 0 0.33rem 0;
+    color: #4f4f4f;
+    text-transform: uppercase;
+  }
   
-  // .notifDetailPostedDate {
-  //   font-size: 0.875rem;
-  //   font-weight: 300;
-  //   margin: 0 0 0.33rem 0;
-  // }
+  .notifDetailPostedDate {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin: 0 0 0.33rem 0;
+  }
   
-  // .notifDetailDuration {
-  //   font-size: 0.875rem;
-  //   font-weight: 300;
-  //   margin: 0 0 0.33rem 0;
-  //   color: rgba(0, 0, 0, 0.5);
-  // }
+  .notifDetailDuration {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin: 0 0 0.33rem 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
   
-  // .notifDetaildescription {
-  //   font-size: 0.875rem;
-  //   font-weight: 300;
-  //   line-height: 1.5;
-  //   margin: 0;
-  //   color: rgba(0, 0, 0, 0.8);
-  // }
+  .notifDetaildescription {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.8);
+  }
+ 
+  #notifDetailHeader {
+    background-color: #f4f4f4;
+    width: 100%;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    padding: 2rem 1rem 1rem 1rem;
+  }
   
-  // /* Embedded Content
-  //  ========================================================================= */
+  #notifDetailHeader .topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25rem 0;
+  }
   
-  // /* Grouping Content
-  //  ========================================================================= */
-  
-  // #notifDetailHeader {
-  //   background-color: #f4f4f4;
-  //   width: 100%;
-  //   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  //   position: fixed;
-  //   top: 0;
-  //   padding: 2rem 1rem 1rem 1rem;
-  // }
-  
-  // #notifDetailHeader .topHeader {
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   margin: 0.25rem 0;
-  // }
-  
-  // .notifDetailCard {
-  //   background-color: white;
-  //   width: 100%;
-  //   padding: 1rem;
-  //   margin: 0.5rem 0;
-  //   border-radius: 0.5rem;
-  //   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-  // }
+  .notifDetailCard {
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  }
   
   /******************************************************************************
         Notification Detail view style ends here
