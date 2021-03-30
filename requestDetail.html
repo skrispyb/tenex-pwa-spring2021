@@ -19,18 +19,18 @@
                 </svg>
             </button>
             <h1 id="headerTitle" class="headerTitle">Request</h1>
-            <button id="edit_btn" class="edit_btn" type="button"><svg width="40" height="40" viewBox="0 0 40 40"
+            <button id="edit_btn" class="edit_btn" type="button"><svg width="34" height="34" viewBox="0 0 34 34"
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d)">
                         <path
-                            d="M6 25.1675V31H11.8325L29.0346 13.7979L23.2021 7.96542L6 25.1675ZM33.5451 9.28746C34.1516 8.68088 34.1516 7.70101 33.5451 7.09443L29.9056 3.45494C29.299 2.84835 28.3191 2.84835 27.7125 3.45494L24.8663 6.30121L30.6988 12.1337L33.5451 9.28746V9.28746Z"
-                            fill="#4f4f4f" />
+                            d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                            fill="#828282" />
                         <path
-                            d="M4.93934 24.1068L4.5 24.5462V25.1675V31V32.5H6H11.8325H12.4538L12.8932 32.0607L30.0952 14.8586L30.6988 14.2551L31.1559 13.7979L31.7595 13.1944L34.6057 10.3481C35.7981 9.15575 35.7981 7.22614 34.6057 6.03377L30.9662 2.39428L29.9056 3.45494L30.9662 2.39428C29.7739 1.20191 27.8442 1.20191 26.6519 2.39428L23.8056 5.24055L23.2021 5.8441L22.7449 6.30121L22.1414 6.90476L4.93934 24.1068Z"
+                            d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
                             stroke="white" stroke-width="3" />
                     </g>
                     <defs>
-                        <filter id="filter0_d" x="0" y="0" width="40" height="40" filterUnits="userSpaceOnUse"
+                        <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
                             color-interpolation-filters="sRGB">
                             <feFlood flood-opacity="0" result="BackgroundImageFix" />
                             <feColorMatrix in="SourceAlpha" type="matrix"
@@ -43,91 +43,199 @@
                         </filter>
                     </defs>
                 </svg>
-                EDIT
+
             </button>
         </div>
     </header>
     <section class="detailCardSection">
-        <div id="requestDetailCard">
+        <!-- <div id="requestDetailCard"> -->
+        <div class="newRequestCard">
+            <h2 class="requestTitle">
+                New Fob Request
+            </h2>
+            <div class="requestDetail">
+                <div class="requestStatusBar">
+                    <div class="statusProgressSent"></div>
+                    <div class="statusAll"></div>
+                </div>
+                <div class="requestInfoMain">
+                    <p class="description">Hi, <br><br>
+                        My key fob is broken and I need a new one. Can you help me get a new one?
+                        <br><br>
+                        Thanks,<br>
+                        Michael
+                    </p>
+                    <div class="attachmentSection">
+                        <div class="attachment">
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.13369 9.00928L8.67805 3.46492C9.74353 2.39944 11.4695 2.39944 12.535 3.46492C13.6005 4.5304 13.6005 6.25639 12.535 7.32187L6.50852 13.3483C5.84319 14.0137 4.76325 14.0137 4.09793 13.3483C3.4326 12.683 3.4326 11.6031 4.09793 10.9378L9.16017 5.87551C9.42533 5.61035 9.85924 5.61035 10.1244 5.87551C10.3896 6.14068 10.3896 6.57459 10.1244 6.83975L5.54428 11.4199L6.26746 12.1431L10.8476 7.56293C11.5129 6.89761 11.5129 5.81766 10.8476 5.15234C10.1823 4.48701 9.10231 4.48701 8.43699 5.15234L3.37475 10.2146C2.30927 11.2801 2.30927 13.006 3.37475 14.0715C4.44023 15.137 6.16621 15.137 7.2317 14.0715L13.2582 8.04505C14.7238 6.57941 14.7238 4.20739 13.2582 2.74175C11.7925 1.27611 9.42051 1.27611 7.95487 2.74175L2.41051 8.28611L3.13369 9.00928Z" fill="#4F4F4F"/>
+                                    </svg>
+                                <p class="attachmentTitle">img 012.jpg</p>
+                            </div>
+                        </div>
+                        <div class="attachment">
+                            <div class="tag">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.13369 9.00928L8.67805 3.46492C9.74353 2.39944 11.4695 2.39944 12.535 3.46492C13.6005 4.5304 13.6005 6.25639 12.535 7.32187L6.50852 13.3483C5.84319 14.0137 4.76325 14.0137 4.09793 13.3483C3.4326 12.683 3.4326 11.6031 4.09793 10.9378L9.16017 5.87551C9.42533 5.61035 9.85924 5.61035 10.1244 5.87551C10.3896 6.14068 10.3896 6.57459 10.1244 6.83975L5.54428 11.4199L6.26746 12.1431L10.8476 7.56293C11.5129 6.89761 11.5129 5.81766 10.8476 5.15234C10.1823 4.48701 9.10231 4.48701 8.43699 5.15234L3.37475 10.2146C2.30927 11.2801 2.30927 13.006 3.37475 14.0715C4.44023 15.137 6.16621 15.137 7.2317 14.0715L13.2582 8.04505C14.7238 6.57941 14.7238 4.20739 13.2582 2.74175C11.7925 1.27611 9.42051 1.27611 7.95487 2.74175L2.41051 8.28611L3.13369 9.00928Z" fill="#4F4F4F"/>
+                                    </svg>
+                                <p class="attachmentTitle">img 013.jpg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="requestDetailSub">
+                <p class="newRequestStatus">SENT</p>
+                <p class="newRequestDate">FEB 12, 2021</p>
+            </div>
+        </div>
+
+        </div>
     </section>
     <section class="tipsInfoSection">
-        <div class="imagePlaceholderArea">
-            <svg class="imagePlaceholder" width="109" height="100" viewBox="0 0 109 100" fill="none"
-                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect y="0.0703125" width="109" height="99" fill="url(#pattern0)" />
-                <defs>
-                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                        <use xlink:href="#image0" transform="translate(-0.105505) scale(0.00352038 0.00387597)" />
-                    </pattern>
-                    <image id="image0" width="344" height="258"
-                        xlink:href="data:image/png;base64,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" />
-                </defs>
+        <div class="illustration">
+            <svg width="129" height="98" viewBox="0 0 129 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.5">
+                    <path
+                        d="M3.29602 97.3995L0.00275268 21.034C0.00275268 21.034 -0.198165 18.457 2.83305 18.457C5.86426 18.457 55.9972 18.8327 55.9972 18.8327L65.746 29.8044L62.6187 97.3995H3.29602Z"
+                        fill="#A7A9AC" />
+                    <path
+                        d="M55.5865 32.2676H27.6505C27.1728 32.2676 26.7856 32.6548 26.7856 33.1324V33.6565C26.7856 34.1341 27.1728 34.5213 27.6505 34.5213H55.5865C56.0641 34.5213 56.4513 34.1341 56.4513 33.6565V33.1324C56.4513 32.6548 56.0641 32.2676 55.5865 32.2676Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M55.5865 37.6406H27.6505C27.1728 37.6406 26.7856 38.0278 26.7856 38.5055V39.0296C26.7856 39.5072 27.1728 39.8944 27.6505 39.8944H55.5865C56.0641 39.8944 56.4513 39.5072 56.4513 39.0296V38.5055C56.4513 38.0278 56.0641 37.6406 55.5865 37.6406Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M54.7305 45.3711H10.5465C10.0688 45.3711 9.68164 45.7583 9.68164 46.2359V46.76C9.68164 47.2377 10.0688 47.6249 10.5465 47.6249H54.7305C55.2081 47.6249 55.5953 47.2377 55.5953 46.76V46.2359C55.5953 45.7583 55.2081 45.3711 54.7305 45.3711Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M54.7305 57.9316H10.5465C10.0688 57.9316 9.68164 58.3188 9.68164 58.7964V59.3206C9.68164 59.7982 10.0688 60.1854 10.5465 60.1854H54.7305C55.2081 60.1854 55.5953 59.7982 55.5953 59.3206V58.7964C55.5953 58.3188 55.2081 57.9316 54.7305 57.9316Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M54.7305 63.8477H10.5465C10.0688 63.8477 9.68164 64.2348 9.68164 64.7125V65.2366C9.68164 65.7142 10.0688 66.1014 10.5465 66.1014H54.7305C55.2081 66.1014 55.5953 65.7142 55.5953 65.2366V64.7125C55.5953 64.2348 55.2081 63.8477 54.7305 63.8477Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M54.7305 71.1152H10.5465C10.0688 71.1152 9.68164 71.5024 9.68164 71.98V72.5041C9.68164 72.9818 10.0688 73.3689 10.5465 73.3689H54.7305C55.2081 73.3689 55.5953 72.9818 55.5953 72.5041V71.98C55.5953 71.5024 55.2081 71.1152 54.7305 71.1152Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M54.7305 83.9297H10.5465C10.0688 83.9297 9.68164 84.3169 9.68164 84.7945V85.3186C9.68164 85.7962 10.0688 86.1835 10.5465 86.1835H54.7305C55.2081 86.1835 55.5953 85.7962 55.5953 85.3186V84.7945C55.5953 84.3169 55.2081 83.9297 54.7305 83.9297Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M44.2479 76.5742H10.5465C10.0688 76.5742 9.68164 76.9614 9.68164 77.439V77.9631C9.68164 78.4408 10.0688 78.8279 10.5465 78.8279H44.2479C44.7255 78.8279 45.1127 78.4408 45.1127 77.9631V77.439C45.1127 76.9614 44.7255 76.5742 44.2479 76.5742Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M44.2479 90.4277H10.5465C10.0688 90.4277 9.68164 90.8149 9.68164 91.2925V91.8166C9.68164 92.2943 10.0688 92.6815 10.5465 92.6815H44.2479C44.7255 92.6815 45.1127 92.2943 45.1127 91.8166V91.2925C45.1127 90.8149 44.7255 90.4277 44.2479 90.4277Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M44.2479 50.7441H10.5465C10.0688 50.7441 9.68164 51.1313 9.68164 51.609V52.1331C9.68164 52.6107 10.0688 52.9979 10.5465 52.9979H44.2479C44.7255 52.9979 45.1127 52.6107 45.1127 52.1331V51.609C45.1127 51.1313 44.7255 50.7441 44.2479 50.7441Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M13.272 40.2356C13.272 40.2356 13.2021 40.1745 13.1409 40.0435L12.9662 39.6329L8.27527 27.84C8.1209 27.4951 7.90478 27.1813 7.63758 26.914C7.37387 26.667 7.05255 26.4898 6.70288 26.3987C6.51859 26.3471 6.34004 26.2768 6.17002 26.189C6.11933 26.165 6.07577 26.1282 6.0436 26.0823C6.01144 26.0363 5.99178 25.9828 5.98657 25.927C5.98657 25.8396 6.04772 25.7785 6.16129 25.7348C6.30947 25.696 6.4624 25.6783 6.61553 25.6824C6.94748 25.6824 7.27069 25.6824 7.5677 25.6824C7.8647 25.6824 8.18791 25.6824 8.5548 25.6824C8.92169 25.6824 9.341 25.6824 9.70789 25.6824H10.5814C10.7374 25.6783 10.8933 25.696 11.0444 25.7348C11.158 25.7348 11.2191 25.8309 11.2191 25.9182C11.2163 25.9714 11.1984 26.0226 11.1674 26.066C11.1365 26.1093 11.0938 26.1429 11.0444 26.1628C10.8683 26.2387 10.6874 26.3029 10.5028 26.355C10.4263 26.3666 10.3541 26.3976 10.2929 26.445C10.2318 26.4924 10.1838 26.5546 10.1534 26.6258C10.0934 26.7665 10.0636 26.9183 10.066 27.0713C10.0781 27.3897 10.137 27.7047 10.2408 28.006L11.1143 30.3122C11.3938 31.011 11.6646 31.6836 11.9354 32.33C12.2062 32.9765 12.4858 33.6316 12.809 34.3043C13.1322 34.9769 13.4379 35.7281 13.7961 36.558C13.866 36.7153 13.9271 36.7939 13.9795 36.7764C14.032 36.7589 14.0756 36.6978 14.1193 36.5842L15.8664 32.3825C15.8664 32.2689 15.9363 32.1641 15.9625 32.0855C16.0151 31.9296 16.0151 31.7608 15.9625 31.605L15.8315 31.2469L14.5735 28.1894C14.3887 27.7301 14.0877 27.3268 13.7 27.0189C13.3479 26.7421 12.9483 26.5319 12.5207 26.3987C12.3364 26.3471 12.1579 26.2768 11.9878 26.189C11.9372 26.165 11.8936 26.1282 11.8614 26.0823C11.8293 26.0363 11.8096 25.9828 11.8044 25.927C11.8044 25.8396 11.8655 25.7785 11.9791 25.7348C12.1273 25.696 12.2802 25.6783 12.4334 25.6824C12.6692 25.6824 12.8876 25.6824 13.0973 25.6824C13.3069 25.6824 13.5253 25.6824 13.7524 25.6824H14.4775C14.8094 25.6824 15.1239 25.6824 15.4034 25.6824H16.1547C16.3078 25.6777 16.4608 25.6954 16.6089 25.7348C16.7312 25.7348 16.7836 25.8309 16.7836 25.9182C16.779 25.9822 16.7559 26.0435 16.7171 26.0947C16.6784 26.1459 16.6256 26.1847 16.5652 26.2065L16.1197 26.4423C16.0488 26.48 15.9899 26.5368 15.9498 26.6063C15.9096 26.6758 15.8898 26.7552 15.8926 26.8354C15.8926 26.8354 15.8926 26.8878 15.8926 26.9228C15.8905 26.9519 15.8905 26.9811 15.8926 27.0101C15.8926 27.0626 15.98 27.2111 16.0586 27.4295C16.1372 27.6478 16.2333 27.9099 16.3381 28.1807L16.6526 28.9582L16.871 29.4648C16.9496 29.6395 17.0107 29.7269 17.0544 29.7356C17.0981 29.7443 17.1767 29.657 17.2641 29.4648C17.3514 29.2726 17.4999 28.9057 17.6222 28.5913C17.7445 28.2768 17.8581 27.9449 17.9542 27.6478L18.1376 27.0276C18.1429 26.9753 18.1429 26.9227 18.1376 26.8704C18.143 26.7937 18.128 26.717 18.0943 26.648C18.0606 26.579 18.0092 26.5201 17.9454 26.4773L17.5436 26.2327C17.4848 26.2072 17.4341 26.166 17.3971 26.1136C17.3601 26.0612 17.3383 25.9996 17.334 25.9357C17.334 25.8483 17.3951 25.7872 17.5087 25.7522C17.6569 25.7134 17.8098 25.6958 17.9629 25.6998H18.6181C18.778 25.7111 18.9386 25.7111 19.0985 25.6998C19.308 25.7105 19.518 25.7105 19.7275 25.6998C19.9456 25.6843 20.1645 25.6843 20.3826 25.6998C20.5358 25.6958 20.6887 25.7134 20.8369 25.7522C20.9504 25.7959 21.0116 25.8571 21.0116 25.9444C21.0078 25.9973 20.9895 26.0481 20.9586 26.0913C20.9278 26.1344 20.8857 26.1683 20.8369 26.189C20.6671 26.2782 20.4843 26.3401 20.2953 26.3724C19.954 26.4256 19.6288 26.5539 19.3431 26.7481C19.1336 26.945 18.9541 27.1717 18.8103 27.4207C18.7404 27.5488 18.6355 27.7672 18.4958 28.0759C18.356 28.3816 18.2162 28.7136 18.059 29.0717C17.9018 29.4299 17.7795 29.7793 17.6572 30.0938C17.6055 30.2354 17.5675 30.3817 17.5436 30.5305C17.5137 30.6599 17.5137 30.7943 17.5436 30.9237L19.7886 36.689C19.7886 36.7589 19.8498 36.7851 19.8935 36.7502C19.9551 36.7005 20.0007 36.6336 20.0245 36.558C20.3914 35.5971 20.8019 34.3742 21.2562 32.8804C21.7104 31.3866 22.1909 29.8055 22.6801 28.137C22.7254 28.0066 22.7576 27.872 22.7762 27.7352C22.7879 27.6102 22.7879 27.4845 22.7762 27.3596C22.7809 27.1529 22.7328 26.9484 22.6364 26.7656C22.5809 26.6735 22.5061 26.5945 22.4171 26.5342C22.3281 26.4739 22.2271 26.4336 22.121 26.4161C21.9812 26.4161 21.824 26.32 21.658 26.2502C21.492 26.1803 21.4047 26.0842 21.4047 25.9881C21.4047 25.892 21.4658 25.8396 21.5794 25.7959C21.7276 25.7571 21.8805 25.7395 22.0336 25.7435H22.8286H23.606C23.9642 25.7435 24.3136 25.7435 24.6456 25.7435C24.9775 25.7435 25.2832 25.7435 25.5628 25.7435C25.7159 25.7389 25.869 25.7565 26.017 25.7959C26.1393 25.8396 26.1917 25.9007 26.1917 25.9881C26.19 26.0416 26.1725 26.0933 26.1414 26.1369C26.1103 26.1804 26.0671 26.2137 26.017 26.2327C25.8473 26.3219 25.6645 26.3838 25.4754 26.4161C25.1487 26.4864 24.847 26.6433 24.6019 26.8704C24.3733 27.0819 24.1814 27.3298 24.0341 27.6042C23.903 27.875 23.7895 28.1195 23.7021 28.3379L19.8498 39.6941C19.8139 39.7963 19.7701 39.8956 19.7187 39.9911C19.6489 40.1308 19.5702 40.192 19.5004 40.192C19.4617 40.1857 19.4247 40.1717 19.3917 40.1506C19.3586 40.1296 19.3302 40.102 19.3082 40.0697C19.2337 39.9844 19.1746 39.8869 19.1335 39.7814C18.7578 38.9079 18.4259 38.1304 18.1551 37.4403C17.8843 36.7502 17.6135 36.0601 17.3602 35.37C17.1068 34.6799 16.8011 33.9024 16.4866 33.0638C16.4866 32.959 16.408 32.9153 16.3818 32.9415C16.3237 33.0177 16.2793 33.1034 16.2508 33.1949C15.9013 34.016 15.6043 34.7498 15.3772 35.3875C15.1501 36.0252 14.8706 36.6716 14.626 37.3355C14.3814 37.9994 14.1018 38.7506 13.7961 39.6067C13.7339 39.7602 13.661 39.9091 13.5777 40.0522C13.4467 40.1658 13.3593 40.2356 13.272 40.2356Z"
+                        fill="#F1F2F2" />
+                    <path
+                        d="M55.9969 18.877L55.2456 27.132C55.3064 27.7631 55.594 28.3508 56.055 28.786C56.516 29.2213 57.1191 29.4747 57.7527 29.4993C60.0326 29.6129 65.7457 29.8487 65.7457 29.8487L55.9969 18.877Z"
+                        fill="#939598" />
+                    <path d="M95.8003 87.1099L96.1748 92.1453L97.7978 93.4521L99.5956 92.4616V86.1777L95.8003 87.1099Z"
+                        fill="#E6E7E8" />
+                    <path d="M118.597 84.6201L120.652 89.9968H123.141L123.357 88.9397L122.733 84.0625L118.597 84.6201Z"
+                        fill="#E6E7E8" />
+                    <path
+                        d="M121.377 88.5408C120.869 88.5991 119.379 88.133 119.255 88.8155C119.189 89.5603 119.189 90.3095 119.255 91.0544L123.141 97.2133C123.141 97.2133 126.279 97.5879 126.687 97.2133C127.095 96.8388 127.028 93.235 127.028 93.235C127.028 93.235 124.107 87.4089 123.541 87.5171C122.975 87.6253 122.051 88.4576 121.377 88.5408Z"
+                        fill="#808285" />
+                    <path
+                        d="M84.2727 6.00927C84.2727 6.00927 84.5973 11.7605 84.2727 13.0672C83.9481 14.3739 85.2548 13.0672 85.2548 13.0672C85.2548 13.0672 85.13 18.0609 86.6198 18.1025C88.1096 18.1442 92.654 16.1133 92.654 16.1133L92.2794 9.64641C92.2794 9.64641 91.5969 7.65722 92.654 7.28269C93.2452 7.058 93.8844 6.98922 94.51 7.08294C94.51 7.08294 96.0164 4.58604 92.9036 3.9202C92.9036 3.9202 93.9607 1.19027 91.5304 0.591013C90.9239 0.378043 90.2628 0.379184 89.6571 0.594213C89.0514 0.809242 88.5376 1.2252 88.2012 1.77289L86.4617 1.58145C86.4617 1.58145 83.9648 -2.08064 81.7342 1.83115C79.5037 5.74295 84.2727 6.00927 84.2727 6.00927Z"
+                        fill="#E6E7E8" />
+                    <path d="M81.3874 38.0293L75.7388 41.0525L79.8367 46.2853L85.6295 39.7851L81.3874 38.0293Z"
+                        fill="#E6E7E8" />
+                    <path
+                        d="M79.8452 38.7531C79.8452 38.7531 83.3825 42.2987 82.8248 44.9121C82.2672 47.5255 89.3584 36.5142 89.3584 36.5142L93.0621 47.9749L112.296 53.6096L110.257 48.4577L111.006 30.7298C113.064 33.5212 114.35 36.8051 114.735 40.2512L120.561 40.0598C120.561 40.0598 123.175 20.4675 110.482 15.6152H98.1308C98.1308 15.6152 97.4733 21.4413 94.5186 21.5578C93.6695 21.5719 92.8365 21.3258 92.1313 20.8527C91.4261 20.3796 90.8825 19.7021 90.5735 18.9111L84.2897 24.3294C84.2897 24.3294 85.1553 34.833 79.8452 38.7531Z"
+                        fill="white" />
+                    <path
+                        d="M87.2856 96.2475C87.2856 96.2475 90.0822 90.5878 96.366 91.2537C96.366 91.2537 96.366 92.3107 98.1055 92.3773C99.845 92.4438 99.5371 91.5034 99.5371 91.5034L100.278 91.6282V96.7884H87.2856V96.2475Z"
+                        fill="#808285" />
+                    <path
+                        d="M90.5151 50.6621L115.026 59.3679L123.349 83.9956V85.3689L118.63 86.351L102.076 50.6621H100.211C100.211 50.6621 100.911 87.8408 100.303 88.8146H94.7099C94.7099 88.8146 93.5946 51.6359 90.5151 50.6621Z"
+                        fill="#A7A9AC" />
+                    <path
+                        d="M94.6679 10.7708C95.5002 7.69126 93.9272 6.3346 93.9272 6.3346H91.8381L91.6883 6.10156L91.0391 15.6064L90.29 20.0842L96.7237 24.7533L98.7795 17.1961L94.6679 10.7708Z"
+                        fill="#E6E7E8" />
+                    <path
+                        d="M84.2729 13.5935C84.2729 13.477 84.2729 13.3189 84.2729 13.1191C84.2064 13.3855 84.2147 13.5269 84.2729 13.5935Z"
+                        fill="#BCBEC0" />
+                    <path
+                        d="M93.3534 4.04595C93.239 4.01106 93.1419 3.93422 93.0817 3.83081C93.0215 3.7274 93.0026 3.60508 93.0288 3.48832C93.2119 2.65603 93.3534 1.03304 91.5307 0.566952C90.9623 0.371198 90.3469 0.358246 89.7707 0.529894C89.1946 0.701542 88.6866 1.04918 88.318 1.52409C88.2695 1.59173 88.2038 1.64516 88.1277 1.67882C88.0516 1.71249 87.9679 1.72516 87.8852 1.71553L86.6451 1.58236C86.5801 1.57594 86.5171 1.5564 86.4599 1.52493C86.4027 1.49345 86.3524 1.4507 86.3122 1.39925C85.7962 0.741735 83.6572 -1.60533 81.7096 1.80709C79.4707 5.72721 84.2731 6.01018 84.2731 6.01018C84.7944 6.11436 85.3334 6.08753 85.8418 5.9321C86.3502 5.77667 86.8121 5.4975 87.1861 5.11962C87.235 5.07581 87.2924 5.04246 87.3546 5.02157C87.4169 5.00069 87.4828 4.99273 87.5482 4.99818C87.6137 5.00364 87.6773 5.02238 87.7353 5.05327C87.7932 5.08417 87.8442 5.12658 87.8852 5.17788C88.2557 5.51456 88.7205 5.72952 89.2169 5.79378C89.3301 5.81783 89.4293 5.88541 89.4932 5.98194C89.557 6.07847 89.5803 6.19621 89.5582 6.3098C89.5616 6.54806 89.6161 6.78282 89.718 6.9982C89.82 7.21359 89.967 7.40457 90.1491 7.55824C90.1943 7.60277 90.2301 7.65591 90.2544 7.71453C90.2787 7.77314 90.291 7.83604 90.2906 7.89949V11.8862C90.292 12.0022 90.2515 12.1149 90.1766 12.2036C90.1017 12.2922 89.9974 12.3509 89.8828 12.3689L85.2552 13.0681C85.2552 13.0681 85.1303 18.0618 86.6201 18.1035C87.8769 18.1617 91.2976 16.7135 92.3463 16.2558C92.4365 16.2145 92.5124 16.1474 92.5642 16.0629C92.6161 15.9784 92.6417 15.8804 92.6377 15.7813L92.2881 9.70558V9.58905C92.1882 9.26445 91.7305 7.61651 92.6793 7.2836C93.2182 7.11304 93.793 7.09006 94.3439 7.21702C94.4051 7.23179 94.4686 7.23421 94.5308 7.22416C94.593 7.21411 94.6526 7.19177 94.706 7.15845C94.7595 7.12514 94.8058 7.08152 94.8422 7.03013C94.8786 6.97874 94.9044 6.92059 94.9181 6.85912C95.0129 6.57187 95.047 6.26811 95.0185 5.967C94.9899 5.66589 94.8993 5.37398 94.7522 5.10966C94.6052 4.84534 94.405 4.61436 94.1643 4.43129C93.9235 4.24821 93.6474 4.11699 93.3534 4.04595Z"
+                        fill="#BCBEC0" />
+                    <path
+                        d="M106.029 54.1175L108.826 54.6752C110.544 53.9975 112.415 53.8046 114.236 54.1175C116.791 54.7417 115.792 52.378 115.792 52.378C115.792 52.378 118.905 47.9585 119.271 46.0359C119.637 44.1133 120.395 40.0684 120.395 40.0684L114.86 40.2265L113.928 51.8204H108.102L106.029 54.1175Z"
+                        fill="#E6E7E8" />
+                    <path
+                        d="M42.8911 31.8027L52.9296 32.6499H53.0059L127.74 59.4024C127.79 59.4175 127.834 59.447 127.867 59.4872C128.299 59.9954 131.129 63.6042 125.783 64.3328C125.736 64.3458 125.686 64.3458 125.639 64.3328L50.9473 38.0715H50.8711L42.6962 32.2941C42.66 32.253 42.6359 32.2028 42.6265 32.1489C42.6171 32.095 42.6228 32.0395 42.643 31.9886C42.6631 31.9378 42.697 31.8935 42.7408 31.8607C42.7846 31.8279 42.8366 31.8078 42.8911 31.8027Z"
+                        fill="#808285" />
+                    <path
+                        d="M50.582 37.9109L42.7291 32.3621C42.6754 32.3231 42.6359 32.2675 42.6166 32.2039C42.5974 32.1403 42.5994 32.0722 42.6224 32.0099C42.6454 31.9476 42.6881 31.8945 42.7441 31.8587C42.8 31.8229 42.8661 31.8063 42.9324 31.8115L52.5643 32.6586C52.611 32.6624 52.6561 32.6769 52.6963 32.7009C52.7365 32.7249 52.7705 32.7579 52.7959 32.7972C52.8213 32.8365 52.8373 32.8811 52.8427 32.9276C52.8481 32.9741 52.8427 33.0212 52.8269 33.0653L51.0479 37.7584C51.0315 37.8025 51.0053 37.8424 50.9714 37.875C50.9374 37.9077 50.8965 37.9322 50.8517 37.9469C50.807 37.9615 50.7595 37.9659 50.7128 37.9597C50.6661 37.9534 50.6214 37.9368 50.582 37.9109Z"
+                        fill="#BCBEC0" />
+                </g>
             </svg>
         </div>
-        <p>You are able to edit your request description before the building manager reads your request which will
-            change your request status to “READ”.</p>
+        <p>You can edit your description before the status changes to “READ”.</p>
     </section>
     <button class="main_btn"><svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_ddd)">
-                <rect x="10" y="9" width="50" height="50" rx="25" fill="#333333" />
-            </g>
-            <rect x="10" y="9" width="50" height="50" rx="25" fill="white" fill-opacity="0.04" />
-            <path
-                d="M43 24H27C25.9 24 25.01 24.9 25.01 26L25 44L29 40H43C44.1 40 45 39.1 45 38V26C45 24.9 44.1 24 43 24ZM29 31H41V33H29V31ZM37 36H29V34H37V36ZM41 30H29V28H41V30Z"
-                fill="white" />
-            <defs>
-                <filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse"
-                    color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                    <feOffset dy="2" />
-                    <feGaussianBlur stdDeviation="2" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                    <feOffset dy="1" />
-                    <feGaussianBlur stdDeviation="5" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
-                    <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                    <feOffset dy="4" />
-                    <feGaussianBlur stdDeviation="2.5" />
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
-                    <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow" />
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape" />
-                </filter>
-            </defs>
+        <g filter="url(#filter0_ddd)">
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="#DCEBE9"/>
+        </g>
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="white"/>
+        <path d="M43 24H27C25.9 24 25.01 24.9 25.01 26L25 44L29 40H43C44.1 40 45 39.1 45 38V26C45 24.9 44.1 24 43 24ZM29 31H41V33H29V31ZM37 36H29V34H37V36ZM41 30H29V28H41V30Z" fill="#81B7AE"/>
+        <circle cx="44.5" cy="24.5" r="3" fill="#6FCF97" stroke="white"/>
+        <defs>
+        <filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="2"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation="5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+        <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2.5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0"/>
+        <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
+        </filter>
+        </defs>
         </svg></button>
-        <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Script for pwa -->
     <script>
-      // does the browser support service workers?
-      if ("serviceWorker" in navigator) {
-        // fires when the service worker is ready
-        navigator.serviceWorker.ready.then((reg) => {
-          // we have an active service worker working for us
-          console.log(`Service Worker ready (Scope: ${reg.scope})`);
-          // do something interesting, if you want...
-        });
-        // then register our service worker
-        navigator.serviceWorker
-          .register("./sw.js", { scope: "/" })
-          .then(function (reg) {
-            // display a success message
-            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-          })
-          .catch(function (error) {
-            // display an error message
-            console.log(`Service Worker Error (${error})`);
-          });
-      } else {
-        // happens when the app isn't served over a TLS connection (HTTPS)
-        console.warn("Service Worker not available");
-      }
+        // does the browser support service workers?
+        if ("serviceWorker" in navigator) {
+            // fires when the service worker is ready
+            navigator.serviceWorker.ready.then((reg) => {
+                // we have an active service worker working for us
+                console.log(`Service Worker ready (Scope: ${reg.scope})`);
+                // do something interesting, if you want...
+            });
+            // then register our service worker
+            navigator.serviceWorker
+                .register("./sw.js", { scope: "/" })
+                .then(function (reg) {
+                    // display a success message
+                    console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+                })
+                .catch(function (error) {
+                    // display an error message
+                    console.log(`Service Worker Error (${error})`);
+                });
+        } else {
+            // happens when the app isn't served over a TLS connection (HTTPS)
+            console.warn("Service Worker not available");
+        }
     </script>
     <!-- Link to handlebars js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -144,22 +252,22 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
     <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-      const firebaseConfig = {
-        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-        projectId: "tenex-pwa-spring2021",
-        storageBucket: "tenex-pwa-spring2021.appspot.com",
-        messagingSenderId: "874020516286",
-        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-        measurementId: "G-BB18XSR7K4",
-      };
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        const firebaseConfig = {
+            apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+            authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+            projectId: "tenex-pwa-spring2021",
+            storageBucket: "tenex-pwa-spring2021.appspot.com",
+            messagingSenderId: "874020516286",
+            appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+            measurementId: "G-BB18XSR7K4",
+        };
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
     </script>
-        <script src="assets/js/requestDetail.js" defer></script>
+    <script src="assets/js/requestDetail.js" defer></script>
 </body>
 
 </html>

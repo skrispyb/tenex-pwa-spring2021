@@ -19,6 +19,7 @@ h1 {
 
 .headerTitle {
     margin: 0;
+    font-family: "futura";
 }
 
 h2 {
@@ -26,7 +27,6 @@ h2 {
     font-weight: 600;
     color: rgba(0, 0, 0, 0.45);
     margin: 1.25rem 0;
-    text-transform: uppercase;
 }
 
 p {
@@ -38,31 +38,40 @@ p {
 
 .requestTitle {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0 0 0.33rem 0;
     color: #4F4F4F;
+    font-family: "SF Pro Display";
 }
 
 .newRequestDate {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.4)
+    margin: 0;
+    color: #4F4F4F;
 }
 
 .newRequestStatus {
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.4)
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin: 0;
+    color: #4F4F4F;
 }
 
 .description {
     font-size: 0.875rem;
     font-weight: 300;
     line-height: 1.5;
-    margin: 0;
+    margin: 0 0 2rem 0;
     color: rgba(0, 0, 0, 0.8)
+}
+
+.attachmentTitle {
+    font-size: 0.875rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 0 0 0 0.25rem;
+    color: #4F4F4F;
 }
 
 /* Embedded Content
@@ -72,7 +81,7 @@ p {
    ========================================================================= */
 
 body {
-    background-color: #E8E8E8;
+    background-color: #f4f4f4;
     margin: 0;
 }
 
@@ -119,7 +128,21 @@ button svg {
 }
 
 .detailCardSection {
-    margin: 7.5rem 1rem 0 1rem;
+    margin: 6.5rem 1rem 0 1rem;
+}
+
+.requestDetail {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+}
+
+.requestStatusBar {
+    width: 8px;
+    height: 100%;
+    background-color: #FDAE46;
+    border-radius: 10px;
 }
 
 .newRequestCard {
@@ -130,6 +153,30 @@ button svg {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
     margin-right: 0.5rem;
+}
+
+.attachmentSection {
+    text-align: right;
+}
+
+.attachment {
+    display: inline-block;
+}
+
+.tag {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #EEEEEE;
+    padding: 0.25rem 0.5rem;
+    width: fit-content;
+    border-radius: 40px;
+    margin: 0;
+}
+
+.requestDetailSub {
+    display: flex;
+    justify-content: space-between;
 }
 
 .tipsInfoSection {
@@ -143,16 +190,9 @@ button svg {
     padding: 0 3rem;
 }
 
-.imagePlaceholderArea {
+.illustration {
     width: fit-content;
     margin: auto;
-}
-
-.imagePlaceholder {
-    width: 140px;
-    height: 140px;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
 }
 
 .main_btn {

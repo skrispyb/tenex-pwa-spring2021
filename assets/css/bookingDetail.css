@@ -19,6 +19,7 @@ h1 {
 
 .headerTitle {
     margin: 0;
+    font-family: "futura";
 }
 
 h2 {
@@ -26,7 +27,6 @@ h2 {
     font-weight: 600;
     color: rgba(0, 0, 0, 0.45);
     margin: 1.25rem 0;
-    text-transform: uppercase;
 }
 
 p {
@@ -38,37 +38,50 @@ p {
 
 .requestTitle {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 600;
     margin: 0 0 0.33rem 0;
     color: #4F4F4F;
+    font-family: "SF Pro Display";
 }
 
 .newRequestDate {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.4)
+    margin: 0;
+    color: #4F4F4F;
 }
 
 .newRequestStatus {
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.4)
+    font-size: 0.75rem;
+    font-weight: 300;
+    margin: 0;
+    color: #4F4F4F;
 }
 
 .bookingDate {
     font-size: 0.875rem;
     font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.4)
+    margin: 0;
+    padding: 0 0 0 0.25rem;
+    color: #4F4F4F;
 }
 
 .bookingTime {
     font-size: 0.875rem;
     font-weight: 300;
     margin: 0;
-    color: rgba(0, 0, 0, 0.4)
+    padding: 0 0 0 0.25rem;
+    color: #4F4F4F;
+}
+
+.bookingInfoHeader {
+    font-size: 0.75rem;
+    margin: 0 0 0.25rem 0;
+}
+
+.tipsInfoSection p {
+    padding: 0 0.5rem;
+    color: #707070;
 }
 
 /* Embedded Content
@@ -78,7 +91,7 @@ p {
    ========================================================================= */
 
 body {
-    background-color: #E8E8E8;
+    background-color: #F4F4F4;
     margin: 0;
 }
 
@@ -120,12 +133,47 @@ button svg {
 
 .cancel_btn {
     background-color:rgba(0,0,0,0);
-    color: #4f4f4f;
     font-size: 0.75rem;
 }
 
+
 .detailCardSection {
-    margin: 7.5rem 1rem 0 1rem;
+    margin: 6.5rem 1rem 0 1rem;
+}
+
+.bookingDetail {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+}
+
+.bookingStatusBar {
+    width: 8px;
+    height: 100%;
+    background-color: #4980C1;
+    border-radius: 10px;
+}
+
+.bookingDateInfo,
+.bookingTimeInfo {
+    margin: 1.75rem 0 1rem 0;
+}
+
+.tag {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #EEEEEE;
+    padding: 0.25rem 0.5rem;
+    width: fit-content;
+    border-radius: 40px;
+    margin: 0;
+}
+
+.bookingDetailSub {
+    display: flex;
+    justify-content: space-between;
 }
 
 .newRequestCard {
@@ -145,18 +193,7 @@ button svg {
     text-align: center;
 }
 
-.tipsInfoSection p {
-    padding: 0 3rem;
-}
-
-.imagePlaceholderArea {
+.illustration {
     width: fit-content;
     margin: auto;
-}
-
-.imagePlaceholder {
-    width: 140px;
-    height: 140px;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
 }
