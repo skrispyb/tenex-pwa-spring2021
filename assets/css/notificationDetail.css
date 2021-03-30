@@ -1,7 +1,7 @@
 /* Fonts
    ========================================================================= */
 
-* {
+   * {
     font-family: "roboto", sans-serif;
     box-sizing: border-box;
 }
@@ -36,45 +36,29 @@ p {
     color: #4F4F4F;
 }
 
-.requestTitle {
+.notificationTitle {
     font-size: 1rem;
     font-weight: 600;
     margin: 0 0 0.33rem 0;
-    color: #4F4F4F;
+    color:#81B7AE;
     font-family: "SF Pro Display";
 }
 
-.newRequestDate {
-    font-size: 0.75rem;
+.notificationDescription {
+    font-size: 0.875rem;
     font-weight: 300;
+    line-height: 1.5;
     margin: 0;
-    color: #4F4F4F;
+    color: rgba(0, 0, 0, 0.8)
 }
 
-.newRequestStatus {
-    font-size: 0.75rem;
-    font-weight: 300;
-    margin: 0;
-    color: #4F4F4F;
-}
-
-.bookingDate,
-.bookingTime {
+.notificationDate,
+.notificationTime {
     font-size: 0.875rem;
     font-weight: 300;
     margin: 0;
     padding: 0 0 0 0.25rem;
     color: #4F4F4F;
-}
-
-.bookingInfoHeader {
-    font-size: 0.75rem;
-    margin: 0 0 0.25rem 0;
-}
-
-.tipsInfoSection p {
-    padding: 0 0.5rem;
-    color: #707070;
 }
 
 /* Embedded Content
@@ -84,7 +68,7 @@ p {
    ========================================================================= */
 
 body {
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
     margin: 0;
 }
 
@@ -97,7 +81,7 @@ header {
     padding: 2rem 1rem 1rem 1rem;
 }
 
-.headerEdit {
+.headerNotification {
     padding: 1.4rem 1rem 0.4rem 1rem;
 }
 
@@ -124,33 +108,56 @@ button svg {
     grid-row: 1/1;
 }
 
-.cancel_btn {
-    background-color:rgba(0,0,0,0);
+.edit_btn {
+    background-color: rgba(0, 0, 0, 0);
+    color: #4f4f4f;
     font-size: 0.75rem;
 }
-
 
 .detailCardSection {
     margin: 6.5rem 1rem 0 1rem;
 }
 
-.bookingDetail {
+.notificationHeader {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 0.25rem;
+}
+
+.notificationTitle {
+    display: flex;
+    align-self: center;
+}
+
+.notificationDetail {
     margin: 1rem 0;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-gap: 1rem;
 }
 
-.bookingStatusBar {
+.notificationStatusBar {
     width: 8px;
     height: 100%;
-    background-color: #4980C1;
+    background-color: #81B7AE;
+    ;
     border-radius: 10px;
 }
 
-.bookingDateInfo,
-.bookingTimeInfo {
-    margin: 1.75rem 0 1rem 0;
+.detailCard {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    margin-right: 0.5rem;
+}
+
+.notificationDuration {
+    margin: 1.5rem 0 1rem 0;
+    display: grid;
+    grid-gap: 0.5rem;
 }
 
 .tag {
@@ -164,29 +171,11 @@ button svg {
     margin: 0;
 }
 
-.bookingDetailSub {
+.notificationDetailSub {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-.newRequestCard {
-    background-color: white;
-    width: 100%;
-    margin-bottom: 0.5rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-    margin-right: 0.5rem;
-}
-
-.tipsInfoSection {
-    margin: auto;
-    margin: 0 1rem;
-    padding-top: 1.5rem;
-    text-align: center;
-}
-
-.illustration {
-    width: fit-content;
-    margin: auto;
-}
+.visually-hidden {
+    opacity: 0;
+  }
