@@ -61,7 +61,7 @@ $("#new_booking").click(function () {
 });
 
 $("#new_request").click(function () {
-  window.location.pathname = "/newRequestRequest.html";
+  window.location.pathname = "/newRequestRequest1.html";
 });
 
 // Array for date formatting
@@ -140,39 +140,7 @@ function mergeRecentCards() {
   }
 }
 
-//Function to display booking cards
-// displayBookingUI = (i) => {
-//   temp = document.createElement("div");
-//   temp.classList.add("newRequestCard");
-//   recentCards.appendChild(temp);
-
-// temp = document.createElement("h2");
-// temp.classList.add("requestTitle");
-// temp.innerText = `${requestUpdates[i].title}`;
-// document.getElementById("requestCards").children[i].appendChild(temp);
-
-// temp = document.createElement("p");
-// temp.classList.add("newRequestDate");
-// temp.innerText = `${requestUpdates[i].onDate}`;
-// document.getElementById("requestCards").children[i].appendChild(temp);
-
-// temp = document.createElement("p");
-// temp.classList.add("newRequestStatus");
-// temp.innerText = `${requestUpdates[i].bookingStatus}`;
-// document.getElementById("requestCards").children[i].appendChild(temp);
-
-// temp = document.createElement("p");
-// temp.classList.add("bookingDate");
-// temp.innerText = `${requestUpdates[i].bookingDate}`;
-// document.getElementById("requestCards").children[i].appendChild(temp);
-
-// temp = document.createElement("p");
-// temp.classList.add("bookingTime");
-// temp.innerText = `${requestUpdates[i].bookingTime}`;
-// document.getElementById("requestCards").children[i].appendChild(temp);
-// };
-
-//Function to display request cards
+//Function to display recent cards
 displayRecenttUI = (i) => {
   temp = document.createElement("div");
   if (recentUpdates[i].cardType === "Booking") {
@@ -613,7 +581,7 @@ $(".back_btn").click(function () {
 
 // Navigating to card details page
 let cardID;
-let getTarget;
+// let getTarget;
 
 document.onclick = function (e) {
   console.log(e.target);
@@ -624,9 +592,9 @@ document.onclick = function (e) {
   if (e.target.closest(".alertCard") != undefined) {
     cardID = e.target.closest(".alertCard").getAttribute("data-number");
   } else if (e.target.closest(".notifCard") != undefined) {
-    getTarget = e.target.closest(".notifCard").getAttribute("data-number");
+    cardID = e.target.closest(".notifCard").getAttribute("data-number");
   } else if (e.target.closest(".newRequestCard") != undefined) {
-    getTarget = e.target.closest(".newReqeustCard").getAttribute("data-number");
+    cardID = e.target.closest(".newReqeustCard").getAttribute("data-number");
   } else {
     cardID = undefined;
   }

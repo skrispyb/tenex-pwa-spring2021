@@ -41,23 +41,27 @@
   height: 13rem;
   width: max-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   border-radius: 1rem;
 }
 
 .new_req_book_wrapper .new_req_book_card button {
   background: white;
   border: 1px solid lightgray;
-  padding: 1rem 4rem;
-  border-radius: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
   font-size: 1.2rem;
   line-height: 1;
   font-weight: bold;
-  color: white;
-  background-color: #444;
+  color: #4f4f4f;
+}
+
+.request_btn_icon,
+.booking_btn_icon {
+  height: 134.77px;
 }
 
 .show_popup {
@@ -126,4 +130,89 @@ h1 {
   font-weight: 300;
   margin: 0;
   color: rgba(0, 0, 0, 0.4);
+}
+
+/* New Request subject input */
+.newReq_subject_input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 1px solid #dcdcd6;
+}
+
+/* New Request description input */
+.newReq_description_input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 0;
+  padding: 1rem;
+}
+
+/* New Request attachment button */
+.attachment_btn,
+.newReq_subject_submit,
+#snapPhoto,
+#retake,
+#attachPhoto {
+  background-color: #dcebe9;
+  border: 1px solid #e0e0e0;
+  color: #4f4f4f;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+}
+
+/* Camera */
+
+video,
+canvas, #attachments_list li {
+  border: 0.5rem solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.camera_feed,
+.clicked_camera_feed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  padding-top: 3rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .snap_options {
+    margin-top: 2rem;
+  }
+
+  .clicked_options {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+
+    button {
+      width: max-content;
+    }
+  }
+}
+
+#attachments_list {
+
+  li {
+    position: relative;
+
+    img {
+      position: relative;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.5rem;
+      background-color: #FFFFFF;
+    }
+  }
 }

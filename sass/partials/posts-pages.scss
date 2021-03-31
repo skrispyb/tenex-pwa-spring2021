@@ -1,4 +1,6 @@
-/* Alert card home screen starts here */
+/******************************************************************************
+        Alert card home screen starts here
+******************************************************************************/
 
 .notification_home_header {
   position: sticky;
@@ -337,7 +339,6 @@
 
 /* Recent Card Home screen ends here */
 
-
 /******************************************************************************
       Alert Detail view style starts here
 ******************************************************************************/
@@ -345,177 +346,295 @@
 /* Text-level Semantics
    ========================================================================= */
 
-   #alertDetailHeader h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #4f4f4f;
-    padding: 0;
-    margin: 1rem 0;
-  }
-  
-  #alertDetailHeader .headerTitle {
-    margin: 0;
-  }
-  
-  .alertDetailCardTitle {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.33rem 0;
-    padding: 0;
-    color: white;
-    text-transform: uppercase;
-  }
-  
-  .alertDetailPostedDate {
-    font-size: 0.875rem;
-    font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .alertDetailDescription {
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1.5;
-    margin: 0;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  /* Embedded Content
-     ========================================================================= */
-  
-  /* Grouping Content
-     ========================================================================= */
-  
-  #alertDetailHeader {
-    background-color: #f4f4f4;
-    width: 100%;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-    position: fixed;
-    top: 0;
-    padding: 2rem 1rem 1rem 1rem;
-  }
-  
-  .topHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.25rem 0;
-  }
-  
-  button {
-    border: none;
-  }
-  
-  button svg {
-    display: flex;
-    margin: auto;
-  }
-  
-  svg {
-    margin: auto;
-  }
-  
-  .search_btn {
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    border: 1px solid rgba(170, 170, 170, 0.25);
-    background-color: white;
-  }
-  
-  .back_btn {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0);
-    grid-row: 1/1;
-  }
-  
-  .detailCardSection {
-    margin: 7.5rem 1rem 0 1rem;
-  }
-  
-  .alertDetailCard {
-    background-color: #4f4f4f;
-    width: 100%;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-    margin: 0.5rem 0;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  .visuallyHidden {
-    visibility: hidden;
-  }
-  
-  /******************************************************************************
+#alertDetailHeader h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #4f4f4f;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+#alertDetailHeader .headerTitle {
+  margin: 0;
+}
+
+.alertDetailCardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  padding: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.alertDetailPostedDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.alertDetailDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#alertDetailHeader {
+  background-color: #f4f4f4;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 0;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+.topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25rem 0;
+}
+
+button {
+  border: none;
+}
+
+button svg {
+  display: flex;
+  margin: auto;
+}
+
+svg {
+  margin: auto;
+}
+
+.search_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(170, 170, 170, 0.25);
+  background-color: white;
+}
+
+.back_btn {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  grid-row: 1/1;
+}
+
+.detailCardSection {
+  margin: 7.5rem 1rem 0 1rem;
+}
+
+.alertDetailCard {
+  background-color: #4f4f4f;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin: 0.5rem 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyHidden {
+  visibility: hidden;
+}
+
+/******************************************************************************
         Alert Detail view style ends here
   ******************************************************************************/
-  
-  /******************************************************************************
+
+/******************************************************************************
         Notification Detail view style starts here
   ******************************************************************************/
-  
-  .notifDetailCardTitle {
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0;
-    margin: 0 0 0.33rem 0;
-    color: #4f4f4f;
-    text-transform: uppercase;
-  }
-  
-  .notifDetailPostedDate {
-    font-size: 0.875rem;
-    font-weight: 300;
-    margin: 0 0 0.33rem 0;
-  }
-  
-  .notifDetailDuration {
-    font-size: 0.875rem;
-    font-weight: 300;
-    margin: 0 0 0.33rem 0;
-    color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .notifDetaildescription {
-    font-size: 0.875rem;
-    font-weight: 300;
-    line-height: 1.5;
-    margin: 0;
-    color: rgba(0, 0, 0, 0.8);
-  }
- 
-  #notifDetailHeader {
-    background-color: #f4f4f4;
-    width: 100%;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-    position: fixed;
-    top: 0;
-    padding: 2rem 1rem 1rem 1rem;
-  }
-  
-  #notifDetailHeader .topHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0.25rem 0;
-  }
-  
-  .notifDetailCard {
-    background-color: white;
-    width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-  }
-  
-  /******************************************************************************
+
+.notifDetailCardTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0;
+  margin: 0 0 0.33rem 0;
+  color: #4f4f4f;
+  text-transform: uppercase;
+}
+
+.notifDetailPostedDate {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+}
+
+.notifDetailDuration {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0 0 0.33rem 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.notifDetaildescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#notifDetailHeader {
+  background-color: #f4f4f4;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 0;
+  padding: 2rem 1rem 1rem 1rem;
+}
+
+#notifDetailHeader .topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25rem 0;
+}
+
+.notifDetailCard {
+  background-color: white;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/******************************************************************************
         Notification Detail view style ends here
-  ******************************************************************************/
-  
+******************************************************************************/
+
+/******************************************************************************
+        New Request view style starts here
+******************************************************************************/
+.newRequest_header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem 1rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+
+  h2 {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .sendRequest_btn {
+    background: none;
+  }
+}
+
+.requestForm_main {
+  background: #f4f4f4;
+  min-height: 92vh;
+}
+
+.progress_wrapper {
+  padding: 0 1rem 0 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.progress_img {
+  margin-top: 2.25rem;
+  transform: translateX(17px);
+}
+
+.progress_content {
+  padding: 0;
+  transform: translate(0, 0);
+
+  li {
+    list-style-type: none;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    color: #bdbdbd;
+
+    div:first-of-type {
+      margin-top: 2px;
+    }
+  }
+}
+
+.reqForm_current span {
+  color: #333333;
+}
+
+.options_wrapper {
+  padding: 0 1rem 1rem;
+}
+
+.options_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  button {
+    padding: 1rem 0;
+    background: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+  }
+}
+
+.options_subject, .options_desciption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.newReq_subject_submit {
+  width: max-content;
+  margin-top: 1rem;
+}
+
+.attachment_options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  button {
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 0.5rem;
+  }
+}
+
+.options_attachment {
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+#attachments_list {
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+
+  li {
+    list-style-type: none;
+    margin-top: 1rem;
+  }
+}
+
+/******************************************************************************
+        New Request view style ends here
+******************************************************************************/
