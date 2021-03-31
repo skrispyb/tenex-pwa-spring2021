@@ -49,6 +49,28 @@ p {
   }
 }
 
+.requestForm_main {
+  font-family: $font_date_posted;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.newReq_subject_input {
+  font-family: $font_date_posted;
+  font-size: 18px;
+}
+
+.attachment_btn {
+  font-size: 14px;
+  letter-spacing: 1.25px;
+}
+
+.attachment_options {
+  font-size: 14px;
+  letter-spacing: 1.25px;
+}
+
+
 .slideshow-container {
   .mySlides {
     h2 {
