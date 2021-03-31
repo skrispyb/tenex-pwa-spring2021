@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenex - Notification Detail</title>
+    <link rel="stylesheet" href="assets/css/notificationDetail.css">
+</head>
+
+<body>
+    <header class="headerNotification">
+        <div class="topHeader">
+            <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 22L2 12L12 2" stroke="#4F4F4F" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <h1 id="headerTitle" class="headerTitle">Notification</h1>
+            <button id="edit_btn" class="edit_btn visually-hidden" type="button"><svg width="34" height="34"
+                    viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d)">
+                        <path
+                            d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                            fill="#828282" />
+                        <path
+                            d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
+                            stroke="white" stroke-width="3" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
+                            color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feColorMatrix in="SourceAlpha" type="matrix"
+                                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                            <feOffset dy="3" />
+                            <feGaussianBlur stdDeviation="1.5" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                        </filter>
+                    </defs>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <section class="detailCardSection">
+        <!-- <div id="requestDetailCard"> -->
+        <div class="detailCard">
+
+            <div class="notificationHeader">
+                <h2 class="notificationTitle">
+                    Elevator Under Maintenance
+                </h2>
+                <div class="notificationIcon">
+                    <svg width="30" height="38" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.8"
+                            d="M27.67 27.4179C26.7596 26.4842 26.25 25.2316 26.25 23.9274V16.3462C26.25 10.9174 23.65 6.3017 19.0623 4.57725C18.3438 4.30718 17.8125 3.65218 17.8125 2.88462C17.8125 1.28846 16.5562 0 15 0C13.4438 0 12.1875 1.28846 12.1875 2.88462C12.1875 3.65205 11.656 4.30685 10.9372 4.57567C6.33537 6.29666 3.75 10.8984 3.75 16.3462V23.9274C3.75 25.2316 3.24044 26.4842 2.33 27.4179L0.388219 29.4095C0.139311 29.6648 0 30.0072 0 30.3638C0 31.1188 0.612013 31.7308 1.36697 31.7308H28.633C29.388 31.7308 30 31.1188 30 30.3638C30 30.0072 29.8607 29.6648 29.6118 29.4095L27.67 27.4179ZM16.875 24.0865C16.875 25.1221 16.0355 25.9615 15 25.9615C13.9645 25.9615 13.125 25.1221 13.125 24.0865V23.9904C13.125 22.9549 13.9645 22.1154 15 22.1154C16.0355 22.1154 16.875 22.9549 16.875 23.9904V24.0865ZM16.875 16.3942C16.875 17.4298 16.0355 18.2692 15 18.2692C13.9645 18.2692 13.125 17.4298 13.125 16.3942V12.4519C13.125 11.4164 13.9645 10.5769 15 10.5769C16.0355 10.5769 16.875 11.4164 16.875 12.4519V16.3942ZM15 37.5C15.7679 37.5 16.4839 37.2601 17.0801 36.8497C18.7861 35.6754 17.0711 33.6538 15 33.6538C12.9289 33.6538 11.2082 35.6787 12.9149 36.8519C13.51 37.2609 14.2265 37.5 15 37.5Z"
+                            fill="#81B7AE" />
+                    </svg>
+                </div>
+            </div>
+            <div class="notificationDetail">
+                <div class="notificationStatusBar">
+                </div>
+                <div class="requestInfoMain">
+                    <p class="notificationDescription">Dear Owners/Residents, <br><br>
+                        The elevators will be out of service from 10:00 - 14:00 on Thursday February 21, 2021 till
+                        Friday February 22, 2021 due to annual maintenance inspections.
+                        Should you have any questions, feel free to contact me. Thank you for your attention.
+                        <br><br>
+                        Stay safe!<br>
+                        Dwight
+                    </p>
+                    <div class="notificationDuration">
+                        <div class="tag">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M15.1895 13.916C15.1895 14.6924 14.4696 15.3223 13.5823 15.3223H1.7966C0.90932 15.3223 0.189453 14.6924 0.189453 13.916V5.94727H15.1895V13.916ZM13.0466 8.29102C13.0466 8.0332 12.8055 7.82227 12.5109 7.82227H9.2966C9.00195 7.82227 8.76088 8.0332 8.76088 8.29102V11.1035C8.76088 11.3613 9.00195 11.5723 9.2966 11.5723H12.5109C12.8055 11.5723 13.0466 11.3613 13.0466 11.1035V8.29102ZM1.7966 2.19727H3.40374V0.791016C3.40374 0.533203 3.64481 0.322266 3.93945 0.322266H5.01088C5.30552 0.322266 5.5466 0.533203 5.5466 0.791016V2.19727H9.83231V0.791016C9.83231 0.533203 10.0734 0.322266 10.368 0.322266H11.4395C11.7341 0.322266 11.9752 0.533203 11.9752 0.791016V2.19727H13.5823C14.4696 2.19727 15.1895 2.82715 15.1895 3.60352V5.00977H0.189453V3.60352C0.189453 2.82715 0.90932 2.19727 1.7966 2.19727Z" fill="#4F4F4F"/>
+                              </svg>
+                              <p class="notificationDate">21 FEB 2021 - 22 FEB 2021</p>
+                          </div>
+                        <div class="tag">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z"
+                                    fill="#4F4F4F" />
+                            </svg>
+                            <p class="notificationTime">14:00 - 15:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notificationDetailSub">
+                <p class="notificationDate">FEB 15, 2021</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Script for pwa -->
+    <script>
+        // does the browser support service workers?
+        if ("serviceWorker" in navigator) {
+            // fires when the service worker is ready
+            navigator.serviceWorker.ready.then((reg) => {
+                // we have an active service worker working for us
+                console.log(`Service Worker ready (Scope: ${reg.scope})`);
+                // do something interesting, if you want...
+            });
+            // then register our service worker
+            navigator.serviceWorker
+                .register("./sw.js", { scope: "/" })
+                .then(function (reg) {
+                    // display a success message
+                    console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+                })
+                .catch(function (error) {
+                    // display an error message
+                    console.log(`Service Worker Error (${error})`);
+                });
+        } else {
+            // happens when the app isn't served over a TLS connection (HTTPS)
+            console.warn("Service Worker not available");
+        }
+    </script>
+    <!-- Link to handlebars js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+    <script>
+        // TODO: Replace the following with your app's Firebase project configuration
+        // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+        const firebaseConfig = {
+            apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+            authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+            projectId: "tenex-pwa-spring2021",
+            storageBucket: "tenex-pwa-spring2021.appspot.com",
+            messagingSenderId: "874020516286",
+            appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+            measurementId: "G-BB18XSR7K4",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="assets/js/requestDetail.js" defer></script>
+</body>
+
+</html>
