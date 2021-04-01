@@ -1,134 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenex - Tenexbox</title>
-    <link rel="stylesheet" href="assets/css/tenexbox.css">
-    <script src="assets/js/tenexbox.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenex - Tenexbox</title>
+  <link rel="stylesheet" href="assets/css/tenexbox.css">
+  <script src="assets/js/tenexbox.js" defer></script>
 </head>
+
 <body>
-    <!-- Navigation bar at bottom of screen -->
-    <div class="app-nav">
-        <div class="nav">
-          <ul>
-            <li>
-              <button id="nav_home">
-                <svg
-                  width="16"
-                  height="20"
-                  viewBox="0 0 16 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+  <!-- Navigation bar at bottom of screen -->
+  <div class="app-nav">
+    <div class="nav">
+      <ul>
+        <li>
+          <button id="nav_home">
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
+                fill="#848484" />
+            </svg>
+            Navigation
+          </button>
+        </li>
+        <li>
+          <button id="nav_cal">
+            <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
+                fill="#848484" />
+            </svg>
+            Calendar
+          </button>
+        </li>
+        <li>
+          <button id="nav_tbox">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
+                fill="#848484" />
+            </svg>
+            Tenex Box
+          </button>
+        </li>
+        <li>
+          <button id="nav_more">
+            <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
+              <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
+              <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
+              <rect x="6.00012" width="16" height="3" rx="1.5" fill="#848484" />
+              <rect x="6.00012" y="7" width="16" height="3" rx="1.5" fill="#848484" />
+              <rect x="6.00012" y="14" width="16" height="3" rx="1.5" fill="#848484" />
+            </svg>
+            More
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <header>
+    <div class="topHeader">
+      <h1 id="headerTitle" class="headerTitle">TenexBox</h1>
+      <form action="" id="searchBar" class="searchBar">
+        <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search"
+          name="search" placeholder="Search">
+        <button id="search_btn" class="search_btn" type="button"><svg width="18" height="18" viewBox="0 0 18 18"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+              fill="#AAAAAA" />
+          </svg></button>
+      </form>
+    </div>
+    <div class="bottomHeader">
+      <button id="bookings_btn" class="textFilter_btn">Bookings</button>
+      <button id="requests_btn" class="textFilter_btn">Requests</button>
+    </div>
+  </header>
+  <main>
+    <!-- <div id="requestCards">
+        </div> -->
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newBookingCard_status_progress_wrapper">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title">Meeting Room Booking</h3>
+            <div class="newBookingCard_time_wrapper">
+              <p class="newBookingCard_time">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8 20C9.1 20 10 19.1 10 18H6C6 19.1 6.89 20 8 20ZM14 14V9C14 5.93 12.36 3.36 9.5 2.68V2C9.5 1.17 8.83 0.5 8 0.5C7.17 0.5 6.5 1.17 6.5 2V2.68C3.63 3.36 2 5.92 2 9V14L0 16V17H16V16L14 14Z"
-                    fill="#848484"
-                  />
-                </svg>
-                Navigation
-              </button>
-            </li>
-            <li>
-              <button id="nav_cal">
-                <svg
-                  width="21"
-                  height="22"
-                  viewBox="0 0 21 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.6001 2H17.6001V0H15.6001V2H5.6001V0H3.6001V2H2.6001C1.5001 2 0.600098 2.9 0.600098 4V20C0.600098 21.1 1.5001 22 2.6001 22H18.6001C19.7001 22 20.6001 21.1 20.6001 20V4C20.6001 2.9 19.7001 2 18.6001 2ZM18.6001 20H2.6001V7H18.6001V20Z"
-                    fill="#848484"
-                  />
-                </svg>
-                Calendar
-              </button>
-            </li>
-            <li>
-              <button id="nav_tbox">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.0002 0H1.99024C0.880244 0 0.0102441 0.89 0.0102441 2L0.000244141 16C0.000244141 17.1 0.880244 18 1.99024 18H16.0002C17.1002 18 18.0002 17.1 18.0002 16V2C18.0002 0.89 17.1002 0 16.0002 0ZM16.0002 12H12.0002C12.0002 13.66 10.6502 15 9.00024 15C7.35024 15 6.00024 13.66 6.00024 12H1.99024V2H16.0002V12Z"
-                    fill="#848484"
-                  /></svg>
-                  Tenex Box
-              </button>
-            </li>
-            <li>
-              <button id="nav_more">
-                <svg
-                  width="22"
-                  height="17"
-                  viewBox="0 0 22 17"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle cx="1.50012" cy="1.5" r="1.5" fill="#848484" />
-                  <circle cx="1.50012" cy="8.5" r="1.5" fill="#848484" />
-                  <circle cx="1.50012" cy="15.5" r="1.5" fill="#848484" />
-                  <rect
-                    x="6.00012"
-                    width="16"
-                    height="3"
-                    rx="1.5"
-                    fill="#848484"
-                  />
-                  <rect
-                    x="6.00012"
-                    y="7"
-                    width="16"
-                    height="3"
-                    rx="1.5"
-                    fill="#848484"
-                  />
-                  <rect
-                    x="6.00012"
-                    y="14"
-                    width="16"
-                    height="3"
-                    rx="1.5"
-                    fill="#848484"
-                  />
-                </svg>
-                More
-              </button>
-            </li>
-          </ul>
+                    d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z"
+                    fill="#4F4F4F" />
+                </svg> 14:00 - 15:00
+              </p>
+            </div>
+          </div>
+          <p class="newRequestCard_status">BOOKED</p>
+        </div>
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M49.6904 5.45455H48.9404C47.8359 5.45455 46.9404 4.55911 46.9404 3.45455V2C46.9404 0.895431 46.045 0 44.9404 0H43.4404C42.3359 0 41.4404 0.895431 41.4404 2V3.45455C41.4404 4.55911 40.545 5.45455 39.4404 5.45455H15.9404C14.8359 5.45455 13.9404 4.55911 13.9404 3.45455V2C13.9404 0.895431 13.045 0 11.9404 0H10.4404C9.33586 0 8.44043 0.895431 8.44043 2V3.45455C8.44043 4.55911 7.545 5.45455 6.44043 5.45455H5.69043C2.66543 5.45455 0.19043 7.90909 0.19043 10.9091V54.5455C0.19043 57.5455 2.66543 60 5.69043 60H49.6904C52.7154 60 55.1904 57.5455 55.1904 54.5455V10.9091C55.1904 7.90909 52.7154 5.45455 49.6904 5.45455ZM49.6904 52.5455C49.6904 53.65 48.795 54.5455 47.6904 54.5455H7.69043C6.58586 54.5455 5.69043 53.65 5.69043 52.5455V17.2747C5.69043 16.1702 6.58586 15.2747 7.69043 15.2747H47.6904C48.795 15.2747 49.6904 16.1702 49.6904 17.2747V52.5455Z"
+                fill="#4980C1"></path>
+            </svg>
+          </div>
+          <div class="newBookingCard_date_for">MAR<br>17</div>
+          <p>Feb 28, 2021</p>
         </div>
       </div>
-    <header>
-        <div class="topHeader">
-            <h1 id="headerTitle" class="headerTitle">Tenexbox</h1>
-            <form action="" id="searchBar" class="searchBar">
-                <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search" name="search" placeholder="Search">
-                <button id="search_btn" class="search_btn" type="button"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
-                        fill="#AAAAAA" />
-                </svg></button>
-            </form>
+    </div>
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newRequestCard_status_progress_wrapper">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title">New Fob Request</h3>
+            <p class="newRequestCard_excerpt">Hi Dwight, My key fob is broken and I need new one. Can you help me get a new key fob? Thanks, Michael</p>
+          </div>
+          <p class="newRequestCard_status">ONGOING</p>
         </div>
-        <div class="bottomHeader">
-            <button id="bookings_btn" class="textFilter_btn">Bookings</button>
-            <button id="requests_btn" class="textFilter_btn">Requests</button>
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46" />
+              <path
+                d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2576C28.6011 45.2576 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z"
+                fill="white" />
+            </svg>
+          </div>
+          <p>Feb 12, 2021</p>
         </div>
-    </header>
-    <main>
-        <div id="requestCards">
+      </div>
+    </div>
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newRequestCard_status_progress_rejected_wrapper">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title">Corridor Maintenance</h3>
+            <p class="newRequestCard_excerpt">Hi Dwight, I have a minor problem with the maintenance going on in the corridor. It's pretty noisy. Can you ask them to lower their volume? Thanks, Michael</p>
+          </div>
+          <p class="newRequestCard_status rejected">REJECTED</p>
         </div>
-        <!-- <div class="newRequestCard">
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="27.5" cy="27.5" r="27.5" fill="#BE0707"/>
+              <path d="M47 27.5C47 37.6707 38.3173 46 27.5 46C16.6827 46 8 37.6707 8 27.5C8 17.3293 16.6827 9 27.5 9C38.3173 9 47 17.3293 47 27.5Z" stroke="white" stroke-width="2"/>
+              <path d="M6.79715 37.6114L8.03319 37.0386L10.4062 38.8612L11.7086 38.2576L9.11827 36.3259C9.75299 35.6981 9.86958 34.7884 9.47746 33.9422C8.91083 32.7195 7.72721 32.3369 6.34497 32.9775L3.80644 34.1538L6.76893 40.5467L7.91193 40.017L6.79715 37.6114ZM5.37852 34.5501L6.64557 33.9629C7.3677 33.6283 8.00814 33.8374 8.3202 34.5108C8.64046 35.2019 8.40642 35.8001 7.67986 36.1368L6.39066 36.7342L5.37852 34.5501ZM16.3568 34.9304L13.3619 36.3183L12.5161 34.493L15.347 33.1811L14.9261 32.2729L12.0952 33.5848L11.2945 31.857L14.2894 30.4692L13.8418 29.5034L9.70398 31.4209L12.6665 37.8137L16.8043 35.8962L16.3568 34.9304ZM16.807 33.7746C17.3326 34.9087 18.4947 35.2797 19.7131 34.7151C21.0111 34.1136 21.433 33.0032 20.8294 31.7007L18.7558 27.2262L17.6173 27.7538L19.6867 32.2195C20.007 32.9106 19.8472 33.4367 19.2358 33.72C18.7042 33.9664 18.1766 33.7803 17.919 33.2593L16.807 33.7746ZM26.7962 30.0927L23.8013 31.4805L22.9555 29.6553L25.7864 28.3434L25.3655 27.4352L22.5346 28.7471L21.734 27.0193L24.7288 25.6315L24.2812 24.6657L20.1434 26.5832L23.1059 32.976L27.2437 31.0585L26.7962 30.0927ZM31.2678 29.3229C32.7785 28.6228 33.4401 27.3098 33.0051 25.8485L31.8843 26.3679C32.0643 27.2209 31.6688 27.9585 30.8226 28.3506C29.7151 28.8639 28.5983 28.2889 27.9332 26.8535C27.2721 25.427 27.5577 24.1968 28.6564 23.6876C29.4848 23.3037 30.3804 23.5291 30.9026 24.2612L32.0279 23.7397C31.2497 22.432 29.6909 22.0296 28.2068 22.7174C26.3904 23.5591 25.8192 25.3576 26.7636 27.3955C27.7141 29.4467 29.4426 30.1687 31.2678 29.3229ZM37.5325 26.2906L35.0176 20.8636L36.927 19.9787L36.4795 19.0129L31.5176 21.3123L31.9651 22.2781L33.879 21.3912L36.3939 26.8182L37.5325 26.2906ZM44.1432 22.054L41.1484 23.4418L40.3025 21.6165L43.1335 20.3047L42.7126 19.3965L39.8817 20.7083L39.081 18.9805L42.0758 17.5927L41.6283 16.6269L37.4904 18.5444L40.4529 24.9373L44.5908 23.0198L44.1432 22.054ZM42.8475 16.0619L45.81 22.4548L48.1447 21.3728C50.0586 20.4859 50.6336 18.7772 49.6954 16.7525C48.7572 14.7279 47.0917 14.0951 45.1822 14.98L42.8475 16.0619ZM44.438 16.498L45.5102 16.0012C46.7861 15.41 47.8692 15.8659 48.5323 17.2969C49.2078 18.7545 48.8623 19.8671 47.5775 20.4625L46.5054 20.9593L44.438 16.498Z" fill="white"/>
+              </svg>
+              
+          </div>
+          <p>Feb 02, 2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newRequestCard_status_draft_progress_wrapper">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title">Where's the Key Fob Price Info?</h3>
+            <p class="newRequestCard_excerpt">Hi Dwight, Where should I look for to find the price of a new key fob? Thanks, Michael</p>
+          </div>
+          <p class="newRequestCard_status">DRAFT</p>
+        </div>
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
+              <g filter="url(#filter0_d)">
+              <path d="M14 35.1675V41H19.8325L37.0346 23.7979L31.2021 17.9654L14 35.1675ZM41.5451 19.2875C42.1516 18.6809 42.1516 17.701 41.5451 17.0944L37.9056 13.4549C37.299 12.8484 36.3191 12.8484 35.7125 13.4549L32.8663 16.3012L38.6988 22.1337L41.5451 19.2875Z" fill="#FDAE46"/>
+              <path d="M12.9393 34.1068L12.5 34.5462V35.1675V41V42.5H14H19.8325H20.4538L20.8932 42.0607L38.0952 24.8586L38.6988 24.2551L39.1559 23.7979L39.7595 23.1944L42.6057 20.3481C43.7981 19.1558 43.7981 17.2261 42.6057 16.0338L38.9662 12.3943L37.9178 13.4427L38.9662 12.3943C37.7739 11.2019 35.8442 11.2019 34.6519 12.3943L35.6998 13.4422L34.6519 12.3943L31.8056 15.2405L31.2021 15.8441L30.7449 16.3012L30.1414 16.9048L12.9393 34.1068Z" stroke="white" stroke-width="3"/>
+              </g>
+              <defs>
+              <filter id="filter0_d" x="8" y="10" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+              <feOffset dy="3"/>
+              <feGaussianBlur stdDeviation="1.5"/>
+              <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+              </filter>
+              </defs>
+              </svg>              
+          </div>
+          <p>JAN 22, 2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newBookingCard_status_progress_wrapper">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title">Swimming Pool Booking</h3>
+            <div class="newBookingCard_time_wrapper">
+              <p class="newBookingCard_time">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z"
+                    fill="#4F4F4F" />
+                </svg> 14:00 - 15:00
+              </p>
+            </div>
+          </div>
+          <p class="newRequestCard_status">BOOKED</p>
+        </div>
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M49.6904 5.45455H48.9404C47.8359 5.45455 46.9404 4.55911 46.9404 3.45455V2C46.9404 0.895431 46.045 0 44.9404 0H43.4404C42.3359 0 41.4404 0.895431 41.4404 2V3.45455C41.4404 4.55911 40.545 5.45455 39.4404 5.45455H15.9404C14.8359 5.45455 13.9404 4.55911 13.9404 3.45455V2C13.9404 0.895431 13.045 0 11.9404 0H10.4404C9.33586 0 8.44043 0.895431 8.44043 2V3.45455C8.44043 4.55911 7.545 5.45455 6.44043 5.45455H5.69043C2.66543 5.45455 0.19043 7.90909 0.19043 10.9091V54.5455C0.19043 57.5455 2.66543 60 5.69043 60H49.6904C52.7154 60 55.1904 57.5455 55.1904 54.5455V10.9091C55.1904 7.90909 52.7154 5.45455 49.6904 5.45455ZM49.6904 52.5455C49.6904 53.65 48.795 54.5455 47.6904 54.5455H7.69043C6.58586 54.5455 5.69043 53.65 5.69043 52.5455V17.2747C5.69043 16.1702 6.58586 15.2747 7.69043 15.2747H47.6904C48.795 15.2747 49.6904 16.1702 49.6904 17.2747V52.5455Z"
+                fill="#4980C1"></path>
+            </svg>
+          </div>
+          <div class="newBookingCard_date_for">JAN<br>15</div>
+          <p>JAN 07, 2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="newRequestCard">
+      <div class="newRequestCard_wrapper">
+        <div class="newRequestCard_content_wrapper">
+          <div class="newBookingCard_status_progress_wrapper cancelled_progress">
+          </div>
+          <div class="newRequestCard_details">
+            <h3 class="newRequestCard_title cancelledText">Swimming Pool Booking</h3>
+            <div class="newBookingCard_time_wrapper">
+              <p class="newBookingCard_time cancelledText">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="cancelledIcon"
+                    d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z"
+                    fill="#4F4F4F" />
+                </svg> 14:00 - 15:00
+              </p>
+            </div>
+          </div>
+          <p class="newRequestCard_status cancelledText">CANCELLED</p>
+        </div>
+        <div class="newRequestCard_date_wrapper">
+          <div class="newRequest_logo">
+            <svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="cancelledIcon"
+                d="M49.6904 5.45455H48.9404C47.8359 5.45455 46.9404 4.55911 46.9404 3.45455V2C46.9404 0.895431 46.045 0 44.9404 0H43.4404C42.3359 0 41.4404 0.895431 41.4404 2V3.45455C41.4404 4.55911 40.545 5.45455 39.4404 5.45455H15.9404C14.8359 5.45455 13.9404 4.55911 13.9404 3.45455V2C13.9404 0.895431 13.045 0 11.9404 0H10.4404C9.33586 0 8.44043 0.895431 8.44043 2V3.45455C8.44043 4.55911 7.545 5.45455 6.44043 5.45455H5.69043C2.66543 5.45455 0.19043 7.90909 0.19043 10.9091V54.5455C0.19043 57.5455 2.66543 60 5.69043 60H49.6904C52.7154 60 55.1904 57.5455 55.1904 54.5455V10.9091C55.1904 7.90909 52.7154 5.45455 49.6904 5.45455ZM49.6904 52.5455C49.6904 53.65 48.795 54.5455 47.6904 54.5455H7.69043C6.58586 54.5455 5.69043 53.65 5.69043 52.5455V17.2747C5.69043 16.1702 6.58586 15.2747 7.69043 15.2747H47.6904C48.795 15.2747 49.6904 16.1702 49.6904 17.2747V52.5455Z"
+                fill="#4980C1"></path>
+            </svg>
+          </div>
+          <div class="newBookingCard_date_for cancelledText">JAN<br>15</div>
+          <p class="cancelledText">JAN 07, 2021</p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="newRequestCard">
             <h2 class="requestTitle">Meeting Room Booking</h2>
             <p class="newRequestDate">FEB 15, 2021</p>
             <p class="newRequestStatus">BOOKED</p>
@@ -163,67 +298,65 @@
             <p class="newRequestExerpt">Hi Dwight, The building corridor, especially on my floor, is getting a little too dirty. Please ask the cleaning crew to clean the building corridor more often. Thanks, Michael
             </p>
         </div> -->
-    </main>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Script for pwa -->
-    <script>
-      // does the browser support service workers?
-      if ("serviceWorker" in navigator) {
-        // fires when the service worker is ready
-        navigator.serviceWorker.ready.then((reg) => {
-          // we have an active service worker working for us
-          console.log(`Service Worker ready (Scope: ${reg.scope})`);
-          // do something interesting, if you want...
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Script for pwa -->
+  <script>
+    // does the browser support service workers?
+    if ("serviceWorker" in navigator) {
+      // fires when the service worker is ready
+      navigator.serviceWorker.ready.then((reg) => {
+        // we have an active service worker working for us
+        console.log(`Service Worker ready (Scope: ${reg.scope})`);
+        // do something interesting, if you want...
+      });
+      // then register our service worker
+      navigator.serviceWorker
+        .register("./sw.js", { scope: "/" })
+        .then(function (reg) {
+          // display a success message
+          console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+        })
+        .catch(function (error) {
+          // display an error message
+          console.log(`Service Worker Error (${error})`);
         });
-        // then register our service worker
-        navigator.serviceWorker
-          .register("./sw.js", { scope: "/" })
-          .then(function (reg) {
-            // display a success message
-            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-          })
-          .catch(function (error) {
-            // display an error message
-            console.log(`Service Worker Error (${error})`);
-          });
-      } else {
-        // happens when the app isn't served over a TLS connection (HTTPS)
-        console.warn("Service Worker not available");
-      }
-    </script>
-    <!-- Link to handlebars js cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    } else {
+      // happens when the app isn't served over a TLS connection (HTTPS)
+      console.warn("Service Worker not available");
+    }
+  </script>
+  <!-- Link to handlebars js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-    <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-      const firebaseConfig = {
-        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-        projectId: "tenex-pwa-spring2021",
-        storageBucket: "tenex-pwa-spring2021.appspot.com",
-        messagingSenderId: "874020516286",
-        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-        measurementId: "G-BB18XSR7K4",
-      };
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+    const firebaseConfig = {
+      apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+      authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+      projectId: "tenex-pwa-spring2021",
+      storageBucket: "tenex-pwa-spring2021.appspot.com",
+      messagingSenderId: "874020516286",
+      appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+      measurementId: "G-BB18XSR7K4",
+    };
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
+
 </html>
