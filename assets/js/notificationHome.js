@@ -1,6 +1,7 @@
 //Variable Declarations
 let temp;
 let i = 0;
+let currUid;
 
 // Variable to store requests from db
 let bookings = [];
@@ -17,21 +18,56 @@ let notifDetail = [];
 // Check if the user is logged in or not
 const auth = firebase.auth();
 
-window.addEventListener("load", function () {
+// Accessing cloud firestore db
+const db = firebase.firestore();
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    console.log("user is logged in");
+    currUid = user.uid;
+    console.log(currUid);
+    // On Request status change in db update front end
+    db.collection("newRequests")
+      .where("ReqUid", "==", currUid)
+      .get()
+      .then((doc) => {
+        requests = [];
+
+        doc.forEach((fields) => {
+          requests.push(fields.data());
+        });
+        mergeRecentCards();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
+    // Retreive bookings
+    db.collection("bookings")
+      .where("BookingUid", "==", currUid)
+      .get()
+      .then((doc) => {
+        bookings = [];
+
+        doc.forEach((fields) => {
+          bookings.push(fields.data());
+        });
+        mergeRecentCards();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  } else {
+    // No user is signed in.
+    console.log("user is not logged in");
+    window.location.pathname = "/index.html";
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
   $("#nav_home").css("color", "white");
   $("#nav_home > svg").children().css("fill", "white");
   $(".body_wrapper_alert").addClass("hidden");
   $(".body_wrapper_notif").addClass("hidden");
-
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      console.log("user is logged in");
-    } else {
-      // No user is signed in.
-      console.log("user is not logged in");
-      window.location.pathname = "/index.html";
-    }
-  });
 });
 
 // Navigating through pages
@@ -61,7 +97,7 @@ $("#new_booking").click(function () {
 });
 
 $("#new_request").click(function () {
-  window.location.pathname = "/newRequestRequest1.html";
+  window.location.pathname = "/newRequestRequest.html";
 });
 
 // Array for date formatting
@@ -88,34 +124,6 @@ let notifCards = document.getElementById("notificationCards");
 
 // Select the request cards container
 let recentCards = document.getElementById("recentCards");
-
-// Accessing cloud firestore db
-const db = firebase.firestore();
-
-// On Request status change in db update front end
-db.collection("newRequests")
-  .where("ReqUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
-  .onSnapshot((doc) => {
-    requests = [];
-
-    doc.forEach((fields) => {
-      requests.push(fields.data());
-    });
-    mergeRecentCards();
-  });
-
-// Retreive bookings
-db.collection("bookings")
-  .where("BookingUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
-  .onSnapshot((doc) => {
-    bookings = [];
-    // clearRequestsUI();
-
-    doc.forEach((fields) => {
-      bookings.push(fields.data());
-    });
-    mergeRecentCards();
-  });
 
 // Function to display recent cards
 function mergeRecentCards() {
@@ -566,7 +574,6 @@ displayAlertUI = (i) => {
         Alerts cards retreival and display in order ends here
 ******************************************************************************/
 
- 
 /******************************************************************************
       Different Cards Detail view JS starts here
 ******************************************************************************/
@@ -634,7 +641,6 @@ document.onclick = function (e) {
       Different Cards Detail view JS ends here
 ******************************************************************************/
 
-
 /******************************************************************************
       Alert Detail view JS starts here
 ******************************************************************************/
@@ -667,7 +673,6 @@ displayAlertDetailUI = (i) => {
 /******************************************************************************
       Alert Detail view JS ends here
 ******************************************************************************/
-
 
 /******************************************************************************
       Notification Detail view JS starts here
@@ -707,7 +712,6 @@ displayNotifDetailUI = (i) => {
       Notification Detail view JS ends here
 ******************************************************************************/
 
-
 /******************************************************************************
       Request Detail view JS starts here
 ******************************************************************************/
@@ -745,7 +749,6 @@ displayRequestDetailUI = (i) => {
 /******************************************************************************
       Request Detail view JS ends here
 ******************************************************************************/
-
 
 /******************************************************************************
       Booking Detail view JS starts here
