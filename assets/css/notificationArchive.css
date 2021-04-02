@@ -2,7 +2,7 @@
    ========================================================================= */
 
 * {
-    font-family: "roboto", sans-serif;
+    font-family: "SFProDisplayRegular", "roboto", sans-serif;
     box-sizing: border-box;
 }
 
@@ -10,9 +10,10 @@
    ========================================================================= */
 
 h1 {
+    font-family: "futura";
     font-size: 1.5rem;
     font-weight: 500;
-    color: #4F4F4F;
+    color: #333333;
     padding: 0;
     margin: 1rem 0;
 }
@@ -26,11 +27,12 @@ h2 {
 }
 
 h3 {
+    font-family: "SFProDisplaySemibold", sans-serif;
+    font-weight: 600;
     font-size: 1rem;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.45);
-    padding: 0 1rem;
-    margin: 0.75rem 0;
+    color: #333333;
+    padding: 0;
+    margin: 0;
 }
 
 .notificationCardTitle, .notificationCard h2 {
@@ -61,6 +63,36 @@ h3 {
     line-height: 1.5;
     margin: 0;
     color: rgba(0, 0, 0, 0.8)
+}
+
+.alertCard_title,
+.notifCard_title {
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+}
+
+.alertCardArchive p, 
+.notifCardArchive p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #4f4f4f;
+}
+
+.notifCard_duration_date_wrapper p, 
+.notifCard_duration_time_wrapper p {
+    margin: 0;
+}
+
+.alertCard_date_wrapper p,
+.notifCard_date_wrapper p {
+    text-align: right;
+    margin: 0;
+    font-size: 0.75rem;
 }
 
 .alertCardTitle {
@@ -102,7 +134,7 @@ h3 {
    ========================================================================= */
 
 body {
-    background-color: #E8E8E8;
+    background-color: #F4F4F4;
     margin: 0;
 }
 
@@ -110,9 +142,10 @@ header {
     background-color: #f4f4f4;
     width: 100%;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-    position: fixed;
+    position: sticky;
     top: 0;
     padding: 2rem 1rem 1rem 1rem;
+    z-index: 100;
 }
 
 .topHeader {
@@ -121,7 +154,6 @@ header {
     align-items: center;
     margin: 0.25rem 0; 
 }
-
 
 button {
     border: none;
@@ -196,10 +228,6 @@ svg {
     fill: white;
 }
 
-main {
-    margin-top: 10.75rem;
-}
-
 .monthHeader, .dayHeader {
     border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
@@ -228,6 +256,141 @@ main {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
     margin: 0.5rem 0;
+}
+
+.notifCardArchive {
+    background-color: #dcebe9;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+}
+
+.notifCard_wrapper {
+    width: 100%;
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 0.25rem;
+}
+
+.notifCard_content_wrapper {
+    width: 100%;
+}
+
+.notif_excerpt {
+    margin: 0.5rem 0 0.75rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+}
+
+.notif_excerpt_long {
+    margin: 0.5rem 0 0.75rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+}
+
+.notifCard_duration_date_wrapper, 
+.notifCard_duration_time_wrapper {
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+}
+
+.notifCard_duration_date_wrapper p svg, 
+.notifCard_duration_time_wrapper p svg {
+    margin-bottom: -2px;
+}
+.notifCard_duration_date_wrapper p svg {
+    margin-right: 2px;
+}
+
+.notifCard_date_wrapper {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-end;
+}
+
+.alertCardArchive {
+    background-color: #FFDFDF;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0 0 0;
+    border-radius: 0.5rem;
+    -webkit-box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+}
+
+.alertCard_wrapper {
+    width: 100%;
+    height: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 0.25rem;
+}
+
+.alertCard_content_wrapper {
+    width: 100%;
+}
+
+.alert_excerpt {
+    margin: 0.5rem 0 0.75rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+}
+
+.alertCard_date_wrapper {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-end;
 }
 
 .hidden {
