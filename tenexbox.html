@@ -81,8 +81,8 @@
     </div>
   </header>
   <main>
-    <!-- <div id="requestCards">
-        </div> -->
+    <div id="requestCards">
+        </div>
     <div class="newRequestCard">
       <div class="newRequestCard_wrapper">
         <div class="newRequestCard_content_wrapper">
@@ -263,42 +263,80 @@
         </div>
       </div>
     </div>
-    <!-- <div class="newRequestCard">
-            <h2 class="requestTitle">Meeting Room Booking</h2>
-            <p class="newRequestDate">FEB 15, 2021</p>
-            <p class="newRequestStatus">BOOKED</p>
-            <p class="bookingDate">FEB 21, 2021</p>
-            <p class="bookingTime">14:00 - 15:00</p>
-        </div>
-        <div class="newRequestCard">
-            <h2 class="requestTitle">Manager Meeting Booking</h2>
-            <p class="newRequestDate">FEB 12, 2021</p>
-            <p class="newRequestStatus">BOOKED</p>
-            <p class="bookingDate">FEB 13, 2021</p>
-            <p class="bookingTime">10:00 - 10:30</p>
-        </div>
-        <div class="newRequestCard">
-            <h2 class="requestTitle">Key Fob Price?</h2>
-            <p class="newRequestDate">FEB 10, 2021</p>
-            <p class="newRequestStatus">PENDING</p>
-            <p class="newRequestExerpt">Hi Dwight, I remember you mentioned that I can find the key fob price in the Tenex app. Where can I find that information in the app? Thanks, Michael
-            </p>
-        </div>
-        <div class="newRequestCard">
-            <h2 class="requestTitle">Noise Complaint</h2>
-            <p class="newRequestDate">FEB 05, 2021</p>
-            <p class="newRequestStatus">REJECTED</p>
-            <p class="newRequestExerpt">Hi Dwight, My neighbor has been playing the drums non-stop during the day. It's too loud. I can't focus on my work. Please ask him/her to stop. Thanks, Michael
-            </p>
-        </div>
-        <div class="newRequestCard">
-            <h2 class="requestTitle">Building Corridor Maintenance</h2>
-            <p class="newRequestDate">FEB 01, 2021</p>
-            <p class="newRequestStatus">MESSAGE</p>
-            <p class="newRequestExerpt">Hi Dwight, The building corridor, especially on my floor, is getting a little too dirty. Please ask the cleaning crew to clean the building corridor more often. Thanks, Michael
-            </p>
-        </div> -->
   </main>
+  <div class="body_wrapper_req">
+    <header id="notifDetailHeader">
+      <div class="topHeader">
+          <button class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+          </button>
+          <h2 id="headerTitle" class="headerTitle">Request</h2>
+          <button id="edit_btn" class="edit_btn" type="button"><svg width="34" height="34" viewBox="0 0 34 34"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+                <path
+                    d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                    fill="#828282" />
+                <path
+                    d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
+                    stroke="white" stroke-width="3" />
+            </g>
+            <defs>
+                <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
+                    color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix in="SourceAlpha" type="matrix"
+                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                    <feOffset dy="3" />
+                    <feGaussianBlur stdDeviation="1.5" />
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+                </filter>
+            </defs>
+        </svg></button>
+      </div>
+  </header>
+ 
+    <section class="detailCardSection">
+        <div id="requestDetail">
+        </div>
+    </section>
+    <section class="tipsInfoSection">
+    </section>
+    <button id="chat_btn" class="main_btn"><svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g filter="url(#filter0_ddd)">
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="#DCEBE9"/>
+        </g>
+        <rect x="10" y="9" width="50" height="50" rx="25" fill="white"/>
+        <path d="M43 24H27C25.9 24 25.01 24.9 25.01 26L25 44L29 40H43C44.1 40 45 39.1 45 38V26C45 24.9 44.1 24 43 24ZM29 31H41V33H29V31ZM37 36H29V34H37V36ZM41 30H29V28H41V30Z" fill="#81B7AE"/>
+        <circle cx="44.5" cy="24.5" r="3" fill="#6FCF97" stroke="white"/>
+        <defs>
+        <filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="2"/>
+        <feGaussianBlur stdDeviation="2"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="1"/>
+        <feGaussianBlur stdDeviation="5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"/>
+        <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dy="4"/>
+        <feGaussianBlur stdDeviation="2.5"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0"/>
+        <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
+        </filter>
+        </defs>
+        </svg></button>
+</div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- Script for pwa -->
@@ -340,6 +378,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
 
   <script>
     // TODO: Replace the following with your app's Firebase project configuration

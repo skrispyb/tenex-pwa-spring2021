@@ -9,7 +9,7 @@
     color: white;
     border-radius: 1.5rem;
     background-color: black;
-    margin-top: 5rem;
+    margin-top: 2rem;
   }
 }
 
@@ -53,9 +53,6 @@
   border: 1px solid lightgray;
   padding: 1rem;
   border-radius: 0.5rem;
-  font-size: 1.2rem;
-  line-height: 1;
-  font-weight: bold;
   color: #4f4f4f;
 }
 
@@ -73,32 +70,7 @@ button:focus {
   outline: none;
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #4f4f4f;
-  padding: 0;
-  margin: 0;
-}
-
-.notificationCardTitle,
-.requestTitle {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0 0 0.33rem 0;
-  color: #4f4f4f;
-}
-
-.newRequestDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
 .newRequestExerpt {
-  font-size: 0.875rem;
-  font-weight: 300;
   white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -106,30 +78,8 @@ h1 {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   max-height: 2.5rem;
-  line-height: 1.5;
   margin: 0;
   color: rgba(0, 0, 0, 0.8);
-}
-
-.newRequestStatus {
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.bookingDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.bookingTime {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.4);
 }
 
 /* New Request subject input */
@@ -164,7 +114,8 @@ h1 {
 /* Camera */
 
 video,
-canvas, #attachments_list li {
+canvas,
+#attachments_list li {
   border: 0.5rem solid lightgray;
   border-radius: 0.5rem;
 }
@@ -199,7 +150,6 @@ canvas, #attachments_list li {
 }
 
 #attachments_list {
-
   li {
     position: relative;
 
@@ -212,7 +162,54 @@ canvas, #attachments_list li {
       top: 0;
       right: 0;
       padding: 0.5rem;
-      background-color: #FFFFFF;
+      background-color: #ffffff;
     }
   }
+}
+
+.statusProgressSent {
+  height: 25%;
+  background-color: $req_orange;
+}
+
+.statusProgressRead {
+  height: 50%;
+  background-color: $req_orange;
+}
+
+.statusProgressCompleted {
+  height: 100%;
+  background-color: $req_orange;
+}
+
+.statusProgressRejected {
+  height: 100%;
+  background-color: $alert_red;
+}
+
+.statusProgressMessage {
+  height: 75%;
+  background-color: $req_orange;
+}
+
+.statusProgressBooked {
+  height: 100%;
+  background-color: $booking_card;
+}
+
+.statusProgressOngoing {
+  height: 75%;
+  background-color: $req_orange;
+}
+
+.text-right {
+  float: right;
+}
+
+.bg-green {
+  background-color: #DCEBE9;
+}
+
+.bg-gray {
+  background-color: #E5E5EA;
 }

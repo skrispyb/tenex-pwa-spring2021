@@ -1,7 +1,12 @@
 // Firebase authentication
 const auth = firebase.auth();
-let email;
-let password;
+
+// Access firestore db
+const db = firebase.firestore();
+
+let htmlEmail;
+let htmlPassword;
+
 $("#loginForm").submit(function () {
   htmlEmail = $("#username").val();
   htmlPassword = $("#password").val();
@@ -27,51 +32,6 @@ $("#loginForm").submit(function () {
 
   return false;
 });
-
-//*****************************************************************************
-// When a manager creates a new user account
-//*****************************************************************************
-// htmlEmail = $("#username").val();
-// htmlPassword = $("#password").val();
-// htmlFirstName = $("#firstname").val();
-// htmlbuilding = $("#building").val();
-// htmlLeaseStartDate = $("#leasestartdate").val();
-// htmlPhoneNum = $("#phone").val();
-// htmlTenantID = $("#tenantID").val();
-// htmlUnit = $("#unit").val();
-// {
-//   var userUid = auth.currentUser.uid;
-//   var db = firebase.firestore();
-
-//   db.collection("users").doc(userUid).set({
-//     email: htmlEmail,
-//     password: htmlPassword,
-//     building: htmlBuilding,
-//     firstName: htmlFirstName,
-//     lastName: htmlLastName,
-//     leaseStartDate: htmlLeaseStartDate,
-//     phone: htmlPhoneNum,
-//     tenantID: htmlTenantID,
-//     unit: htmlUnit,
-//   });
-// }
-
-// Accessing cloud firestore db
-// db = firebase.firestore();
-// // console.log(db);
-// db.collection("alerts").add({
-//   "title" : "covid alert"
-// });
-
-// Adding document while also assigning an id to it
-// db.collection("data").doc("one").set(docData).then(() => {
-//   console.log("Document successfully written!");
-// });
-
-// Updating and existing document using its id
-// db.collection("alerts").doc("0w3iioZfKRVTrcFwUpJc").update({
-//   "title" : "Heavy snowfall"
-// });
 
 // Onboarding transition manipulation with js
 var slideIndex = 1;

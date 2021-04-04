@@ -410,40 +410,20 @@
 /******************************************************************************
       Alert Detail view style starts here
 ******************************************************************************/
-/* Text-level Semantics
-   ========================================================================= */
-#alertDetailHeader h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #4f4f4f;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-#alertDetailHeader .headerTitle {
-  margin: 0;
-}
-
 .alertDetailCardTitle {
-  font-size: 1rem;
-  font-weight: 600;
   margin: 0 0 0.33rem 0;
-  padding: 0;
-  color: white;
-  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .alertDetailPostedDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
 .alertDetailDescription {
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 1.5;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -453,9 +433,9 @@
   width: 100%;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  padding: 2rem 1rem 1rem 1rem;
 }
 
 .topHeader {
@@ -468,7 +448,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.25rem 0;
 }
 
 button {
@@ -502,10 +481,6 @@ svg {
   grid-row: 1/1;
 }
 
-.detailCardSection {
-  margin: 7.5rem 1rem 0 1rem;
-}
-
 .alertDetailCard {
   background-color: #4f4f4f;
   width: 100%;
@@ -514,6 +489,71 @@ svg {
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   margin: 0.5rem 0;
+}
+
+#alertDetailMain {
+  margin: 1rem;
+}
+
+.alertDetail_wrapper {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.alertHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 0.25rem;
+}
+
+.body_wrapper_alert {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.alertDetailDescription {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.alertDetailPostedDate {
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.alertStatusBar {
+  width: 8px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.detailCard {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin-right: 0.5rem;
+}
+
+.alertDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .hidden {
@@ -526,38 +566,75 @@ svg {
 
 /******************************************************************************
         Alert Detail view style ends here
-  ******************************************************************************/
+******************************************************************************/
 /******************************************************************************
         Notification Detail view style starts here
-  ******************************************************************************/
+******************************************************************************/
+.notificationHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 0.25rem;
+}
+
 .notifDetailCardTitle {
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0;
   margin: 0 0 0.33rem 0;
-  color: #4f4f4f;
-  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .notifDetailPostedDate {
-  font-size: 0.875rem;
-  font-weight: 300;
   margin: 0 0 0.33rem 0;
 }
 
-.notifDetailDuration {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.5);
+.notificationDetail {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.notificationDuration {
+  margin: 1.5rem 0 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #EEEEEE;
+  padding: 0.25rem 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 40px;
+  margin: 0;
 }
 
 .notifDetaildescription {
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 1.5;
   margin: 0;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.notificationStatusBar {
+  width: 8px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 #notifDetailHeader {
@@ -565,9 +642,9 @@ svg {
   width: 100%;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  padding: 2rem 1rem 1rem 1rem;
 }
 
 #notifDetailHeader .topHeader {
@@ -580,7 +657,21 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.25rem 0;
+  margin: 0;
+}
+
+.body_wrapper_notif {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.notificationDate,
+.notificationTime {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  color: #4f4f4f;
 }
 
 .notifDetailCard {
@@ -593,8 +684,182 @@ svg {
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
+.notificationDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 /******************************************************************************
         Notification Detail view style ends here
+******************************************************************************/
+/******************************************************************************
+        Request Detail view style starts here
+******************************************************************************/
+.body_wrapper_req {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.detailCardSection {
+  margin: 1rem;
+}
+
+.edit_btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4f4f4f;
+  font-size: 0.75rem;
+}
+
+.requestTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.33rem 0;
+  color: #4F4F4F;
+  font-family: "SF Pro Display";
+}
+
+.newRequestDate {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin: 0;
+  color: #4F4F4F;
+}
+
+.newRequestStatus {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin: 0;
+  color: #4F4F4F;
+}
+
+.description {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0 0 2rem 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.attachmentTitle {
+  font-size: 0.875rem;
+  font-weight: 300;
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  color: #4F4F4F;
+}
+
+.requestDetail {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.requestStatusBar {
+  width: 8px;
+  height: 100%;
+  background-color: rgba(253, 174, 70, 0.5);
+  border-radius: 10px;
+}
+
+.requestStatusBar div {
+  border-radius: 10px;
+}
+
+.RequestDetailCard {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin-right: 0.5rem;
+}
+
+.attachmentSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.attachment {
+  margin-top: 0.25rem;
+}
+
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #EEEEEE;
+  padding: 0.25rem 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 40px;
+  margin: 0;
+}
+
+.requestDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tipsInfoSection {
+  margin: auto;
+  margin: 0 1rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.tipsInfoSection p {
+  margin: 0;
+}
+
+.tipsInfoSection p:first-of-type {
+  margin: 1rem 0 0 0;
+}
+
+.illustration {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.main_btn {
+  background-color: rgba(0, 0, 0, 0);
+  right: 0;
+  bottom: 3.75rem;
+  position: fixed;
+}
+
+/******************************************************************************
+        Request Detail view style ends here
 ******************************************************************************/
 /******************************************************************************
         New Request view style starts here
@@ -698,7 +963,8 @@ svg {
   border-radius: 0.5rem;
 }
 
-.options_subject, .options_desciption {
+.options_subject,
+.options_desciption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,5 +1025,294 @@ svg {
 
 /******************************************************************************
         New Request view style ends here
+******************************************************************************/
+/******************************************************************************
+        Chat view style starts here
+******************************************************************************/
+#chatHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 0.25rem;
+  background-color: #f4f4f4;
+}
+
+.chat_input_wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.chat_input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.chat_input input {
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  width: 100%;
+  border: 1px solid #4f4f4f;
+}
+
+/* copied */
+main, #messages-card {
+  height: 80vh;
+  padding-bottom: 0;
+}
+
+#messages-card-container {
+  height: calc(100% - 35px);
+  padding-bottom: 0;
+}
+
+#messages-card {
+  margin-top: 15px;
+}
+
+.mdl-layout__header-row span {
+  margin-left: 15px;
+  margin-top: 17px;
+}
+
+.mdl-grid {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.material-icons {
+  font-size: 36px;
+  top: 8px;
+  position: relative;
+}
+
+.mdl-layout__header-row {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.mdl-card__supporting-text {
+  width: auto;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#messages {
+  overflow-y: auto;
+  margin-bottom: 10px;
+  height: calc(100% - 80px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#message-filler {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.message-container:first-of-type {
+  border-top-width: 0;
+}
+
+.message-container {
+  display: block;
+  margin-top: 10px;
+  border-top: 1px solid #f3f3f3;
+  padding-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.message-container.visible {
+  opacity: 1;
+}
+
+.message-container .pic {
+  background-image: url("/images/profile_placeholder.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  border-radius: 20px;
+}
+
+.message-container .spacing {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.message-container .message {
+  display: table-cell;
+  width: calc(100% - 40px);
+  padding: 5px 0 5px 10px;
+}
+
+.message-container .name {
+  display: inline-block;
+  width: 100%;
+  padding-left: 40px;
+  color: #bbb;
+  font-style: italic;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#message-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 0.5rem 1rem;
+}
+
+#message-form button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: white;
+  border-radius: 2rem;
+}
+
+#message-form button:disabled {
+  background-color: #f4f4f4;
+}
+
+#image-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 48px;
+  float: right;
+}
+
+#message-form .mdl-textfield {
+  width: calc(100% - 100px);
+}
+
+.mdl-card {
+  min-height: 0;
+}
+
+.mdl-card {
+  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#f9f9f9));
+  background: linear-gradient(white, #f9f9f9);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#user-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  top: 22px;
+  width: 100%;
+  right: 0;
+  padding-left: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#user-container #user-pic {
+  top: -3px;
+  position: relative;
+  display: inline-block;
+  background-image: url("/images/profile_placeholder.png");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+}
+
+#user-container #user-name {
+  font-size: 16px;
+  line-height: 36px;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+#image-form #submitImage {
+  width: auto;
+  padding: 0 6px 0 1px;
+  min-width: 0;
+}
+
+#image-form #submitImage .material-icons {
+  top: -1px;
+}
+
+.message img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+#mediaCapture {
+  display: none;
+}
+
+@media screen and (max-width: 610px) {
+  header {
+    height: 113px;
+    padding-bottom: 80px !important;
+  }
+  #user-container {
+    top: 72px;
+    background-color: #039be5;
+    height: 38px;
+    padding-top: 3px;
+    padding-right: 2px;
+  }
+  #user-container #user-pic {
+    top: 2px;
+    width: 33px;
+    height: 33px;
+    background-size: 33px;
+  }
+}
+
+.mdl-textfield__label:after {
+  background-color: #0288D1;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+  color: #0288D1;
+}
+
+.mdl-button .material-icons {
+  top: -1px;
+  margin-right: 5px;
+}
+
+/* copied delete useless */
+/******************************************************************************
+        Chat view style ends here
 ******************************************************************************/
 /*# sourceMappingURL=posts-pages.css.map */
