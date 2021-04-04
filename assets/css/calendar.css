@@ -1,0 +1,30 @@
+.no_events {
+    margin: 4rem 4rem;
+}
+
+.empty_illustration {
+    display: flex;
+    justify-content: center;
+}
+
+.no_events p {
+    font-size: 1rem;
+    color: #828282;
+    opacity: 0.7;
+    line-height: 1.5;
+    text-align: center;
+}
+
+input[type=date] {
+    color: #828282;
+    font-family: "SFProDisplayRegular";
+    border-radius: 1rem;
+    border: 1px solid #DDDDDD;
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator::before {
+    opacity: 1;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16 2.62727H15V0.510254H13V2.62727H5V0.510254H3V2.62727H2C0.89 2.62727 0.00999999 3.57992 0.00999999 4.74428L0 19.5634C0 20.7277 0.89 21.6804 2 21.6804H16C17.1 21.6804 18 20.7277 18 19.5634V4.74428C18 3.57992 17.1 2.62727 16 2.62727ZM16 19.5634H2V7.91979H16V19.5634ZM4 10.0368H9V15.3293H4V10.0368Z" fill="#333333"/%3E%3C/svg%3E');
+    /* content: '<svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2.62727H15V0.510254H13V2.62727H5V0.510254H3V2.62727H2C0.89 2.62727 0.00999999 3.57992 0.00999999 4.74428L0 19.5634C0 20.7277 0.89 21.6804 2 21.6804H16C17.1 21.6804 18 20.7277 18 19.5634V4.74428C18 3.57992 17.1 2.62727 16 2.62727ZM16 19.5634H2V7.91979H16V19.5634ZM4 10.0368H9V15.3293H4V10.0368Z" fill="#333333"/></svg>';  */
+}
