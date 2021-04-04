@@ -7,6 +7,7 @@ h2 {
 h3 {
   font-family: $font_h3;
   font-weight: 600;
+  margin: 0;
 }
 
 p {
@@ -16,11 +17,32 @@ p {
 
 .alertCard p,
 .notifCard p,
-.newRequestCard p {
+.newRequestCard p,
+.alertDetailDescription,
+.notifDetaildescription {
   font-size: 14px;
+  line-height: 1.5;
 }
 
-.newRequestCard .newRequestCard_status {
+.alertDetailCardTitle {
+  color: $alert_red;
+}
+
+.alertStatusBar {
+  background-color: $alert_red;
+}
+
+.notifDetailCardTitle {
+  color: $notif_green;
+}
+
+.notificationStatusBar {
+  background-color: $notif_green;
+}
+
+.newRequestCard .newRequestCard_status,
+.alertDetailPostedDate,
+.notifDetailPostedDate {
   font-size: 0.75rem;
 }
 
@@ -70,6 +92,14 @@ p {
   letter-spacing: 1.25px;
 }
 
+.alertDetailCardTitle {
+  font-size: 1rem;
+}
+
+.booking_date {
+  margin: 0;
+  font-size: 14px;
+}
 
 .slideshow-container {
   .mySlides {
@@ -84,4 +114,17 @@ p {
       //   font-size: 16px;
     }
   }
+}
+
+.message-container .name {
+  font-family: $font_h3;
+  font-size: 14px;
+}
+
+.message-container .message {
+  font-family: $font_date_posted;
+}
+
+#user-container #user-name {
+  font-size: 16px;
 }

@@ -403,6 +403,7 @@ h2 {
 h3 {
   font-family: SFProDisplaySemibold, serif;
   font-weight: 600;
+  margin: 0;
 }
 
 p {
@@ -412,11 +413,32 @@ p {
 
 .alertCard p,
 .notifCard p,
-.newRequestCard p {
+.newRequestCard p,
+.alertDetailDescription,
+.notifDetaildescription {
   font-size: 14px;
+  line-height: 1.5;
 }
 
-.newRequestCard .newRequestCard_status {
+.alertDetailCardTitle {
+  color: #BE0707;
+}
+
+.alertStatusBar {
+  background-color: #BE0707;
+}
+
+.notifDetailCardTitle {
+  color: #81b7ae;
+}
+
+.notificationStatusBar {
+  background-color: #81b7ae;
+}
+
+.newRequestCard .newRequestCard_status,
+.alertDetailPostedDate,
+.notifDetailPostedDate {
   font-size: 0.75rem;
 }
 
@@ -465,12 +487,34 @@ p {
   letter-spacing: 1.25px;
 }
 
+.alertDetailCardTitle {
+  font-size: 1rem;
+}
+
+.booking_date {
+  margin: 0;
+  font-size: 14px;
+}
+
 .slideshow-container .mySlides h2 {
   text-align: center;
 }
 
 .slideshow-container .mySlides p {
   text-align: center;
+}
+
+.message-container .name {
+  font-family: SFProDisplaySemibold, serif;
+  font-size: 14px;
+}
+
+.message-container .message {
+  font-family: SFProDisplayRegular, serif;
+}
+
+#user-container #user-name {
+  font-size: 16px;
 }
 
 /* 4. Navigation =========================================================== */
@@ -668,253 +712,6 @@ a {
 /******************************************************************************
             Navigation bottom styling ends here
 ******************************************************************************/
-/* 10. Elements ============================================================ */
-.btn_to_login {
-  margin: 0 auto;
-  width: calc(100% - 2rem);
-  /* sign in button */
-}
-
-.btn_to_login button {
-  width: 100%;
-  padding: 0.5rem 0;
-  color: white;
-  border-radius: 1.5rem;
-  background-color: black;
-  margin-top: 5rem;
-}
-
-/* New request button styling */
-#newRequest_btn {
-  position: fixed;
-  bottom: 3.5rem;
-  right: 0;
-}
-
-/* New request booking popup styling */
-.new_req_book_wrapper {
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.new_req_book_card {
-  padding: 2rem 1rem;
-  height: 13rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  gap: 0.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 1rem;
-}
-
-.new_req_book_wrapper .new_req_book_card button {
-  background: white;
-  border: 1px solid lightgray;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-size: 1.2rem;
-  line-height: 1;
-  font-weight: bold;
-  color: #4f4f4f;
-}
-
-.request_btn_icon,
-.booking_btn_icon {
-  height: 134.77px;
-}
-
-.show_popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-button:active,
-button:focus {
-  outline: none;
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #4f4f4f;
-  padding: 0;
-  margin: 0;
-}
-
-.notificationCardTitle,
-.requestTitle {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0 0 0.33rem 0;
-  color: #4f4f4f;
-}
-
-.newRequestDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.newRequestExerpt {
-  font-size: 0.875rem;
-  font-weight: 300;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  max-height: 2.5rem;
-  line-height: 1.5;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.8);
-}
-
-.newRequestStatus {
-  font-size: 0.875rem;
-  font-weight: 600;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.bookingDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.bookingTime {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0;
-  color: rgba(0, 0, 0, 0.4);
-}
-
-/* New Request subject input */
-.newReq_subject_input {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 2rem;
-  border: 1px solid #dcdcd6;
-}
-
-/* New Request description input */
-.newReq_description_input {
-  width: 100%;
-  border-radius: 0.5rem;
-  border: 0;
-  padding: 1rem;
-}
-
-/* New Request attachment button */
-.attachment_btn,
-.newReq_subject_submit,
-#snapPhoto,
-#retake,
-#attachPhoto {
-  background-color: #dcebe9;
-  border: 1px solid #e0e0e0;
-  color: #4f4f4f;
-  border-radius: 2rem;
-  padding: 1rem 2rem;
-}
-
-/* Camera */
-video,
-canvas, #attachments_list li {
-  border: 0.5rem solid lightgray;
-  border-radius: 0.5rem;
-}
-
-.camera_feed,
-.clicked_camera_feed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 12;
-  padding-top: 3rem;
-  background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.camera_feed .snap_options,
-.clicked_camera_feed .snap_options {
-  margin-top: 2rem;
-}
-
-.camera_feed .clicked_options,
-.clicked_camera_feed .clicked_options {
-  margin-top: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 2rem;
-}
-
-.camera_feed .clicked_options button,
-.clicked_camera_feed .clicked_options button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-#attachments_list li {
-  position: relative;
-}
-
-#attachments_list li img {
-  position: relative;
-}
-
-#attachments_list li button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0.5rem;
-  background-color: #FFFFFF;
-}
-
 /* 5. Posts and Pages ====================================================== */
 /******************************************************************************
         Alert card home screen starts here
@@ -959,7 +756,7 @@ canvas, #attachments_list li {
   display: inline-block;
   vertical-align: top;
   width: 20rem;
-  height: 7.5rem;
+  height: 7.75rem;
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -997,9 +794,9 @@ canvas, #attachments_list li {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 13rem auto;
-      grid-template-columns: 13rem auto;
-  grid-gap: 0.5rem;
+  -ms-grid-columns: 13.25rem auto;
+      grid-template-columns: 13.25rem auto;
+  grid-gap: 0.25rem;
 }
 
 .alertCard_content_wrapper {
@@ -1037,9 +834,9 @@ canvas, #attachments_list li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .alertCard_date_wrapper p {
@@ -1090,7 +887,7 @@ canvas, #attachments_list li {
   display: inline-block;
   vertical-align: top;
   width: 20rem;
-  height: 10.5rem;
+  height: 10.75rem;
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -1128,9 +925,9 @@ canvas, #attachments_list li {
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 13rem auto;
-      grid-template-columns: 13rem auto;
-  grid-gap: 0.5rem;
+  -ms-grid-columns: 13.5rem auto;
+      grid-template-columns: 13.5rem auto;
+  grid-gap: 0.25rem;
 }
 
 .notifCard_content_wrapper {
@@ -1207,9 +1004,9 @@ canvas, #attachments_list li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .notifCard_date_wrapper p {
@@ -1267,6 +1064,7 @@ canvas, #attachments_list li {
 }
 
 .newRequestCard_details {
+  height: 71px;
   display: block;
 }
 
@@ -1293,10 +1091,12 @@ canvas, #attachments_list li {
 .newRequestCard_status {
   margin: 0;
   grid-column: 1 / -1;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .newRequestCard_date_wrapper {
-  height: 100%;
+  height: 93px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1307,14 +1107,14 @@ canvas, #attachments_list li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .newBookingCard_date_for {
-  -webkit-transform: translateY(-46px);
-          transform: translateY(-46px);
+  -webkit-transform: translate(-15px, -48px);
+          transform: translate(-15px, -48px);
   text-align: center;
   height: 0;
 }
@@ -1328,40 +1128,20 @@ canvas, #attachments_list li {
 /******************************************************************************
       Alert Detail view style starts here
 ******************************************************************************/
-/* Text-level Semantics
-   ========================================================================= */
-#alertDetailHeader h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #4f4f4f;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-#alertDetailHeader .headerTitle {
-  margin: 0;
-}
-
 .alertDetailCardTitle {
-  font-size: 1rem;
-  font-weight: 600;
   margin: 0 0 0.33rem 0;
-  padding: 0;
-  color: white;
-  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .alertDetailPostedDate {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
 .alertDetailDescription {
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 1.5;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1371,9 +1151,9 @@ canvas, #attachments_list li {
   width: 100%;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  padding: 2rem 1rem 1rem 1rem;
 }
 
 .topHeader {
@@ -1386,7 +1166,6 @@ canvas, #attachments_list li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.25rem 0;
 }
 
 button {
@@ -1420,10 +1199,6 @@ svg {
   grid-row: 1/1;
 }
 
-.detailCardSection {
-  margin: 7.5rem 1rem 0 1rem;
-}
-
 .alertDetailCard {
   background-color: #4f4f4f;
   width: 100%;
@@ -1432,6 +1207,64 @@ svg {
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   margin: 0.5rem 0;
+}
+
+.alertDetail_wrapper {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.alertHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 0.25rem;
+}
+
+.body_wrapper_alert,
+.body_wrapper_book {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.alertDetailDescription {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.alertDetailPostedDate {
+  margin: 0;
+}
+
+.alertStatusBar {
+  width: 8px;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.detailCard {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin-right: 0.5rem;
+}
+
+.alertDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .hidden {
@@ -1444,38 +1277,75 @@ svg {
 
 /******************************************************************************
         Alert Detail view style ends here
-  ******************************************************************************/
+******************************************************************************/
 /******************************************************************************
         Notification Detail view style starts here
-  ******************************************************************************/
+******************************************************************************/
+.notificationHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  grid-gap: 0.25rem;
+}
+
 .notifDetailCardTitle {
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 0;
   margin: 0 0 0.33rem 0;
-  color: #4f4f4f;
-  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .notifDetailPostedDate {
-  font-size: 0.875rem;
-  font-weight: 300;
   margin: 0 0 0.33rem 0;
 }
 
-.notifDetailDuration {
-  font-size: 0.875rem;
-  font-weight: 300;
-  margin: 0 0 0.33rem 0;
-  color: rgba(0, 0, 0, 0.5);
+.notificationDetail {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.notificationDuration {
+  margin: 1.5rem 0 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eeeeee;
+  padding: 0.25rem 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 40px;
+  margin: 0;
 }
 
 .notifDetaildescription {
-  font-size: 0.875rem;
-  font-weight: 300;
-  line-height: 1.5;
   margin: 0;
   color: rgba(0, 0, 0, 0.8);
+}
+
+.notificationStatusBar {
+  width: 8px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 #notifDetailHeader {
@@ -1483,22 +1353,25 @@ svg {
   width: 100%;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   top: 0;
-  padding: 2rem 1rem 1rem 1rem;
 }
 
 #notifDetailHeader .topHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0.25rem 0;
+  margin: 0;
+}
+
+.body_wrapper_notif {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.notificationDate,
+.notificationTime {
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  color: #4f4f4f;
 }
 
 .notifDetailCard {
@@ -1511,8 +1384,174 @@ svg {
           box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
+.notificationDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 /******************************************************************************
         Notification Detail view style ends here
+******************************************************************************/
+/******************************************************************************
+        Request Detail view style starts here
+******************************************************************************/
+.body_wrapper_req {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.detailCardSection {
+  margin: 1rem;
+}
+
+.edit_btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4f4f4f;
+}
+
+.newRequestDate {
+  margin: 0;
+  color: #4f4f4f;
+}
+
+.newRequestStatus {
+  margin: 0;
+  color: #4f4f4f;
+}
+
+.description {
+  margin: 0 0 2rem 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.attachmentTitle {
+  margin: 0;
+  padding: 0 0 0 0.25rem;
+  color: #4f4f4f;
+}
+
+.requestDetail {
+  margin: 1rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
+}
+
+.requestStatusBar {
+  width: 8px;
+  height: 100%;
+  background-color: rgba(253, 174, 70, 0.5);
+  border-radius: 10px;
+}
+
+.requestStatusBar div {
+  border-radius: 10px;
+}
+
+.bookingStatusBar {
+  width: 0.5rem;
+  height: 100%;
+  background-color: #4980C1;
+  border-radius: 10px;
+}
+
+.RequestDetailCard {
+  background-color: white;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  margin-right: 0.5rem;
+}
+
+.attachmentSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.attachment {
+  margin-top: 0.25rem;
+}
+
+.tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eeeeee;
+  padding: 0.25rem 0.5rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 40px;
+  margin: 0;
+}
+
+.requestDetailSub {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.tipsInfoSection,
+.tipsInfoSectionBooking {
+  margin: auto;
+  margin: 0 1rem;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.tipsInfoSection p,
+.tipsInfoSectionBooking p {
+  margin: 0;
+}
+
+.tipsInfoSection p:first-of-type,
+.tipsInfoSectionBooking p:first-of-type {
+  margin: 1rem 0 0 0;
+}
+
+.illustration {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+
+.main_btn {
+  background-color: rgba(0, 0, 0, 0);
+  right: 0;
+  bottom: 3.75rem;
+  position: fixed;
+}
+
+/******************************************************************************
+        Request Detail view style ends here
 ******************************************************************************/
 /******************************************************************************
         New Request view style starts here
@@ -1616,7 +1655,8 @@ svg {
   border-radius: 0.5rem;
 }
 
-.options_subject, .options_desciption {
+.options_subject,
+.options_desciption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1675,8 +1715,242 @@ svg {
   margin-top: 1rem;
 }
 
+.requestInfoMain .bookingDate {
+  margin: 0;
+}
+
 /******************************************************************************
         New Request view style ends here
+******************************************************************************/
+/******************************************************************************
+        Chat view style starts here
+******************************************************************************/
+#chatHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  background-color: #f4f4f4;
+}
+
+.chat_input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.chat_input input {
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  width: 100%;
+  border: 1px solid #4f4f4f;
+}
+
+/* copied */
+.mdl-card__supporting-text {
+  width: auto;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#messages {
+  overflow-y: auto;
+  padding: 0 0.5rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#message-filler {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.message-container:first-of-type {
+  border-top-width: 0;
+}
+
+.message-container {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  opacity: 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 70%;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.chat_bubble_round_manager {
+  border-radius: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.chat_bubble_round_user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-radius: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.message-container.visible {
+  opacity: 1;
+}
+
+.message-container .pic {
+  background-image: url("/images/profile_placeholder.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: 30px;
+  border-radius: 20px;
+}
+
+.message-container .spacing {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.message-container .message {
+  padding: 0;
+  line-height: 1.15;
+}
+
+.message-container .name {
+  display: inline-block;
+  width: 100%;
+  color: #81b7ae;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#message-form {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 0.5rem 1rem;
+}
+
+#message-form button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  background-color: #81b7ae;
+  border-radius: 2rem;
+  margin-left: 0.25rem;
+}
+
+#message-form button:disabled {
+  background-color: #f4f4f4;
+}
+
+#image-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 48px;
+  float: right;
+}
+
+#user-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  top: 22px;
+  width: 100%;
+  right: 0;
+  padding-left: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-right: 10px;
+}
+
+#user-container #user-pic {
+  top: -3px;
+  position: relative;
+  display: inline-block;
+  background-image: url("/images/profile_placeholder.png");
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
+}
+
+#user-container #user-name {
+  line-height: 36px;
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+#image-form #submitImage {
+  width: auto;
+  padding: 0 6px 0 1px;
+  min-width: 0;
+}
+
+#image-form #submitImage .material-icons {
+  top: -1px;
+}
+
+.message img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+#mediaCapture {
+  display: none;
+}
+
+.mdl-textfield__label:after {
+  background-color: #0288d1;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label {
+  color: #0288d1;
+}
+
+.mdl-button .material-icons {
+  top: -1px;
+  margin-right: 5px;
+}
+
+/* copied delete useless */
+/******************************************************************************
+        Chat view style ends here
 ******************************************************************************/
 /* 6. Media ================================================================ */
 img {
@@ -1749,7 +2023,252 @@ img {
 }
 
 .hidden {
+  display: none !important;
+}
+
+/* 10. Elements ============================================================ */
+.btn_to_login {
+  margin: 0 auto;
+  width: calc(100% - 2rem);
+  /* sign in button */
+}
+
+.btn_to_login button {
+  width: 100%;
+  padding: 0.5rem 0;
+  color: white;
+  border-radius: 1.5rem;
+  background-color: black;
+  margin-top: 2rem;
+}
+
+/* New request button styling */
+#newRequest_btn {
+  position: fixed;
+  bottom: 3.5rem;
+  right: 0;
+}
+
+/* New request booking popup styling */
+.new_req_book_wrapper {
   display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.new_req_book_card {
+  padding: 2rem 1rem;
+  height: 13rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 0.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+}
+
+.new_req_book_wrapper .new_req_book_card button {
+  background: white;
+  border: 1px solid lightgray;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: #4f4f4f;
+}
+
+.request_btn_icon,
+.booking_btn_icon {
+  height: 134.77px;
+}
+
+.show_popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button:active,
+button:focus {
+  outline: none;
+}
+
+.newRequestExerpt {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-height: 2.5rem;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* New Request subject input */
+.newReq_subject_input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 2rem;
+  border: 1px solid #dcdcd6;
+}
+
+/* New Request description input */
+.newReq_description_input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 0;
+  padding: 1rem;
+}
+
+/* New Request attachment button */
+.attachment_btn,
+.newReq_subject_submit,
+#snapPhoto,
+#retake,
+#attachPhoto {
+  background-color: #dcebe9;
+  border: 1px solid #e0e0e0;
+  color: #4f4f4f;
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+}
+
+/* Camera */
+video,
+canvas,
+#attachments_list li {
+  border: 0.5rem solid lightgray;
+  border-radius: 0.5rem;
+}
+
+.camera_feed,
+.clicked_camera_feed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  padding-top: 3rem;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.camera_feed .snap_options,
+.clicked_camera_feed .snap_options {
+  margin-top: 2rem;
+}
+
+.camera_feed .clicked_options,
+.clicked_camera_feed .clicked_options {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.camera_feed .clicked_options button,
+.clicked_camera_feed .clicked_options button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+#attachments_list li {
+  position: relative;
+}
+
+#attachments_list li img {
+  position: relative;
+}
+
+#attachments_list li button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  background-color: #ffffff;
+}
+
+.statusProgressSent {
+  height: 25%;
+  background-color: #FDAE46;
+}
+
+.statusProgressRead {
+  height: 50%;
+  background-color: #FDAE46;
+}
+
+.statusProgressCompleted {
+  height: 100%;
+  background-color: #FDAE46;
+}
+
+.statusProgressRejected {
+  height: 100%;
+  background-color: #BE0707;
+}
+
+.statusProgressMessage {
+  height: 75%;
+  background-color: #FDAE46;
+}
+
+.statusProgressBooked {
+  height: 100%;
+  background-color: #4980C1;
+}
+
+.statusProgressOngoing {
+  height: 75%;
+  background-color: #FDAE46;
+}
+
+.text-right {
+  float: right;
+}
+
+.bg-green {
+  background-color: #DCEBE9;
+}
+
+.bg-gray {
+  background-color: #E5E5EA;
 }
 
 /* 11. hacks =============================================================== */

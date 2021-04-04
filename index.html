@@ -11,13 +11,11 @@
     <link rel="manifest" href="app.webmanifest" />
 
     <script src="assets/js/onboarding.js" defer></script>
-    
   </head>
   <body>
     <div class="slideshow-container" id="slideshow-container">
       <div class="mySlides fade">
-        <a href="https://placeholder.com"><img src="https://via.placeholder.com/500/500"></a>
-        <h2>SEND REQUESTS</h2>
+        <img src="images/requests_and_bookings.svg" />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
           deleniti suscipit!
@@ -25,8 +23,7 @@
       </div>
 
       <div class="mySlides fade">
-        <a href="https://placeholder.com"><img src="https://via.placeholder.com/600/600"></a>
-        <h2>STAY UPDATED</h2>
+        <img src="images/alerts_and_notifications.svg" />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
           deleniti suscipit!
@@ -34,8 +31,7 @@
       </div>
 
       <div class="mySlides fade">
-        <a href="https://placeholder.com"><img src="https://via.placeholder.com/700/700"></a>
-        <h2>BUIDING INFO</h2>
+        <img src="images/calendar.svg" />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti quo
           deleniti suscipit!
@@ -59,7 +55,12 @@
       <h2 id="welcome" onclick="mainpage()">Welcome!</h2>
       <form id="loginForm">
         <label for="Username"
-          ><input type="email" id="username" placeholder="Enter Email" name="email" required
+          ><input
+            type="email"
+            id="username"
+            placeholder="Enter Email"
+            name="email"
+            required
         /></label>
         <label for="password"
           ><input
@@ -73,44 +74,67 @@
 
       <p>Forgot Password?</p>
       <div class="btn_to_login">
-        <button type="submit" form="loginForm" id="signInBtn" >SIGN IN</button>
+        <button type="submit" form="loginForm" id="signInBtn">SIGN IN</button>
       </div>
       <p>New user?</p>
       <p>Contact your building manager</p>
     </div>
 
-    
-
     <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Script for pwa -->
     <script>
+      // does the browser support service workers?
+      if ("serviceWorker" in navigator) {
+        // fires when the service worker is ready
+        navigator.serviceWorker.ready.then((reg) => {
+          // we have an active service worker working for us
+          console.log(`Service Worker ready (Scope: ${reg.scope})`);
+          // do something interesting, if you want...
+        });
+        // then register our service worker
+        navigator.serviceWorker
+          .register("./sw.js", { scope: "/" })
+          .then(function (reg) {
+            // display a success message
+            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+          })
+          .catch(function (error) {
+            // display an error message
+            console.log(`Service Worker Error (${error})`);
+          });
+      } else {
+        // happens when the app isn't served over a TLS connection (HTTPS)
+        console.warn("Service Worker not available");
+      }
+    </script>
 
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script>
       // TODO: Replace the following with your app's Firebase project configuration
       // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
       const firebaseConfig = {
-  apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-  authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-  projectId: "tenex-pwa-spring2021",
-  storageBucket: "tenex-pwa-spring2021.appspot.com",
-  messagingSenderId: "874020516286",
-  appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-  measurementId: "G-BB18XSR7K4"
-};
-  
+        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+        projectId: "tenex-pwa-spring2021",
+        storageBucket: "tenex-pwa-spring2021.appspot.com",
+        messagingSenderId: "874020516286",
+        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+        measurementId: "G-BB18XSR7K4",
+      };
+
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>

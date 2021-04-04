@@ -1,32 +1,59 @@
+// const cacheName = "v1";
+// const urlsToCache = [
+//   "/",
+//   "/index.html",
+//   "/index.html?source=pwa",
+//   "/assets/js/onboarding.js",
+//   "/style.css",
+//   "/notificationHome.html",
+//   "/assets/js/notificationHome.js",
+//   "newRequestRequest.html",
+//   "/assets/js/newRequestRequest.js",
+//   "/calendar.html",
+//   "/assets/js/calendar.js",
+//   "/assets/fonts/futura_medium_bt.ttf",
+//   "/assets/fonts/SFProDisplayRegular.ttf",
+//   "/assets/fonts/SFProDisplaySemibold.ttf",
+// ];
 
-self.addEventListener('install', event => {
-    // fires when the browser installs the app
-    // here we're just logging the event and the contents
-    // of the object passed to the event. the purpose of this event
-    // is to give the service worker a place to setup the local 
-    // environment after the installation completes.
-    console.log(`Event fired: ${event.type}`);
-    console.dir(event);
+self.addEventListener("install", (event) => {
+  console.log(`Event fired: ${event.type}`);
+  console.dir(event);
+//   event.waitUntil(
+//     caches.open(cacheName).then((cache) => {
+//       return cache.addAll(urlsToCache);
+//     })
+//   );
 });
 
-self.addEventListener('activate', event => {
-    // fires after the service worker completes its installation. 
-    // It's a place for the service worker to clean up from previous 
-    // service worker versions
-    console.log(`Event fired: ${event.type}`);
-    console.dir(event);
+self.addEventListener("activate", (event) => {
+  console.log(`Event fired: ${event.type}`);
+  console.dir(event);
+    // event.waitUntil(
+    //   caches.keys().then((keyList) => {
+    //     return Promise.all(
+    //       keyList.map((key) => {
+    //         if (key !== cacheName) {
+    //           return caches.delete(key);
+    //         }
+    //       })
+    //     );
+    //   })
+    // );
 });
 
-self.addEventListener('fetch', event => {
-    // Fires whenever the app requests a resource (file or data)
-    // normally this is where the service worker would check to see
-    // if the requested resource is in the local cache before going
-    // to the server to get it. There's a whole chapter in the book
-    // covering different cache strategies, so I'm not going to say 
-    // any more about this here
-    console.log(`Fetching ${event.request.url}`);
-    // console.dir(event.request);
-    // Next, go get the requested resource from the network, 
-    // nothing fancy going on here.
-    event.respondWith(fetch(event.request));
+self.addEventListener("fetch", (event) => {
+  console.log(`Fetching ${event.request.url}`);
+//   event.respondWith(
+//     (async () => {
+//       const req = await caches.match(event.request);
+//       if (req) {
+//         return req;
+//       }
+//       const response = await fetch(event.request);
+//       const newCache = await caches.open(cacheName);
+//       newCache.put(event.request, response.clone());
+//       return response;
+//     })()
+//   );
 });

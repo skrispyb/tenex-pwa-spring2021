@@ -141,6 +141,48 @@ button svg {
 .requestStatusBar {
     width: 8px;
     height: 100%;
+    background-color: rgba(253, 174, 70, 0.5);
+    border-radius: 10px;
+}
+
+.statusProgressSent {
+    height: 25%;
+    background-color: #FDAE46;
+    border-radius: 10px;
+}
+
+.statusProgressRead {
+    height: 50%;
+    background-color: #FDAE46;
+    border-radius: 10px;
+}
+
+.statusProgressCompleted {
+    height: 100%;
+    background-color: #FDAE46;
+    border-radius: 10px;
+}
+
+.statusProgressRejected {
+    height: 100%;
+    background-color: $alert_red;
+    border-radius: 10px;
+}
+
+.statusProgressMessage {
+    height: 75%;
+    background-color: #FDAE46;
+    border-radius: 10px;
+}
+
+.statusProgressBooked {
+    height: 100;
+    background-color: $booking_card;
+    border-radius: 10px;
+}
+
+.statusProgressOngoing {
+    height: 75%;
     background-color: #FDAE46;
     border-radius: 10px;
 }
