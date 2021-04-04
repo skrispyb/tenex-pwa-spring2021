@@ -63,9 +63,11 @@ p {
 
 .newBookingCard_date_for {
   font-size: 20px;
-  line-height: 0.9;
-  font-family: $font_h3;
+  line-height: 1;
+  font-family: $font_booking_date;
   color: $booking_card;
+  text-align: center;
+
   &::first-line {
     font-size: 12px;
   }
@@ -127,4 +129,11 @@ p {
 
 #user-container #user-name {
   font-size: 16px;
+}
+
+.bottomHeader {
+  
+  button {
+    font-family: $font_date_posted;
+  }
 }

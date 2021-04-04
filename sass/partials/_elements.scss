@@ -213,3 +213,27 @@ canvas,
 .bg-gray {
   background-color: #E5E5EA;
 }
+
+.textFilter_btn {
+  height: 32px;
+  padding: 0 0.75rem;
+  margin-right: 0.25rem;
+  border-radius: 32px;
+  border: 1px solid rgba(170, 170, 170, 0.25);
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #AAAAAA;
+}
+
+.activeFilterText {
+  color: white;
+}
+
+.activeFilterBackground {
+  background-color: #AAAAAA;
+}
+
+.activeFilterIcon {
+  fill: white;
+}
