@@ -13,7 +13,13 @@
   src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
 }
 
+@font-face {
+  font-family: RobotoMono;
+  src: url(../../../assets/fonts/RobotoMono-Regular.ttf);
+}
+
 $font_h2: futuraMedium, serif;
 $font_h3: SFProDisplaySemibold, serif;
 $font_date_posted: SFProDisplayRegular, serif;
+$font_booking_date: RobotoMono, monospace;
 // $font_sans: helvetica, arial, sans-serif;

@@ -43,6 +43,11 @@ Table of Contents
   src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
 }
 
+@font-face {
+  font-family: RobotoMono;
+  src: url(../../../assets/fonts/RobotoMono-Regular.ttf);
+}
+
 /* 2. Reset ================================================================ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -457,9 +462,10 @@ p {
 
 .newBookingCard_date_for {
   font-size: 20px;
-  line-height: 0.9;
-  font-family: SFProDisplaySemibold, serif;
+  line-height: 1;
+  font-family: RobotoMono, monospace;
   color: #4980C1;
+  text-align: center;
 }
 
 .newBookingCard_date_for::first-line {
@@ -515,6 +521,10 @@ p {
 
 #user-container #user-name {
   font-size: 16px;
+}
+
+.bottomHeader button {
+  font-family: SFProDisplayRegular, serif;
 }
 
 /* 4. Navigation =========================================================== */
@@ -716,7 +726,7 @@ a {
 /******************************************************************************
         Alert card home screen starts here
 ******************************************************************************/
-.notification_home_header {
+.notification_home_header, .tenexbox_header, .calendar_header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -733,7 +743,7 @@ a {
           box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
 
-.notification_home_header > h2 {
+.notification_home_header > h2, .tenexbox_header > h2, .calendar_header > h2 {
   margin: 0 0 0 1rem;
 }
 
@@ -1113,8 +1123,8 @@ a {
 }
 
 .newBookingCard_date_for {
-  -webkit-transform: translate(-15px, -48px);
-          transform: translate(-15px, -48px);
+  -webkit-transform: translate(-18px, -52px);
+          transform: translate(-18px, -52px);
   text-align: center;
   height: 0;
 }
@@ -1746,7 +1756,6 @@ svg {
   border: 1px solid #4f4f4f;
 }
 
-/* copied */
 .mdl-card__supporting-text {
   width: auto;
   height: 100%;
@@ -1811,15 +1820,6 @@ svg {
   opacity: 1;
 }
 
-.message-container .pic {
-  background-image: url("/images/profile_placeholder.png");
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  background-size: 30px;
-  border-radius: 20px;
-}
-
 .message-container .spacing {
   display: table-cell;
   vertical-align: top;
@@ -1867,18 +1867,6 @@ svg {
   background-color: #f4f4f4;
 }
 
-#image-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 48px;
-  float: right;
-}
-
 #user-container {
   position: absolute;
   display: -webkit-box;
@@ -1898,41 +1886,10 @@ svg {
   padding-right: 10px;
 }
 
-#user-container #user-pic {
-  top: -3px;
-  position: relative;
-  display: inline-block;
-  background-image: url("/images/profile_placeholder.png");
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  background-size: 40px;
-  border-radius: 20px;
-}
-
 #user-container #user-name {
   line-height: 36px;
   padding-right: 10px;
   padding-left: 20px;
-}
-
-#image-form #submitImage {
-  width: auto;
-  padding: 0 6px 0 1px;
-  min-width: 0;
-}
-
-#image-form #submitImage .material-icons {
-  top: -1px;
-}
-
-.message img {
-  max-width: 300px;
-  max-height: 200px;
-}
-
-#mediaCapture {
-  display: none;
 }
 
 .mdl-textfield__label:after {
@@ -1948,9 +1905,64 @@ svg {
   margin-right: 5px;
 }
 
-/* copied delete useless */
 /******************************************************************************
         Chat view style ends here
+******************************************************************************/
+/******************************************************************************
+        Tenexbox style starts here
+******************************************************************************/
+.tenexbox_header {
+  z-index: 100;
+}
+
+.tenexbox_header .topHeader {
+  padding: 0 1rem;
+}
+
+.tenexbox_header .topHeader h2 {
+  margin: 0;
+}
+
+.tenexbox_header .bottomHeader {
+  padding: 0 1rem;
+}
+
+.tenexbox_main {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem 5rem 1rem;
+}
+
+/******************************************************************************
+        Tenexbox style ends here
+******************************************************************************/
+/******************************************************************************
+        Calendar style starts here
+******************************************************************************/
+.calendar_header {
+  z-index: 100;
+}
+
+.calendar_header .topHeader {
+  padding: 0 1rem;
+}
+
+.calendar_header .topHeader h2 {
+  margin: 0;
+}
+
+.calendar_header .bottomHeader {
+  padding: 0 1rem;
+}
+
+.calendar_main {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem 5rem 1rem;
+}
+
+/******************************************************************************
+        Calendar style ends here
 ******************************************************************************/
 /* 6. Media ================================================================ */
 img {
@@ -2269,6 +2281,30 @@ canvas,
 
 .bg-gray {
   background-color: #E5E5EA;
+}
+
+.textFilter_btn {
+  height: 32px;
+  padding: 0 0.75rem;
+  margin-right: 0.25rem;
+  border-radius: 32px;
+  border: 1px solid rgba(170, 170, 170, 0.25);
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #AAAAAA;
+}
+
+.activeFilterText {
+  color: white;
+}
+
+.activeFilterBackground {
+  background-color: #AAAAAA;
+}
+
+.activeFilterIcon {
+  fill: white;
 }
 
 /* 11. hacks =============================================================== */

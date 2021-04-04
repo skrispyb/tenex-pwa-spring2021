@@ -2,7 +2,7 @@
         Alert card home screen starts here
 ******************************************************************************/
 
-.notification_home_header {
+.notification_home_header, .tenexbox_header, .calendar_header {
   position: sticky;
   top: 0;
   // z-index: 10;
@@ -329,7 +329,7 @@
 }
 
 .newBookingCard_date_for {
-  transform: translate(-15px,-48px);
+  transform: translate(-18px,-52px);
   text-align: center;
   height: 0;
 }
@@ -852,7 +852,7 @@ svg {
     border: 1px solid #4f4f4f;
   }
 }
-/* copied */
+
 .mdl-card__supporting-text {
   width: auto;
   height: 100%;
@@ -896,14 +896,7 @@ svg {
 .message-container.visible {
   opacity: 1;
 }
-.message-container .pic {
-  background-image: url("/images/profile_placeholder.png");
-  background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  background-size: 30px;
-  border-radius: 20px;
-}
+
 .message-container .spacing {
   display: table-cell;
   vertical-align: top;
@@ -939,12 +932,6 @@ svg {
     }
   }
 }
-#image-form {
-  display: flex;
-  flex-direction: row;
-  width: 48px;
-  float: right;
-}
 
 #user-container {
   position: absolute;
@@ -957,36 +944,11 @@ svg {
   justify-content: flex-end;
   padding-right: 10px;
 }
-#user-container #user-pic {
-  top: -3px;
-  position: relative;
-  display: inline-block;
-  background-image: url("/images/profile_placeholder.png");
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  background-size: 40px;
-  border-radius: 20px;
-}
+
 #user-container #user-name {
   line-height: 36px;
   padding-right: 10px;
   padding-left: 20px;
-}
-#image-form #submitImage {
-  width: auto;
-  padding: 0 6px 0 1px;
-  min-width: 0;
-}
-#image-form #submitImage .material-icons {
-  top: -1px;
-}
-.message img {
-  max-width: 300px;
-  max-height: 200px;
-}
-#mediaCapture {
-  display: none;
 }
 
 .mdl-textfield__label:after {
@@ -999,7 +961,67 @@ svg {
   top: -1px;
   margin-right: 5px;
 }
-/* copied delete useless */
 /******************************************************************************
         Chat view style ends here
+******************************************************************************/
+
+
+/******************************************************************************
+        Tenexbox style starts here
+******************************************************************************/
+
+.tenexbox_header {
+  z-index: 100;
+
+  .topHeader {
+    padding: 0 1rem;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .bottomHeader {
+    padding: 0 1rem;
+  }
+}
+
+.tenexbox_main {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem 5rem 1rem;
+}
+
+/******************************************************************************
+        Tenexbox style ends here
+******************************************************************************/
+
+/******************************************************************************
+        Calendar style starts here
+******************************************************************************/
+
+.calendar_header {
+  z-index: 100;
+
+  .topHeader {
+    padding: 0 1rem;
+
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .bottomHeader {
+    padding: 0 1rem;
+  }
+}
+
+.calendar_main {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem 5rem 1rem;
+}
+
+/******************************************************************************
+        Calendar style ends here
 ******************************************************************************/

@@ -1,7 +1,25 @@
-// Variable Declarations
-let temp;
-let i = 0;
-let obj;
+// Check if the user is logged in or not
+const auth = firebase.auth();
+let currUid;
+
+// Variable to store requests from db
+let notifications = [];
+let bookings = [];
+let requests = [];
+let recentUpdates = [];
+
+// Notification Detail array
+let notifDetail = [];
+// Request detail array
+let requestDetail = [];
+// Booking detail array
+let bookingDetail = [];
+
+// Accessing cloud firestore db
+const db = firebase.firestore();
+
+// Accessing the firebase storage
+let storageRef = firebase.storage();
 
 // To hold selected date
 let selected;
@@ -39,31 +57,24 @@ $("#nav_more").click(function () {
   window.location.pathname = "/more.html";
 });
 
-// Check if the user is logged in or not
-const auth = firebase.auth();
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    console.log("user is logged in");
+    currUid = user.uid;
+    console.log(currUid);
+  } else {
+    // No user is signed in.
+    console.log("user is not logged in");
+    window.location.pathname = "/index.html";
+  }
+});
 
-// Accessing cloud firestore db
-const db = firebase.firestore();
-
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   $("#nav_cal").css("color", "white");
   $("#nav_cal > svg").children().css("fill", "white");
-  $(".body_wrapper_notif").addClass("hide_container");
-
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      console.log("user is logged in");
-
-      selected = document.getElementById("calendarDate");
-      selected.value = new Date().toDateInputValue();
-      currentSelect = `${selected.value}`;
-      sortDisplay(currentSelect);
-    } else {
-      // No user is signed in.
-      console.log("user is not logged in");
-      window.location.pathname = "/index.html";
-    }
-  });
+  $(".body_wrapper_book").addClass("hidden");
+  $(".body_wrapper_req").addClass("hidden");
+  $(".body_wrapper_notif").addClass("hidden");
 });
 
 // date picker current date auto fill
@@ -85,34 +96,49 @@ $("input[type=date]").change(function () {
 // Access all data from db for current user and store objects in array
 function loadDB() {
   return new Promise((resolve) => {
+    // On Request status change in db update front end
     db.collection("newRequests")
-      .where("ReqUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
-      .onSnapshot((doc) => {
+      .where("ReqUid", "==", currUid)
+      .get()
+      .then((doc) => {
+        requests = [];
+
         doc.forEach((fields) => {
-          currentUserCards.push(fields.data());
-          // console.log(currentUserCards);
+          requests.push(fields.data());
         });
+        mergeRecentCards();
+      })
+      .catch((error) => {
+        console.error(error);
       });
 
+    // Retreive bookings
     db.collection("bookings")
-      .where("BookingUid", "==", "bISRwswAqQax3h0XUAEW3bSeClg1")
-      .onSnapshot((doc) => {
-        doc.forEach((fields) => {
-          currentUserCards.push(fields.data());
-          // console.log(currentUserCards);
-        });
-      });
+      .where("BookingUid", "==", currUid)
+      .get()
+      .then((doc) => {
+        bookings = [];
 
-    db.collection("notifications")
-      .where("recipient", "array-contains-any", [
-        "Lansdown Square Building",
-        "104",
-      ])
-      .onSnapshot((doc) => {
         doc.forEach((fields) => {
-          currentUserCards.push(fields.data());
-          // console.log(currentUserCards.length);
+          bookings.push(fields.data());
         });
+        mergeRecentCards();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    db.collection("notifications")
+      .get()
+      .then((doc) => {
+        notifications = [];
+
+        doc.forEach((fields) => {
+          notifications.push(fields.data());
+        });
+        mergeRecentCards();
+      })
+      .catch((error) => {
+        console.error(error);
       });
     setTimeout(() => {
       resolve("resolved");
@@ -120,6 +146,31 @@ function loadDB() {
   });
 }
 
+// Function to display recent cards
+function mergeRecentCards() {
+  clearAllUI();
+
+  recentUpdates = [];
+  requests.forEach((card) => {
+    recentUpdates.push(card);
+  });
+  bookings.forEach((card) => {
+    recentUpdates.push(card);
+  });
+  notifications.forEach((card) => {
+    recentUpdates.push(card);
+  });
+  // Sorting array latest posted first
+  recentUpdates.sort(function (a, b) {
+    if (a.statusChangeTime < b.statusChangeTime) return 1;
+    if (a.statusChangeTime > b.statusChangeTime) return -1;
+    return 0;
+  });
+  let recentsLength = recentUpdates.length;
+  for (i = 0; i < recentsLength; i++) {
+    displayRecenttUI(i);
+  }
+}
 // Sort in reverse chronological order of date and display cards
 async function sortDisplay(currentSelect) {
   await loadDB();

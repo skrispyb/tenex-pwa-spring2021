@@ -161,7 +161,7 @@ function mergeRecentCards() {
   }
 }
 
-//Function to display recent cards
+//Function to display recent cards - notifications and bookings
 displayRecenttUI = (i) => {
   temp = document.createElement("div");
   if (recentUpdates[i].cardType === "Booking") {
@@ -664,9 +664,7 @@ displayAlertDetailUI = (i) => {
       </div>
   </div>
   <div class="alertDetailSub">
-      <p class="alertDetailPostedDate">${
-        months[postDate.getMonth()]
-      } ${postDate.getDate()}, ${postDate.getFullYear()}</p>
+      <p class="alertDetailPostedDate">${months[postDate.getMonth()]} ${postDate.getDate()}, ${postDate.getFullYear()}</p>
   </div>
 </div>`;
 };
