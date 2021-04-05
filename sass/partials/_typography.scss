@@ -15,6 +15,7 @@ h2 {
 h3 {
   font-family: $font_h3;
   font-weight: 600;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -30,6 +31,7 @@ p {
 .notifDetaildescription {
   font-size: 14px;
   line-height: 1.5;
+  color: $color_body;
 }
 
 .alertDetailCardTitle {

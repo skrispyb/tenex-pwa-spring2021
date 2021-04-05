@@ -13,8 +13,8 @@ $("#nav_tbox").click(function () {
 const auth = firebase.auth();
 let CUid;
 window.addEventListener("load", function () {
-  $("#nav_more").css("color", "white");
-  $("#nav_more > svg").children().css("fill", "white");
+  $("#nav_more").css("color", "#81B7AE");
+  $("#nav_more > svg").children().css("fill", "#81B7AE");
 
   auth.onAuthStateChanged((user) => {
     if (user) {
