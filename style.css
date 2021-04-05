@@ -413,6 +413,7 @@ h2 {
 h3 {
   font-family: SFProDisplaySemibold, serif;
   font-weight: 600;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -428,6 +429,7 @@ p {
 .notifDetaildescription {
   font-size: 14px;
   line-height: 1.5;
+  color: #4f4f4f;
 }
 
 .alertDetailCardTitle {
@@ -699,7 +701,7 @@ a {
   right: 0;
   width: 100%;
   height: 3.5rem;
-  background-color: #454545;
+  background-color: white;
   z-index: 100;
 }
 
@@ -726,14 +728,18 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: SFProDisplayRegular, serif;
   font-size: 0.6rem;
   color: #848484;
   background: none;
   border: 0;
+  list-style-type: none;
+  letter-spacing: 0.5px;
 }
 
 .app-nav .nav ul li button:active {
   outline: 0;
+  color: #81B7AE;
 }
 
 .app-nav .nav ul li button svg {
@@ -1844,8 +1850,8 @@ img {
 /* New request button styling */
 #newRequest_btn {
   position: fixed;
-  bottom: 3.5rem;
-  right: 0;
+  bottom: 3.75rem;
+  right: 6px;
 }
 
 /* New request booking popup styling */
