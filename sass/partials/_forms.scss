@@ -2,37 +2,43 @@
     text-align: center;
     width: 100%;
     min-height: 100vh;
+    background-color: $color_login_bg;
   #signInBtn {
     margin-top: 3rem;
   }
   h2 {
-      margin-top: 5rem;
+      margin:0;
+      padding-top: 6.25rem;
   }
   form {
     display: flex;
     flex-flow: column nowrap;
     gap: 1rem;
     align-items: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
     width: 100%;
   }
   #loginForm input {
     border-radius: 1.5rem;
-    padding: 0.5rem 1rem;
-    width: 100%;
+    border: 1px solid $color_input_border;
+    padding: 0.625rem 1.25rem;
+    margin: 0.25rem;
+    width: 343px;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
   }
   
   p:nth-of-type(1) {
-    text-align: center;
-    font-weight: 400;
-    font-size: 0.8rem;
+    text-align: right;
+    margin: 0.5rem 1rem 1rem 1rem;
   }
 
   p:nth-of-type(2) {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.25rem;
   }
     
   p:nth-of-type(3) {
     text-decoration: underline;
+    margin-top: 0;
   }  
 }

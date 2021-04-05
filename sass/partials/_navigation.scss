@@ -17,6 +17,10 @@ a {
   margin: auto;
 }
 
+.slideshow-container img {
+  margin: auto;
+}
+
 /* Next & previous buttons */
 .prev,
 .next {
@@ -74,8 +78,8 @@ a {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  margin: 0 4px;
+  background-color: $color_my_slides_dot;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -83,7 +87,7 @@ a {
 
 .dot:hover,
 .dot:active {
-  background-color: #717171;
+  background-color: #81B7AE;
 }
 
 /* Fading animation */
