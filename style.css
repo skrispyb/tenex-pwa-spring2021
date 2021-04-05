@@ -568,6 +568,10 @@ p {
   font-family: SFProDisplayRegular, serif;
 }
 
+.textFilter_btn {
+  font-family: SFProDisplaySemibold, serif;
+}
+
 /* 4. Navigation =========================================================== */
 a {
   text-decoration: none;
@@ -2061,6 +2065,14 @@ canvas,
 
 .activeFilterText {
   color: white;
+}
+
+.activeFilterTextRequest {
+  color: #FDAE46;
+}
+
+.activeFilterTextBooking {
+  color: #4980C1;
 }
 
 .activeFilterBackground {
