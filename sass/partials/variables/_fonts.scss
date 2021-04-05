@@ -1,4 +1,9 @@
 @font-face {
+  font-family: futuraBold;
+  src: url(../../../assets/fonts/futura_bold_bt.ttf);
+}
+
+@font-face {
   font-family: futuraMedium;
   src: url(../../../assets/fonts/futura_medium_bt.ttf);
 }
@@ -13,13 +18,21 @@
   src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
 }
 
+@font-face{
+  font-family: SFProDisplayLight;
+  src: url(../../../assets/fonts/SFProDisplayLight.ttf);
+}
+
 @font-face {
   font-family: RobotoMono;
   src: url(../../../assets/fonts/RobotoMono-Regular.ttf);
 }
 
+$font_welcome: futuraBold, serif;
 $font_h2: futuraMedium, serif;
 $font_h3: SFProDisplaySemibold, serif;
+$font_body: SFProDisplayRegular, serif;
+$font_light: SFProDisplayLight, serif;
 $font_date_posted: SFProDisplayRegular, serif;
 $font_booking_date: RobotoMono, monospace;
 // $font_sans: helvetica, arial, sans-serif;
