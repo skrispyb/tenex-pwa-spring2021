@@ -24,11 +24,11 @@ p {
   line-height: 1.5;
 }
 
-.alertCard p,
-.notifCard p,
+.alert_excerpt,
+.notif_excerpt,
 .newRequestCard p,
 .alertDetailDescription,
-.notifDetaildescription {
+.notifDetaildescription, .description {
   font-size: 14px;
   line-height: 1.5;
   color: $color_body;
@@ -50,7 +50,7 @@ p {
   background-color: $notif_green;
 }
 
-.newRequestCard .newRequestCard_status,
+.newRequestCard .newRequestCard_status, .newRequestStatus, .newRequestDate,
 .alertDetailPostedDate,
 .notifDetailPostedDate {
   font-size: 0.75rem;
@@ -81,6 +81,20 @@ p {
   &::first-line {
     font-size: 12px;
   }
+}
+
+#new_booking,
+#new_request {
+  font-family: $font_h3;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#option_service,
+#option_complaint,
+#option_general {
+  font-family: $font_body;
+  font-size: 14px;
 }
 
 .requestForm_main {

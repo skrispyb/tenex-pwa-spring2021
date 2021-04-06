@@ -415,7 +415,7 @@ document
           .then(() => {
             console.log("Document successfully written!");
             setTimeout(
-              (window.location.pathname = "/notificationHome1.html"),
+              (window.location.pathname = "/notificationHome.html"),
               300
             );
           });

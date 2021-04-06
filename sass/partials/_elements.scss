@@ -1,3 +1,10 @@
+.active {
+  background-color: $color_nav_icon_active;
+}
+
+.logo_login {
+  padding-top: 3.5rem;
+}
 .btn_to_login {
   margin: 0 auto;
   width: calc(100% - 2rem);
@@ -11,6 +18,10 @@
     background-color: $color_btn_sign_in_bg;
     margin-top: 2rem;
     box-shadow: (3px 3px 4px rgba(0, 0, 0, 0.16));
+  
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -19,10 +30,10 @@
   position: fixed;
   bottom: 3.75rem;
   right: 6px;
+  z-index: 100;
 }
 
 /* New request booking popup styling */
-
 .new_req_book_wrapper {
   display: none;
   justify-content: center;
@@ -55,6 +66,18 @@
   padding: 1rem;
   border-radius: 0.5rem;
   color: #4f4f4f;
+
+  &:active {
+    background-color: #DCEBE9;
+  }
+}
+
+#option_service, #option_complaint, #option_general {
+
+  &:active {
+    background-color: #DCEBE9;
+    font-weight: bold;
+  }
 }
 
 .request_btn_icon,
@@ -245,4 +268,17 @@ canvas,
 
 .activeFilterIcon {
   fill: white;
+}
+
+.activeFilterNotif svg path {
+  fill: #81B7AE;
+}
+
+.activeFilterAlert svg path {
+  fill: #BE0707;
+}
+
+
+#calendarDate {
+  width: 12rem;
 }

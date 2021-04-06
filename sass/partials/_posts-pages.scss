@@ -2,7 +2,7 @@
         Alert card home screen starts here
 ******************************************************************************/
 
-.notification_home_header, .tenexbox_header, .calendar_header {
+.notification_home_header, .tenexbox_header, .calendar_header, .archive_header {
   position: sticky;
   top: 0;
   // z-index: 10;
@@ -34,7 +34,7 @@
   display: inline-block;
   vertical-align: top;
   width: 20rem;
-  height: 7.75rem;
+  height: 7.5rem;
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -47,6 +47,8 @@
 
 .alertCard:last-of-type {
   margin-right: 1rem;
+  width: 8.5rem;
+
   .view_more_alert {
     height: 100%;
     display: flex;
@@ -153,6 +155,7 @@
 
 .notifCard:last-of-type {
   margin-right: 1rem;
+  width: 8.5rem;
 
   .view_more_notif {
     height: 100%;
@@ -539,6 +542,10 @@ svg {
   margin: 0;
 }
 
+.topHeader {
+  padding: 0 0.5rem;
+}
+
 .body_wrapper_notif {
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -618,7 +625,7 @@ svg {
 .requestStatusBar {
   width: 8px;
   height: 100%;
-  background-color: rgba(253, 174, 70, 0.5);
+  background-color: rgba(253, 174, 70, 0.25);
   border-radius: 10px;
 
   div {
@@ -1027,6 +1034,275 @@ svg {
   margin: 0.5rem 0 0 0;
 }
 
+.body_wrapper_calendar {
+  .notifCard_wrapper {
+    grid-template-columns: 14.5rem auto;
+  }
+}
+
+
 /******************************************************************************
         Calendar style ends here
+******************************************************************************/
+
+
+/******************************************************************************
+        Archive style starts here
+******************************************************************************/
+
+/* copied useless code check and delete */
+.archive_header {
+  z-index: 100;
+
+  .topHeader {
+    padding: 0 1rem;
+
+    h2 {
+      margin: 0;
+    }
+
+    .back_btn {
+      display: flex;
+      padding-left: 1px!important;
+      svg {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .bottomHeader {
+    padding: 0 1rem;
+  }
+}
+
+.filter_btn {
+  height: 32px;
+  padding: 0 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 32px;
+  border: 1px solid rgba(170, 170, 170, 0.25);
+  background-color: white;
+}
+
+.activeFilterBackground {
+  background-color: #AAAAAA;
+}
+
+.activeFilterIcon {
+  fill: white;
+}
+
+#notifAlertCards {
+  padding: 0 1rem 2.5rem 1rem;
+
+  > :first-child {
+    margin-top: 1rem;
+  }
+}
+
+.notifCardArchive {
+    background-color: #dcebe9;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0 0 0;
+    border-radius: 0.5rem;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+ 
+.notif_excerpt {
+    margin: 0.5rem 0 0.75rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: pre-line;
+}
+
+.notifCard_duration_date_wrapper, 
+.notifCard_duration_time_wrapper {
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    max-width: max-content;
+}
+
+.notifCard_duration_date_wrapper p svg, 
+.notifCard_duration_time_wrapper p svg {
+    margin-bottom: -2px;
+}
+.notifCard_duration_date_wrapper p svg {
+    margin-right: 2px;
+}
+
+.notifCard_date_wrapper {
+    height: 100%;
+
+    display: flex;
+
+    flex-flow: column nowrap;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+#notifAlertCards .notifCard_wrapper {
+  grid-template-columns: 14.75rem auto;
+}
+
+.body_wrapper_archive .archive_header .back_btn {
+  padding-left: 0;
+  
+  svg {
+    margin-left: 0;
+  }
+}
+
+.alertCardArchive {
+    background-color: #FFDFDF;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 7.5rem;
+    padding: 1rem;
+    margin: 0.5rem 0 0 0;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.alertCard_wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0.25rem;
+}
+
+.alertCard_content_wrapper {
+    width: 100%;
+}
+
+button:focus {
+    outline: none;
+}
+/* Copied useless code */
+
+/******************************************************************************
+        Archive style ends here
+******************************************************************************/
+
+/******************************************************************************
+        More style starts here
+******************************************************************************/
+
+.body_wrapper_regulations {
+  main{
+    margin: 3rem 1rem 5rem 1rem;
+    background-color: white;
+   
+    
+}
+ .fas{
+     color: gray;
+ }
+
+}
+
+/* Copied code delete useless */
+
+.body_wrapper_FAQs header {
+  position: sticky;
+  top: 0;
+  // z-index: 10;
+  padding: 1rem 0 0.875rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+
+  & > h2 {
+    margin: 0 0 0 1rem;
+  }
+}
+
+/* Copied code*/
+
+/******************************************************************************
+        More style ends here
+******************************************************************************/
+
+/******************************************************************************
+        FAQs style starts here
+******************************************************************************/
+.body_wrapper_FAQs {
+  
+main{
+  padding: 4rem 1rem 1rem 1rem;
+  margin: auto;
+  margin-bottom: 6rem;
+}
+main div{
+   max-width: 100%;
+     display: block;
+  transform: translateY(-18px);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 1rem;
+
+}
+
+.fas{
+   color: gray;
+}
+
+}
+
+/* ============= Accordion ================== */
+
+.accordion {
+  cursor: pointer;  
+  padding: 2rem 1rem .5rem 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  display:flex;
+  justify-content: space-between;
+align-items: center;
+}
+
+.accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.first{
+    display: flex;
+    gap: 2rem
+}
+
+main button {
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+
+
+}
+
+/******************************************************************************
+        FAQs style ends here
 ******************************************************************************/

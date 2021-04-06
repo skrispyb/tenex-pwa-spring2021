@@ -675,7 +675,7 @@ displayRequestDetailUI = (i) => {
 </div>`;
   if (requestDetail[i].requestStatus === "SENT") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressSent"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="129" height="98" viewBox="0 0 129 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -764,7 +764,7 @@ displayRequestDetailUI = (i) => {
 <p>You can edit your description before the status changes to “READ”.</p>`;
   } else if (requestDetail[i].requestStatus === "READ") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressRead"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -805,7 +805,7 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "COMPLETED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressCompleted"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -846,11 +846,11 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "REJECTED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressRejected"></div>`;
   } else if (requestDetail[i].requestStatus === "MESSAGE") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressMessage"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -891,11 +891,11 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "BOOKED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressBooked"></div>`;
   } else {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressOngoing"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">

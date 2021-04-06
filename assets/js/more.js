@@ -32,14 +32,14 @@ window.addEventListener("load", function () {
 // Redirecting to regulations.html page
 $(document).ready(function () {
   $("#Regulation").click(function () {
-    window.location.assign("regulations.html");
+    window.location.assign("regulationsV2.html");
   });
 });
 
 // Redirecting to FAQs.html page
 $(document).ready(function () {
   $("#FAQs").click(function () {
-    window.location.assign("FAQs.html");
+    window.location.assign("FAQsV2.html");
   });
 });
 

@@ -113,7 +113,9 @@ document.getElementById("requests_btn").addEventListener("click", function () {
       .getElementById("requests_btn")
       .classList.contains("activeFilterTextRequest")
   ) {
-    document.getElementById("requests_btn").classList.add("activeFilterTextRequest");
+    document
+      .getElementById("requests_btn")
+      .classList.add("activeFilterTextRequest");
     document
       .getElementById("bookings_btn")
       .classList.remove("activeFilterTextBooking");
@@ -145,7 +147,9 @@ document.getElementById("bookings_btn").addEventListener("click", function () {
       .getElementById("bookings_btn")
       .classList.contains("activeFilterTextBooking")
   ) {
-    document.getElementById("bookings_btn").classList.add("activeFilterTextBooking");
+    document
+      .getElementById("bookings_btn")
+      .classList.add("activeFilterTextBooking");
     document
       .getElementById("requests_btn")
       .classList.remove("activeFilterTextRequest");
@@ -438,7 +442,7 @@ displayRequestDetailUI = (i) => {
 </div>`;
   if (requestDetail[i].requestStatus === "SENT") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressSent"></div>`;
     document.querySelector(
       ".tipsInfoSection"
@@ -529,7 +533,7 @@ displayRequestDetailUI = (i) => {
 <p>You can edit your description before the status changes to “READ”.</p>`;
   } else if (requestDetail[i].requestStatus === "READ") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressRead"></div>`;
     document.querySelector(
       ".tipsInfoSection"
@@ -572,7 +576,7 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "COMPLETED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressCompleted"></div>`;
     document.querySelector(
       ".tipsInfoSection"
@@ -615,11 +619,11 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "REJECTED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressRejected"></div>`;
   } else if (requestDetail[i].requestStatus === "MESSAGE") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressMessage"></div>`;
     document.querySelector(
       ".tipsInfoSection"
@@ -662,11 +666,11 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "BOOKED") {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressBooked"></div>`;
   } else {
     document.querySelector(
-      ".requestStatusBar"
+      "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressOngoing"></div>`;
     document.querySelector(
       ".tipsInfoSection"
@@ -709,6 +713,52 @@ displayRequestDetailUI = (i) => {
 <p>Please cancel this request and submit a new one.</p>`;
   }
 
+  if (requestDetail[i].requestStatus !== "SENT") {
+    document.getElementById(
+      "edit_btn"
+    ).innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="17" cy="14" r="11" fill="#828282"/>
+    <g filter="url(#filter0_d)">
+    <path d="M17 3C10.917 3 6 7.917 6 14C6 20.083 10.917 25 17 25C23.083 25 28 20.083 28 14C28 7.917 23.083 3 17 3ZM22.5 17.949L20.949 19.5L17 15.551L13.051 19.5L11.5 17.949L15.449 14L11.5 10.051L13.051 8.5L17 12.449L20.949 8.5L22.5 10.051L18.551 14L22.5 17.949Z" fill="#F4F4F4"/>
+    <path d="M17 1.5C10.0886 1.5 4.5 7.08857 4.5 14C4.5 20.9114 10.0886 26.5 17 26.5C23.9114 26.5 29.5 20.9114 29.5 14C29.5 7.08857 23.9114 1.5 17 1.5Z" stroke="#828282" stroke-width="3"/>
+    </g>
+    <defs>
+    <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset dy="3"/>
+    <feGaussianBlur stdDeviation="1.5"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    </defs>
+    </svg>`;
+  } else {
+    document.getElementById(
+      "edit_btn"
+    ).innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+              <path d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                fill="#828282" />
+              <path d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
+                stroke="white" stroke-width="3" />
+            </g>
+            <defs>
+              <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                <feOffset dy="3" />
+                <feGaussianBlur stdDeviation="1.5" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+              </filter>
+            </defs>
+          </svg>`;
+  }
+  
   if (requestDetail[i].reqImageURL.length > 0) {
     requestDetail[i].reqImageURL.forEach((image) => {
       let showImgRef = storageRef.ref().child(image);

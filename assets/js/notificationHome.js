@@ -36,33 +36,26 @@ auth.onAuthStateChanged(async (user) => {
     // On Request status change in db update front end
     db.collection("newRequests")
       .where("ReqUid", "==", currUid)
-      .get()
-      .then((doc) => {
+      .onSnapshot((doc) => {
         requests = [];
 
         doc.forEach((fields) => {
           requests.push(fields.data());
         });
         mergeRecentCards();
-      })
-      .catch((error) => {
-        console.error(error);
       });
+      
 
     // Retreive bookings
     db.collection("bookings")
       .where("BookingUid", "==", currUid)
-      .get()
-      .then((doc) => {
+      .onSnapshot((doc) => {
         bookings = [];
 
         doc.forEach((fields) => {
           bookings.push(fields.data());
         });
         mergeRecentCards();
-      })
-      .catch((error) => {
-        console.error(error);
       });
   } else {
     // No user is signed in.
@@ -161,7 +154,7 @@ function mergeRecentCards() {
   }
 }
 
-//Function to display recent cards - notifications and bookings
+//Function to display recent cards - requests and bookings
 displayRecenttUI = (i) => {
   temp = document.createElement("div");
   if (recentUpdates[i].cardType === "Booking") {
@@ -252,28 +245,14 @@ displayRecenttUI = (i) => {
   recentCards.children[i].children[0].children[1].appendChild(temp);
   if (recentUpdates[i].requestStatus !== "REJECTED") {
     if (recentUpdates[i].ReqCategory === "Service") {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
-      <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2576C28.6011 45.2576 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
+      temp.innerHTML = `<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="36" cy="36" r="36" fill="#FDAE46"/>
+      <path d="M15.5578 28.7212C15.5578 28.7212 2.59855 31.1355 7.76004 43.9337C7.76004 43.9337 9.68034 50.1386 18.9655 50.3051C18.9655 50.3051 21.7516 49.2728 21.796 47.3692C21.8348 45.46 21.8792 32.2122 21.8792 32.2122C21.8792 32.2122 23.2667 21.312 33.6896 20.0355C33.6896 20.0355 42.6029 18.5647 47.1594 25.9962C47.1594 25.9962 49.5903 29.143 49.3961 34.6986L49.4349 47.3858C49.4349 47.3858 49.5848 49.5836 46.7987 50.6825C46.7987 50.6825 45.7275 51.2653 44.2013 51.2819C44.2013 51.2819 42.8415 48.6956 39.123 49.1674C35.4045 49.6391 34.5554 53.3354 34.5554 53.3354C34.5554 53.3354 33.8394 58.0585 37.4414 59.2462C37.4414 59.2462 39.6447 60.9611 43.0302 58.7689L43.9016 58.0807C43.9016 58.0807 50.3396 57.9364 53.4087 54.2068C53.4087 54.2068 55.44 52.0645 55.8507 49.7945C55.8507 49.7945 61.5505 48.8344 63.715 43.4398C63.715 43.4398 66.49 38.1285 62.655 33.0613C62.655 33.0613 59.3583 28.5769 55.44 28.588C55.44 28.588 54.835 24.6586 52.0878 21.2731C52.0878 21.2731 48.0863 15.4901 40.6104 13.6586C33.1346 11.8271 26.6522 15.0128 26.6522 15.0128C26.6522 15.0128 21.8459 17.5935 19.4095 20.9346C16.973 24.2757 16.5623 25.6798 15.5578 28.7212Z" fill="white"/>
       </svg>`;
     } else if (recentUpdates[i].ReqCategory === "Complaint") {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
-      <g filter="url(#filter0_d)">
-      <path d="M14 35.1675V41H19.8325L37.0346 23.7979L31.2021 17.9654L14 35.1675ZM41.5451 19.2875C42.1516 18.6809 42.1516 17.701 41.5451 17.0944L37.9056 13.4549C37.299 12.8484 36.3191 12.8484 35.7125 13.4549L32.8663 16.3012L38.6988 22.1337L41.5451 19.2875Z" fill="#FDAE46"/>
-      <path d="M12.9393 34.1068L12.5 34.5462V35.1675V41V42.5H14H19.8325H20.4538L20.8932 42.0607L38.0952 24.8586L38.6988 24.2551L39.1559 23.7979L39.7595 23.1944L42.6057 20.3481C43.7981 19.1558 43.7981 17.2261 42.6057 16.0338L38.9662 12.3943L37.9178 13.4427L38.9662 12.3943C37.7739 11.2019 35.8442 11.2019 34.6519 12.3943L35.6998 13.4422L34.6519 12.3943L31.8056 15.2405L31.2021 15.8441L30.7449 16.3012L30.1414 16.9048L12.9393 34.1068Z" stroke="white" stroke-width="3"/>
-      </g>
-      <defs>
-      <filter id="filter0_d" x="8" y="10" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dy="3"/>
-      <feGaussianBlur stdDeviation="1.5"/>
-      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
-      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-      </filter>
-      </defs>
+      temp.innerHTML = `<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="36" cy="36" r="36" fill="#FDAE46"/>
+      <path d="M15.5578 28.7212C15.5578 28.7212 2.59855 31.1355 7.76004 43.9337C7.76004 43.9337 9.68034 50.1386 18.9655 50.3051C18.9655 50.3051 21.7516 49.2728 21.796 47.3692C21.8348 45.46 21.8792 32.2122 21.8792 32.2122C21.8792 32.2122 23.2667 21.312 33.6896 20.0355C33.6896 20.0355 42.6029 18.5647 47.1594 25.9962C47.1594 25.9962 49.5903 29.143 49.3961 34.6986L49.4349 47.3858C49.4349 47.3858 49.5848 49.5836 46.7987 50.6825C46.7987 50.6825 45.7275 51.2653 44.2013 51.2819C44.2013 51.2819 42.8415 48.6956 39.123 49.1674C35.4045 49.6391 34.5554 53.3354 34.5554 53.3354C34.5554 53.3354 33.8394 58.0585 37.4414 59.2462C37.4414 59.2462 39.6447 60.9611 43.0302 58.7689L43.9016 58.0807C43.9016 58.0807 50.3396 57.9364 53.4087 54.2068C53.4087 54.2068 55.44 52.0645 55.8507 49.7945C55.8507 49.7945 61.5505 48.8344 63.715 43.4398C63.715 43.4398 66.49 38.1285 62.655 33.0613C62.655 33.0613 59.3583 28.5769 55.44 28.588C55.44 28.588 54.835 24.6586 52.0878 21.2731C52.0878 21.2731 48.0863 15.4901 40.6104 13.6586C33.1346 11.8271 26.6522 15.0128 26.6522 15.0128C26.6522 15.0128 21.8459 17.5935 19.4095 20.9346C16.973 24.2757 16.5623 25.6798 15.5578 28.7212Z" fill="white"/>
       </svg>`;
     } else if (recentUpdates[i].requestStatus === "BOOKED") {
       temp.innerHTML = `<svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -414,9 +393,9 @@ displayNotificationUI = (i) => {
   <path d="M15 13.5938C15 14.3701 14.2801 15 13.3929 15H1.60714C0.719867 15 0 14.3701 0 13.5938V5.625H15V13.5938ZM12.8571 7.96875C12.8571 7.71094 12.6161 7.5 12.3214 7.5H9.10714C8.8125 7.5 8.57143 7.71094 8.57143 7.96875V10.7812C8.57143 11.0391 8.8125 11.25 9.10714 11.25H12.3214C12.6161 11.25 12.8571 11.0391 12.8571 10.7812V7.96875ZM1.60714 1.875H3.21429V0.46875C3.21429 0.210938 3.45536 0 3.75 0H4.82143C5.11607 0 5.35714 0.210938 5.35714 0.46875V1.875H9.64286V0.46875C9.64286 0.210938 9.88393 0 10.1786 0H11.25C11.5446 0 11.7857 0.210938 11.7857 0.46875V1.875H13.3929C14.2801 1.875 15 2.50488 15 3.28125V4.6875H0V3.28125C0 2.50488 0.719867 1.875 1.60714 1.875Z" fill="#4F4F4F"/>
   </svg> ${
     months[postDurationStartDate.getMonth()]
-  } ${postDurationStartDate.getDay()}, ${postDurationStartDate.getFullYear()} - ${
+  } ${postDurationStartDate.getDate()}, ${postDurationStartDate.getFullYear()} - ${
     months[postDurationEndDate.getMonth()]
-  } ${postDurationEndDate.getDay()}, ${postDurationEndDate.getFullYear()}`;
+  } ${postDurationEndDate.getDate()}, ${postDurationEndDate.getFullYear()}`;
   notifCards.children[i].children[0].children[0].children[2].appendChild(temp);
 
   temp = document.createElement("div");
@@ -445,7 +424,7 @@ displayNotificationUI = (i) => {
   const postDate = notifications[i].onDate.toDate();
   temp.innerHTML = `${
     months[postDate.getMonth()]
-  } ${postDate.getDay()}, ${postDate.getFullYear()}`;
+  } ${postDate.getDate()}, ${postDate.getFullYear()}`;
   notifCards.children[i].children[0].children[1].appendChild(temp);
 };
 
@@ -710,9 +689,9 @@ displayNotifDetailUI = (i) => {
                     </svg>
                     <p class="notificationDate">${
                       months[postDurationStartDate.getMonth()]
-                    } ${postDurationStartDate.getDay()}, ${postDurationStartDate.getFullYear()} - ${
+                    } ${postDurationStartDate.getDate()}, ${postDurationStartDate.getFullYear()} - ${
     months[postDurationEndDate.getMonth()]
-  } ${postDurationEndDate.getDay()}, ${postDurationEndDate.getFullYear()}</p>
+  } ${postDurationEndDate.getDate()}, ${postDurationEndDate.getFullYear()}</p>
                 </div>
               <div class="tag">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -728,7 +707,7 @@ displayNotifDetailUI = (i) => {
   <div class="notificationDetailSub">
       <p class="notifDetailPostedDate">${
         months[postDate.getMonth()]
-      } ${postDate.getDay()}, ${postDate.getFullYear()}</p>
+      } ${postDate.getDate()}, ${postDate.getFullYear()}</p>
   </div>
 </div>`;
 };
@@ -766,9 +745,7 @@ displayRequestDetailUI = (i) => {
   </div>
 </div>`;
   if (requestDetail[i].requestStatus === "SENT") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressSent"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressSent"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="129" height="98" viewBox="0 0 129 98" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.5">
@@ -855,9 +832,7 @@ displayRequestDetailUI = (i) => {
 </div>
 <p>You can edit your description before the status changes to “READ”.</p>`;
   } else if (requestDetail[i].requestStatus === "READ") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressRead"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressRead"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
@@ -896,9 +871,7 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "COMPLETED") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressCompleted"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressCompleted"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
@@ -937,13 +910,9 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "REJECTED") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressRejected"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressRejected"></div>`;
   } else if (requestDetail[i].requestStatus === "MESSAGE") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressMessage"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressMessage"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
@@ -982,13 +951,9 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "BOOKED") {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressBooked"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressBooked"></div>`;
   } else {
-    document.querySelector(
-      ".requestStatusBar"
-    ).innerHTML = `<div class="statusProgressOngoing"></div>`;
+    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressOngoing"></div>`;
     document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
@@ -1026,6 +991,48 @@ displayRequestDetailUI = (i) => {
 </div>
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
+  }
+
+  if (requestDetail[i].requestStatus !== "SENT") {
+    document.getElementById("edit_btn").innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="17" cy="14" r="11" fill="#828282"/>
+    <g filter="url(#filter0_d)">
+    <path d="M17 3C10.917 3 6 7.917 6 14C6 20.083 10.917 25 17 25C23.083 25 28 20.083 28 14C28 7.917 23.083 3 17 3ZM22.5 17.949L20.949 19.5L17 15.551L13.051 19.5L11.5 17.949L15.449 14L11.5 10.051L13.051 8.5L17 12.449L20.949 8.5L22.5 10.051L18.551 14L22.5 17.949Z" fill="#F4F4F4"/>
+    <path d="M17 1.5C10.0886 1.5 4.5 7.08857 4.5 14C4.5 20.9114 10.0886 26.5 17 26.5C23.9114 26.5 29.5 20.9114 29.5 14C29.5 7.08857 23.9114 1.5 17 1.5Z" stroke="#828282" stroke-width="3"/>
+    </g>
+    <defs>
+    <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+    <feOffset dy="3"/>
+    <feGaussianBlur stdDeviation="1.5"/>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"/>
+    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+    </defs>
+    </svg>`;
+  } else {
+    document.getElementById("edit_btn").innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g filter="url(#filter0_d)">
+              <path d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                fill="#828282" />
+              <path d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
+                stroke="white" stroke-width="3" />
+            </g>
+            <defs>
+              <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
+                color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                <feOffset dy="3" />
+                <feGaussianBlur stdDeviation="1.5" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+              </filter>
+            </defs>
+          </svg>`;
   }
 
   if (requestDetail[i].reqImageURL.length > 0) {

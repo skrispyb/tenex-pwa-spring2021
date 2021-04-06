@@ -83,3 +83,19 @@ function mainpage() {
   if (x.style.display === "block") x.style.display = "none";
   y.style.display = "block";
 }
+
+document.getElementById("username").addEventListener('keyup', function() {
+  if (document.getElementById("username").value.length > 0 && document.getElementById("password").value.length > 0) {
+    document.getElementById("signInBtn").removeAttribute("disabled");
+  } else {
+    document.getElementById("signInBtn").setAttribute("disabled", "true");
+  }
+});
+
+document.getElementById("password").addEventListener('keyup', function() {
+  if (document.getElementById("username").value.length > 0 && document.getElementById("password").value.length > 0) {
+    document.getElementById("signInBtn").removeAttribute("disabled");
+  } else {
+    document.getElementById("signInBtn").setAttribute("disabled", "true");
+  }
+});

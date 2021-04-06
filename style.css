@@ -30,11 +30,12 @@ Table of Contents
 
 @font-face {
   font-family: futuraBold;
-  src: url(../../../assets/fonts/futura_bold_bt.ttf);
+  src: url(../../../assets/fonts/futura_bold.otf);
 }
+
 @font-face {
   font-family: futuraMedium;
-  src: url(../../../assets/fonts/futura_medium_bt.ttf);
+  src: url(../../../assets/fonts/futura_medium_bt.otf);
 }
 
 @font-face {
@@ -46,14 +47,17 @@ Table of Contents
   font-family: SFProDisplayRegular;
   src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
 }
+
 @font-face {
   font-family: SFProDisplayLight;
   src: url(../../../assets/fonts/SFProDisplayLight.ttf);
 }
+
 @font-face {
   font-family: RobotoMono;
   src: url(../../../assets/fonts/RobotoMono-Regular.ttf);
 }
+
 /* 2. Reset ================================================================ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -80,7 +84,8 @@ html {
    * Remove the margin in all browsers.
    */
 body {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 450px;
 }
 
 /**
@@ -407,7 +412,7 @@ template {
 /* 3. Typography =========================================================== */
 h2 {
   font-family: futuraMedium, serif;
-  color: #828282;
+  color: #4F4F4F;
   font-weight: normal;
 }
 
@@ -431,11 +436,11 @@ p {
   line-height: 1.5;
 }
 
-.alertCard p,
-.notifCard p,
+.alert_excerpt,
+.notif_excerpt,
 .newRequestCard p,
 .alertDetailDescription,
-.notifDetaildescription {
+.notifDetaildescription, .description {
   font-size: 14px;
   line-height: 1.5;
   color: #4f4f4f;
@@ -457,7 +462,7 @@ p {
   background-color: #81b7ae;
 }
 
-.newRequestCard .newRequestCard_status,
+.newRequestCard .newRequestCard_status, .newRequestStatus, .newRequestDate,
 .alertDetailPostedDate,
 .notifDetailPostedDate {
   font-size: 0.75rem;
@@ -486,6 +491,20 @@ p {
 
 .newBookingCard_date_for::first-line {
   font-size: 12px;
+}
+
+#new_booking,
+#new_request {
+  font-family: SFProDisplaySemibold, serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+#option_service,
+#option_complaint,
+#option_general {
+  font-family: SFProDisplayRegular, serif;
+  font-size: 14px;
 }
 
 .requestForm_main {
@@ -527,6 +546,7 @@ p {
   margin: 0.5rem 2rem 2rem 2rem;
   color: #4f4f4f;
 }
+
 .slideshow-container button {
   font-family: SFProDisplaySemibold, serif;
   letter-spacing: 1px;
@@ -536,45 +556,61 @@ p {
   font-family: SFProDisplaySemibold, serif;
   letter-spacing: 1px;
 }
+
 .tenexform label input {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
   color: SFProDisplayRegular, serif;
 }
-.tenexform label input::-moz-placeholder {
+
+.tenexform label input::-webkit-input-placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
 }
+
 .tenexform label input:-ms-input-placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
 }
+
+.tenexform label input::-ms-input-placeholder {
+  font-family: SFProDisplayLight, serif;
+  letter-spacing: 1px;
+}
+
 .tenexform label input::placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
 }
+
 .tenexform p:nth-of-type(1) {
   font-weight: 400;
   font-size: 0.8rem;
   color: #4f4f4f;
 }
+
 .tenexform p:nth-of-type(2) {
   color: #4f4f4f;
   font-family: SFProDisplayLight, serif;
 }
+
 .tenexform p:nth-of-type(3) {
   color: #4f4f4f;
 }
+
 .tenexform .message-container .name {
   font-family: SFProDisplaySemibold, serif;
   font-size: 14px;
 }
+
 .tenexform .message-container .message {
   font-family: SFProDisplayRegular, serif;
 }
+
 .tenexform #user-container #user-name {
   font-size: 16px;
 }
+
 .tenexform .bottomHeader button {
   font-family: SFProDisplayRegular, serif;
 }
@@ -755,9 +791,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: SFProDisplayRegular, serif;
   font-size: 0.6rem;
   color: #848484;
@@ -783,7 +826,8 @@ a {
 /******************************************************************************
         Alert card home screen starts here
 ******************************************************************************/
-.notification_home_header, .tenexbox_header, .calendar_header {
+.notification_home_header, .tenexbox_header, .calendar_header, .archive_header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 1rem 0 0.875rem;
@@ -799,7 +843,7 @@ a {
           box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
 
-.notification_home_header > h2, .tenexbox_header > h2, .calendar_header > h2 {
+.notification_home_header > h2, .tenexbox_header > h2, .calendar_header > h2, .archive_header > h2 {
   margin: 0 0 0 1rem;
 }
 
@@ -822,7 +866,7 @@ a {
   display: inline-block;
   vertical-align: top;
   width: 20rem;
-  height: 7.75rem;
+  height: 7.5rem;
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
@@ -836,6 +880,7 @@ a {
 
 .alertCard:last-of-type {
   margin-right: 1rem;
+  width: 8.5rem;
 }
 
 .alertCard:last-of-type .view_more_alert {
@@ -967,6 +1012,7 @@ a {
 
 .notifCard:last-of-type {
   margin-right: 1rem;
+  width: 8.5rem;
 }
 
 .notifCard:last-of-type .view_more_notif {
@@ -1179,7 +1225,8 @@ a {
 }
 
 .newBookingCard_date_for {
-  transform: translate(-18px, -52px);
+  -webkit-transform: translate(-18px, -52px);
+          transform: translate(-18px, -52px);
   text-align: center;
   height: 0;
 }
@@ -1427,6 +1474,10 @@ svg {
   margin: 0;
 }
 
+.topHeader {
+  padding: 0 0.5rem;
+}
+
 .body_wrapper_notif {
   min-height: 100vh;
   background-color: #f4f4f4;
@@ -1511,7 +1562,7 @@ svg {
 .requestStatusBar {
   width: 8px;
   height: 100%;
-  background-color: rgba(253, 174, 70, 0.5);
+  background-color: rgba(253, 174, 70, 0.25);
   border-radius: 10px;
 }
 
@@ -1969,12 +2020,15 @@ svg {
 .tenexbox_header {
   z-index: 100;
 }
+
 .tenexbox_header .topHeader {
   padding: 0 1rem;
 }
+
 .tenexbox_header .topHeader h2 {
   margin: 0;
 }
+
 .tenexbox_header .bottomHeader {
   padding: 0 1rem;
 }
@@ -1994,12 +2048,15 @@ svg {
 .calendar_header {
   z-index: 100;
 }
+
 .calendar_header .topHeader {
   padding: 0 1rem;
 }
+
 .calendar_header .topHeader h2 {
   margin: 0;
 }
+
 .calendar_header .bottomHeader {
   padding: 0 1rem;
 }
@@ -2015,8 +2072,287 @@ svg {
   margin: 0.5rem 0 0 0;
 }
 
+.body_wrapper_calendar .notifCard_wrapper {
+  -ms-grid-columns: 14.5rem auto;
+      grid-template-columns: 14.5rem auto;
+}
+
 /******************************************************************************
         Calendar style ends here
+******************************************************************************/
+/******************************************************************************
+        Archive style starts here
+******************************************************************************/
+/* copied useless code check and delete */
+.archive_header {
+  z-index: 100;
+}
+
+.archive_header .topHeader {
+  padding: 0 1rem;
+}
+
+.archive_header .topHeader h2 {
+  margin: 0;
+}
+
+.archive_header .topHeader .back_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 1px !important;
+}
+
+.archive_header .topHeader .back_btn svg {
+  margin-top: 4px;
+}
+
+.archive_header .bottomHeader {
+  padding: 0 1rem;
+}
+
+.filter_btn {
+  height: 32px;
+  padding: 0 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 32px;
+  border: 1px solid rgba(170, 170, 170, 0.25);
+  background-color: white;
+}
+
+.activeFilterBackground {
+  background-color: #AAAAAA;
+}
+
+.activeFilterIcon {
+  fill: white;
+}
+
+#notifAlertCards {
+  padding: 0 1rem 2.5rem 1rem;
+}
+
+#notifAlertCards > :first-child {
+  margin-top: 1rem;
+}
+
+.notifCardArchive {
+  background-color: #dcebe9;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.notif_excerpt {
+  margin: 0.5rem 0 0.75rem 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
+}
+
+.notifCard_duration_date_wrapper,
+.notifCard_duration_time_wrapper {
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
+
+.notifCard_duration_date_wrapper p svg,
+.notifCard_duration_time_wrapper p svg {
+  margin-bottom: -2px;
+}
+
+.notifCard_duration_date_wrapper p svg {
+  margin-right: 2px;
+}
+
+.notifCard_date_wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#notifAlertCards .notifCard_wrapper {
+  -ms-grid-columns: 14.75rem auto;
+      grid-template-columns: 14.75rem auto;
+}
+
+.body_wrapper_archive .archive_header .back_btn {
+  padding-left: 0;
+}
+
+.body_wrapper_archive .archive_header .back_btn svg {
+  margin-left: 0;
+}
+
+.alertCardArchive {
+  background-color: #FFDFDF;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 7.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.alertCard_wrapper {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-gap: 0.25rem;
+}
+
+.alertCard_content_wrapper {
+  width: 100%;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Copied useless code */
+/******************************************************************************
+        Archive style ends here
+******************************************************************************/
+/******************************************************************************
+        More style starts here
+******************************************************************************/
+.body_wrapper_regulations main {
+  margin: 3rem 1rem 5rem 1rem;
+  background-color: white;
+}
+
+.body_wrapper_regulations .fas {
+  color: gray;
+}
+
+/* Copied code delete useless */
+.body_wrapper_FAQs header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+}
+
+.body_wrapper_FAQs header > h2 {
+  margin: 0 0 0 1rem;
+}
+
+/* Copied code*/
+/******************************************************************************
+        More style ends here
+******************************************************************************/
+/******************************************************************************
+        FAQs style starts here
+******************************************************************************/
+.body_wrapper_FAQs main {
+  padding: 4rem 1rem 1rem 1rem;
+  margin: auto;
+  margin-bottom: 6rem;
+}
+
+.body_wrapper_FAQs main div {
+  max-width: 100%;
+  display: block;
+  -webkit-transform: translateY(-18px);
+          transform: translateY(-18px);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 1rem;
+}
+
+.body_wrapper_FAQs .fas {
+  color: gray;
+}
+
+/* ============= Accordion ================== */
+.accordion {
+  cursor: pointer;
+  padding: 2rem 1rem .5rem 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+main button {
+  background-color: white;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/******************************************************************************
+        FAQs style ends here
 ******************************************************************************/
 /* 6. Media ================================================================ */
 img {
@@ -2038,7 +2374,7 @@ img {
 
 .tenexform h2 {
   margin: 0;
-  padding-top: 6.25rem;
+  padding-top: 3rem;
 }
 
 .tenexform form {
@@ -2050,18 +2386,24 @@ img {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   gap: 1rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 4rem;
   width: 100%;
+}
+
+.tenexform #loginForm label {
+  width: calc(100% - 2rem);
 }
 
 .tenexform #loginForm input {
   border-radius: 1.5rem;
   border: 1px solid #bdbdbd;
   padding: 0.625rem 1.25rem;
-  margin: 0.25rem;
-  width: 343px;
-  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
+  width: 100%;
+  -webkit-box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
+          box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
 }
 
 .tenexform p:nth-of-type(1) {
@@ -2097,6 +2439,14 @@ img {
 }
 
 /* 10. Elements ============================================================ */
+.active {
+  background-color: #81B7AE;
+}
+
+.logo_login {
+  padding-top: 3.5rem;
+}
+
 .btn_to_login {
   margin: 0 auto;
   width: calc(100% - 2rem);
@@ -2110,7 +2460,12 @@ img {
   border-radius: 1.5rem;
   background-color: #DCEBE9;
   margin-top: 2rem;
-  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
+          box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
+}
+
+.btn_to_login button:disabled {
+  opacity: 0.5;
 }
 
 /* New request button styling */
@@ -2118,6 +2473,7 @@ img {
   position: fixed;
   bottom: 3.75rem;
   right: 6px;
+  z-index: 100;
 }
 
 /* New request booking popup styling */
@@ -2169,6 +2525,15 @@ img {
   padding: 1rem;
   border-radius: 0.5rem;
   color: #4f4f4f;
+}
+
+.new_req_book_wrapper .new_req_book_card button:active {
+  background-color: #DCEBE9;
+}
+
+#option_service:active, #option_complaint:active, #option_general:active {
+  background-color: #DCEBE9;
+  font-weight: bold;
 }
 
 .request_btn_icon,
@@ -2372,6 +2737,18 @@ canvas,
 
 .activeFilterIcon {
   fill: white;
+}
+
+.activeFilterNotif svg path {
+  fill: #81B7AE;
+}
+
+.activeFilterAlert svg path {
+  fill: #BE0707;
+}
+
+#calendarDate {
+  width: 12rem;
 }
 
 /* 11. hacks =============================================================== */
