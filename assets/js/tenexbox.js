@@ -79,6 +79,10 @@ $("#nav_more").click(function () {
   window.location.pathname = "/more.html";
 });
 
+$("#chat_btn").click(function () {
+  window.location.pathname = "/chat_with_manager.html";
+});
+
 //Request objects
 let requestArray = [];
 
