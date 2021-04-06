@@ -74,8 +74,8 @@ auth.onAuthStateChanged((user) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  $("#nav_cal").css("color", "white");
-  $("#nav_cal > svg").children().css("fill", "white");
+  $("#nav_cal").css("color", "#81B7AE");
+  $("#nav_cal > svg").children().css("fill", "#81B7AE");
   $(".body_wrapper_book").addClass("hidden");
   $(".body_wrapper_req").addClass("hidden");
   $(".body_wrapper_notif").addClass("hidden");

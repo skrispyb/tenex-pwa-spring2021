@@ -29,6 +29,10 @@ Table of Contents
 }
 
 @font-face {
+  font-family: futuraBold;
+  src: url(../../../assets/fonts/futura_bold_bt.ttf);
+}
+@font-face {
   font-family: futuraMedium;
   src: url(../../../assets/fonts/futura_medium_bt.ttf);
 }
@@ -42,12 +46,14 @@ Table of Contents
   font-family: SFProDisplayRegular;
   src: url(../../../assets/fonts/SFProDisplayRegular.ttf);
 }
-
+@font-face {
+  font-family: SFProDisplayLight;
+  src: url(../../../assets/fonts/SFProDisplayLight.ttf);
+}
 @font-face {
   font-family: RobotoMono;
   src: url(../../../assets/fonts/RobotoMono-Regular.ttf);
 }
-
 /* 2. Reset ================================================================ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -405,9 +411,18 @@ h2 {
   font-weight: normal;
 }
 
+#welcome {
+  font-family: futuraBold, serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #333333;
+}
+
 h3 {
   font-family: SFProDisplaySemibold, serif;
   font-weight: 600;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -423,6 +438,7 @@ p {
 .notifDetaildescription {
   font-size: 14px;
   line-height: 1.5;
+  color: #4f4f4f;
 }
 
 .alertDetailCardTitle {
@@ -508,23 +524,63 @@ p {
 
 .slideshow-container .mySlides p {
   text-align: center;
+  margin: 0.5rem 2rem 2rem 2rem;
+  color: #4f4f4f;
+}
+.slideshow-container button {
+  font-family: SFProDisplaySemibold, serif;
+  letter-spacing: 1px;
 }
 
-.message-container .name {
+.tenexform button {
+  font-family: SFProDisplaySemibold, serif;
+  letter-spacing: 1px;
+}
+.tenexform label input {
+  font-family: SFProDisplayLight, serif;
+  letter-spacing: 1px;
+  color: SFProDisplayRegular, serif;
+}
+.tenexform label input::-moz-placeholder {
+  font-family: SFProDisplayLight, serif;
+  letter-spacing: 1px;
+}
+.tenexform label input:-ms-input-placeholder {
+  font-family: SFProDisplayLight, serif;
+  letter-spacing: 1px;
+}
+.tenexform label input::placeholder {
+  font-family: SFProDisplayLight, serif;
+  letter-spacing: 1px;
+}
+.tenexform p:nth-of-type(1) {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #4f4f4f;
+}
+.tenexform p:nth-of-type(2) {
+  color: #4f4f4f;
+  font-family: SFProDisplayLight, serif;
+}
+.tenexform p:nth-of-type(3) {
+  color: #4f4f4f;
+}
+.tenexform .message-container .name {
   font-family: SFProDisplaySemibold, serif;
   font-size: 14px;
 }
-
-.message-container .message {
+.tenexform .message-container .message {
   font-family: SFProDisplayRegular, serif;
 }
-
-#user-container #user-name {
+.tenexform #user-container #user-name {
   font-size: 16px;
 }
-
-.bottomHeader button {
+.tenexform .bottomHeader button {
   font-family: SFProDisplayRegular, serif;
+}
+
+.textFilter_btn {
+  font-family: SFProDisplaySemibold, serif;
 }
 
 /* 4. Navigation =========================================================== */
@@ -544,6 +600,10 @@ a {
 .slideshow-container {
   max-width: 1000px;
   position: relative;
+  margin: auto;
+}
+
+.slideshow-container img {
   margin: auto;
 }
 
@@ -608,8 +668,8 @@ a {
   cursor: pointer;
   height: 15px;
   width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  margin: 0 4px;
+  background-color: #E0E0E0;
   border-radius: 50%;
   display: inline-block;
   -webkit-transition: background-color 0.6s ease;
@@ -618,7 +678,7 @@ a {
 
 .dot:hover,
 .dot:active {
-  background-color: #717171;
+  background-color: #81B7AE;
 }
 
 /* Fading animation */
@@ -660,7 +720,7 @@ a {
   right: 0;
   width: 100%;
   height: 3.5rem;
-  background-color: #454545;
+  background-color: white;
   z-index: 100;
 }
 
@@ -695,24 +755,21 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: SFProDisplayRegular, serif;
   font-size: 0.6rem;
   color: #848484;
   background: none;
   border: 0;
+  list-style-type: none;
+  letter-spacing: 0.5px;
 }
 
 .app-nav .nav ul li button:active {
   outline: 0;
+  color: #81B7AE;
 }
 
 .app-nav .nav ul li button svg {
@@ -727,7 +784,6 @@ a {
         Alert card home screen starts here
 ******************************************************************************/
 .notification_home_header, .tenexbox_header, .calendar_header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 1rem 0 0.875rem;
@@ -1123,8 +1179,7 @@ a {
 }
 
 .newBookingCard_date_for {
-  -webkit-transform: translate(-18px, -52px);
-          transform: translate(-18px, -52px);
+  transform: translate(-18px, -52px);
   text-align: center;
   height: 0;
 }
@@ -1914,15 +1969,12 @@ svg {
 .tenexbox_header {
   z-index: 100;
 }
-
 .tenexbox_header .topHeader {
   padding: 0 1rem;
 }
-
 .tenexbox_header .topHeader h2 {
   margin: 0;
 }
-
 .tenexbox_header .bottomHeader {
   padding: 0 1rem;
 }
@@ -1942,15 +1994,12 @@ svg {
 .calendar_header {
   z-index: 100;
 }
-
 .calendar_header .topHeader {
   padding: 0 1rem;
 }
-
 .calendar_header .topHeader h2 {
   margin: 0;
 }
-
 .calendar_header .bottomHeader {
   padding: 0 1rem;
 }
@@ -1980,6 +2029,7 @@ img {
   text-align: center;
   width: 100%;
   min-height: 100vh;
+  background-color: #F4F4F4;
 }
 
 .tenexform #signInBtn {
@@ -1987,7 +2037,8 @@ img {
 }
 
 .tenexform h2 {
-  margin-top: 5rem;
+  margin: 0;
+  padding-top: 6.25rem;
 }
 
 .tenexform form {
@@ -1999,31 +2050,33 @@ img {
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
   gap: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 5rem;
+  align-items: center;
+  margin-top: 4rem;
   width: 100%;
 }
 
 .tenexform #loginForm input {
   border-radius: 1.5rem;
-  padding: 0.5rem 1rem;
-  width: 100%;
+  border: 1px solid #bdbdbd;
+  padding: 0.625rem 1.25rem;
+  margin: 0.25rem;
+  width: 343px;
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
 }
 
 .tenexform p:nth-of-type(1) {
-  text-align: center;
-  font-weight: 400;
-  font-size: 0.8rem;
+  text-align: right;
+  margin: 0.5rem 1rem 1rem 1rem;
 }
 
 .tenexform p:nth-of-type(2) {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .tenexform p:nth-of-type(3) {
   text-decoration: underline;
+  margin-top: 0;
 }
 
 /* 8. Comments ============================================================= */
@@ -2053,17 +2106,18 @@ img {
 .btn_to_login button {
   width: 100%;
   padding: 0.5rem 0;
-  color: white;
+  color: #333333;
   border-radius: 1.5rem;
-  background-color: black;
+  background-color: #DCEBE9;
   margin-top: 2rem;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
 }
 
 /* New request button styling */
 #newRequest_btn {
   position: fixed;
-  bottom: 3.5rem;
-  right: 0;
+  bottom: 3.75rem;
+  right: 6px;
 }
 
 /* New request booking popup styling */
@@ -2302,6 +2356,14 @@ canvas,
 
 .activeFilterText {
   color: white;
+}
+
+.activeFilterTextRequest {
+  color: #FDAE46;
+}
+
+.activeFilterTextBooking {
+  color: #4980C1;
 }
 
 .activeFilterBackground {

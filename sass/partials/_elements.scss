@@ -6,18 +6,19 @@
   button {
     width: 100%;
     padding: 0.5rem 0;
-    color: white;
+    color: $color_btn_sign_in_text;
     border-radius: 1.5rem;
-    background-color: black;
+    background-color: $color_btn_sign_in_bg;
     margin-top: 2rem;
+    box-shadow: (3px 3px 4px rgba(0, 0, 0, 0.16));
   }
 }
 
 /* New request button styling */
 #newRequest_btn {
   position: fixed;
-  bottom: 3.5rem;
-  right: 0;
+  bottom: 3.75rem;
+  right: 6px;
 }
 
 /* New request booking popup styling */
@@ -228,6 +229,14 @@ canvas,
 
 .activeFilterText {
   color: white;
+}
+
+.activeFilterTextRequest {
+  color: #FDAE46;
+}
+
+.activeFilterTextBooking {
+  color: #4980C1;
 }
 
 .activeFilterBackground {

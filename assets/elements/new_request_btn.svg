@@ -1,11 +1,11 @@
-<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="71" height="70" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_ddd)">
-<rect x="10" y="9" width="50" height="50" rx="25" fill="#333333"/>
+<rect x="10.6484" y="9" width="50" height="50" rx="25" fill="white"/>
 </g>
-<rect x="10" y="9" width="50" height="50" rx="25" fill="white" fill-opacity="0.04"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M42 35H36V41H34V35H28V33H34V27H36V33H42V35Z" fill="white"/>
+<rect x="10.6484" y="9" width="50" height="50" rx="25" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48 35.2143C48 35.4904 47.7761 35.7143 47.5 35.7143H37.7857C37.5096 35.7143 37.2857 35.9381 37.2857 36.2143V45.5C37.2857 45.7761 37.0619 46 36.7857 46H34.2143C33.9381 46 33.7143 45.7761 33.7143 45.5V36.2143C33.7143 35.9381 33.4904 35.7143 33.2143 35.7143H23.5C23.2239 35.7143 23 35.4904 23 35.2143V32.7857C23 32.5096 23.2239 32.2857 23.5 32.2857H33.2143C33.4904 32.2857 33.7143 32.0619 33.7143 31.7857V22.5C33.7143 22.2239 33.9381 22 34.2143 22H36.7857C37.0619 22 37.2857 22.2239 37.2857 22.5V31.7857C37.2857 32.0619 37.5096 32.2857 37.7857 32.2857H47.5C47.7761 32.2857 48 32.5096 48 32.7857V35.2143Z" fill="#81B7AE"/>
 <defs>
-<filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_ddd" x="0.648438" y="0" width="70" height="70" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
 <feOffset dy="2"/>

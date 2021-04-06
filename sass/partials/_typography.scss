@@ -4,9 +4,18 @@ h2 {
   font-weight: normal;
 }
 
+#welcome {
+  font-family: $font_welcome;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: $color_welcome_text;
+}
+
 h3 {
   font-family: $font_h3;
   font-weight: 600;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -22,6 +31,7 @@ p {
 .notifDetaildescription {
   font-size: 14px;
   line-height: 1.5;
+  color: $color_body;
 }
 
 .alertDetailCardTitle {
@@ -112,28 +122,70 @@ p {
     }
     p {
       text-align: center;
+      margin: 0.5rem 2rem 2rem 2rem;
+      color: $color_body;
       //   font-weight: 300;
       //   font-size: 16px;
     }
   }
-}
-
-.message-container .name {
-  font-family: $font_h3;
-  font-size: 14px;
-}
-
-.message-container .message {
-  font-family: $font_date_posted;
-}
-
-#user-container #user-name {
-  font-size: 16px;
-}
-
-.bottomHeader {
-  
   button {
+    font-family: $font_h3;
+    letter-spacing: 1px;
+  }
+}
+
+.tenexform {
+  button {
+    font-family: $font_h3;
+    letter-spacing: 1px;
+  }
+
+  label input {
+    font-family: $font_light;
+    letter-spacing: 1px;
+    color: $font_body;
+  }
+
+  label input::placeholder {
+    font-family: $font_light;
+    letter-spacing: 1px;
+  }
+
+  p:nth-of-type(1) {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: $color_body;
+  }
+
+  p:nth-of-type(2) {
+    color: $color_body;
+    font-family: $font_light;
+  }
+
+  p:nth-of-type(3) {
+    color: $color_body;
+  }
+
+  .message-container .name {
+    font-family: $font_h3;
+    font-size: 14px;
+  }
+
+  .message-container .message {
     font-family: $font_date_posted;
   }
+
+  #user-container #user-name {
+    font-size: 16px;
+  }
+
+  .bottomHeader {
+    button {
+      font-family: $font_date_posted;
+    }
+  }
+}
+
+.textFilter_btn {
+  font-family: $font_h3;
 }
