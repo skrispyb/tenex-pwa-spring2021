@@ -1,3 +1,19 @@
+
+@font-face {
+  font-family: futuraMedium;
+  src: url(../fonts/futura_medium_bt.otf);
+}
+
+@font-face {
+  font-family: SFProDisplayRegular;
+  src: url(../fonts/SFProDisplayRegular.ttf);
+}
+
+@font-face {
+  font-family: RobotoMono;
+  src: url(../fonts/RobotoMono-Regular.ttf);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,41 +32,46 @@ header {
   background-color: #f4f4f4;
   box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
-header > h2 {
+
+header>h2 {
   margin: 0 0 0 1rem;
 }
 
+#headerTitle {
+  font-family: futuraMedium;
+}
 
 .topHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0.5rem;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
 
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .visuallyHidden {
-    visibility: hidden;
-  }
-  
+  visibility: hidden;
+}
 
 .hidden {
-    display: none!important;
+  display: none!important;
 }
+
 main {
   padding: 4rem 1rem 1rem 1rem;
   margin: auto;
   margin-bottom: 6rem;
 }
+
 main div {
   max-width: 100%;
   display: block;
@@ -86,9 +107,15 @@ main div {
   align-items: center;
 }
 
-.accordion:hover {
-  background-color: #ccc;
+.accordion p {
+  font-family: SFProDisplayRegular;
+  font-size: 1rem;
+  color: #4f4f4f;
 }
+
+/* .accordion:hover {
+  background-color: #ccc;
+} */
 
 .panel {
   padding: 0 18px;
@@ -99,7 +126,7 @@ main div {
 
 .first {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 main button {
