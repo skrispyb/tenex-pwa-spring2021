@@ -60,14 +60,14 @@ section {
   background-color: white;
   background-repeat: 5px;
   margin: 0 0.5rem 0 0.5rem;
-  padding: 0 0.5rem 0 0.5rem;
+  padding: 0 1rem 0 1rem;
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 .first {
   display: flex;
   flex-flow: row nowrap;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
 }
 

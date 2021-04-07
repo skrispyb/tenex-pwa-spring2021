@@ -14,7 +14,7 @@ h2 {
 
 h3 {
   font-family: $font_h3;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   margin: 0;
 }
@@ -61,6 +61,12 @@ p {
   a {
     font-family: $font_h3;
   }
+}
+
+.notifCard_duration_date_wrapper p,
+.notifCard_duration_time_wrapper p {
+  font-size: 0.875rem;
+  color: $color_body;
 }
 
 .alertCard_date_wrapper p,
