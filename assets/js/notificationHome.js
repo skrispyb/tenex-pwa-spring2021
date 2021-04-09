@@ -63,6 +63,21 @@ auth.onAuthStateChanged(async (user) => {
     window.location.pathname = "/index.html";
   }
 });
+
+// Check if connected to internet or not
+function isOnline() {
+  
+  if (navigator.onLine) {
+      document.getElementById(
+        "onlineStatus").classList.remove("not_online");
+        recentCards.innerHTML += '<p style="color: red">Your are offline</p>';
+  } else {
+      document.getElementById(
+        "onlineStatus").classList.add("not_online");
+        clearNotificationsUI();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   $("#nav_home").css("color", "#81B7AE");
   $("#nav_home > svg").children().css("fill", "#81B7AE");
