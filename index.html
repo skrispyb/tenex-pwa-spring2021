@@ -62,7 +62,7 @@
       <h2 id="welcome" onclick="mainpage()">Welcome!</h2>
       <form id="loginForm">
         <label for="Username"
-          ><input type="email" id="username" placeholder="Enter Email" name="email" required
+          ><input type="email" value="tenexuser@gmail.com" id="username" placeholder="Enter Email" name="email" required
         /></label>
         <label for="password"
           ><input
@@ -70,13 +70,14 @@
             id="password"
             placeholder="Enter Password"
             name="psw"
+            value="password"
             required
         /></label>
       </form>
 
       <p>Forgot password?</p>
       <div class="btn_to_login">
-        <button type="submit" form="loginForm" id="signInBtn" disabled>SIGN IN</button>
+        <button type="submit" form="loginForm" id="signInBtn" >SIGN IN</button>
       </div>
       <p>New user?</p>
       <p>Contact your building manager</p>
@@ -89,7 +90,31 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"
   ></script>
-
+  <script>
+    // does the browser support service workers?
+    if ("serviceWorker" in navigator) {
+      // fires when the service worker is ready
+      navigator.serviceWorker.ready.then((reg) => {
+        // we have an active service worker working for us
+        console.log(`Service Worker ready (Scope: ${reg.scope})`);
+        // do something interesting, if you want...
+      });
+      // then register our service worker
+      navigator.serviceWorker
+        .register("./sw.js", { scope: "/" })
+        .then(function (reg) {
+          // display a success message
+          console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+        })
+        .catch(function (error) {
+          // display an error message
+          console.log(`Service Worker Error (${error})`);
+        });
+    } else {
+      // happens when the app isn't served over a TLS connection (HTTPS)
+      console.warn("Service Worker not available");
+    }
+  </script>
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>

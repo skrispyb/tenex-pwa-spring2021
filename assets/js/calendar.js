@@ -108,57 +108,46 @@ clearAllUI = () => {
 let recentCards = document.getElementById("allCards");
 
 // Access all data from db for current user and store objects in array
-function loadDB() {
-  return new Promise((resolve) => {
+async function loadDB() {
+  // return new Promise(async (resolve) => {
     // On Request status change in db update front end
-
-      db.collection("newRequests")
+      await db.collection("newRequests")
       .where("ReqUid", "==", currUid)
-      .get()
-      .then((doc) => {
+      .get().then((doc) => {
         requests = [];
 
         doc.forEach((fields) => {
           requests.push(fields.data());
         });
-        mergeRecentCards();
-      })
-      .catch((error) => {
-        console.error(error);
+        // mergeRecentCards();
       });
+      console.log(requests);
 
       // Retreive bookings
-    db.collection("bookings")
+    await db.collection("bookings")
       .where("BookingUid", "==", currUid)
-      .get()
-      .then((doc) => {
+      .get().then((doc) => {
         bookings = [];
 
         doc.forEach((fields) => {
           bookings.push(fields.data());
         });
-        mergeRecentCards();
-      })
-      .catch((error) => {
-        console.error(error);
+        // mergeRecentCards();
       });
-    db.collection("notifications")
-      .get()
-      .then((doc) => {
+    await db.collection("notifications")
+      .get().then((doc) => {
         notifications = [];
 
         doc.forEach((fields) => {
           notifications.push(fields.data());
         });
-        mergeRecentCards();
-      })
-      .catch((error) => {
-        console.error(error);
+        // mergeRecentCards();
       });
-    setTimeout(() => {
-      resolve("resolved");
-    }, 1100);
-  });
+      mergeRecentCards();
+  //   setTimeout(() => {
+  //     resolve("resolved");
+  //   }, 100);
+  // });
 }
 
 // Function to display recent cards
@@ -175,6 +164,7 @@ function mergeRecentCards() {
   notifications.forEach((card) => {
     recentUpdates.push(card);
   });
+  console.log(recentUpdates);
   
 }
 // Sort in reverse chronological order of date and display cards
@@ -182,13 +172,13 @@ async function sortDisplay(currentSelect) {
   await loadDB();
   recentUpdates.forEach(function (items) {
     obj = items.onDate;
-    console.log(items.cardType + obj.toDate().getUTCDate());
+    // console.log(items.cardType + obj.toDate().getUTCDate());
     if (
       obj.toDate().getFullYear() === new Date(currentSelect).getUTCFullYear() &&
       obj.toDate().getMonth() === new Date(currentSelect).getUTCMonth() &&
       obj.toDate().getDate() === new Date(currentSelect).getUTCDate()
     ) {
-      currentDateCards.push(items); console.log(currentDateCards);
+      currentDateCards.push(items);
     }
   });
   

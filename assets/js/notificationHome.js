@@ -28,10 +28,10 @@ const db = firebase.firestore();
 // Accessing the firebase storage
 let storageRef = firebase.storage();
 
-auth.onAuthStateChanged(async (user) => {
+auth.onAuthStateChanged((user) => {
   if (user) {
     console.log("user is logged in");
-    currUid = await user.uid;
+    currUid = user.uid;
     console.log(currUid);
     // On Request status change in db update front end
     db.collection("newRequests")
