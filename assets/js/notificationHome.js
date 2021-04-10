@@ -69,12 +69,13 @@ function isOnline() {
   
   if (navigator.onLine) {
       document.getElementById(
-        "onlineStatus").classList.remove("not_online");
-        recentCards.innerHTML += '<p style="color: red">Your are offline</p>';
+        "onlineStatus").classList.add("hidden");
+      clearRecentsUI();
   } else {
       document.getElementById(
-        "onlineStatus").classList.add("not_online");
-        clearNotificationsUI();
+        "onlineStatus").classList.remove("hidden");
+        document.getElementById(
+          "onlineStatus").innerHTML = '<p style="color: red">Your are offline</p>';
   }
 }
 
@@ -85,6 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body_wrapper_notif").addClass("hidden");
   $(".body_wrapper_book").addClass("hidden");
   $(".body_wrapper_req").addClass("hidden");
+  
+  isOnline();
 });
 
 // Navigating through pages
