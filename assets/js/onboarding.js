@@ -84,18 +84,33 @@ function mainpage() {
   y.style.display = "block";
 }
 
-document.getElementById("username").addEventListener('keyup', function() {
-  if (document.getElementById("username").value.length > 0 && document.getElementById("password").value.length > 0) {
+document.getElementById("username").addEventListener("keyup", function () {
+  if (
+    document.getElementById("username").value.length > 0 &&
+    document.getElementById("password").value.length > 0
+  ) {
     document.getElementById("signInBtn").removeAttribute("disabled");
   } else {
     document.getElementById("signInBtn").setAttribute("disabled", "true");
   }
 });
 
-document.getElementById("password").addEventListener('keyup', function() {
-  if (document.getElementById("username").value.length > 0 && document.getElementById("password").value.length > 0) {
+document.getElementById("password").addEventListener("keyup", function () {
+  if (
+    document.getElementById("username").value.length > 0 &&
+    document.getElementById("password").value.length > 0
+  ) {
     document.getElementById("signInBtn").removeAttribute("disabled");
   } else {
     document.getElementById("signInBtn").setAttribute("disabled", "true");
   }
 });
+
+// *************************Adding Splash Screen  ****************************
+setTimeout(function () {
+  mainpage();
+  var x = document.getElementById("main_page_img");
+  var y = document.getElementById("slideshow-container");
+  if (x.style.display === "block") x.style.display = "none";
+  y.style.display = "block";
+}, 2000);

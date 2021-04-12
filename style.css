@@ -15,15 +15,6 @@ Table of Contents
 
 */
 /* 1. Variables =========================================================== */
-::-webkit-input-placeholder {
-  color: #BDBDBD;
-}
-:-ms-input-placeholder {
-  color: #BDBDBD;
-}
-::-ms-input-placeholder {
-  color: #BDBDBD;
-}
 ::placeholder {
   color: #BDBDBD;
 }
@@ -67,8 +58,7 @@ Table of Contents
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -111,8 +101,7 @@ h1 {
    * 2. Show the overflow in Edge and IE.
    */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -149,8 +138,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -298,8 +286,7 @@ fieldset {
    *    `fieldset` elements in all browsers.
    */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -333,8 +320,7 @@ textarea {
    */
 [type="checkbox"],
 [type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -569,21 +555,6 @@ p {
   color: SFProDisplayRegular, serif;
 }
 
-.tenexform label input::-webkit-input-placeholder {
-  font-family: SFProDisplayLight, serif;
-  letter-spacing: 1px;
-}
-
-.tenexform label input:-ms-input-placeholder {
-  font-family: SFProDisplayLight, serif;
-  letter-spacing: 1px;
-}
-
-.tenexform label input::-ms-input-placeholder {
-  font-family: SFProDisplayLight, serif;
-  letter-spacing: 1px;
-}
-
 .tenexform label input::placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
@@ -660,13 +631,9 @@ a {
   color: white;
   font-weight: bold;
   font-size: 18px;
-  -webkit-transition: 0.6s ease;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 /* Position the "next button" to the right and previous button to left*/
@@ -714,7 +681,6 @@ a {
   background-color: #E0E0E0;
   border-radius: 50%;
   display: inline-block;
-  -webkit-transition: background-color 0.6s ease;
   transition: background-color 0.6s ease;
 }
 
@@ -729,15 +695,6 @@ a {
   -webkit-animation-duration: 1.5s;
   animation-name: fade;
   animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 @keyframes fade {
@@ -772,19 +729,10 @@ a {
 
 .app-nav .nav ul {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 0;
   margin: 0;
 }
@@ -794,19 +742,10 @@ a {
 }
 
 .app-nav .nav ul li button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: SFProDisplayRegular, serif;
   font-size: 0.6rem;
   color: #848484;
@@ -833,20 +772,13 @@ a {
         Alert card home screen starts here
 ******************************************************************************/
 .notification_home_header, .tenexbox_header, .calendar_header, .archive_header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 1rem 0 0.875rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #f4f4f4;
-  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
-          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
 
 .notification_home_header > h2, .tenexbox_header > h2, .calendar_header > h2, .archive_header > h2 {
@@ -876,8 +808,7 @@ a {
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .alertCard:first-of-type {
@@ -891,15 +822,9 @@ a {
 
 .alertCard:last-of-type .view_more_alert {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .alertCard:last-of-type .view_more_alert a {
@@ -909,10 +834,8 @@ a {
 .alertCard_wrapper {
   width: 100%;
   height: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 13.25rem auto;
-      grid-template-columns: 13.25rem auto;
+  grid-template-columns: 13.25rem auto;
   grid-gap: 0.25rem;
 }
 
@@ -926,7 +849,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -936,24 +858,14 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
 .alertCard_date_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .alertCard_date_wrapper p {
@@ -971,13 +883,8 @@ a {
 /* Notification Card Home screen starts here */
 .notificationSection {
   padding: 1.5rem 0 0.875rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #ffffff;
 }
 
@@ -1008,8 +915,7 @@ a {
   padding: 1rem;
   margin: 0 0 0.25rem 0.5rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .notifCard:first-of-type {
@@ -1023,15 +929,9 @@ a {
 
 .notifCard:last-of-type .view_more_notif {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .notifCard:last-of-type .view_more_notif a {
@@ -1041,10 +941,8 @@ a {
 .notifCard_wrapper {
   width: 100%;
   height: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 13.5rem auto;
-      grid-template-columns: 13.5rem auto;
+  grid-template-columns: 13.5rem auto;
   grid-gap: 0.25rem;
 }
 
@@ -1058,7 +956,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1068,7 +965,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1078,8 +974,6 @@ a {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -1098,8 +992,6 @@ a {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(189, 189, 189, 0.25);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -1112,19 +1004,10 @@ a {
 }
 
 .notifCard_date_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .notifCard_date_wrapper p {
@@ -1156,23 +1039,18 @@ a {
   padding: 1rem;
   margin: 0.5rem 0 0 0;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .newRequestCard_wrapper {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  grid-template-columns: auto auto;
   grid-gap: 0.5rem;
 }
 
 .newRequestCard_content_wrapper {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 0.5rem auto;
-      grid-template-columns: 0.5rem auto;
+  grid-template-columns: 0.5rem auto;
   grid-gap: 0.25rem 1rem;
   width: 14rem;
 }
@@ -1192,7 +1070,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1202,37 +1079,25 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
 .newRequestCard_status {
   margin: 0;
   grid-column: 1 / -1;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
 }
 
 .newRequestCard_date_wrapper {
   height: 93px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .newBookingCard_date_for {
-  -webkit-transform: translate(-18px, -52px);
-          transform: translate(-18px, -52px);
+  transform: translate(-18px, -52px);
   text-align: center;
   height: 0;
 }
@@ -1248,11 +1113,8 @@ a {
 ******************************************************************************/
 .alertDetailCardTitle {
   margin: 0 0 0.33rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .alertDetailPostedDate {
@@ -1267,23 +1129,15 @@ a {
 #alertDetailHeader {
   background-color: #f4f4f4;
   width: 100%;
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: -webkit-sticky;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
 }
 
 .topHeader {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 button {
@@ -1291,8 +1145,6 @@ button {
 }
 
 button svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin: auto;
 }
@@ -1313,7 +1165,6 @@ svg {
   width: 40px;
   height: 40px;
   background-color: rgba(0, 0, 0, 0);
-  -ms-grid-row: 1;
   grid-row: 1/1;
 }
 
@@ -1322,25 +1173,20 @@ svg {
   width: 100%;
   padding: 1rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   margin: 0.5rem 0;
 }
 
 .alertDetail_wrapper {
   margin: 1rem 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
   grid-gap: 1rem;
 }
 
 .alertHeader {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
   grid-gap: 0.25rem;
 }
 
@@ -1371,18 +1217,13 @@ svg {
   margin-bottom: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   margin-right: 0.5rem;
 }
 
 .alertDetailSub {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .hidden {
@@ -1400,20 +1241,15 @@ svg {
         Notification Detail view style starts here
 ******************************************************************************/
 .notificationHeader {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
   grid-gap: 0.25rem;
 }
 
 .notifDetailCardTitle {
   margin: 0 0 0.33rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-item-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .notifDetailPostedDate {
@@ -1422,34 +1258,23 @@ svg {
 
 .notificationDetail {
   margin: 1rem 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
   grid-gap: 1rem;
 }
 
 .notificationDuration {
   margin: 1.5rem 0 1rem 0;
-  display: -ms-grid;
   display: grid;
   grid-gap: 0.5rem;
 }
 
 .tag {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 40px;
   margin: 0;
@@ -1469,9 +1294,7 @@ svg {
 #notifDetailHeader {
   background-color: #f4f4f4;
   width: 100%;
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
-  position: -webkit-sticky;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
 }
@@ -1502,17 +1325,12 @@ svg {
   padding: 1rem;
   margin: 0.5rem 0;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .notificationDetailSub {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 /******************************************************************************
@@ -1558,10 +1376,8 @@ svg {
 
 .requestDetail {
   margin: 1rem 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 1fr;
-      grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
   grid-gap: 1rem;
 }
 
@@ -1589,22 +1405,14 @@ svg {
   margin-bottom: 0.5rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   margin-right: 0.5rem;
 }
 
 .attachmentSection {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   gap: 0.25rem;
 }
 
@@ -1613,31 +1421,19 @@ svg {
 }
 
 .tag {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 40px;
   margin: 0;
 }
 
 .requestDetailSub {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .tipsInfoSection,
@@ -1659,8 +1455,6 @@ svg {
 }
 
 .illustration {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
@@ -1679,24 +1473,15 @@ svg {
         New Request view style starts here
 ******************************************************************************/
 .newRequest_header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 10;
   padding: 1rem 1rem 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #f4f4f4;
-  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
-          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
 
 .newRequest_header h2 {
@@ -1715,37 +1500,25 @@ svg {
 
 .progress_wrapper {
   padding: 0 1rem 0 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .progress_img {
   margin-top: 2.25rem;
-  -webkit-transform: translateX(17px);
-          transform: translateX(17px);
+  transform: translateX(17px);
 }
 
 .progress_content {
   padding: 0;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 
 .progress_content li {
   list-style-type: none;
   padding: 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   color: #bdbdbd;
 }
 
@@ -1762,65 +1535,46 @@ svg {
 }
 
 .options_content {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
 
 .options_content button {
   padding: 1rem 0;
   background: white;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
 }
 
 .options_subject,
 .options_desciption {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .newReq_subject_submit {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin-top: 1rem;
 }
 
 .attachment_options {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
 
 .attachment_options button {
   padding: 2rem;
   background-color: #ffffff;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
 }
 
 .options_attachment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .options_attachment button {
@@ -1848,17 +1602,13 @@ svg {
         Chat view style starts here
 ******************************************************************************/
 #chatHeader {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
   background-color: #f4f4f4;
 }
 
 .chat_input {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .chat_input input {
@@ -1879,19 +1629,12 @@ svg {
   overflow-y: auto;
   padding: 0 0.5rem;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 #message-filler {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 
 .message-container:first-of-type {
@@ -1903,11 +1646,8 @@ svg {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
   opacity: 0;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   max-width: 70%;
-  -webkit-transition: opacity 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out;
 }
 
@@ -1916,15 +1656,9 @@ svg {
 }
 
 .chat_bubble_round_user {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  flex-direction: column;
+  align-self: flex-end;
   border-radius: 0.5rem 0.5rem 0 0.5rem;
 }
 
@@ -1946,8 +1680,7 @@ svg {
   display: inline-block;
   width: 100%;
   color: #81b7ae;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #message-form {
@@ -1956,20 +1689,13 @@ svg {
   left: 0;
   right: 0;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+  flex-flow: row nowrap;
   padding: 0.5rem 1rem;
 }
 
 #message-form button {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   background-color: #81b7ae;
   border-radius: 2rem;
   margin-left: 0.25rem;
@@ -1981,20 +1707,13 @@ svg {
 
 #user-container {
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   top: 22px;
   width: 100%;
   right: 0;
   padding-left: 10px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   padding-right: 10px;
 }
 
@@ -2079,8 +1798,7 @@ svg {
 }
 
 .body_wrapper_calendar .notifCard_wrapper {
-  -ms-grid-columns: 14.5rem auto;
-      grid-template-columns: 14.5rem auto;
+  grid-template-columns: 14.5rem auto;
 }
 
 /******************************************************************************
@@ -2103,8 +1821,6 @@ svg {
 }
 
 .archive_header .topHeader .back_btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding-left: 1px !important;
 }
@@ -2150,8 +1866,7 @@ svg {
   padding: 1rem;
   margin: 0.5rem 0 0 0;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .notif_excerpt {
@@ -2160,7 +1875,6 @@ svg {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -2170,8 +1884,6 @@ svg {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -2186,24 +1898,14 @@ svg {
 
 .notifCard_date_wrapper {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 #notifAlertCards .notifCard_wrapper {
-  -ms-grid-columns: 14.75rem auto;
-      grid-template-columns: 14.75rem auto;
+  grid-template-columns: 14.75rem auto;
 }
 
 .body_wrapper_archive .archive_header .back_btn {
@@ -2223,17 +1925,14 @@ svg {
   padding: 1rem;
   margin: 0.5rem 0 0 0;
   border-radius: 0.5rem;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .alertCard_wrapper {
   width: 100%;
   height: 100%;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  grid-template-columns: auto auto;
   grid-gap: 0.25rem;
 }
 
@@ -2263,20 +1962,13 @@ button:focus {
 
 /* Copied code delete useless */
 .body_wrapper_FAQs header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   padding: 1rem 0 0.875rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #f4f4f4;
-  -webkit-box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
-          box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
 }
 
 .body_wrapper_FAQs header > h2 {
@@ -2299,8 +1991,7 @@ button:focus {
 .body_wrapper_FAQs main div {
   max-width: 100%;
   display: block;
-  -webkit-transform: translateY(-18px);
-          transform: translateY(-18px);
+  transform: translateY(-18px);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-top: 1rem;
@@ -2318,19 +2009,12 @@ button:focus {
   border: none;
   text-align: left;
   outline: none;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: .5rem;
   margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion:hover {
@@ -2345,16 +2029,13 @@ button:focus {
 }
 
 .first {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
 
 main button {
   background-color: white;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 /******************************************************************************
@@ -2384,17 +2065,10 @@ img {
 }
 
 .tenexform form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
+  flex-flow: column nowrap;
   gap: 1rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-top: 4rem;
   width: 100%;
 }
@@ -2408,8 +2082,7 @@ img {
   border: 1px solid #bdbdbd;
   padding: 0.625rem 1.25rem;
   width: 100%;
-  -webkit-box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
-          box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
 }
 
 .tenexform p:nth-of-type(1) {
@@ -2431,8 +2104,7 @@ img {
 /* 9. Accessibility ======================================================== */
 .visually-hidden {
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -2466,8 +2138,7 @@ img {
   border-radius: 1.5rem;
   background-color: #DCEBE9;
   margin-top: 2rem;
-  -webkit-box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
-          box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.16);
 }
 
 .btn_to_login button:disabled {
@@ -2485,43 +2156,27 @@ img {
 /* New request booking popup styling */
 .new_req_book_wrapper {
   display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .new_req_book_card {
   padding: 2rem 1rem;
   height: 13rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   gap: 0.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   border-radius: 1rem;
 }
 
@@ -2534,11 +2189,13 @@ img {
 }
 
 .new_req_book_wrapper .new_req_book_card button:active {
-  background-color: #DCEBE9;
+  background-color: #dcebe9;
 }
 
-#option_service:active, #option_complaint:active, #option_general:active {
-  background-color: #DCEBE9;
+#option_service:active,
+#option_complaint:active,
+#option_general:active {
+  background-color: #dcebe9;
   font-weight: bold;
 }
 
@@ -2548,8 +2205,6 @@ img {
 }
 
 .show_popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2564,7 +2219,6 @@ button:focus {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   max-height: 2.5rem;
   margin: 0;
   color: rgba(0, 0, 0, 0.8);
@@ -2617,16 +2271,9 @@ canvas,
   z-index: 12;
   padding-top: 3rem;
   background-color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .camera_feed .snap_options,
@@ -2637,16 +2284,12 @@ canvas,
 .camera_feed .clicked_options,
 .clicked_camera_feed .clicked_options {
   margin-top: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
 }
 
 .camera_feed .clicked_options button,
 .clicked_camera_feed .clicked_options button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -2706,11 +2349,11 @@ canvas,
 }
 
 .bg-green {
-  background-color: #DCEBE9;
+  background-color: #dcebe9;
 }
 
 .bg-gray {
-  background-color: #E5E5EA;
+  background-color: #e5e5ea;
 }
 
 .textFilter_btn {
@@ -2722,7 +2365,7 @@ canvas,
   background-color: white;
   text-transform: uppercase;
   font-weight: 500;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .activeFilterText {
@@ -2730,15 +2373,15 @@ canvas,
 }
 
 .activeFilterTextRequest {
-  color: #FDAE46;
+  color: #fdae46;
 }
 
 .activeFilterTextBooking {
-  color: #4980C1;
+  color: #4980c1;
 }
 
 .activeFilterBackground {
-  background-color: #AAAAAA;
+  background-color: #aaaaaa;
 }
 
 .activeFilterIcon {
@@ -2746,17 +2389,28 @@ canvas,
 }
 
 .activeFilterNotif svg path {
-  fill: #81B7AE;
+  fill: #81b7ae;
 }
 
 .activeFilterAlert svg path {
-  fill: #BE0707;
+  fill: #be0707;
 }
 
 #calendarDate {
   width: 12rem;
 }
 
+.offline_events {
+  text-align: center;
+}
+
+.tenex_image {
+  display: block;
+}
+
+.slideshow-container {
+  display: none;
+}
+
 /* 11. hacks =============================================================== */
 /* 12. Print =============================================================== */
-/*# sourceMappingURL=style.css.map */

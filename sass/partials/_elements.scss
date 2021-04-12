@@ -18,7 +18,7 @@
     background-color: $color_btn_sign_in_bg;
     margin-top: 2rem;
     box-shadow: (3px 3px 4px rgba(0, 0, 0, 0.16));
-  
+
     &:disabled {
       opacity: 0.5;
     }
@@ -68,14 +68,15 @@
   color: #4f4f4f;
 
   &:active {
-    background-color: #DCEBE9;
+    background-color: #dcebe9;
   }
 }
 
-#option_service, #option_complaint, #option_general {
-
+#option_service,
+#option_complaint,
+#option_general {
   &:active {
-    background-color: #DCEBE9;
+    background-color: #dcebe9;
     font-weight: bold;
   }
 }
@@ -231,11 +232,11 @@ canvas,
 }
 
 .bg-green {
-  background-color: #DCEBE9;
+  background-color: #dcebe9;
 }
 
 .bg-gray {
-  background-color: #E5E5EA;
+  background-color: #e5e5ea;
 }
 
 .textFilter_btn {
@@ -247,7 +248,7 @@ canvas,
   background-color: white;
   text-transform: uppercase;
   font-weight: 500;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .activeFilterText {
@@ -255,15 +256,15 @@ canvas,
 }
 
 .activeFilterTextRequest {
-  color: #FDAE46;
+  color: #fdae46;
 }
 
 .activeFilterTextBooking {
-  color: #4980C1;
+  color: #4980c1;
 }
 
 .activeFilterBackground {
-  background-color: #AAAAAA;
+  background-color: #aaaaaa;
 }
 
 .activeFilterIcon {
@@ -271,14 +272,29 @@ canvas,
 }
 
 .activeFilterNotif svg path {
-  fill: #81B7AE;
+  fill: #81b7ae;
 }
 
 .activeFilterAlert svg path {
-  fill: #BE0707;
+  fill: #be0707;
 }
-
 
 #calendarDate {
   width: 12rem;
+}
+
+// ******************** Notification Offline Illustration **********************
+
+.offline_events {
+  text-align: center;
+}
+
+// ******************** Tenex Image  **********************
+
+.tenex_image {
+  display: block;
+}
+
+.slideshow-container {
+  display: none;
 }
