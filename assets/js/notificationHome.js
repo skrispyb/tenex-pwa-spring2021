@@ -75,8 +75,8 @@ function isOnline() {
       document.getElementById(
         "onlineStatus").classList.remove("hidden");
         document.getElementById(
-          "onlineStatus").innerHTML = `<div class="no_events">
-          <div class="empty_illustration">
+          "onlineStatus").innerHTML = `<div class="offline_events">
+          <div class="offline_illustration">
             <svg width="134" height="100" viewBox="0 0 134 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.7">
               <path d="M76.4675 25.2229H6.64373C2.9745 25.2229 0 28.1974 0 31.8666V92.5769C0 96.2461 2.9745 99.2206 6.64373 99.2206H76.4675C80.1368 99.2206 83.1112 96.2461 83.1112 92.5769V31.8666C83.1112 28.1974 80.1368 25.2229 76.4675 25.2229Z" fill="#A7A9AC"/>
@@ -122,7 +122,7 @@ function isOnline() {
               </g>
               </svg>
           </div>
-          <p>Looks Like you have no notifications for this day</p>
+          <p>Sorry!! You are offline </p>
         </div>`;
   }
 }
