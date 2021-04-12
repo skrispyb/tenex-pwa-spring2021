@@ -9,23 +9,42 @@
 
     <!-- Link to manifest file -->
     <link rel="manifest" href="app.webmanifest" />
-
   </head>
   <body>
-    <div class="slideshow-container" id="slideshow-container">
-      <div class="mySlides fade">
-        <img src="assets/elements/login_and_setting_page_images/alerts and notifications.svg">
-       <p>Receive the latest alerts and updates of your residential building via Tenex!</p>
-        </div>
+    <div class="tenex_image" style="display: block" id="main_page_img">
+      <img src="assets/elements/tenex_image.svg" />
+    </div>
 
+    <div
+      class="slideshow-container"
+      id="slideshow-container"
+      style="display: none"
+    >
       <div class="mySlides fade">
-        <img src="assets/elements/login_and_setting_page_images/calendar.svg">
-        <p>Track & find notifications, bookings, and requests via our calendar feature!</p>
+        <img
+          src="assets/elements/login_and_setting_page_images/alerts and notifications.svg"
+        />
+        <p>
+          Receive the latest alerts and updates of your residential building via
+          Tenex!
+        </p>
       </div>
 
       <div class="mySlides fade">
-        <img src="assets/elements/login_and_setting_page_images/requests and bookings.svg">
-        <p>Send requests to your building manager & book amenities via Tenex!</p>
+        <img src="assets/elements/login_and_setting_page_images/calendar.svg" />
+        <p>
+          Track & find notifications, bookings, and requests via our calendar
+          feature!
+        </p>
+      </div>
+
+      <div class="mySlides fade">
+        <img
+          src="assets/elements/login_and_setting_page_images/requests and bookings.svg"
+        />
+        <p>
+          Send requests to your building manager & book amenities via Tenex!
+        </p>
       </div>
       <div style="text-align: center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -42,27 +61,70 @@
     </div>
 
     <div class="tenexform" style="display: none" id="tenexform">
-      <div class="logo_login"><svg width="95" height="82" viewBox="0 0 95 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_i)">
-        <path d="M23.7574 67C25.8285 67 27.5074 65.3211 27.5074 63.25C27.5074 61.1789 25.8285 59.5 23.7574 59.5V67ZM23.7574 25.7056C21.6864 25.7056 20.0074 27.3845 20.0074 29.4556C20.0074 31.5266 21.6864 33.2056 23.7574 33.2056V25.7056ZM66.2577 41.9639C66.2577 44.035 67.9367 45.7139 70.0077 45.7139C72.0788 45.7139 73.7577 44.035 73.7577 41.9639H66.2577ZM54.4375 77.085L51.9467 74.2817L54.4375 77.085ZM68.8712 64.2599L66.3804 61.4566L68.8712 64.2599ZM90.8953 59.2576L94.6453 59.2647L90.8953 59.2576ZM90.9924 8.00758L87.2424 8.00047L90.9924 8.00758ZM23.7574 59.5H8.01518V67H23.7574V59.5ZM7.76519 59.2491L7.95939 7.99906L0.459443 7.97064L0.265242 59.2206L7.76519 59.2491ZM8.20939 7.75H86.9924V0.25H8.20939V7.75ZM87.2424 8.00047L87.1453 59.2505L94.6453 59.2647L94.7424 8.01468L87.2424 8.00047ZM86.8953 59.5H71.5281V67H86.8953V59.5ZM66.3804 61.4566L51.9467 74.2817L56.9284 79.8882L71.3621 67.0631L66.3804 61.4566ZM51.5306 74.0948V33.4556H44.0306V74.0948H51.5306ZM43.7806 25.7056H23.7574V33.2056H43.7806V25.7056ZM23.7574 33.2056H66.0077V25.7056H23.7574V33.2056ZM66.2577 33.4556V41.9639H73.7577V33.4556H66.2577ZM66.0077 33.2056C66.1458 33.2056 66.2577 33.3175 66.2577 33.4556H73.7577C73.7577 29.1754 70.288 25.7056 66.0077 25.7056V33.2056ZM51.5306 33.4556C51.5306 29.1753 48.0608 25.7056 43.7806 25.7056V33.2056C43.9187 33.2056 44.0306 33.3175 44.0306 33.4556H51.5306ZM51.9467 74.2817C51.9026 74.3209 51.8736 74.3357 51.8617 74.3411C51.8489 74.3469 51.8381 74.3498 51.8262 74.3513C51.7989 74.3549 51.7446 74.3527 51.6782 74.3229C51.6118 74.2931 51.5741 74.2539 51.5587 74.2312C51.5519 74.2212 51.5469 74.2112 51.5427 74.1978C51.5388 74.1853 51.5306 74.1538 51.5306 74.0948H44.0306C44.0306 80.7812 51.9301 84.3295 56.9284 79.8882L51.9467 74.2817ZM71.5281 59.5C69.6305 59.5 67.7989 60.1962 66.3804 61.4566L71.3621 67.0631C71.4078 67.0225 71.4669 67 71.5281 67V59.5ZM87.1453 59.2505C87.1451 59.3884 87.0332 59.5 86.8953 59.5V67C91.1698 67 94.6372 63.5392 94.6453 59.2647L87.1453 59.2505ZM86.9924 7.75C87.1307 7.75 87.2427 7.86222 87.2424 8.00047L94.7424 8.01468C94.7505 3.72875 91.2784 0.25 86.9924 0.25V7.75ZM7.95939 7.99906C7.95991 7.86135 8.07169 7.75 8.20939 7.75V0.25C3.94064 0.25 0.475619 3.70193 0.459443 7.97064L7.95939 7.99906ZM8.01518 59.5C7.87675 59.5 7.76466 59.3875 7.76519 59.2491L0.265242 59.2206C0.248979 63.5123 3.72349 67 8.01518 67V59.5Z" fill="#81B7AE"/>
-        </g>
-        <defs>
-        <filter id="filter0_i" x="0.265625" y="0.25" width="94.4772" height="85.61" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-        <feOffset dy="4"/>
-        <feGaussianBlur stdDeviation="2"/>
-        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-        <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
-        </filter>
-        </defs>
-        </svg></div>
+      <div class="logo_login">
+        <svg
+          width="95"
+          height="82"
+          viewBox="0 0 95 82"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_i)">
+            <path
+              d="M23.7574 67C25.8285 67 27.5074 65.3211 27.5074 63.25C27.5074 61.1789 25.8285 59.5 23.7574 59.5V67ZM23.7574 25.7056C21.6864 25.7056 20.0074 27.3845 20.0074 29.4556C20.0074 31.5266 21.6864 33.2056 23.7574 33.2056V25.7056ZM66.2577 41.9639C66.2577 44.035 67.9367 45.7139 70.0077 45.7139C72.0788 45.7139 73.7577 44.035 73.7577 41.9639H66.2577ZM54.4375 77.085L51.9467 74.2817L54.4375 77.085ZM68.8712 64.2599L66.3804 61.4566L68.8712 64.2599ZM90.8953 59.2576L94.6453 59.2647L90.8953 59.2576ZM90.9924 8.00758L87.2424 8.00047L90.9924 8.00758ZM23.7574 59.5H8.01518V67H23.7574V59.5ZM7.76519 59.2491L7.95939 7.99906L0.459443 7.97064L0.265242 59.2206L7.76519 59.2491ZM8.20939 7.75H86.9924V0.25H8.20939V7.75ZM87.2424 8.00047L87.1453 59.2505L94.6453 59.2647L94.7424 8.01468L87.2424 8.00047ZM86.8953 59.5H71.5281V67H86.8953V59.5ZM66.3804 61.4566L51.9467 74.2817L56.9284 79.8882L71.3621 67.0631L66.3804 61.4566ZM51.5306 74.0948V33.4556H44.0306V74.0948H51.5306ZM43.7806 25.7056H23.7574V33.2056H43.7806V25.7056ZM23.7574 33.2056H66.0077V25.7056H23.7574V33.2056ZM66.2577 33.4556V41.9639H73.7577V33.4556H66.2577ZM66.0077 33.2056C66.1458 33.2056 66.2577 33.3175 66.2577 33.4556H73.7577C73.7577 29.1754 70.288 25.7056 66.0077 25.7056V33.2056ZM51.5306 33.4556C51.5306 29.1753 48.0608 25.7056 43.7806 25.7056V33.2056C43.9187 33.2056 44.0306 33.3175 44.0306 33.4556H51.5306ZM51.9467 74.2817C51.9026 74.3209 51.8736 74.3357 51.8617 74.3411C51.8489 74.3469 51.8381 74.3498 51.8262 74.3513C51.7989 74.3549 51.7446 74.3527 51.6782 74.3229C51.6118 74.2931 51.5741 74.2539 51.5587 74.2312C51.5519 74.2212 51.5469 74.2112 51.5427 74.1978C51.5388 74.1853 51.5306 74.1538 51.5306 74.0948H44.0306C44.0306 80.7812 51.9301 84.3295 56.9284 79.8882L51.9467 74.2817ZM71.5281 59.5C69.6305 59.5 67.7989 60.1962 66.3804 61.4566L71.3621 67.0631C71.4078 67.0225 71.4669 67 71.5281 67V59.5ZM87.1453 59.2505C87.1451 59.3884 87.0332 59.5 86.8953 59.5V67C91.1698 67 94.6372 63.5392 94.6453 59.2647L87.1453 59.2505ZM86.9924 7.75C87.1307 7.75 87.2427 7.86222 87.2424 8.00047L94.7424 8.01468C94.7505 3.72875 91.2784 0.25 86.9924 0.25V7.75ZM7.95939 7.99906C7.95991 7.86135 8.07169 7.75 8.20939 7.75V0.25C3.94064 0.25 0.475619 3.70193 0.459443 7.97064L7.95939 7.99906ZM8.01518 59.5C7.87675 59.5 7.76466 59.3875 7.76519 59.2491L0.265242 59.2206C0.248979 63.5123 3.72349 67 8.01518 67V59.5Z"
+              fill="#81B7AE"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_i"
+              x="0.265625"
+              y="0.25"
+              width="94.4772"
+              height="85.61"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+              />
+              <feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
+            </filter>
+          </defs>
+        </svg>
+      </div>
       <h2 id="welcome" onclick="mainpage()">Welcome!</h2>
       <form id="loginForm">
         <label for="Username"
-          ><input type="email" value="tenexuser@gmail.com" id="username" placeholder="Enter Email" name="email" required
+          ><input
+            type="email"
+            value="tenexuser@gmail.com"
+            id="username"
+            placeholder="Enter Email"
+            name="email"
+            required
         /></label>
         <label for="password"
           ><input
@@ -77,71 +139,68 @@
 
       <p>Forgot password?</p>
       <div class="btn_to_login">
-        <button type="submit" form="loginForm" id="signInBtn" >SIGN IN</button>
+        <button type="submit" form="loginForm" id="signInBtn">SIGN IN</button>
       </div>
       <p>New user?</p>
       <p>Contact your building manager</p>
     </div>
 
-    
-
     <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-  ></script>
-  <script>
-    // does the browser support service workers?
-    if ("serviceWorker" in navigator) {
-      // fires when the service worker is ready
-      navigator.serviceWorker.ready.then((reg) => {
-        // we have an active service worker working for us
-        console.log(`Service Worker ready (Scope: ${reg.scope})`);
-        // do something interesting, if you want...
-      });
-      // then register our service worker
-      navigator.serviceWorker
-        .register("./sw.js", { scope: "/" })
-        .then(function (reg) {
-          // display a success message
-          console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-        })
-        .catch(function (error) {
-          // display an error message
-          console.log(`Service Worker Error (${error})`);
-        });
-    } else {
-      // happens when the app isn't served over a TLS connection (HTTPS)
-      console.warn("Service Worker not available");
-    }
-  </script>
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script>
+      // does the browser support service workers?
+      if ("serviceWorker" in navigator) {
+        // fires when the service worker is ready
+        navigator.serviceWorker.ready.then((reg) => {
+          // we have an active service worker working for us
+          console.log(`Service Worker ready (Scope: ${reg.scope})`);
+          // do something interesting, if you want...
+        });
+        // then register our service worker
+        navigator.serviceWorker
+          .register("./sw.js", { scope: "/" })
+          .then(function (reg) {
+            // display a success message
+            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
+          })
+          .catch(function (error) {
+            // display an error message
+            console.log(`Service Worker Error (${error})`);
+          });
+      } else {
+        // happens when the app isn't served over a TLS connection (HTTPS)
+        console.warn("Service Worker not available");
+      }
+    </script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script>
       // TODO: Replace the following with your app's Firebase project configuration
       // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
       const firebaseConfig = {
-  apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-  authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-  projectId: "tenex-pwa-spring2021",
-  storageBucket: "tenex-pwa-spring2021.appspot.com",
-  messagingSenderId: "874020516286",
-  appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-  measurementId: "G-BB18XSR7K4"
-};
-  
+        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+        projectId: "tenex-pwa-spring2021",
+        storageBucket: "tenex-pwa-spring2021.appspot.com",
+        messagingSenderId: "874020516286",
+        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+        measurementId: "G-BB18XSR7K4",
+      };
+
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
-        <script src="assets/js/onboarding.js"></script>
+    <script src="assets/js/onboarding.js"></script>
   </body>
 </html>

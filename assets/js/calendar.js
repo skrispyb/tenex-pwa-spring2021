@@ -80,9 +80,11 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body_wrapper_req").addClass("hidden");
   $(".body_wrapper_notif").addClass("hidden");
   selected = document.getElementById("calendarDate");
-      selected.value = new Date().toDateInputValue();
-      currentSelect = `${selected.value}`;
-      // sortDisplay(currentSelect);
+  selected.value = new Date().toDateInputValue();
+  currentSelect = `${selected.value}`;
+  // sortDisplay(currentSelect);
+
+  isOnline();
 });
 
 // date picker current date auto fill
@@ -110,40 +112,46 @@ let recentCards = document.getElementById("allCards");
 // Access all data from db for current user and store objects in array
 async function loadDB() {
   // return new Promise(async (resolve) => {
-    // On Request status change in db update front end
-      await db.collection("newRequests")
-      .where("ReqUid", "==", currUid)
-      .get().then((doc) => {
-        requests = [];
+  // On Request status change in db update front end
+  await db
+    .collection("newRequests")
+    .where("ReqUid", "==", currUid)
+    .get()
+    .then((doc) => {
+      requests = [];
 
-        doc.forEach((fields) => {
-          requests.push(fields.data());
-        });
-        // mergeRecentCards();
+      doc.forEach((fields) => {
+        requests.push(fields.data());
       });
-      console.log(requests);
+      // mergeRecentCards();
+    });
+  console.log(requests);
 
-      // Retreive bookings
-    await db.collection("bookings")
-      .where("BookingUid", "==", currUid)
-      .get().then((doc) => {
-        bookings = [];
+  // Retreive bookings
+  await db
+    .collection("bookings")
+    .where("BookingUid", "==", currUid)
+    .get()
+    .then((doc) => {
+      bookings = [];
 
-        doc.forEach((fields) => {
-          bookings.push(fields.data());
-        });
-        // mergeRecentCards();
+      doc.forEach((fields) => {
+        bookings.push(fields.data());
       });
-    await db.collection("notifications")
-      .get().then((doc) => {
-        notifications = [];
+      // mergeRecentCards();
+    });
+  await db
+    .collection("notifications")
+    .get()
+    .then((doc) => {
+      notifications = [];
 
-        doc.forEach((fields) => {
-          notifications.push(fields.data());
-        });
-        // mergeRecentCards();
+      doc.forEach((fields) => {
+        notifications.push(fields.data());
       });
-      mergeRecentCards();
+      // mergeRecentCards();
+    });
+  mergeRecentCards();
   //   setTimeout(() => {
   //     resolve("resolved");
   //   }, 100);
@@ -165,7 +173,6 @@ function mergeRecentCards() {
     recentUpdates.push(card);
   });
   console.log(recentUpdates);
-  
 }
 // Sort in reverse chronological order of date and display cards
 async function sortDisplay(currentSelect) {
@@ -181,7 +188,7 @@ async function sortDisplay(currentSelect) {
       currentDateCards.push(items);
     }
   });
-  
+
   if (currentDateCards.length > 0) {
     document.querySelector(".no_events").classList.add("hidden");
 
@@ -198,6 +205,67 @@ async function sortDisplay(currentSelect) {
   }
 }
 
+function isOnline() {
+  if (navigator.onLine) {
+    document.getElementById("onlineStatus").classList.add("hidden");
+    clearRecentsUI();
+  } else {
+    document.querySelector(".no_events").classList.add("hidden");
+    document.getElementById("onlineStatus").classList.remove("hidden");
+    document.getElementById(
+      "onlineStatus"
+    ).innerHTML = `<div class="offline_events">
+          <div class="offline_illustration">
+            <svg width="134" height="100" viewBox="0 0 134 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.7">
+              <path d="M76.4675 25.2229H6.64373C2.9745 25.2229 0 28.1974 0 31.8666V92.5769C0 96.2461 2.9745 99.2206 6.64373 99.2206H76.4675C80.1368 99.2206 83.1112 96.2461 83.1112 92.5769V31.8666C83.1112 28.1974 80.1368 25.2229 76.4675 25.2229Z" fill="#A7A9AC"/>
+              <path d="M6.99964 25.2229H76.1116C77.968 25.2229 79.7484 25.9604 81.0611 27.273C82.3738 28.5857 83.1112 30.3661 83.1112 32.2226V37.3671H0V32.2226C0 30.3661 0.737462 28.5857 2.05015 27.273C3.36283 25.9604 5.14322 25.2229 6.99964 25.2229Z" fill="#B9B9B9"/>
+              <path d="M10.2243 21.3613H10.2135C9.25448 21.3613 8.47705 22.1387 8.47705 23.0977V30.3131C8.47705 31.2721 9.25448 32.0495 10.2135 32.0495H10.2243C11.1833 32.0495 11.9607 31.2721 11.9607 30.3131V23.0977C11.9607 22.1387 11.1833 21.3613 10.2243 21.3613Z" fill="#D1D3D4"/>
+              <path d="M17.1813 21.3613H17.1705C16.2115 21.3613 15.4341 22.1387 15.4341 23.0977V30.3131C15.4341 31.2721 16.2115 32.0495 17.1705 32.0495H17.1813C18.1403 32.0495 18.9177 31.2721 18.9177 30.3131V23.0977C18.9177 22.1387 18.1403 21.3613 17.1813 21.3613Z" fill="#D1D3D4"/>
+              <path d="M66.5773 21.3613H66.5665C65.6075 21.3613 64.8301 22.1387 64.8301 23.0977V30.3131C64.8301 31.2721 65.6075 32.0495 66.5665 32.0495H66.5773C67.5363 32.0495 68.3137 31.2721 68.3137 30.3131V23.0977C68.3137 22.1387 67.5363 21.3613 66.5773 21.3613Z" fill="#D1D3D4"/>
+              <path d="M73.5338 21.3613H73.523C72.564 21.3613 71.7866 22.1387 71.7866 23.0977V30.3131C71.7866 31.2721 72.564 32.0495 73.523 32.0495H73.5338C74.4928 32.0495 75.2703 31.2721 75.2703 30.3131V23.0977C75.2703 22.1387 74.4928 21.3613 73.5338 21.3613Z" fill="#D1D3D4"/>
+              <path d="M71.4632 65.7212C69.4002 67.1705 67.9025 69.2894 67.2246 71.7178" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M67.0082 66.5627L70.6428 71.2867C69.7369 71.8044 69.8447 72.4946 68.8417 72.7858C67.8368 73.1056 66.7489 73.0402 65.7895 72.6025C65.2954 72.3315 64.8732 71.9465 64.558 71.4793C64.2428 71.0122 64.0438 70.4766 63.9775 69.917C63.8418 68.7727 64.1379 67.6189 64.808 66.6814C65.249 66.0414 65.8295 65.5098 66.5058 65.1268C67.1821 64.7438 67.9366 64.5193 68.7123 64.4704C69.4904 64.4393 70.2633 64.6109 70.9552 64.9682C71.6472 65.3255 72.2345 65.8564 72.6597 66.5088C73.0617 67.1748 73.2615 67.9432 73.2347 68.7206C73.2079 69.4981 72.9556 70.2509 72.5087 70.8876" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M53.6781 65.7212C51.615 67.1705 50.1173 69.2894 49.4395 71.7178" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M49.2563 66.5627L52.891 71.2867C51.985 71.8044 52.0821 72.4946 51.079 72.7858C50.0741 73.1056 48.9862 73.0402 48.0268 72.6025C47.5355 72.3281 47.1156 71.9421 46.8008 71.4756C46.4861 71.0091 46.2854 70.4753 46.2149 69.917C46.0833 68.7714 46.3832 67.6178 47.0561 66.6814C47.4965 66.0408 48.0769 65.5088 48.7533 65.1258C49.4298 64.7427 50.1845 64.5185 50.9604 64.4704C51.7385 64.4393 52.5114 64.6109 53.2034 64.9682C53.8953 65.3255 54.4826 65.8564 54.9078 66.5088C55.3098 67.1748 55.5096 67.9432 55.4828 68.7206C55.456 69.4981 55.2038 70.2509 54.7568 70.8876" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M35.494 65.7212C33.4309 67.1705 31.9332 69.2894 31.2554 71.7178" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M31.0297 66.5627L34.6644 71.2867C33.7584 71.8044 33.8663 72.4946 32.8632 72.7858C31.8583 73.1056 30.7704 73.0402 29.811 72.6025C29.3171 72.3301 28.8946 71.9448 28.5779 71.4781C28.2612 71.0114 28.0591 70.4765 27.9883 69.917C27.8619 68.7718 28.1613 67.62 28.8296 66.6814C29.2705 66.0414 29.851 65.5098 30.5274 65.1268C31.2037 64.7438 31.9581 64.5193 32.7338 64.4704C33.512 64.4393 34.2848 64.6109 34.9768 64.9682C35.6687 65.3255 36.256 65.8564 36.6812 66.5088C37.0833 67.1748 37.283 67.9432 37.2562 68.7206C37.2294 69.4981 36.9772 70.2509 36.5302 70.8876" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M17.7421 65.7212C15.6794 67.1732 14.179 69.2905 13.4927 71.7178" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M13.2873 66.5628L16.922 71.2867C16.016 71.8044 16.1131 72.4947 15.11 72.7859C14.1051 73.1056 13.0172 73.0403 12.0578 72.6026C11.5665 72.3282 11.1466 71.9421 10.8319 71.4756C10.5171 71.0092 10.3164 70.4753 10.2459 69.917C10.1143 68.7714 10.4142 67.6179 11.0871 66.6815C11.5263 66.0397 12.1065 65.5068 12.7831 65.1236C13.4598 64.7404 14.2152 64.517 14.9914 64.4704C15.7681 64.4391 16.5395 64.6107 17.2298 64.9681C17.9201 65.3255 18.5053 65.8565 18.928 66.5089C19.3343 67.1729 19.5375 67.9412 19.5126 68.7192C19.4876 69.4973 19.2357 70.251 18.7878 70.8877" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M71.4632 82.1584C69.3976 83.6052 67.8992 85.7251 67.2246 88.1551" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M67.0082 83.0105L70.6428 87.7236C69.7369 88.2521 69.8447 88.9424 68.8417 89.2228C67.8388 89.5512 66.749 89.4896 65.7895 89.0503C65.2954 88.7793 64.8732 88.3942 64.558 87.9271C64.2428 87.46 64.0438 86.9243 63.9775 86.3647C63.8418 85.2204 64.1379 84.0666 64.808 83.1292C65.249 82.4891 65.8295 81.9576 66.5058 81.5746C67.1821 81.1916 67.9366 80.9671 68.7123 80.9181C69.4904 80.8871 70.2633 81.0586 70.9552 81.4159C71.6472 81.7732 72.2345 82.3041 72.6597 82.9566C73.0617 83.6225 73.2615 84.391 73.2347 85.1684C73.2079 85.9458 72.9556 86.6987 72.5087 87.3354" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M53.6781 82.1584C51.6124 83.6052 50.114 85.7251 49.4395 88.1551" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M49.2563 83.0105L52.891 87.7236C51.985 88.2521 52.0821 88.9424 51.079 89.2228C50.0761 89.5512 48.9863 89.4896 48.0268 89.0503C47.5355 88.7759 47.1156 88.3898 46.8008 87.9234C46.4861 87.4569 46.2854 86.923 46.2149 86.3647C46.0833 85.2191 46.3832 84.0656 47.0561 83.1292C47.4965 82.4886 48.0769 81.9566 48.7533 81.5735C49.4298 81.1904 50.1845 80.9663 50.9604 80.9181C51.7385 80.8871 52.5114 81.0586 53.2034 81.4159C53.8953 81.7732 54.4826 82.3041 54.9078 82.9566C55.3098 83.6225 55.5096 84.391 55.4828 85.1684C55.456 85.9458 55.2038 86.6987 54.7568 87.3354" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M35.494 82.1584C33.4283 83.6052 31.93 85.7251 31.2554 88.1551" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M31.0297 83.0105L34.6644 87.7236C33.7584 88.2521 33.8663 88.9424 32.8632 89.2228C31.8603 89.5512 30.7705 89.4896 29.811 89.0503C29.3171 88.7778 28.8946 88.3925 28.5779 87.9259C28.2612 87.4592 28.0591 86.9243 27.9883 86.3647C27.8619 85.2195 28.1613 84.0678 28.8296 83.1292C29.2705 82.4891 29.851 81.9576 30.5274 81.5746C31.2037 81.1916 31.9581 80.9671 32.7338 80.9181C33.512 80.8871 34.2848 81.0586 34.9768 81.4159C35.6687 81.7732 36.256 82.3041 36.6812 82.9566C37.0833 83.6225 37.283 84.391 37.2562 85.1684C37.2294 85.9458 36.9772 86.6987 36.5302 87.3354" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M71.4632 49.4463C69.3976 50.893 67.8992 53.0129 67.2246 55.4429" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M67.009 50.2771L70.6436 55.0011C69.7376 55.5295 69.8455 56.2198 68.8424 56.5002C67.8389 56.8234 66.751 56.7618 65.7902 56.3276C65.2948 56.0556 64.8717 55.6689 64.5564 55.1998C64.2412 54.7307 64.043 54.1928 63.9783 53.6313C63.8531 52.5046 64.1489 51.3715 64.8088 50.4497C65.248 49.808 65.8281 49.2751 66.5048 48.8919C67.1814 48.5087 67.9368 48.2853 68.713 48.2387C69.4915 48.2055 70.2652 48.3761 70.9575 48.7336C71.6498 49.0911 72.2368 49.6231 72.6604 50.2771C73.0625 50.9431 73.2622 51.7115 73.2354 52.4889C73.2086 53.2664 72.9564 54.0193 72.5094 54.6559" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M53.6781 49.4463C51.6124 50.893 50.114 53.0129 49.4395 55.4429" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M49.2562 50.2771L52.8908 55.0011C51.9849 55.5295 52.0819 56.2198 51.0789 56.5002C50.0753 56.8234 48.9875 56.7618 48.0267 56.3276C47.534 56.0522 47.1133 55.6645 46.7985 55.1961C46.4836 54.7276 46.2837 54.1915 46.2148 53.6313C46.0937 52.5034 46.3933 51.3704 47.056 50.4497C47.4946 49.8074 48.0746 49.2741 48.7514 48.8908C49.4282 48.5076 50.1838 48.2845 50.9603 48.2387C51.7388 48.2055 52.5124 48.3761 53.2048 48.7336C53.8971 49.0911 54.4841 49.6231 54.9077 50.2771C55.3097 50.9431 55.5095 51.7115 55.4827 52.4889C55.4559 53.2664 55.2037 54.0193 54.7567 54.6559" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M35.494 49.4463C33.4283 50.893 31.93 53.0129 31.2554 55.4429" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M31.0293 50.2771L34.6639 55.0011C33.7579 55.5295 33.8658 56.2198 32.8628 56.5002C31.8592 56.8234 30.7713 56.7618 29.8105 56.3276C29.3153 56.0541 28.892 55.6672 28.5751 55.1986C28.2583 54.7299 28.057 54.1928 27.9878 53.6313C27.8719 52.5037 28.171 51.3726 28.8291 50.4497C29.2683 49.808 29.8484 49.2751 30.5251 48.8919C31.2018 48.5087 31.9571 48.2853 32.7333 48.2387C33.5118 48.2055 34.2855 48.3761 34.9778 48.7336C35.6701 49.0911 36.2571 49.6231 36.6808 50.2771C37.0828 50.9431 37.2826 51.7115 37.2558 52.4889C37.2289 53.2664 36.9767 54.0193 36.5298 54.6559" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M17.7421 82.1584C15.6769 83.6079 14.1758 85.7262 13.4927 88.1551" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M13.2873 83.0105L16.922 87.7237C16.016 88.2522 16.1131 88.9424 15.11 89.2228C14.1071 89.5512 13.0173 89.4897 12.0578 89.0503C11.5665 88.7759 11.1466 88.3899 10.8319 87.9234C10.5171 87.4569 10.3164 86.9231 10.2459 86.3648C10.1143 85.2192 10.4142 84.0656 11.0871 83.1292C11.5263 82.4875 12.1065 81.9546 12.7831 81.5714C13.4598 81.1882 14.2152 80.9648 14.9914 80.9182C15.7681 80.8869 16.5395 81.0584 17.2298 81.4158C17.9201 81.7733 18.5053 82.3043 18.928 82.9566C19.3343 83.6206 19.5375 84.389 19.5126 85.167C19.4876 85.945 19.2357 86.6988 18.7878 87.3354" stroke="#F1F2F2" stroke-miterlimit="10" stroke-linecap="round"/>
+              <path d="M91.9183 29.1479C91.9224 29.1179 91.9224 29.0875 91.9183 29.0575C91.8279 28.5727 90.9651 24.1269 90.1844 24.0119C89.7653 23.9297 89.6585 24.4885 89.6585 25.0391C89.6549 25.1175 89.6285 25.1931 89.5825 25.2567C89.5365 25.3203 89.4729 25.369 89.3996 25.397C89.3263 25.4249 89.2464 25.4308 89.1697 25.4139C89.0931 25.3971 89.023 25.3582 88.9682 25.3021L87.1028 23.4367C87.0273 23.3685 86.9292 23.3308 86.8275 23.3308C86.7258 23.3308 86.6277 23.3685 86.5522 23.4367C86.1466 23.829 85.8506 24.3205 85.6935 24.8625C85.5363 25.4044 85.5236 25.9781 85.6565 26.5265C86.0016 29.0904 88.8203 31.3092 89.5106 31.1119C90.1432 30.9846 90.7886 30.9322 91.4335 30.9558C91.5328 30.9584 91.6294 30.9235 91.704 30.858C91.7787 30.7925 91.8258 30.7012 91.8362 30.6024L91.9183 29.1479Z" fill="#E6E7E8"/>
+              <path d="M127.509 28.8188C127.505 28.7916 127.505 28.7639 127.509 28.7366C127.6 28.2518 128.463 23.8061 129.243 23.691C129.671 23.6089 129.769 24.1594 129.777 24.7182C129.78 24.796 129.806 24.8712 129.852 24.9343C129.897 24.9974 129.961 25.0456 130.034 25.0729C130.107 25.1001 130.186 25.1051 130.262 25.0874C130.337 25.0696 130.406 25.0298 130.46 24.973L132.325 23.1076C132.4 23.0394 132.499 23.0017 132.6 23.0017C132.702 23.0017 132.8 23.0394 132.875 23.1076C133.283 23.499 133.58 23.9902 133.739 24.5322C133.897 25.0742 133.911 25.6483 133.779 26.1974C133.426 28.7531 130.607 30.9801 129.917 30.7746C129.284 30.65 128.639 30.6004 127.994 30.6267C127.896 30.6292 127.8 30.594 127.727 30.5283C127.654 30.4626 127.608 30.3714 127.6 30.2733L127.509 28.8188Z" fill="#E6E7E8"/>
+              <path d="M103.3 95.2586L103.703 89.6213L107.425 89.8761L107.179 96.3927L102.758 97.124L103.3 95.2586Z" fill="#E6E7E8"/>
+              <path d="M119.16 95.16L118.807 90.0732L122.184 90.3773L122.48 95.916L119.16 95.16Z" fill="#E6E7E8"/>
+              <path d="M112.61 61.5255C115.119 71.7154 116.836 82.0841 117.746 92.5388C117.746 92.5388 122.077 93.451 123.498 92.5388C123.498 92.5388 123.4 75.5202 122.389 68.2722C122.389 68.2722 119.669 49.7415 119.874 43.8001C120.08 37.8588 104.869 44.5068 104.869 44.5068C104.869 44.5068 103.554 83.6802 103.053 92.243C103.053 92.243 107.482 91.7335 108.493 92.4402C108.485 92.4402 112.511 65.0509 112.61 61.5255Z" fill="#A7A9AC"/>
+              <path d="M103.399 94.0996C103.399 94.0996 97.7121 95.8171 97.2519 97.1237C96.7917 98.4303 97.2519 98.6851 97.2519 98.6851H108.231C108.231 98.6851 108.74 96.1705 108.231 96.1705C108.073 96.1667 107.917 96.1288 107.776 96.0593C107.634 95.9898 107.509 95.8903 107.409 95.7678C107.409 95.7678 103.785 96.5238 103.637 95.9157C103.521 95.3158 103.441 94.7093 103.399 94.0996Z" fill="#808285"/>
+              <path d="M117.114 99.088H123.491C123.491 99.088 123.36 95.4969 122.152 94.0999C120.944 92.7029 119.062 94.3218 119.062 94.3218C119.062 94.3218 117.517 95.6284 117.114 99.088Z" fill="#808285"/>
+              <path d="M107.861 5.19331C107.861 5.19331 106.39 10.0828 105.724 11.0771C105.059 12.0715 106.546 11.373 106.546 11.373C106.546 11.373 104.902 15.4818 106.168 15.9913C107.433 16.5008 111.797 16.1556 111.797 16.1556L113.441 10.6498C113.441 10.6498 113.441 8.78442 114.468 8.79263C115.027 8.78571 115.578 8.92148 116.07 9.18709C116.07 9.18709 118.075 7.58464 115.692 6.06438C115.692 6.06438 117.401 4.10858 115.569 2.85128C115.121 2.48902 114.563 2.29138 113.987 2.29138C113.411 2.29138 112.853 2.48902 112.405 2.85128L111.008 2.16923C111.008 2.16923 110.047 -1.64374 106.998 0.94481C103.949 3.53336 107.861 5.19331 107.861 5.19331Z" fill="#E6E7E8"/>
+              <path d="M115.092 12.3102C116.735 9.99278 115.815 8.39035 115.815 8.39035L114.073 7.75758L114.015 7.51929L110.613 15.2521L108.633 18.761L112.594 24.5955L116.587 18.9171L115.092 12.3102Z" fill="#E6E7E8"/>
+              <path d="M105.568 11.5204C105.568 11.4138 105.642 11.2825 105.7 11.1184C105.568 11.3071 105.536 11.4466 105.568 11.5204Z" fill="#BCBEC0"/>
+              <path d="M116.029 6.31117C115.945 6.24592 115.888 6.15162 115.87 6.04675C115.852 5.94187 115.874 5.83397 115.931 5.74415C116.325 5.13605 116.941 3.79656 115.569 2.85153C115.153 2.51643 114.643 2.31966 114.109 2.28873C113.576 2.25779 113.046 2.39422 112.594 2.67897C112.531 2.71744 112.459 2.7378 112.385 2.7378C112.311 2.7378 112.238 2.71744 112.175 2.67897L111.181 2.19413C111.077 2.14443 110.998 2.05581 110.959 1.94759C110.729 1.24087 109.652 -1.33945 106.998 0.887531C103.941 3.47608 107.861 5.16891 107.861 5.16891C108.263 5.41437 108.72 5.5557 109.191 5.58009C109.662 5.60448 110.131 5.51118 110.556 5.30862C110.611 5.28655 110.669 5.27588 110.728 5.2773C110.786 5.27871 110.844 5.29215 110.897 5.31682C110.95 5.34149 110.998 5.37684 111.037 5.42067C111.076 5.4645 111.105 5.51585 111.123 5.57156C111.33 5.96546 111.654 6.28457 112.052 6.48373C112.136 6.54076 112.196 6.62692 112.22 6.72556C112.245 6.82421 112.231 6.92834 112.183 7.01788C112.113 7.21643 112.086 7.42776 112.105 7.63758C112.123 7.84741 112.186 8.05084 112.29 8.23409C112.313 8.28744 112.324 8.3447 112.324 8.40254C112.324 8.46039 112.313 8.51767 112.29 8.57102L111.082 11.8581C111.049 11.9552 110.981 12.0368 110.892 12.0882C110.803 12.1395 110.698 12.157 110.597 12.1375L106.489 11.3157C106.489 11.3157 104.845 15.4245 106.111 15.934C107.138 16.3531 110.433 16.1805 111.444 16.123C111.531 16.1138 111.613 16.0794 111.68 16.0238C111.747 15.9683 111.797 15.8942 111.822 15.8107L113.375 10.6419C113.379 10.6091 113.379 10.576 113.375 10.5432C113.375 10.2392 113.506 8.72714 114.402 8.73536C114.912 8.757 115.406 8.91601 115.832 9.19554C115.879 9.2263 115.932 9.24753 115.987 9.25799C116.042 9.26844 116.099 9.26793 116.153 9.25648C116.208 9.24504 116.261 9.22286 116.307 9.19125C116.353 9.15965 116.393 9.11923 116.424 9.07228C116.583 8.86677 116.7 8.63123 116.767 8.37967C116.834 8.12812 116.849 7.86569 116.812 7.60804C116.775 7.3504 116.687 7.1028 116.553 6.88C116.418 6.65719 116.24 6.46375 116.029 6.31117Z" fill="#BCBEC0"/>
+              <path d="M132.801 28.4655C132.801 28.4655 127.953 32.8619 127.953 28.2765C127.953 25.4743 126.391 29.6982 125.06 33.2728C124.616 28.1861 123.655 19.0563 123.655 19.0563C121.363 17.391 118.559 16.5852 115.733 16.7801C114.487 17.6245 113.014 18.0688 111.509 18.0538C109.225 17.9223 109.422 17.3799 109.422 17.3799C109.422 17.3799 105.461 17.8483 104.59 18.5879C103.719 19.3275 100.029 25.0388 99.6593 32.8866C99.6593 32.8866 92.9455 29.5996 91.4417 28.2601C91.4417 28.2601 88.8203 27.7177 89.0915 31.013L98.024 39.6004C98.024 39.6004 100.974 41.6877 102.453 39.0005C103.239 37.6754 103.847 36.2524 104.261 34.7684L104.064 45.9855L104.532 45.7801C106.012 45.5089 111.649 45.5089 113.662 46.4539C115.675 47.3989 119.71 46.8566 120.236 46.4539C120.762 46.0512 120.236 40.8084 120.236 40.8084C120.236 40.8084 123.523 41.9671 123.868 41.7616C124.057 41.7123 132.801 32.0484 132.801 28.4655Z" fill="white"/>
+              </g>
+              </svg>
+          </div>
+          <p>Sorry!! You are offline </p>
+        </div>`;
+  }
+}
+
 clearNotifDetailUI = () => {
   document.getElementById("notifDetail").innerHTML = "";
 };
@@ -206,192 +274,198 @@ clearNotifDetailUI = () => {
 displayRecenttUI = (i) => {
   if (currentDateCards[i].cardType === "Notification") {
     temp = document.createElement("div");
-  temp.setAttribute("data-number", `${currentDateCards[i].notifID}`);
-  temp.classList.add("notifCard");
-  recentCards.appendChild(temp);
+    temp.setAttribute("data-number", `${currentDateCards[i].notifID}`);
+    temp.classList.add("notifCard");
+    recentCards.appendChild(temp);
 
-  temp = document.createElement("div");
-  temp.classList.add("notifCard_wrapper");
-  recentCards.children[i].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("notifCard_wrapper");
+    recentCards.children[i].appendChild(temp);
 
-  temp = document.createElement("div");
-  temp.classList.add("notifCard_content_wrapper");
-  recentCards.children[i].children[0].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("notifCard_content_wrapper");
+    recentCards.children[i].children[0].appendChild(temp);
 
-  temp = document.createElement("h3");
-  temp.classList.add("notifCard_title");
-  temp.innerText = `${currentDateCards[i].notifHead}`;
-  recentCards.children[i].children[0].children[0].appendChild(temp);
+    temp = document.createElement("h3");
+    temp.classList.add("notifCard_title");
+    temp.innerText = `${currentDateCards[i].notifHead}`;
+    recentCards.children[i].children[0].children[0].appendChild(temp);
 
-  temp = document.createElement("p");
-  temp.classList.add("notif_excerpt");
-  temp.innerText = `${currentDateCards[i].description}`;
-  recentCards.children[i].children[0].children[0].appendChild(temp);
+    temp = document.createElement("p");
+    temp.classList.add("notif_excerpt");
+    temp.innerText = `${currentDateCards[i].description}`;
+    recentCards.children[i].children[0].children[0].appendChild(temp);
 
-  temp = document.createElement("div");
-  temp.classList.add("notifCard_duration_date_wrapper");
-  recentCards.children[i].children[0].children[0].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("notifCard_duration_date_wrapper");
+    recentCards.children[i].children[0].children[0].appendChild(temp);
 
-  temp = document.createElement("p");
-  temp.classList.add("notifCard_duration_date");
-  const postDurationStartDate = currentDateCards[i].startDate.toDate();
-  const postDurationEndDate = currentDateCards[i].endDate.toDate();
-  temp.innerHTML = `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    temp = document.createElement("p");
+    temp.classList.add("notifCard_duration_date");
+    const postDurationStartDate = currentDateCards[i].startDate.toDate();
+    const postDurationEndDate = currentDateCards[i].endDate.toDate();
+    temp.innerHTML = `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M15 13.5938C15 14.3701 14.2801 15 13.3929 15H1.60714C0.719867 15 0 14.3701 0 13.5938V5.625H15V13.5938ZM12.8571 7.96875C12.8571 7.71094 12.6161 7.5 12.3214 7.5H9.10714C8.8125 7.5 8.57143 7.71094 8.57143 7.96875V10.7812C8.57143 11.0391 8.8125 11.25 9.10714 11.25H12.3214C12.6161 11.25 12.8571 11.0391 12.8571 10.7812V7.96875ZM1.60714 1.875H3.21429V0.46875C3.21429 0.210938 3.45536 0 3.75 0H4.82143C5.11607 0 5.35714 0.210938 5.35714 0.46875V1.875H9.64286V0.46875C9.64286 0.210938 9.88393 0 10.1786 0H11.25C11.5446 0 11.7857 0.210938 11.7857 0.46875V1.875H13.3929C14.2801 1.875 15 2.50488 15 3.28125V4.6875H0V3.28125C0 2.50488 0.719867 1.875 1.60714 1.875Z" fill="#4F4F4F"/>
   </svg> ${
     months[postDurationStartDate.getMonth()]
   } ${postDurationStartDate.getDay()}, ${postDurationStartDate.getFullYear()} - ${
-    months[postDurationEndDate.getMonth()]
-  } ${postDurationEndDate.getDay()}, ${postDurationEndDate.getFullYear()}`;
-  recentCards.children[i].children[0].children[0].children[2].appendChild(temp);
+      months[postDurationEndDate.getMonth()]
+    } ${postDurationEndDate.getDay()}, ${postDurationEndDate.getFullYear()}`;
+    recentCards.children[i].children[0].children[0].children[2].appendChild(
+      temp
+    );
 
-  temp = document.createElement("div");
-  temp.classList.add("notifCard_duration_time_wrapper");
-  recentCards.children[i].children[0].children[0].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("notifCard_duration_time_wrapper");
+    recentCards.children[i].children[0].children[0].appendChild(temp);
 
-  temp = document.createElement("p");
-  temp.classList.add("notifCard_duration_time");
-  temp.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    temp = document.createElement("p");
+    temp.classList.add("notifCard_duration_time");
+    temp.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z" fill="#4F4F4F"/>
   </svg> 14:00 - 15:00`;
-  recentCards.children[i].children[0].children[0].children[3].appendChild(temp);
+    recentCards.children[i].children[0].children[0].children[3].appendChild(
+      temp
+    );
 
-  temp = document.createElement("div");
-  temp.classList.add("notifCard_date_wrapper");
-  recentCards.children[i].children[0].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("notifCard_date_wrapper");
+    recentCards.children[i].children[0].appendChild(temp);
 
-  temp = document.createElement("div");
-  temp.classList.add("notif_icon");
-  temp.innerHTML = `<svg width="30" height="38" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    temp = document.createElement("div");
+    temp.classList.add("notif_icon");
+    temp.innerHTML = `<svg width="30" height="38" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path opacity="0.8" d="M27.67 27.4179C26.7596 26.4842 26.25 25.2316 26.25 23.9274V16.3462C26.25 10.9174 23.65 6.3017 19.0623 4.57725C18.3438 4.30718 17.8125 3.65218 17.8125 2.88462C17.8125 1.28846 16.5562 0 15 0C13.4438 0 12.1875 1.28846 12.1875 2.88462C12.1875 3.65205 11.656 4.30685 10.9372 4.57567C6.33537 6.29666 3.75 10.8984 3.75 16.3462V23.9274C3.75 25.2316 3.24044 26.4842 2.33 27.4179L0.388219 29.4095C0.139311 29.6648 0 30.0072 0 30.3638C0 31.1188 0.612013 31.7308 1.36697 31.7308H28.633C29.388 31.7308 30 31.1188 30 30.3638C30 30.0072 29.8607 29.6648 29.6118 29.4095L27.67 27.4179ZM16.875 24.0865C16.875 25.1221 16.0355 25.9615 15 25.9615C13.9645 25.9615 13.125 25.1221 13.125 24.0865V23.9904C13.125 22.9549 13.9645 22.1154 15 22.1154C16.0355 22.1154 16.875 22.9549 16.875 23.9904V24.0865ZM16.875 16.3942C16.875 17.4298 16.0355 18.2692 15 18.2692C13.9645 18.2692 13.125 17.4298 13.125 16.3942V12.4519C13.125 11.4164 13.9645 10.5769 15 10.5769C16.0355 10.5769 16.875 11.4164 16.875 12.4519V16.3942ZM15 37.5C15.7679 37.5 16.4839 37.2601 17.0801 36.8497C18.7861 35.6754 17.0711 33.6538 15 33.6538C12.9289 33.6538 11.2082 35.6787 12.9149 36.8519C13.51 37.2609 14.2265 37.5 15 37.5Z" fill="#81B7AE"/>
 </svg>`;
-  recentCards.children[i].children[0].children[1].appendChild(temp);
+    recentCards.children[i].children[0].children[1].appendChild(temp);
 
-  temp = document.createElement("p");
-  const postDate = currentDateCards[i].onDate.toDate();
-  temp.innerHTML = `${
-    months[postDate.getMonth()]
-  } ${postDate.getDate()}, ${postDate.getFullYear()}`;
-  recentCards.children[i].children[0].children[1].appendChild(temp);
+    temp = document.createElement("p");
+    const postDate = currentDateCards[i].onDate.toDate();
+    temp.innerHTML = `${
+      months[postDate.getMonth()]
+    } ${postDate.getDate()}, ${postDate.getFullYear()}`;
+    recentCards.children[i].children[0].children[1].appendChild(temp);
   } else {
-  temp = document.createElement("div");
-  if (currentDateCards[i].cardType === "Booking") {
-    temp.setAttribute("data-number", `${currentDateCards[i].bookingID}`);
-  } else {
-    temp.setAttribute("data-number", `${currentDateCards[i].requestID}`);
-  }
-  temp.classList.add("newRequestCard");
-  recentCards.appendChild(temp);
-
-  temp = document.createElement("div");
-  temp.classList.add("newRequestCard_wrapper");
-  recentCards.children[i].appendChild(temp);
-
-  temp = document.createElement("div");
-  temp.classList.add("newRequestCard_content_wrapper");
-  recentCards.children[i].children[0].appendChild(temp);
-
-  temp = document.createElement("div");
-  temp.classList.add("newRequestCard_status_progress_wrapper");
-  recentCards.children[i].children[0].children[0].appendChild(temp);
-  if (currentDateCards[i].requestStatus === "SENT") {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressSent"></div>`;
-  } else if (currentDateCards[i].requestStatus === "READ") {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressRead"></div>`;
-  } else if (currentDateCards[i].requestStatus === "REJECTED") {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressRejected"></div>`;
-  } else if (currentDateCards[i].requestStatus === "MESSAGE") {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressMessage"></div>`;
-  } else if (currentDateCards[i].requestStatus === "COMPLETED") {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressCompleted"></div>`;
-  } else if (currentDateCards[i].requestStatus === "BOOKED") {
-    temp.classList.add("bookingStatusBar");
-  } else {
-    temp.classList.add("requestStatusBar");
-    temp.innerHTML = `<div class="statusProgressOngoing"></div>`;
-  }
-
-  temp = document.createElement("div");
-  temp.classList.add("newRequestCard_details");
-  recentCards.children[i].children[0].children[0].appendChild(temp);
-
-  temp = document.createElement("h3");
-  temp.classList.add("newRequestCard_title");
-  temp.innerText = `${currentDateCards[i].title}`;
-  recentCards.children[i].children[0].children[0].children[1].appendChild(temp);
-
-  if (currentDateCards[i].cardType === "Booking") {
     temp = document.createElement("div");
-    temp.classList.add("newBookingCard_time_wrapper");
+    if (currentDateCards[i].cardType === "Booking") {
+      temp.setAttribute("data-number", `${currentDateCards[i].bookingID}`);
+    } else {
+      temp.setAttribute("data-number", `${currentDateCards[i].requestID}`);
+    }
+    temp.classList.add("newRequestCard");
+    recentCards.appendChild(temp);
+
+    temp = document.createElement("div");
+    temp.classList.add("newRequestCard_wrapper");
+    recentCards.children[i].appendChild(temp);
+
+    temp = document.createElement("div");
+    temp.classList.add("newRequestCard_content_wrapper");
+    recentCards.children[i].children[0].appendChild(temp);
+
+    temp = document.createElement("div");
+    temp.classList.add("newRequestCard_status_progress_wrapper");
+    recentCards.children[i].children[0].children[0].appendChild(temp);
+    if (currentDateCards[i].requestStatus === "SENT") {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressSent"></div>`;
+    } else if (currentDateCards[i].requestStatus === "READ") {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressRead"></div>`;
+    } else if (currentDateCards[i].requestStatus === "REJECTED") {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressRejected"></div>`;
+    } else if (currentDateCards[i].requestStatus === "MESSAGE") {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressMessage"></div>`;
+    } else if (currentDateCards[i].requestStatus === "COMPLETED") {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressCompleted"></div>`;
+    } else if (currentDateCards[i].requestStatus === "BOOKED") {
+      temp.classList.add("bookingStatusBar");
+    } else {
+      temp.classList.add("requestStatusBar");
+      temp.innerHTML = `<div class="statusProgressOngoing"></div>`;
+    }
+
+    temp = document.createElement("div");
+    temp.classList.add("newRequestCard_details");
+    recentCards.children[i].children[0].children[0].appendChild(temp);
+
+    temp = document.createElement("h3");
+    temp.classList.add("newRequestCard_title");
+    temp.innerText = `${currentDateCards[i].title}`;
     recentCards.children[i].children[0].children[0].children[1].appendChild(
       temp
     );
 
-    temp = document.createElement("p");
-    temp.classList.add("newBookingCard_time");
-    temp.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    if (currentDateCards[i].cardType === "Booking") {
+      temp = document.createElement("div");
+      temp.classList.add("newBookingCard_time_wrapper");
+      recentCards.children[i].children[0].children[0].children[1].appendChild(
+        temp
+      );
+
+      temp = document.createElement("p");
+      temp.classList.add("newBookingCard_time");
+      temp.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M8.38672 0.921875C12.5299 0.921875 15.8867 4.27873 15.8867 8.42188C15.8867 12.565 12.5299 15.9219 8.38672 15.9219C4.24357 15.9219 0.886719 12.565 0.886719 8.42188C0.886719 4.27873 4.24357 0.921875 8.38672 0.921875ZM5.58964 10.3876L6.19448 11.1436C6.23417 11.1933 6.28325 11.2346 6.33891 11.2653C6.39458 11.2959 6.45573 11.3153 6.51889 11.3223C6.58205 11.3293 6.64597 11.3239 6.70701 11.3062C6.76804 11.2885 6.825 11.259 6.87462 11.2193L8.90083 9.71562C9.04241 9.60227 9.15668 9.45854 9.2352 9.29506C9.31373 9.13158 9.35448 8.95253 9.35446 8.77117V4.06704C9.35446 3.93871 9.30348 3.81563 9.21274 3.72489C9.12199 3.63414 8.99892 3.58317 8.87059 3.58317H7.90285C7.77452 3.58317 7.65144 3.63414 7.5607 3.72489C7.46996 3.81563 7.41898 3.93871 7.41898 4.06704V8.42188L5.66494 9.70716C5.6153 9.74687 5.57397 9.79599 5.54331 9.85169C5.51265 9.90738 5.49327 9.96858 5.48628 10.0318C5.47929 10.095 5.48482 10.1589 5.50255 10.22C5.52029 10.281 5.54988 10.338 5.58964 10.3876Z" fill="#4F4F4F"/>
     </svg> ${currentDateCards[i].timeSlot}`;
-    recentCards.children[
-      i
-    ].children[0].children[0].children[1].children[1].appendChild(temp);
-  } else {
+      recentCards.children[
+        i
+      ].children[0].children[0].children[1].children[1].appendChild(temp);
+    } else {
+      temp = document.createElement("p");
+      temp.classList.add("newRequestCard_excerpt");
+      temp.innerText = `${currentDateCards[i].description}`;
+      recentCards.children[i].children[0].children[0].children[1].appendChild(
+        temp
+      );
+    }
+
     temp = document.createElement("p");
-    temp.classList.add("newRequestCard_excerpt");
-    temp.innerText = `${currentDateCards[i].description}`;
-    recentCards.children[i].children[0].children[0].children[1].appendChild(
-      temp
-    );
-  }
+    temp.classList.add("newRequestCard_status");
+    temp.innerText = `${currentDateCards[i].requestStatus}`;
+    recentCards.children[i].children[0].children[0].appendChild(temp);
 
-  temp = document.createElement("p");
-  temp.classList.add("newRequestCard_status");
-  temp.innerText = `${currentDateCards[i].requestStatus}`;
-  recentCards.children[i].children[0].children[0].appendChild(temp);
+    temp = document.createElement("div");
+    temp.classList.add("newRequestCard_date_wrapper");
+    recentCards.children[i].children[0].appendChild(temp);
 
-  temp = document.createElement("div");
-  temp.classList.add("newRequestCard_date_wrapper");
-  recentCards.children[i].children[0].appendChild(temp);
-
-  temp = document.createElement("div");
-  temp.classList.add("newRequest_logo");
-  recentCards.children[i].children[0].children[1].appendChild(temp);
-  if (currentDateCards[i].requestStatus !== "REJECTED") {
-    if (currentDateCards[i].ReqCategory === "Service") {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    temp = document.createElement("div");
+    temp.classList.add("newRequest_logo");
+    recentCards.children[i].children[0].children[1].appendChild(temp);
+    if (currentDateCards[i].requestStatus !== "REJECTED") {
+      if (currentDateCards[i].ReqCategory === "Service") {
+        temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2575C28.6011 45.2575 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
       </svg>`;
-    } else if (currentDateCards[i].ReqCategory === "Complaint") {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      } else if (currentDateCards[i].ReqCategory === "Complaint") {
+        temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2575C28.6011 45.2575 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
       </svg>`;
-    } else if (currentDateCards[i].requestStatus === "BOOKED") {
-      temp.innerHTML = `<svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      } else if (currentDateCards[i].requestStatus === "BOOKED") {
+        temp.innerHTML = `<svg width="56" height="60" viewBox="0 0 56 60" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M49.6904 5.45455H48.9404C47.8359 5.45455 46.9404 4.55911 46.9404 3.45455V2C46.9404 0.895431 46.045 0 44.9404 0H43.4404C42.3359 0 41.4404 0.895431 41.4404 2V3.45455C41.4404 4.55911 40.545 5.45455 39.4404 5.45455H15.9404C14.8359 5.45455 13.9404 4.55911 13.9404 3.45455V2C13.9404 0.895431 13.045 0 11.9404 0H10.4404C9.33586 0 8.44043 0.895431 8.44043 2V3.45455C8.44043 4.55911 7.545 5.45455 6.44043 5.45455H5.69043C2.66543 5.45455 0.19043 7.90909 0.19043 10.9091V54.5455C0.19043 57.5455 2.66543 60 5.69043 60H49.6904C52.7154 60 55.1904 57.5455 55.1904 54.5455V10.9091C55.1904 7.90909 52.7154 5.45455 49.6904 5.45455ZM49.6904 52.5455C49.6904 53.65 48.795 54.5455 47.6904 54.5455H7.69043C6.58586 54.5455 5.69043 53.65 5.69043 52.5455V17.2747C5.69043 16.1702 6.58586 15.2747 7.69043 15.2747H47.6904C48.795 15.2747 49.6904 16.1702 49.6904 17.2747V52.5455Z" fill="#4980C1"/>
       </svg>`;
 
-      temp = document.createElement("div");
-      temp.classList.add("newBookingCard_date_for");
-      const bookedFor = currentDateCards[i].bookedFor.toDate();
-      temp.innerHTML = `${
-        months[bookedFor.getMonth()]
-      }<br>${bookedFor.getDate()}`;
-      recentCards.children[i].children[0].children[1].appendChild(temp);
-    } else {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+        temp = document.createElement("div");
+        temp.classList.add("newBookingCard_date_for");
+        const bookedFor = currentDateCards[i].bookedFor.toDate();
+        temp.innerHTML = `${
+          months[bookedFor.getMonth()]
+        }<br>${bookedFor.getDate()}`;
+        recentCards.children[i].children[0].children[1].appendChild(temp);
+      } else {
+        temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2576C28.6011 45.2576 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
       </svg>`;
-    }
-  } else {
-    temp.innerHTML = `<svg width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      }
+    } else {
+      temp.innerHTML = `<svg width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="35.5" cy="27.5" r="27.5" fill="#BE0707"/>
     <circle cx="35.5" cy="27.5" r="26.5" stroke="white" stroke-width="2"/>
     <path d="M55 27.5C55 37.6707 46.3173 46 35.5 46C24.6827 46 16 37.6707 16 27.5C16 17.3293 24.6827 9 35.5 9C46.3173 9 55 17.3293 55 27.5Z" stroke="white" stroke-width="2"/>
@@ -399,21 +473,21 @@ displayRecenttUI = (i) => {
     <ellipse rx="6.01469" ry="5.08842" transform="matrix(0.779859 -0.625955 0.725595 0.688122 51.2905 19.2209)" fill="#BE0707"/>
     <path d="M13.4829 34.5017L14.4951 36.6858L15.7843 36.0884C16.1475 35.92 16.3851 35.6933 16.497 35.4083C16.6089 35.1232 16.5847 34.8079 16.4246 34.4624C16.2686 34.1257 16.0405 33.9084 15.7405 33.8107C15.4405 33.7129 15.1103 33.7475 14.75 33.9145L13.4829 34.5017ZM14.9016 37.563L16.0163 39.9686L14.8733 40.4983L11.9109 34.1054L14.4494 32.9291C15.1375 32.6102 15.7608 32.5384 16.3193 32.7137C16.8763 32.8861 17.2972 33.2795 17.5819 33.8938C17.7803 34.3221 17.8492 34.7494 17.7885 35.1758C17.7264 35.5992 17.5378 35.9664 17.2227 36.2775L19.8131 38.2092L18.5106 38.8128L16.1376 36.9902L14.9016 37.563ZM24.4612 34.882L24.9087 35.8478L20.7709 37.7653L17.8084 31.3725L21.9462 29.455L22.3938 30.4208L19.3989 31.8086L20.1996 33.5364L23.0305 32.2245L23.4514 33.1327L20.6205 34.4446L21.4663 36.2698L24.4612 34.882ZM24.9115 33.7262L26.0234 33.2109C26.1512 33.471 26.3354 33.644 26.576 33.7298C26.8197 33.8142 27.0744 33.7948 27.3402 33.6716C27.6474 33.5293 27.8389 33.3311 27.9149 33.077C27.9925 32.8186 27.9512 32.5166 27.7911 32.1711L25.7217 27.7054L26.8602 27.1778L28.9338 31.6523C29.2349 32.3021 29.2858 32.892 29.0866 33.422C28.8903 33.9507 28.4672 34.3656 27.8175 34.6667C27.2061 34.95 26.6349 35.0066 26.104 34.8364C25.5718 34.6633 25.1742 34.2932 24.9115 33.7262ZM34.9006 30.0443L35.3481 31.0101L31.2103 32.9276L28.2478 26.5348L32.3856 24.6173L32.8332 25.5831L29.8384 26.9709L30.639 28.6987L33.47 27.3868L33.8908 28.295L31.0599 29.6069L31.9057 31.4321L34.9006 30.0443ZM39.3722 29.2745C38.4566 29.6988 37.5947 29.7394 36.7864 29.3964C35.981 29.0521 35.3415 28.369 34.868 27.3471C34.3972 26.3311 34.2922 25.4039 34.553 24.5654C34.8155 23.7227 35.4015 23.0905 36.3112 22.669C37.0555 22.3241 37.7816 22.2459 38.4897 22.4344C39.1963 22.62 39.7439 23.0389 40.1323 23.6913L39.007 24.2128C38.747 23.8453 38.4103 23.6103 37.9968 23.5077C37.5863 23.4038 37.1743 23.4476 36.7608 23.6392C36.2114 23.8938 35.8707 24.3082 35.7386 24.8825C35.6081 25.4524 35.7077 26.0933 36.0376 26.8051C36.3702 27.5228 36.7961 28.0161 37.3153 28.2849C37.8345 28.5537 38.3718 28.5595 38.927 28.3022C39.3494 28.1065 39.6538 27.8344 39.8404 27.4861C40.0286 27.1334 40.078 26.7445 39.9887 26.3195L41.1095 25.8001C41.3266 26.5318 41.2804 27.2062 40.9708 27.8233C40.6612 28.4404 40.1283 28.9241 39.3722 29.2745ZM45.6369 26.2422L44.4983 26.7698L41.9834 21.3428L40.0696 22.2297L39.622 21.2639L44.5839 18.9645L45.0314 19.9303L43.122 20.8152L45.6369 26.2422ZM52.2476 22.0056L52.6952 22.9713L48.5573 24.8889L45.5948 18.496L49.7327 16.5785L50.1802 17.5443L47.1854 18.9321L47.9861 20.6599L50.817 19.3481L51.2379 20.2563L48.4069 21.5681L49.2528 23.3934L52.2476 22.0056ZM50.9519 16.0135L53.2866 14.9316C54.2436 14.4881 55.118 14.4202 55.9099 14.7277C56.7018 15.0352 57.3317 15.694 57.7998 16.7041C58.2693 17.7172 58.3674 18.6296 58.0943 19.4415C57.8211 20.2533 57.206 20.881 56.2491 21.3244L53.9144 22.4064L50.9519 16.0135ZM52.5424 16.4496L54.6098 20.9109L55.6819 20.4141C56.3258 20.1157 56.7301 19.6951 56.8948 19.1524C57.0594 18.6097 56.9734 17.9751 56.6367 17.2485C56.3055 16.5338 55.8788 16.066 55.3567 15.8451C54.8332 15.6213 54.2525 15.6572 53.6146 15.9528L52.5424 16.4496Z" fill="white"/>
     </svg>`;
-  }
+    }
 
-  temp = document.createElement("p");
-  const postDate = currentDateCards[i].onDate.toDate();
-  if (currentDateCards[i].requestStatus === "BOOKED") {
-    temp.innerText = `${
-      months[postDate.getMonth()]
-    } ${postDate.getDate()}, ${postDate.getFullYear()}`;
-  } else {
-    temp.innerText = `${
-      months[postDate.getMonth()]
-    } ${postDate.getDate()}, ${postDate.getFullYear()}`;
+    temp = document.createElement("p");
+    const postDate = currentDateCards[i].onDate.toDate();
+    if (currentDateCards[i].requestStatus === "BOOKED") {
+      temp.innerText = `${
+        months[postDate.getMonth()]
+      } ${postDate.getDate()}, ${postDate.getFullYear()}`;
+    } else {
+      temp.innerText = `${
+        months[postDate.getMonth()]
+      } ${postDate.getDate()}, ${postDate.getFullYear()}`;
+    }
+    recentCards.children[i].children[0].children[1].appendChild(temp);
   }
-  recentCards.children[i].children[0].children[1].appendChild(temp);
-}
 };
 
 /******************************************************************************
@@ -492,7 +566,6 @@ displayNotifDetailUI = (i) => {
 /******************************************************************************
       Notification Detail view JS ends here
 ******************************************************************************/
-
 
 /******************************************************************************
         Different Cards Detail view JS starts here
@@ -653,7 +726,9 @@ displayRequestDetailUI = (i) => {
     document.querySelector(
       "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressSent"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="129" height="98" viewBox="0 0 129 98" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.5">
             <path
@@ -742,7 +817,9 @@ displayRequestDetailUI = (i) => {
     document.querySelector(
       "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressRead"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -783,7 +860,9 @@ displayRequestDetailUI = (i) => {
     document.querySelector(
       "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressCompleted"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -828,7 +907,9 @@ displayRequestDetailUI = (i) => {
     document.querySelector(
       "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressMessage"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -873,7 +954,9 @@ displayRequestDetailUI = (i) => {
     document.querySelector(
       "#requestDetail .requestStatusBar"
     ).innerHTML = `<div class="statusProgressOngoing"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -976,7 +1059,9 @@ displayBookingDetailUI = (i) => {
       } ${postDate.getDate()}, ${postDate.getFullYear()}</p>
   </div>
 </div>`;
-  document.querySelector(".tipsInfoSectionBooking").innerHTML = `<div class="illustration">
+  document.querySelector(
+    ".tipsInfoSectionBooking"
+  ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
