@@ -1,65 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tenex - Tenexbox</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div class="body_wrapper_tenexbox">
-    <!-- Navigation bar at bottom of screen -->
-    <div class="app-nav">
-      <div class="nav">
-        <ul>
-          <li>
-            <button id="nav_home">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M12 22.9375C13.2375 22.9375 14.25 21.925 14.25 20.6875H9.75C9.75 21.925 10.7512 22.9375 12 22.9375ZM18.75 16.1875V10.5625C18.75 7.10875 16.905 4.2175 13.6875 3.4525V2.6875C13.6875 1.75375 12.9337 1 12 1C11.0663 1 10.3125 1.75375 10.3125 2.6875V3.4525C7.08375 4.2175 5.25 7.0975 5.25 10.5625V16.1875L3 18.4375V19.5625H21V18.4375L18.75 16.1875Z"
-                  fill="#AAAAAA" />
-              </svg>
-              Notification
-            </button>
-          </li>
-          <li>
-            <button id="nav_cal">
-              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M20.5996 3H19.5996V1H17.5996V3H7.59961V1H5.59961V3H4.59961C3.49961 3 2.59961 3.9 2.59961 5V21C2.59961 22.1 3.49961 23 4.59961 23H20.5996C21.6996 23 22.5996 22.1 22.5996 21V5C22.5996 3.9 21.6996 3 20.5996 3ZM20.5996 21H4.59961V8H20.5996V21Z"
-                  fill="#AAAAAA" />
-              </svg>
-              Calendar
-            </button>
-          </li>
-          <li>
-            <button id="nav_tbox">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M19.7778 2H4.21111C2.97778 2 2.01111 2.98889 2.01111 4.22222L2 19.7778C2 21 2.97778 22 4.21111 22H19.7778C21 22 22 21 22 19.7778V4.22222C22 2.98889 21 2 19.7778 2ZM19.7778 15.3333H15.3333C15.3333 17.1778 13.8333 18.6667 12 18.6667C10.1667 18.6667 8.66667 17.1778 8.66667 15.3333H4.21111V4.22222H19.7778V15.3333Z"
-                  fill="#AAAAAA" />
-              </svg>
-              TenexBox
-            </button>
-          </li>
-          <li>
-            <button id="nav_more">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="2.5" cy="5.5" r="1.5" fill="#AAAAAA" />
-                <circle cx="2.5" cy="12.5" r="1.5" fill="#AAAAAA" />
-                <circle cx="2.5" cy="19.5" r="1.5" fill="#AAAAAA" />
-                <rect x="7" y="4" width="16" height="3" rx="1.5" fill="#AAAAAA" />
-                <rect x="7" y="11" width="16" height="3" rx="1.5" fill="#AAAAAA" />
-                <rect x="7" y="18" width="16" height="3" rx="1.5" fill="#AAAAAA" />
-              </svg>
-              More
-            </button>
-          </li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenex - Tenexbox</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="body_wrapper_tenexbox">
+      <!-- Navigation bar at bottom of screen -->
+      <div class="app-nav">
+        <div class="nav">
+          <ul>
+            <li>
+              <button id="nav_home">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 22.9375C13.2375 22.9375 14.25 21.925 14.25 20.6875H9.75C9.75 21.925 10.7512 22.9375 12 22.9375ZM18.75 16.1875V10.5625C18.75 7.10875 16.905 4.2175 13.6875 3.4525V2.6875C13.6875 1.75375 12.9337 1 12 1C11.0663 1 10.3125 1.75375 10.3125 2.6875V3.4525C7.08375 4.2175 5.25 7.0975 5.25 10.5625V16.1875L3 18.4375V19.5625H21V18.4375L18.75 16.1875Z"
+                    fill="#AAAAAA"
+                  />
+                </svg>
+                Notification
+              </button>
+            </li>
+            <li>
+              <button id="nav_cal">
+                <svg
+                  width="25"
+                  height="24"
+                  viewBox="0 0 25 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.5996 3H19.5996V1H17.5996V3H7.59961V1H5.59961V3H4.59961C3.49961 3 2.59961 3.9 2.59961 5V21C2.59961 22.1 3.49961 23 4.59961 23H20.5996C21.6996 23 22.5996 22.1 22.5996 21V5C22.5996 3.9 21.6996 3 20.5996 3ZM20.5996 21H4.59961V8H20.5996V21Z"
+                    fill="#AAAAAA"
+                  />
+                </svg>
+                Calendar
+              </button>
+            </li>
+            <li>
+              <button id="nav_tbox">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.7778 2H4.21111C2.97778 2 2.01111 2.98889 2.01111 4.22222L2 19.7778C2 21 2.97778 22 4.21111 22H19.7778C21 22 22 21 22 19.7778V4.22222C22 2.98889 21 2 19.7778 2ZM19.7778 15.3333H15.3333C15.3333 17.1778 13.8333 18.6667 12 18.6667C10.1667 18.6667 8.66667 17.1778 8.66667 15.3333H4.21111V4.22222H19.7778V15.3333Z"
+                    fill="#AAAAAA"
+                  />
+                </svg>
+                TenexBox
+              </button>
+            </li>
+            <li>
+              <button id="nav_more">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle cx="2.5" cy="5.5" r="1.5" fill="#AAAAAA" />
+                  <circle cx="2.5" cy="12.5" r="1.5" fill="#AAAAAA" />
+                  <circle cx="2.5" cy="19.5" r="1.5" fill="#AAAAAA" />
+                  <rect
+                    x="7"
+                    y="4"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#AAAAAA"
+                  />
+                  <rect
+                    x="7"
+                    y="11"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#AAAAAA"
+                  />
+                  <rect
+                    x="7"
+                    y="18"
+                    width="16"
+                    height="3"
+                    rx="1.5"
+                    fill="#AAAAAA"
+                  />
+                </svg>
+                More
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
+      <header class="tenexbox_header">
+        <div class="topHeader">
+          <h2 id="headerTitle" class="headerTitle">TenexBox</h2>
+          <form action="" id="searchBar" class="searchBar">
+            <input
+              id="searchBarInput"
+              onkeyup="displaySearchResultUI()"
+              class="searchBarInput hidden"
+              type="search"
+              name="search"
+              placeholder="Search"
+            />
+            <button id="search_btn" class="search_btn" type="button">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
+            </button>
           </form>
         </div>
         <div class="bottomHeader">
@@ -72,211 +147,262 @@
         <div id="onlineStatus"></div>
       </main>
     </div>
-    <header class="tenexbox_header">
-      <div class="topHeader">
-        <h2 id="headerTitle" class="headerTitle">TenexBox</h2>
-        <form action="" id="searchBar" class="searchBar">
-          <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search"
-            name="search" placeholder="Search" />
-          <button id="search_btn" class="search_btn" type="button">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="body_wrapper_req">
+      <header id="notifDetailHeader">
+        <div class="topHeader">
+          <button class="back_btn">
+            <svg
+              width="22"
+              height="24"
+              viewBox="0 0 22 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
-                fill="#AAAAAA" />
+                d="M12 22L2 12L12 2"
+                stroke="#AAAAAA"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
           </button>
-        </form>
-      </div>
-      <div class="bottomHeader">
-        <button id="bookings_btn" class="textFilter_btn">Bookings</button>
-        <button id="requests_btn" class="textFilter_btn">Requests</button>
-      </div>
-    </header>
-    <main class="tenexbox_main">
-      <div id="recentCards"></div>
-    </main>
-  </div>
-  <div class="body_wrapper_req">
-    <header id="notifDetailHeader">
-      <div class="topHeader">
-        <button class="back_btn">
-          <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
-        <h2 id="headerTitle" class="headerTitle">Request</h2>
-        <button id="edit_btn" class="edit_btn" type="button">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_d)">
-              <path
-                d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
-                fill="#828282" />
-              <path
-                d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
-                stroke="white" stroke-width="3" />
-            </g>
-            <defs>
-              <filter id="filter0_d" x="0" y="0" width="34" height="34" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-                <feOffset dy="3" />
-                <feGaussianBlur stdDeviation="1.5" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-              </filter>
-            </defs>
-          </svg>
-        </button>
-      </div>
-    </header>
-
-    <section class="detailCardSection">
-      <div id="requestDetail"></div>
-    </section>
-    <section class="tipsInfoSection"></section>
-    <button id="chat_btn" class="main_btn">
-      <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_ddd)">
-          <rect x="10" y="9" width="50" height="50" rx="25" fill="#DCEBE9" />
-        </g>
-        <rect x="10" y="9" width="50" height="50" rx="25" fill="white" />
-        <path
-          d="M43 24H27C25.9 24 25.01 24.9 25.01 26L25 44L29 40H43C44.1 40 45 39.1 45 38V26C45 24.9 44.1 24 43 24ZM29 31H41V33H29V31ZM37 36H29V34H37V36ZM41 30H29V28H41V30Z"
-          fill="#81B7AE" />
-        <circle cx="44.5" cy="24.5" r="3" fill="#6FCF97" stroke="white" />
-        <defs>
-          <filter id="filter0_ddd" x="0" y="0" width="70" height="70" filterUnits="userSpaceOnUse"
-            color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-            <feOffset dy="2" />
-            <feGaussianBlur stdDeviation="2" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
-            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-            <feOffset dy="1" />
-            <feGaussianBlur stdDeviation="5" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" />
-            <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
-            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-            <feOffset dy="4" />
-            <feGaussianBlur stdDeviation="2.5" />
-            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
-            <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow" />
-            <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape" />
-          </filter>
-        </defs>
-      </svg>
-    </button>
-  </div>
-  <div class="body_wrapper_book">
-    <header id="notifDetailHeader">
-      <div class="topHeader">
-        <button class="back_btn">
-          <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-        </button>
-        <h2 id="headerTitle" class="headerTitle">Booking</h2>
-        <form action="" id="searchBar" class="searchBar">
-          <input id="searchBarInput" class="searchBarInput hidden" type="search" name="search" placeholder="Search" />
-          <button id="search_btn" class="search_btn visuallyHidden" type="button">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="hidden"
-                d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
-                fill="#AAAAAA" />
+          <h2 id="headerTitle" class="headerTitle">Request</h2>
+          <button id="edit_btn" class="edit_btn" type="button">
+            <svg
+              width="34"
+              height="34"
+              viewBox="0 0 34 34"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_d)">
+                <path
+                  d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
+                  fill="#828282"
+                />
+                <path
+                  d="M4.93934 19.3566L4.5 19.796V20.4173V25V26.5H6H10.5827H11.204L11.6434 26.0607L25.1593 12.5448L25.4062 12.2978L26.2199 11.4841L26.4669 11.2372L28.7032 9.00081C29.7656 7.93842 29.7656 6.21878 28.7032 5.15639L25.8436 2.29679C24.7812 1.2344 23.0616 1.2344 21.9992 2.29679L19.7628 4.53315L19.5159 4.78008L18.7022 5.59381L18.4552 5.84074L4.93934 19.3566Z"
+                  stroke="white"
+                  stroke-width="3"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_d"
+                  x="0"
+                  y="0"
+                  width="34"
+                  height="34"
+                  filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB"
+                >
+                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                  <feColorMatrix
+                    in="SourceAlpha"
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  />
+                  <feOffset dy="3" />
+                  <feGaussianBlur stdDeviation="1.5" />
+                  <feColorMatrix
+                    type="matrix"
+                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in2="BackgroundImageFix"
+                    result="effect1_dropShadow"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_dropShadow"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
             </svg>
           </button>
-        </form>
-      </div>
-    </header>
-
-    <section class="detailCardSection">
-      <div id="bookingDetail">
-        <h2 class="requestTitle">
-          New Fob Request
-        </h2>
-        <div class="requestDetail">
-          <div class="requestStatusBar">
-            <div class="statusProgressSent"></div>
-            <div class="statusAll"></div>
-          </div>
-          <div class="requestInfoMain">
-            <p class="description">Hi, <br><br>
-              My key fob is broken and I need a new one. Can you help me get a new one?
-              <br><br>
-              Thanks,<br>
-              Michael
-            </p>
-            <div class="attachmentSection">
-              <div class="attachment">
-                <div class="tag">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M3.13369 9.00928L8.67805 3.46492C9.74353 2.39944 11.4695 2.39944 12.535 3.46492C13.6005 4.5304 13.6005 6.25639 12.535 7.32187L6.50852 13.3483C5.84319 14.0137 4.76325 14.0137 4.09793 13.3483C3.4326 12.683 3.4326 11.6031 4.09793 10.9378L9.16017 5.87551C9.42533 5.61035 9.85924 5.61035 10.1244 5.87551C10.3896 6.14068 10.3896 6.57459 10.1244 6.83975L5.54428 11.4199L6.26746 12.1431L10.8476 7.56293C11.5129 6.89761 11.5129 5.81766 10.8476 5.15234C10.1823 4.48701 9.10231 4.48701 8.43699 5.15234L3.37475 10.2146C2.30927 11.2801 2.30927 13.006 3.37475 14.0715C4.44023 15.137 6.16621 15.137 7.2317 14.0715L13.2582 8.04505C14.7238 6.57941 14.7238 4.20739 13.2582 2.74175C11.7925 1.27611 9.42051 1.27611 7.95487 2.74175L2.41051 8.28611L3.13369 9.00928Z"
-                      fill="#4F4F4F" />
-                  </svg>
-                  <p class="attachmentTitle">img 012.jpg</p>
-                </div>
-              </div>
-              <div class="attachment">
-                <div class="tag">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M3.13369 9.00928L8.67805 3.46492C9.74353 2.39944 11.4695 2.39944 12.535 3.46492C13.6005 4.5304 13.6005 6.25639 12.535 7.32187L6.50852 13.3483C5.84319 14.0137 4.76325 14.0137 4.09793 13.3483C3.4326 12.683 3.4326 11.6031 4.09793 10.9378L9.16017 5.87551C9.42533 5.61035 9.85924 5.61035 10.1244 5.87551C10.3896 6.14068 10.3896 6.57459 10.1244 6.83975L5.54428 11.4199L6.26746 12.1431L10.8476 7.56293C11.5129 6.89761 11.5129 5.81766 10.8476 5.15234C10.1823 4.48701 9.10231 4.48701 8.43699 5.15234L3.37475 10.2146C2.30927 11.2801 2.30927 13.006 3.37475 14.0715C4.44023 15.137 6.16621 15.137 7.2317 14.0715L13.2582 8.04505C14.7238 6.57941 14.7238 4.20739 13.2582 2.74175C11.7925 1.27611 9.42051 1.27611 7.95487 2.74175L2.41051 8.28611L3.13369 9.00928Z"
-                      fill="#4F4F4F" />
-                  </svg>
-                  <p class="attachmentTitle">img 013.jpg</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div class="requestDetailSub">
-          <p class="newRequestStatus">SENT</p>
-          <p class="newRequestDate">FEB 12, 2021</p>
+      </header>
+      <section class="detailCardSection">
+        <div id="requestDetail"></div>
+      </section>
+      <section class="tipsInfoSection"></section>
+      <button id="chat_btn" class="main_btn">
+        <svg
+          width="70"
+          height="70"
+          viewBox="0 0 70 70"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_ddd)">
+            <rect x="10" y="9" width="50" height="50" rx="25" fill="#DCEBE9" />
+          </g>
+          <rect x="10" y="9" width="50" height="50" rx="25" fill="white" />
+          <path
+            d="M43 24H27C25.9 24 25.01 24.9 25.01 26L25 44L29 40H43C44.1 40 45 39.1 45 38V26C45 24.9 44.1 24 43 24ZM29 31H41V33H29V31ZM37 36H29V34H37V36ZM41 30H29V28H41V30Z"
+            fill="#81B7AE"
+          />
+          <circle cx="44.5" cy="24.5" r="3" fill="#6FCF97" stroke="white" />
+          <defs>
+            <filter
+              id="filter0_ddd"
+              x="0"
+              y="0"
+              width="70"
+              height="70"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              />
+              <feOffset dy="2" />
+              <feGaussianBlur stdDeviation="2" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              />
+              <feOffset dy="1" />
+              <feGaussianBlur stdDeviation="5" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect1_dropShadow"
+                result="effect2_dropShadow"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+              />
+              <feOffset dy="4" />
+              <feGaussianBlur stdDeviation="2.5" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="effect2_dropShadow"
+                result="effect3_dropShadow"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect3_dropShadow"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </button>
+    </div>
+    <div class="body_wrapper_book">
+      <header id="notifDetailHeader">
+        <div class="topHeader">
+          <button class="back_btn">
+            <svg
+              width="22"
+              height="24"
+              viewBox="0 0 22 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22L2 12L12 2"
+                stroke="#AAAAAA"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <h2 id="headerTitle" class="headerTitle">Booking</h2>
+          <form action="" id="searchBar" class="searchBar">
+            <input
+              id="searchBarInput"
+              class="searchBarInput hidden"
+              type="search"
+              name="search"
+              placeholder="Search"
+            />
+            <button
+              id="search_btn"
+              class="search_btn visuallyHidden"
+              type="button"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="hidden"
+                  d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
+            </button>
+          </form>
         </div>
-      </div> -->
-  </div>
-  </section>
-  <section class="tipsInfoSectionBooking"></section>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
-  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
-
-  <!-- Add Firebase products that you want to use -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
-
-  <script>
-    // TODO: Replace the following with your app's Firebase project configuration
-    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-    const firebaseConfig = {
-      apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-      authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-      projectId: "tenex-pwa-spring2021",
-      storageBucket: "tenex-pwa-spring2021.appspot.com",
-      messagingSenderId: "874020516286",
-      appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-      measurementId: "G-BB18XSR7K4",
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-  <script src="assets/js/tenexbox.js"></script>
-</body>
-
+      </header>
+      <section class="detailCardSection">
+        <div id="bookingDetail">
+        </div>
+      </section>
+      <section class="tipsInfoSectionBooking"></section>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+    <script>
+      // TODO: Replace the following with your app's Firebase project configuration
+      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+      const firebaseConfig = {
+        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+        projectId: "tenex-pwa-spring2021",
+        storageBucket: "tenex-pwa-spring2021.appspot.com",
+        messagingSenderId: "874020516286",
+        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+        measurementId: "G-BB18XSR7K4",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="assets/js/tenexbox.js"></script>
+  </body>
 </html>
