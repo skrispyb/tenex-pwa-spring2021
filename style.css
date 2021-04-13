@@ -15,12 +15,14 @@ Table of Contents
 
 */
 /* 1. Variables =========================================================== */
+
 ::-moz-placeholder {
   color: #BDBDBD;
 }
 :-ms-input-placeholder {
   color: #BDBDBD;
 }
+
 ::placeholder {
   color: #BDBDBD;
 }
@@ -138,8 +140,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -321,8 +322,10 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
+
 [type=checkbox],
 [type=radio] {
+
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -566,6 +569,7 @@ p {
   letter-spacing: 1px;
   color: SFProDisplayRegular, serif;
 }
+
 .tenexform label input::-moz-placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
@@ -574,6 +578,7 @@ p {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
 }
+
 .tenexform label input::placeholder {
   font-family: SFProDisplayLight, serif;
   letter-spacing: 1px;
@@ -655,10 +660,7 @@ a {
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 /* Position the "next button" to the right and previous button to left*/
@@ -722,6 +724,7 @@ a {
   animation-duration: 1.5s;
 }
 
+
 @-webkit-keyframes fade {
   from {
     opacity: 0.4;
@@ -730,6 +733,7 @@ a {
     opacity: 1;
   }
 }
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -807,6 +811,7 @@ a {
 .tenexbox_header,
 .calendar_header,
 .archive_header {
+
   position: sticky;
   top: 0;
   padding: 1rem 0 0.875rem;
@@ -884,7 +889,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -894,7 +898,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -990,7 +993,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1000,7 +1002,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1010,8 +1011,6 @@ a {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 .notifCard_duration_date_wrapper p,
@@ -1028,8 +1027,6 @@ a {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(189, 189, 189, 0.25);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 .newBookingCard_time_wrapper p {
@@ -1105,7 +1102,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1115,7 +1111,6 @@ a {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1312,8 +1307,6 @@ svg {
   align-items: center;
   background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 40px;
   margin: 0;
@@ -1464,8 +1457,6 @@ svg {
   align-items: center;
   background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   border-radius: 40px;
   margin: 0;
@@ -1496,8 +1487,6 @@ svg {
 }
 
 .illustration {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
@@ -1601,8 +1590,6 @@ svg {
 }
 
 .newReq_subject_submit {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   margin-top: 1rem;
 }
@@ -1691,8 +1678,6 @@ svg {
   margin-top: 1rem;
   padding: 0.75rem 1rem;
   opacity: 0;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   max-width: 70%;
   transition: opacity 0.25s ease-in-out;
@@ -1726,8 +1711,10 @@ svg {
 .message-container .name {
   display: inline-block;
   width: 100%;
+
   color: #3F6E6A;
   font-weight: 600;
+
   box-sizing: border-box;
 }
 
@@ -1739,7 +1726,7 @@ svg {
   z-index: 10;
   display: flex;
   flex-flow: row nowrap;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 #message-form button {
   flex-grow: 1;
@@ -1931,7 +1918,6 @@ svg {
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
   white-space: pre-line;
 }
 
@@ -1941,8 +1927,6 @@ svg {
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
@@ -2102,6 +2086,7 @@ button:focus {
   top: 0;
   z-index: 100;
   padding: 0;
+
   display: flex;
   flex-direction: column;
   background-color: #f4f4f4;
@@ -2179,9 +2164,23 @@ button:focus {
   margin: auto;
   margin-bottom: 6rem;
 }
+
 .body_FAQs #back_btn {
   border: transparent;
   background-color: transparent;
+
+.body_wrapper_FAQs main div {
+  max-width: 100%;
+  display: block;
+  transform: translateY(-18px);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 1rem;
+}
+
+.body_wrapper_FAQs .fas {
+  color: gray;
+
 }
 .body_FAQs .accordion {
   cursor: pointer;
@@ -2196,7 +2195,10 @@ button:focus {
   display: grid;
   transition: flex 0.3s ease-out;
 }
+  
 .body_FAQs .accordionTitle {
+  border-radius: .5rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2209,6 +2211,7 @@ button:focus {
   font-size: 1rem;
   color: #4f4f4f;
 }
+
 .body_FAQs .panel {
   font-family: SFProDisplayRegular;
   font-size: 0.875rem;
@@ -2218,7 +2221,8 @@ button:focus {
   margin-top: 0.5rem;
   margin-bottom: 0;
 }
-.body_FAQs .first {
+
+.first {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -2289,8 +2293,7 @@ button:focus {
 /* 7. Accessibility ======================================================== */
 .visually-hidden {
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
@@ -2348,16 +2351,13 @@ button:focus {
   z-index: 100;
   top: 0;
   left: 0;
-  -webkit-backdrop-filter: blur(0.5rem);
-          backdrop-filter: blur(0.5rem);
+  backdrop-filter: blur(0.5rem);
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .new_req_book_card {
   padding: 2rem 1rem;
   height: 13rem;
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
   display: flex;
   flex-direction: row;
@@ -2375,11 +2375,13 @@ button:focus {
   color: #4f4f4f;
 }
 .new_req_book_wrapper .new_req_book_card button:active {
-  background-color: #DCEBE9;
+  background-color: #dcebe9;
 }
 
-#option_service:active, #option_complaint:active, #option_general:active {
-  background-color: #DCEBE9;
+#option_service:active,
+#option_complaint:active,
+#option_general:active {
+  background-color: #dcebe9;
   font-weight: bold;
 }
 
@@ -2403,7 +2405,6 @@ button:focus {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
   max-height: 2.5rem;
   margin: 0;
   color: rgba(0, 0, 0, 0.8);
@@ -2472,8 +2473,6 @@ canvas,
 }
 .camera_feed .clicked_options button,
 .clicked_camera_feed .clicked_options button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -2531,11 +2530,11 @@ canvas,
 }
 
 .bg-green {
-  background-color: #DCEBE9;
+  background-color: #dcebe9;
 }
 
 .bg-gray {
-  background-color: #E5E5EA;
+  background-color: #e5e5ea;
 }
 
 .textFilter_btn {
@@ -2547,7 +2546,7 @@ canvas,
   background-color: white;
   text-transform: uppercase;
   font-weight: 500;
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .activeFilterText {
@@ -2555,15 +2554,15 @@ canvas,
 }
 
 .activeFilterTextRequest {
-  color: #FDAE46;
+  color: #fdae46;
 }
 
 .activeFilterTextBooking {
-  color: #4980C1;
+  color: #4980c1;
 }
 
 .activeFilterBackground {
-  background-color: #AAAAAA;
+  background-color: #aaaaaa;
 }
 
 .activeFilterIcon {
@@ -2571,16 +2570,17 @@ canvas,
 }
 
 .activeFilterNotif svg path {
-  fill: #81B7AE;
+  fill: #81b7ae;
 }
 
 .activeFilterAlert svg path {
-  fill: #BE0707;
+  fill: #be0707;
 }
 
 #calendarDate {
   width: 12rem;
 }
+
 
 .arrow {
   transition: all 0.3s ease;
@@ -2590,3 +2590,19 @@ canvas,
 .rotate {
   transform: rotate(90deg);
 }/*# sourceMappingURL=style.css.map */
+
+.offline_events {
+  text-align: center;
+}
+
+.tenex_image {
+  display: block;
+}
+
+.slideshow-container {
+  display: none;
+}
+
+/* 11. hacks =============================================================== */
+/* 12. Print =============================================================== */
+
