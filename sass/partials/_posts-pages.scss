@@ -2,7 +2,10 @@
         Alert card home screen starts here
 ******************************************************************************/
 
-.notification_home_header, .tenexbox_header, .calendar_header, .archive_header {
+.notification_home_header,
+.tenexbox_header,
+.calendar_header,
+.archive_header {
   position: sticky;
   top: 0;
   // z-index: 10;
@@ -219,7 +222,7 @@
 }
 
 .newBookingCard_time_wrapper {
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   margin-top: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(189, 189, 189, 0.25);
@@ -332,7 +335,7 @@
 }
 
 .newBookingCard_date_for {
-  transform: translate(-18px,-52px);
+  transform: translate(-18px, -52px);
   text-align: center;
   height: 0;
 }
@@ -636,7 +639,7 @@ svg {
 .bookingStatusBar {
   width: 0.5rem;
   height: 100%;
-  background-color: #4980C1;
+  background-color: #4980c1;
   border-radius: 10px;
 }
 
@@ -684,7 +687,10 @@ svg {
   padding-top: 1.5rem;
   text-align: center;
   p {
+    font-size: 0.875rem;
+    opacity: 0.7;
     margin: 0;
+    color: #828282;
   }
 
   p:first-of-type {
@@ -703,7 +709,6 @@ svg {
   bottom: 3.75rem;
   position: fixed;
 }
-
 
 /******************************************************************************
         Request Detail view style ends here
@@ -794,6 +799,14 @@ svg {
   align-items: flex-end;
 }
 
+#option_service svg,
+#option_complaint svg,
+#option_general svg,
+#option_amenity svg,
+#option_appointment svg {
+  margin-bottom: 0.5rem;
+}
+
 .newReq_subject_submit {
   width: max-content;
   margin-top: 1rem;
@@ -853,10 +866,11 @@ svg {
   flex-grow: 1;
 
   input {
-    padding: 0.75rem 1rem;
+    border: 1px solid $color_input_border;
+    padding: 0.5rem 1rem;
     border-radius: 2rem;
     width: 100%;
-    border: 1px solid #4f4f4f;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
   }
 }
 
@@ -915,7 +929,8 @@ svg {
 .message-container .name {
   display: inline-block;
   width: 100%;
-  color: #81b7ae;
+  color: #3F6E6A;
+  font-weight: 600;
   box-sizing: border-box;
 }
 #message-form {
@@ -926,13 +941,13 @@ svg {
   z-index: 10;
   display: flex;
   flex-flow: row nowrap;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 
   button {
     flex-grow: 1;
     background-color: $notif_green;
     border-radius: 2rem;
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
 
     &:disabled {
       background-color: #f4f4f4;
@@ -971,7 +986,6 @@ svg {
 /******************************************************************************
         Chat view style ends here
 ******************************************************************************/
-
 
 /******************************************************************************
         Tenexbox style starts here
@@ -1016,10 +1030,20 @@ svg {
     h2 {
       margin: 0;
     }
-  }
 
-  .bottomHeader {
-    padding: 0 1rem;
+    input[type=date] {
+      color: #828282;
+      font-family: "SFProDisplayRegular";
+      border-radius: 1rem;
+      border: 1px solid #DDDDDD;
+      padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    }
+    
+    input[type=date]::-webkit-calendar-picker-indicator::before {
+      opacity: 1;
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16 2.62727H15V0.510254H13V2.62727H5V0.510254H3V2.62727H2C0.89 2.62727 0.00999999 3.57992 0.00999999 4.74428L0 19.5634C0 20.7277 0.89 21.6804 2 21.6804H16C17.1 21.6804 18 20.7277 18 19.5634V4.74428C18 3.57992 17.1 2.62727 16 2.62727ZM16 19.5634H2V7.91979H16V19.5634ZM4 10.0368H9V15.3293H4V10.0368Z" fill="#333333"/%3E%3C/svg%3E');
+    }
+
   }
 }
 
@@ -1027,6 +1051,23 @@ svg {
   min-height: 100vh;
   background-color: #f4f4f4;
   padding: 0.5rem 1rem 5rem 1rem;
+
+  .no_events {
+    margin: 4rem 4rem;
+  }
+  
+  .empty_illustration {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .no_events p {
+    font-size: 1rem;
+    color: #828282;
+    opacity: 0.7;
+    line-height: 1.5;
+    text-align: center;
+  }
 }
 
 #allCards .notifCard {
@@ -1040,11 +1081,9 @@ svg {
   }
 }
 
-
 /******************************************************************************
         Calendar style ends here
 ******************************************************************************/
-
 
 /******************************************************************************
         Archive style starts here
@@ -1063,7 +1102,7 @@ svg {
 
     .back_btn {
       display: flex;
-      padding-left: 1px!important;
+      padding-left: 1px !important;
       svg {
         margin-top: 4px;
       }
@@ -1085,7 +1124,7 @@ svg {
 }
 
 .activeFilterBackground {
-  background-color: #AAAAAA;
+  background-color: #aaaaaa;
 }
 
 .activeFilterIcon {
@@ -1101,55 +1140,55 @@ svg {
 }
 
 .notifCardArchive {
-    background-color: #dcebe9;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    padding: 1rem;
-    margin: 0.5rem 0 0 0;
-    border-radius: 0.5rem;
+  background-color: #dcebe9;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
 
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
- 
+
 .notif_excerpt {
-    margin: 0.5rem 0 0.75rem 0;
-    overflow: hidden;
-    display: -webkit-box;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    white-space: pre-line;
+  margin: 0.5rem 0 0.75rem 0;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: pre-line;
 }
 
-.notifCard_duration_date_wrapper, 
+.notifCard_duration_date_wrapper,
 .notifCard_duration_time_wrapper {
-    padding: 0.25rem 0.5rem;
-    margin-top: 0.5rem;
-    border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.3);
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
 
-    max-width: max-content;
+  max-width: max-content;
 }
 
-.notifCard_duration_date_wrapper p svg, 
+.notifCard_duration_date_wrapper p svg,
 .notifCard_duration_time_wrapper p svg {
-    margin-bottom: -2px;
+  margin-bottom: -2px;
 }
 .notifCard_duration_date_wrapper p svg {
-    margin-right: 2px;
+  margin-right: 2px;
 }
 
 .notifCard_date_wrapper {
-    height: 100%;
+  height: 100%;
 
-    display: flex;
+  display: flex;
 
-    flex-flow: column nowrap;
+  flex-flow: column nowrap;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 #notifAlertCards .notifCard_wrapper {
@@ -1158,38 +1197,38 @@ svg {
 
 .body_wrapper_archive .archive_header .back_btn {
   padding-left: 0;
-  
+
   svg {
     margin-left: 0;
   }
 }
 
 .alertCardArchive {
-    background-color: #FFDFDF;
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    height: 7.5rem;
-    padding: 1rem;
-    margin: 0.5rem 0 0 0;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  background-color: #ffdfdf;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 7.5rem;
+  padding: 1rem;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
 }
 
 .alertCard_wrapper {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 0.25rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.25rem;
 }
 
 .alertCard_content_wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 /* Copied useless code */
 
@@ -1201,33 +1240,88 @@ button:focus {
         More style starts here
 ******************************************************************************/
 
-.body_wrapper_regulations {
-  main{
-    margin: 3rem 1rem 5rem 1rem;
-    background-color: white;
-   
-    
-}
- .fas{
-     color: gray;
- }
-
-}
-
-/* Copied code delete useless */
-
-.body_wrapper_FAQs header {
-  position: sticky;
-  top: 0;
-  // z-index: 10;
-  padding: 1rem 0 0.875rem;
-  display: flex;
-  flex-direction: column;
+.body_more {
+  margin: 0;
+  padding: 0;
   background-color: #f4f4f4;
-  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  color: $color_body;
 
-  & > h2 {
+  header > h2 {
     margin: 0 0 0 1rem;
+  }
+
+  .topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  main {
+    padding: 1rem 0.5rem 2.5rem 0.5rem;
+    margin: auto;
+  }
+
+  #back_btn {
+    border: transparent;
+    background-color: transparent;
+  }
+
+  h3 {
+    margin-left: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  section {
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+  }
+
+  section:nth-of-type(4) {
+    margin-bottom: 1rem;
+    border-bottom: none;
+  }
+
+  .more {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    background-repeat: 5px;
+    margin: 0 0.5rem 0 0.5rem;
+    padding: 0 1rem 0 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  .first {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  #FAQs {
+    margin-top: 0.5rem;
+  }
+
+  #signout_btn {
+    background-color: #dcebe9;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem 1rem;
+    width: calc(100% - 1rem);
+    border-color: transparent;
+    margin-bottom: 6rem;
+    font-family: $font_h3;
+    letter-spacing: 1px;
+    color: $color_btn_sign_out_text;
+  }
+  .button {
+    text-align: center;
+    margin-top: 2rem;
   }
 }
 
@@ -1238,69 +1332,182 @@ button:focus {
 ******************************************************************************/
 
 /******************************************************************************
+        Regulations style starts here
+******************************************************************************/
+
+.body_regulations {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: $color_body;
+  font-family: "roboto", sans-serif;
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  }
+
+  header > h2 {
+    margin: 0 0 0 1rem;
+  }
+
+  .topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  main {
+    padding: 1rem 0.5rem 2.5rem 0.5rem;
+    margin: auto;
+  }
+
+  #back_btn {
+    border: transparent;
+    background-color: transparent;
+  }
+}
+
+/* Copied code*/
+
+/******************************************************************************
+       Regulations style ends here
+******************************************************************************/
+
+/******************************************************************************
         FAQs style starts here
 ******************************************************************************/
-.body_wrapper_FAQs {
-  
-main{
-  padding: 4rem 1rem 1rem 1rem;
-  margin: auto;
-  margin-bottom: 6rem;
-}
-main div{
-   max-width: 100%;
-     display: block;
-  transform: translateY(-18px);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  margin-top: 1rem;
 
-}
+.body_FAQs {
+  background-color: $color_body_bg;
 
-.fas{
-   color: gray;
-}
-
-}
-
-/* ============= Accordion ================== */
-
-.accordion {
-  cursor: pointer;  
-  padding: 2rem 1rem .5rem 1rem;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  transition: 0.4s;
-  border-radius: .5rem;
-  margin-bottom: 1rem;
-  display:flex;
-  justify-content: space-between;
-align-items: center;
-}
-
-.accordion:hover {
-  background-color: #ccc; 
-}
-
-.panel {
-  padding: 0 18px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
-}
-
-.first{
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0;
     display: flex;
-    gap: 1rem
-}
+    flex-direction: column;
+    background-color: #f4f4f4;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.06);
+  }
 
-main button {
+  header > h2 {
+    margin: 0 0 0 1rem;
+  }
+
+  #headerTitle {
+    font-family: futuraMedium;
+  }
+
+  .topHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .visuallyHidden {
+    visibility: hidden;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  main {
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 6rem;
+  }
+
+  #back_btn {
+    border: transparent;
+    background-color: transparent;
+  }
+
+  /* ============= Accordion ================== */
+
+  .accordion {
+    cursor: pointer;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: grid;
+    transition: flex 0.3s ease-out;
+  }
+
+  .accordionTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .accordionTitle svg {
+    margin: 0;
+  }
+
+  .accordion .first p {
+    font-family: SFProDisplayRegular;
+    font-size: 1rem;
+    color: $color_body;
+  }
+
+  .panel {
+    font-family: SFProDisplayRegular;
+    font-size: 0.875rem;
+    color: $color_body;
+    line-height: 1.5;
+    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .first {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .second {
+    display: flex;
+    align-items: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  main button {
     background-color: white;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-
-
+    box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+  }
 }
 
 /******************************************************************************

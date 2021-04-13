@@ -283,6 +283,16 @@ canvas,
   width: 12rem;
 }
 
+
+.arrow {
+  transition: all 0.3s ease;
+  transform: rotate(0deg);
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
 // ******************** Notification Offline Illustration **********************
 
 .offline_events {
@@ -298,3 +308,4 @@ canvas,
 .slideshow-container {
   display: none;
 }
+

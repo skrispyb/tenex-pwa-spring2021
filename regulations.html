@@ -1,96 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tenex - Regulations</title>
-    <link rel="stylesheet" href="assets/css/regulations.css">
-<body>  
-    <header>
-        <div class="topHeader">
-            <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </button>
-            <h1 id="headerTitle" class="headerTitle">Regulations</h1>
-    
-        </div>
-        
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenex - Regulations</title>
+  <link rel="stylesheet" href="style.css">
+
+<body class="body_regulations">
+  <div class="body_wrapper_regulations">
+    <header id="notifDetailHeader">
+      <div class="topHeader">
+        <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </button>
+        <h2 id="headerTitle" class="headerTitle">Regulations</h2>
+        <form action="" id="searchBar" class="searchBar">
+          <input id="searchBarInput" class="searchBarInput hidden" type="search" name="search" placeholder="Search">
+          <button id="search_btn" class="search_btn visuallyHidden" type="button"><svg width="18" height="18"
+              viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="hidden"
+                d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                fill="#AAAAAA" />
+            </svg></button>
+        </form>
+      </div>
     </header>
-       
+
     <main>
-        <div>
-            <h1>Lorem</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium magnam temporibus illum expedita autem, numquam possimus debitis placeat odio, tempora eveniet nihil quas perspiciatis repellat ullam reprehenderit optio libero fugiat?</p>
-            <h2>Lorem, ipsum.</h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab omnis est obcaecati veritatis itaque optio, dignissimos hic officia blanditiis nam, at aperiam nisi! Laudantium corrupti cumque hic amet ad? Perferendis illo at rem. Dignissimos quisquam dicta, totam accusamus ipsa quam nesciunt ad, rem aliquid amet aperiam sequi voluptatibus pariatur ex?</p>
-        </div>
+      <h2>Building Regulations & Policies</h2>
+      <p>The Building Code is a provincial building regulation. It applies to the construction of new residential,
+        commercial, instructional and industrial buildings, and to alterations and additions to existing buildings. It
+        also applies if the use of the building changes, such as from a house to an office. The BC building Code sets
+        minimum standards for:</p>
+      <p>>> Health;</p>
+      <p>>> Safety;</p>
+      <p>>> Fire and structural protection;</p>
+      <p>>> Accessibility; and</p>
+      <p>>> Energy and water efficiency;</p>
+      <p>The BC building Code is based on the model National Building Code and an updated code is issued every five
+        years.</p>
+      <p>The B.C. Building Code regulates building in two main categories: simple buildings and complex buildings,
+        commonly called Part 9 and Part 3 buildings. In general, a single family home is a good example of a Part 9
+        building while a shopping mall is an example of a Part 3 building.</p>
     </main>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Script for pwa -->
-    <!-- <script>
-      // does the browser support service workers?
-      if ("serviceWorker" in navigator) {
-        // fires when the service worker is ready
-        navigator.serviceWorker.ready.then((reg) => {
-          // we have an active service worker working for us
-          console.log(`Service Worker ready (Scope: ${reg.scope})`);
-          // do something interesting, if you want...
-        });
-        // then register our service worker
-        navigator.serviceWorker
-          .register("./sw.js", { scope: "/" })
-          .then(function (reg) {
-            // display a success message
-            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-          })
-          .catch(function (error) {
-            // display an error message
-            console.log(`Service Worker Error (${error})`);
-          });
-      } else {
-        // happens when the app isn't served over a TLS connection (HTTPS)
-        console.warn("Service Worker not available");
-      }
-    </script> -->
-    <!-- Link to handlebars js cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <!-- Link to handlebars js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
-    <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-      const firebaseConfig = {
-        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-        projectId: "tenex-pwa-spring2021",
-        storageBucket: "tenex-pwa-spring2021.appspot.com",
-        messagingSenderId: "874020516286",
-        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-        measurementId: "G-BB18XSR7K4",
-      };
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-    <script src="https://kit.fontawesome.com/d61ee45fb2.js" crossorigin="anonymous"></script>
-    <script src="assets/js/regulations.js" defer></script>
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+    const firebaseConfig = {
+      apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+      authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+      projectId: "tenex-pwa-spring2021",
+      storageBucket: "tenex-pwa-spring2021.appspot.com",
+      messagingSenderId: "874020516286",
+      appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+      measurementId: "G-BB18XSR7K4",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="https://kit.fontawesome.com/d61ee45fb2.js" crossorigin="anonymous"></script>
+  <script src="assets/js/regulations.js" defer></script>
 </body>
+
 </html>

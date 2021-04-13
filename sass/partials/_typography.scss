@@ -17,6 +17,7 @@ h3 {
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
+  color: $color_body;
 }
 
 p {
@@ -77,6 +78,10 @@ p {
   line-height: 1.25;
 }
 
+.tipsInfoSectionBooking p {
+  color: #828282;
+}
+
 .newBookingCard_date_for {
   font-size: 20px;
   line-height: 1;
@@ -98,9 +103,12 @@ p {
 
 #option_service,
 #option_complaint,
-#option_general {
+#option_general,
+#option_amenity,
+#option_appointment  {
   font-family: $font_body;
   font-size: 14px;
+  color: $color_btn_text;
 }
 
 .requestForm_main {
@@ -131,6 +139,15 @@ p {
 .booking_date {
   margin: 0;
   font-size: 14px;
+  color: $color_body;
+}
+
+.newBookingCard_time_wrapper {
+
+  p {
+    color: $color_body;
+  }
+
 }
 
 .slideshow-container {
@@ -208,4 +225,16 @@ p {
 
 .textFilter_btn {
   font-family: $font_h3;
+}
+
+.body_wrapper_chat {
+  font-family: $font_body;
+
+  .name {
+    margin-bottom: 0.25rem;
+  }
+
+  .message {
+    color: $color_body;
+  }
 }
