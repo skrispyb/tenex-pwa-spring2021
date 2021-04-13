@@ -5,16 +5,14 @@ $("#back_btn").click(function goBack() {
 
 // =========== Accordion =================
 var acc = document.getElementsByClassName("accordion");
+let arrow = document.getElementsByClassName("arrow");
 var i;
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
+    // this.classList.toggle("active");
+    this.children[0].children[1].children[0].classList.toggle("rotate");
+    this.children[1].classList.toggle("hidden");
+    console.log(this.children[1]);
   });
 }

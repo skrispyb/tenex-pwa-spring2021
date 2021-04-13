@@ -1,179 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tenex - New Booking</title>
 
-    <link rel="stylesheet" href="assets/css/newRequestBooking.css" />
-  </head>
-  <body>
-    <header>
-      <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
-            stroke-linejoin="round" />
-    </svg>
-</button>
-      <h1>Booking</h1>
-      <div class="sendBooking_btn">
-        <svg
-          width="39"
-          height="34"
-          viewBox="0 0 39 34"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g filter="url(#filter0_d)">
-            <path
-              d="M7.01 23L28 14L7.01 5L7 12L22 14L7 16L7.01 23Z"
-              fill="#BDBDBD"
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenex - New Booking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="newRequest_header">
+    <button id="back_btn" class="back_btn">
+      <svg
+        width="22"
+        height="24"
+        viewBox="0 0 22 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 22L2 12L12 2"
+          stroke="#AAAAAA"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <h2>Booking</h2>
+    <button class="sendRequest_btn" form="requestForm" disabled>
+      <svg
+        width="36"
+        height="36"
+        viewBox="0 0 36 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g filter="url(#filter0_d)">
+          <path
+            d="M5.67063 26.0068L27.6602 15.0068L5.67063 4.00684L5.66016 12.5624L21.3744 15.0068L5.66016 17.4513L5.67063 26.0068Z"
+            fill="#F4F4F4"
+          />
+          <path
+            d="M4.67063 26.0081L4.67261 27.6242L6.11802 26.9012L28.1075 15.9012L29.8954 15.0068L28.1075 14.1125L6.11802 3.11249L4.67261 2.38945L4.67063 4.00561L4.66016 12.5612L4.65911 13.4187L5.50645 13.5505L14.8686 15.0068L5.50645 16.4632L4.65911 16.595L4.66016 17.4525L4.67063 26.0081Z"
+            stroke="#DCDCD6"
+            stroke-width="2"
+          />
+        </g>
+        <defs>
+          <filter
+            id="filter0_d"
+            x="0.658203"
+            y="0.772461"
+            width="34.4725"
+            height="34.4696"
+            filterUnits="userSpaceOnUse"
+            color-interpolation-filters="sRGB"
+          >
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feColorMatrix
+              in="SourceAlpha"
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
             />
-            <path
-              d="M5.51 23.0021L5.51325 25.2738L7.60112 24.3786L28.5911 15.3786L31.8064 14L28.5911 12.6214L7.60112 3.62138L5.51325 2.72616L5.51 4.99786L5.5 11.9979L5.49812 13.313L6.80175 13.4868L10.6504 14L6.80175 14.5132L5.49812 14.687L5.5 16.0021L5.51 23.0021Z"
-              stroke="white"
-              stroke-width="3"
+            <feOffset dy="3" />
+            <feGaussianBlur stdDeviation="1.5" />
+            <feColorMatrix
+              type="matrix"
+              values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
             />
-          </g>
-          <defs>
-            <filter
-              id="filter0_d"
-              x="0.996094"
-              y="0.452148"
-              width="37.6165"
-              height="33.0954"
-              filterUnits="userSpaceOnUse"
-              color-interpolation-filters="sRGB"
-            >
-              <feFlood flood-opacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              />
-              <feOffset dy="3" />
-              <feGaussianBlur stdDeviation="1.5" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-              />
-              <feBlend
-                mode="normal"
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow"
-              />
-              <feBlend
-                mode="normal"
-                in="SourceGraphic"
-                in2="effect1_dropShadow"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-        <small>SEND</small>
+            <feBlend
+              mode="normal"
+              in2="BackgroundImageFix"
+              result="effect1_dropShadow"
+            />
+            <feBlend
+              mode="normal"
+              in="SourceGraphic"
+              in2="effect1_dropShadow"
+              result="shape"
+            />
+          </filter>
+        </defs>
+      </svg>
+    </button>
+  </header>
+
+  <main class="requestForm_main">
+    <div class="progress_wrapper">
+      <div class="progress_img">
+        <div class="step1">
+          <svg
+            width="3"
+            height="33"
+            viewBox="0 0 3 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.83521 1.14453V31.1851"
+              stroke="#BDBDBD"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="3 3"
+            />
+          </svg>
+        </div>
+        <div class="step2">
+          <svg
+            width="3"
+            height="33"
+            viewBox="0 0 3 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.83521 1.14453V31.1851"
+              stroke="#BDBDBD"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="3 3"
+            />
+          </svg>
+        </div>
+        <div class="step3">
+          <svg
+            width="3"
+            height="33"
+            viewBox="0 0 3 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.83521 1.14453V31.1851"
+              stroke="#BDBDBD"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-dasharray="3 3"
+            />
+          </svg>
+        </div>
       </div>
-    </header>
-
-    <main> 
-      <form action="" id="bookingForm">
-        <select name="bookingCategory" id="bookingCategory" required>
-          <option disabled selected hidden value="">Select Category</option>
-          <option value="amenities">Amenities</option>
-          <option value="appointment">Appointment</option>
-          <!-- <option value="other">Other</option> -->
-        </select>
-        <!-- <input type="text" name="otherBookingCategory" id="otherBookingCategory"> -->
-        <select name="bookingSubcategory" id="bookingSubcategory" required>
-          <option disabled selected hidden value="">Select Subcategory</option>
-          <option value="gym">Gym</option>
-          <option value="pool">Pool</option>
-          <option value="meeting room">Meeting Room</option>
-          <!-- <option value="other">Other</option> -->
-        </select>
-        <!-- <input type="text" name="otherBookingSubCategory" id="otherBookingSubCategory"> -->
-        <div class="startDateInput">
-          <input type="date" id="startDate" name="startDate" required/>
+      <div class="progress_content_wrapper">
+        <ul class="progress_content">
+          <li class="reqForm_current">
+            <div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="7.58203"
+                  cy="8.14453"
+                  r="6"
+                  fill="#F4F4F4"
+                  stroke="#333333"
+                  stroke-width="3"
+                />
+              </svg>
+            </div>
+            <span>&nbsp;&nbsp;Select Category</span>
+          </li>
+          <li>
+            <div>
+              <svg
+                width="15"
+                height="16"
+                viewBox="0 0 15 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="7.5" cy="8" r="7.5" fill="#BDBDBD" />
+              </svg>
+            </div>
+            <span>&nbsp;&nbsp;Select Subcategory</span>
+          </li>
+          <li>
+            <div>
+              <svg
+                width="15"
+                height="16"
+                viewBox="0 0 15 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="7.5" cy="8" r="7.5" fill="#BDBDBD" />
+              </svg>
+            </div>
+            <span>&nbsp;&nbsp;Select Date</span>
+          </li>
+          <li>
+            <div>
+              <svg
+                width="15"
+                height="16"
+                viewBox="0 0 15 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="7.5" cy="8" r="7.5" fill="#BDBDBD" />
+              </svg>
+            </div>
+            <span>&nbsp;&nbsp;Select Time</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="options_wrapper">
+      <div class="options_content_wrapper">
+        <div class="options_content">
+          <button id="option_amenity">
+            <svg width="160" height="123" viewBox="0 0 160 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <mask id="path-1-inside-1" fill="white">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M63.6047 34.6389C64.6967 32.1352 65.3024 29.3707 65.3024 26.4648C65.3024 15.1624 56.14 6 44.8376 6C33.5352 6 24.3728 15.1624 24.3728 26.4648C24.3728 37.7672 33.5352 46.9296 44.8376 46.9296C50.1971 46.9296 55.0754 44.8693 58.7237 41.4976H69.5446L63.6047 34.6389Z"/>
+              </mask>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M63.6047 34.6389C64.6967 32.1352 65.3024 29.3707 65.3024 26.4648C65.3024 15.1624 56.14 6 44.8376 6C33.5352 6 24.3728 15.1624 24.3728 26.4648C24.3728 37.7672 33.5352 46.9296 44.8376 46.9296C50.1971 46.9296 55.0754 44.8693 58.7237 41.4976H69.5446L63.6047 34.6389Z" fill="white"/>
+              <path d="M63.6047 34.6389L62.6881 34.2391L62.4361 34.8169L62.8488 35.2935L63.6047 34.6389ZM58.7237 41.4976V40.4976H58.3324L58.045 40.7632L58.7237 41.4976ZM69.5446 41.4976V42.4976H71.7335L70.3005 40.843L69.5446 41.4976ZM64.3024 26.4648C64.3024 29.2306 63.7261 31.8591 62.6881 34.2391L64.5213 35.0386C65.6673 32.4113 66.3024 29.5109 66.3024 26.4648H64.3024ZM44.8376 7C55.5877 7 64.3024 15.7147 64.3024 26.4648H66.3024C66.3024 14.6101 56.6923 5 44.8376 5V7ZM25.3728 26.4648C25.3728 15.7147 34.0875 7 44.8376 7V5C32.9829 5 23.3728 14.6101 23.3728 26.4648H25.3728ZM44.8376 45.9296C34.0875 45.9296 25.3728 37.2149 25.3728 26.4648H23.3728C23.3728 38.3195 32.9829 47.9296 44.8376 47.9296V45.9296ZM58.045 40.7632C54.5742 43.9709 49.9357 45.9296 44.8376 45.9296V47.9296C50.4584 47.9296 55.5766 45.7678 59.4025 42.232L58.045 40.7632ZM69.5446 40.4976H58.7237V42.4976H69.5446V40.4976ZM62.8488 35.2935L68.7887 42.1523L70.3005 40.843L64.3606 33.9842L62.8488 35.2935Z" fill="#333333" mask="url(#path-1-inside-1)"/>
+              <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="24" y="6" width="47" height="42">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M64.209 34.85C65.301 32.3464 65.9066 29.5819 65.9066 26.676C65.9066 15.3736 56.7442 6.21118 45.4418 6.21118C34.1395 6.21118 24.9771 15.3736 24.9771 26.676C24.9771 37.9784 34.1395 47.1408 45.4418 47.1408C50.8013 47.1408 55.6797 45.0805 59.328 41.7088H70.1488L64.209 34.85Z" fill="white"/>
+              </mask>
+              <g mask="url(#mask0)">
+              <path d="M45.1289 21.0009C43.6297 20.8157 41.7184 20.5804 39.691 20.3319C31.9184 19.3795 24.7094 24.036 22.3265 31.4954L21.7404 33.33C21.7004 33.4553 21.6447 33.575 21.5747 33.6864C20.8974 34.7645 21.7222 36.1573 22.9932 36.0815L27.9204 35.7876C29.1035 35.7524 30.5438 35.7102 32.091 35.6654C37.9581 35.4957 45.363 35.2906 46.113 35.3047C47.2978 35.3269 50.0066 34.6662 50.4665 34.3249C54.4728 32.1166 51.0504 29.9701 49.7567 29.0717C48.7218 28.353 45.6458 27.0256 44.2371 26.4518C42.7701 26.0343 39.6719 24.9406 39.0153 23.9054C38.6363 23.308 39.156 23.1315 39.8906 23.0878C41.0145 23.021 42.1413 23.1871 43.2637 23.2751C44.8843 23.4022 46.8693 23.4778 47.6842 23.5595C49.1135 23.7029 50.186 23.1107 49.0867 22.2652C48.2073 21.5888 46.0818 21.1405 45.1289 21.0009Z" fill="#A4BFE0" stroke="#333333" stroke-width="0.5"/>
+              </g>
+              <path d="M18.3729 116L49.3729 116" stroke="#333333" stroke-linecap="round"/>
+              <path d="M74 116H136" stroke="#333333" stroke-linecap="round"/>
+              <path d="M104.5 42L88.5631 49.9985C80.0632 58.8319 62.7632 76.8985 61.5632 78.4985C60.3632 80.0985 58.7299 89.1652 58.0632 93.4985C57.5 96.5 53.0019 102.143 52 104.5C50.9367 107.001 50.2298 111.665 50.0631 113.499C49.8965 116.332 50.9198 120.03 56.5 120.5C62.4367 121 70.5 119 74 117L92.0631 101.999L96.0631 102.999C101.663 103.399 97.3965 100.165 94.5631 98.4985L99.5631 99.4985C102.363 99.4985 101.396 97.8319 100.563 96.9985L96.0631 94.9985L101.563 94.4985C103 92.5 102.167 90.8333 101.5 91L101.063 77.4985C96.2631 73.8985 95.8333 68 96.5 65.5C107.5 57 107.896 47.4985 107.063 44.9985L104.5 42Z" fill="white"/>
+              <path d="M96.6707 65.8831C96.3248 70.1113 97.8085 78.5909 106.511 78.6832" stroke="#333333" stroke-linecap="round"/>
+              <path d="M92.6731 57.1576C92.3912 57.606 92.2503 58.5798 92.6731 59.118C93.1899 59.7757 94.2107 60.2711 94.5566 60.5402" stroke="#333333" stroke-linecap="round"/>
+              <path d="M104.013 50.0848L105.858 51.6608" stroke="#333333" stroke-linecap="round"/>
+              <path d="M98.2083 49.5083L92.75 48.3551" stroke="#333333" stroke-linecap="round"/>
+              <path d="M92.135 66.0369C92.75 66.2675 94.3491 66.5904 95.8251 66.0369C97.3012 65.4834 99.6434 63.0643 100.707 61.9624C102.821 59.5407 106.403 53.6058 106.895 51.853C107.388 50.1002 107.511 47.0481 107.511 45.7412" stroke="#333333" stroke-linecap="round"/>
+              <path d="M45.1243 66.652L49.6216 64.0766C44.394 66.0754 41.4983 60.6043 40.7039 57.6189C41.1011 57.2217 42.6873 56.3965 45.8547 56.2735C49.022 56.1505 51.4026 54.4541 52.197 53.6212L55.0031 50.6999C55.2978 50.0592 56.6252 48.8318 59.5773 49.047C62.5294 49.2623 63.7543 47.7785 63.9977 47.0098L65.3047 44.665C69.3279 42.2049 78.6122 36.5775 83.5631 33.7484C88.514 30.9193 94.6719 30.212 97.1319 30.212C98.0545 30.2633 100.761 31.0423 104.205 33.7484C107.649 36.4545 107.895 44.2037 107.587 47.7401L104.858 42.2434L87.676 50.6999C85.6003 63.8075 77.8357 70.419 69.2639 73.0712C62.4064 75.1931 59.9489 81.0149 59.5773 84.5L45.1243 66.652Z" fill="#333333"/>
+              <path d="M49.6216 64.0766L45.1243 66.652L59.5773 84.5C59.9489 81.0149 62.4064 75.1931 69.2639 73.0712C77.8357 70.419 85.6003 63.8075 87.676 50.6999M49.6216 64.0766C62.9983 55.2485 89.3366 40.2138 87.676 50.6999M49.6216 64.0766C44.394 66.0754 41.4983 60.6043 40.7039 57.6189C41.1011 57.2217 42.6873 56.3965 45.8547 56.2735C49.022 56.1505 51.4026 54.4541 52.197 53.6212L55.0031 50.6999C55.2978 50.0592 56.6252 48.8318 59.5773 49.047C62.5294 49.2623 63.7543 47.7785 63.9977 47.0098L65.3047 44.665C69.3279 42.2049 78.6122 36.5775 83.5631 33.7484C88.514 30.9193 94.6719 30.212 97.1319 30.212C98.0545 30.2633 100.761 31.0423 104.205 33.7484C107.649 36.4545 107.895 44.2037 107.587 47.7401L104.858 42.2434L87.676 50.6999" stroke="#333333" stroke-linecap="round"/>
+              <path d="M104.282 53.4674C104.282 53.6797 104.186 53.8518 103.974 53.8518C103.762 53.8518 103.744 53.6797 103.744 53.4674C103.744 53.2551 103.762 53.1599 103.974 53.1599C104.186 53.1599 104.282 53.2551 104.282 53.4674Z" fill="#333333"/>
+              <path d="M100.284 53.6981V56.1198C100.322 56.9654 100.13 58.649 99.054 58.6183C97.9777 58.5875 97.478 58.6055 97.3627 58.6183" stroke="#333333" stroke-linecap="round"/>
+              <path d="M96.7477 51.9088C96.7477 52.1211 96.6525 52.2932 96.4402 52.2932C96.2279 52.2932 96.1327 52.1211 96.1327 51.9088C96.1327 51.6965 96.2279 51.5244 96.4402 51.5244C96.6525 51.5244 96.7477 51.6965 96.7477 51.9088Z" fill="#333333"/>
+              <path d="M61.1257 57C67.7128 61.1992 75.1706 67.5586 68.2049 69.4519C60.4822 71.3451 60.0784 82.28 59.4601 84.6708C58.6146 87.9962 58.0821 91.7633 57.8701 92.8992C57.6051 94.3192 51.4344 105.934 50.6394 107.863C49.2766 112.779 49.7713 123.355 60 120.5" stroke="#333333" stroke-linecap="round"/>
+              <path d="M81.2184 87.4857C78.7967 84.2568 74.4532 77.2994 73.7997 68.0741" stroke="#333333" stroke-linecap="round"/>
+              <path d="M58 94.5001L69.879 99.1327" stroke="#333333" stroke-linecap="round"/>
+              <path d="M91.6287 78.3919L86.1388 89.5709C87.433 89.2964 95.2355 90.219 98.975 90.7145C100.389 87.8936 103.494 81.7313 104.597 79.6499C105.701 77.5685 105.482 76.9338 105.234 76.8766H94.4134C92.9919 76.8766 91.9646 77.8868 91.6287 78.3919Z" fill="#A4BFE0"/>
+              <path d="M94.1655 79.2134L88.6757 89.6471C89.9699 89.3909 97.7724 90.252 101.512 90.7145C102.926 88.0816 106.031 82.3301 107.134 80.3875C108.238 78.4448 108.018 77.8524 107.771 77.7991H96.9503C95.5287 77.7991 94.5015 78.7419 94.1655 79.2134Z" fill="#333333"/>
+              <circle r="1.90257" transform="matrix(-0.945066 -0.326879 -0.326879 0.945066 98.5294 85.9381)" fill="#A4BFE0" stroke="#4980C1" stroke-width="0.5" stroke-linecap="round"/>
+              <path d="M98.5513 83.9934C98.5918 83.5081 98.3217 82.5035 96.9173 82.3673" stroke="#A4BFE0" stroke-width="0.5" stroke-linecap="round"/>
+              <mask id="path-25-inside-2" fill="white">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M130.373 71C139.209 71 146.373 63.6127 146.373 54.5C146.373 45.3873 139.209 38 130.373 38C121.536 38 114.373 45.3873 114.373 54.5C114.373 55.338 114.433 56.1615 114.55 56.9659L111.159 69.764L118.886 65.9864C121.794 69.0784 125.866 71 130.373 71Z"/>
+              </mask>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M130.373 71C139.209 71 146.373 63.6127 146.373 54.5C146.373 45.3873 139.209 38 130.373 38C121.536 38 114.373 45.3873 114.373 54.5C114.373 55.338 114.433 56.1615 114.55 56.9659L111.159 69.764L118.886 65.9864C121.794 69.0784 125.866 71 130.373 71Z" fill="white"/>
+              <path d="M114.55 56.9659L115.517 57.2221L115.569 57.0245L115.54 56.8221L114.55 56.9659ZM111.159 69.764L110.192 69.5078L109.631 71.6237L111.598 70.6624L111.159 69.764ZM118.886 65.9864L119.615 65.3013L119.11 64.7642L118.447 65.088L118.886 65.9864ZM145.373 54.5C145.373 63.0896 138.628 70 130.373 70V72C139.79 72 147.373 64.1358 147.373 54.5H145.373ZM130.373 39C138.628 39 145.373 45.9104 145.373 54.5H147.373C147.373 44.8642 139.79 37 130.373 37V39ZM115.373 54.5C115.373 45.9104 122.117 39 130.373 39V37C120.955 37 113.373 44.8642 113.373 54.5H115.373ZM115.54 56.8221C115.43 56.0652 115.373 55.2898 115.373 54.5H113.373C113.373 55.3863 113.437 56.2578 113.561 57.1097L115.54 56.8221ZM112.125 70.0202L115.517 57.2221L113.584 56.7098L110.192 69.5078L112.125 70.0202ZM118.447 65.088L110.72 68.8656L111.598 70.6624L119.326 66.8848L118.447 65.088ZM130.373 70C126.158 70 122.345 68.2045 119.615 65.3013L118.158 66.6715C121.244 69.9524 125.574 72 130.373 72V70Z" fill="#333333" mask="url(#path-25-inside-2)"/>
+              <mask id="path-27-inside-3" fill="white">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M63.6047 34.6389C64.6967 32.1352 65.3024 29.3707 65.3024 26.4648C65.3024 15.1624 56.14 6 44.8376 6C33.5352 6 24.3728 15.1624 24.3728 26.4648C24.3728 37.7672 33.5352 46.9296 44.8376 46.9296C50.1971 46.9296 55.0754 44.8693 58.7237 41.4976H69.5446L63.6047 34.6389Z"/>
+              </mask>
+              <path d="M63.6047 34.6389L62.6881 34.2391L62.4361 34.8169L62.8488 35.2935L63.6047 34.6389ZM58.7237 41.4976V40.4976H58.3324L58.045 40.7632L58.7237 41.4976ZM69.5446 41.4976V42.4976H71.7335L70.3005 40.843L69.5446 41.4976ZM64.3024 26.4648C64.3024 29.2306 63.7261 31.8591 62.6881 34.2391L64.5213 35.0386C65.6673 32.4113 66.3024 29.5109 66.3024 26.4648H64.3024ZM44.8376 7C55.5877 7 64.3024 15.7147 64.3024 26.4648H66.3024C66.3024 14.6101 56.6923 5 44.8376 5V7ZM25.3728 26.4648C25.3728 15.7147 34.0875 7 44.8376 7V5C32.9829 5 23.3728 14.6101 23.3728 26.4648H25.3728ZM44.8376 45.9296C34.0875 45.9296 25.3728 37.2149 25.3728 26.4648H23.3728C23.3728 38.3195 32.9829 47.9296 44.8376 47.9296V45.9296ZM58.045 40.7632C54.5742 43.9709 49.9357 45.9296 44.8376 45.9296V47.9296C50.4584 47.9296 55.5766 45.7678 59.4025 42.232L58.045 40.7632ZM69.5446 40.4976H58.7237V42.4976H69.5446V40.4976ZM62.8488 35.2935L68.7887 42.1523L70.3005 40.843L64.3606 33.9842L62.8488 35.2935Z" fill="#333333" mask="url(#path-27-inside-3)"/>
+              <path d="M121.21 54.1627L120.521 52.4257L122.026 51.829L123.884 56.513L123.976 56.7453L124.208 56.6533L136.02 51.9767L136.253 51.8846L136.16 51.6521L134.303 46.9681L135.807 46.3714L136.496 48.1084L136.588 48.3408L136.821 48.2486L138.558 47.5597L139.634 50.2743L139.727 50.5067L139.959 50.4145L141.696 49.7257L142.293 51.2303L140.556 51.9192L140.323 52.0113L140.415 52.2437L141.492 54.9583L139.755 55.6472L139.523 55.7394L139.615 55.9718L140.304 57.7088L138.799 58.3055L136.941 53.6215L136.849 53.3892L136.617 53.4812L124.805 58.1578L124.572 58.2499L124.665 58.4824L126.523 63.1664L125.018 63.7631L124.329 62.0261L124.237 61.7937L124.004 61.8859L122.267 62.5748L121.191 59.8602L121.098 59.6278L120.866 59.72L119.129 60.4088L118.532 58.9042L120.269 58.2153L120.502 58.1232L120.41 57.8908L119.333 55.1762L121.07 54.4873L121.302 54.3951L121.21 54.1627Z" fill="#A4BFE0" stroke="#333333" stroke-width="0.5"/>
+              <path d="M74.4175 116.999L91.9383 102.157L97.2306 103.302C98.2891 103.284 99.9774 102.776 98.2626 100.881C98.2626 100.632 95.9163 99.1638 94.7432 98.4611L99.8503 99.6322C100.874 99.4414 102.502 98.6381 100.829 96.9517L96.1192 95.156L101.729 94.4273C102.444 93.395 103.359 91.2472 101.306 90.9141L93.3937 90.0032L87.9425 89.6909C86.884 89.7256 85.0423 89.0715 86.1431 86.1776C86.1431 86.0475 86.0373 84.3559 84.6083 85.2668C83.4652 85.9954 82.6678 87.1665 82.412 87.661C82.2003 88.5285 82.0944 90.685 83.3646 92.3714L51.5634 109.121" stroke="#333333" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M52.3218 106.306C52.3218 106.306 52.3218 108 53 108.5C53.6782 109 57.2456 108.511 57.2456 108.511L55.7466 111.858L50.8227 109.558L52.3218 106.306Z" fill="white"/>
+              </svg>              
+              Book Amenity</button>
+          <button id="option_appointment">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+               viewBox="0 0 160 123" style="enable-background:new 0 0 160 123;" xml:space="preserve">
+            <style type="text/css">
+              .st0{fill:#FFFFFF;}
+              .st1{fill:none;stroke:#333333;stroke-width:1.5;}
+              .st2{fill:#333333;}
+              .st3{fill:none;stroke:#333333;stroke-miterlimit:10;}
+              .st4{fill:none;stroke:#A4C0E0;stroke-linecap:round;stroke-linejoin:round;}
+              .st5{fill:none;stroke:#333333;stroke-linecap:round;stroke-miterlimit:10;}
+              .st6{fill:#FFFFFF;stroke:#333333;stroke-miterlimit:10;}
+            </style>
+            <path class="st0" d="M36.4,74.2c-1.6,0.2-3.2-0.1-4.6-0.9c-1.4-0.8-2.5-2-3.1-3.5l-9.5-22c-0.8-1.8-0.8-3.8-0.1-5.6
+              c0.7-1.8,2.1-3.2,3.9-4L46.7,28c0.9-0.4,1.8-0.6,2.8-0.6c1,0,1.9,0.2,2.8,0.5c0.9,0.4,1.7,0.9,2.4,1.6c0.7,0.7,1.2,1.5,1.6,2.4
+              l9.4,22c0.4,0.9,0.6,1.8,0.6,2.8c0,1-0.2,1.9-0.5,2.8c-0.4,0.9-0.9,1.7-1.5,2.4c-0.7,0.7-1.5,1.2-2.3,1.6L38.3,73.7
+              C37.7,74,37.1,74.1,36.4,74.2z"/>
+            <path class="st1" d="M62.8,63.2L37.7,73.9c-3.3,1.4-7.1-0.1-8.5-3.4L19.1,47c-1.4-3.3,0.1-7.1,3.4-8.5l25.1-10.8
+              c3.3-1.4,7.1,0.1,8.5,3.4l10.1,23.5C67.6,57.9,66.1,61.7,62.8,63.2z"/>
+            <path class="st0" d="M72,76l-10,24.5L49,116h85.5l6.5-25c1.5-18.5-13.5-26.5-17.5-26c-3.2,0.4-7-1.2-8.5-2l-1,2
+              c-0.8,1.5-3.4,5.2-7,8c-4.5,3.5-5.5,2-7.5,1c-1.6-0.8-2.3-3-2.5-4c-0.5-2-1.5-5.6-1.5-4s-2.7,2.3-4,2.5H84C76,68.5,72.7,73.5,72,76z
+              "/>
+            <path class="st0" d="M23.4,43.6c-0.3,0-0.7,0-0.9-0.2c-0.3-0.2-0.5-0.4-0.6-0.7l-1.8-4.2c-0.2-0.4-0.2-0.8,0-1.1
+              c0.1-0.4,0.4-0.7,0.8-0.8c0.1-0.1,0.2-0.1,0.4-0.1c0.3,0,0.7,0,0.9,0.2c0.3,0.2,0.5,0.4,0.6,0.7l1.8,4.2c0.2,0.4,0.2,0.8,0,1.1
+              c-0.1,0.2-0.2,0.4-0.3,0.5c-0.1,0.1-0.3,0.3-0.5,0.3C23.7,43.5,23.6,43.6,23.4,43.6z"/>
+            <path class="st2" d="M21.3,36.8c0.3,0,0.5,0,0.7,0.1c0.2,0.1,0.4,0.3,0.5,0.6l1.8,4.2c0.1,0.1,0.1,0.3,0.1,0.5c0,0.2,0,0.3-0.1,0.5
+              c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.3,0.1-0.6,0.1-0.9,0c-0.3-0.1-0.5-0.3-0.6-0.6l-1.8-4.2
+              c-0.1-0.3-0.1-0.6,0-0.9c0.1-0.3,0.3-0.5,0.6-0.6C21.1,36.8,21.2,36.8,21.3,36.8L21.3,36.8z M21.2,36.1c-0.3,0-0.5,0.1-0.8,0.3
+              c-0.2,0.2-0.4,0.4-0.6,0.6c-0.1,0.2-0.2,0.5-0.2,0.8c0,0.3,0,0.6,0.1,0.8l1.8,4.2c0.1,0.2,0.2,0.4,0.4,0.6s0.4,0.3,0.6,0.4
+              C22.8,44,23,44,23.3,44c0.2,0,0.5-0.1,0.7-0.2c0.2-0.1,0.4-0.2,0.6-0.4c0.2-0.2,0.3-0.4,0.4-0.6c0.1-0.2,0.1-0.5,0.1-0.7
+              s-0.1-0.5-0.2-0.7l-1.8-4.2c-0.2-0.4-0.4-0.7-0.8-0.9C22,36.1,21.6,36.1,21.2,36.1L21.2,36.1z"/>
+            <path class="st0" d="M32.3,39.8c-0.3,0-0.7,0-0.9-0.2c-0.3-0.2-0.5-0.4-0.6-0.7l-1.8-4.2c-0.2-0.4-0.2-0.8,0-1.1
+              c0.1-0.4,0.4-0.7,0.8-0.8c0.1-0.1,0.2-0.1,0.4-0.1c0.3,0,0.7,0,0.9,0.2c0.3,0.2,0.5,0.4,0.6,0.7l1.8,4.2c0.2,0.4,0.2,0.8,0,1.1
+              c-0.1,0.4-0.4,0.7-0.8,0.8C32.5,39.7,32.4,39.7,32.3,39.8z"/>
+            <path class="st2" d="M30.1,32.9c0.3,0,0.5,0,0.7,0.1c0.2,0.1,0.4,0.3,0.5,0.6l1.8,4.2c0.1,0.3,0.1,0.6,0,0.9
+              c-0.1,0.1-0.1,0.3-0.2,0.4c-0.1,0.1-0.2,0.2-0.4,0.3c-0.1,0-0.2,0.1-0.3,0.1c-0.3,0-0.5,0-0.7-0.1c-0.2-0.1-0.4-0.3-0.5-0.6
+              l-1.8-4.2c-0.1-0.3-0.1-0.6,0-0.9c0.1-0.3,0.3-0.5,0.6-0.6C29.9,33,30,33,30.1,32.9L30.1,32.9z M30,32.3c-0.2,0-0.3,0.1-0.4,0.1
+              c-0.2,0.1-0.4,0.2-0.6,0.4c-0.2,0.2-0.3,0.4-0.4,0.6c-0.1,0.2-0.1,0.5-0.1,0.7c0,0.2,0.1,0.5,0.1,0.7l1.8,4.2c0.2,0.4,0.6,0.8,1,1
+              c0.4,0.2,1,0.2,1.4,0c0.4-0.2,0.8-0.6,1-1c0.2-0.5,0.2-1,0-1.4l-1.8-4.2c-0.2-0.4-0.4-0.7-0.8-0.9C30.8,32.3,30.4,32.2,30,32.3
+              L30,32.3z"/>
+            <path class="st0" d="M41.2,35.9c-0.3,0-0.7,0-0.9-0.2c-0.3-0.2-0.5-0.4-0.6-0.7l-1.8-4.2c-0.1-0.2-0.2-0.4-0.2-0.6
+              c0-0.2,0-0.4,0.1-0.6s0.2-0.4,0.3-0.5c0.1-0.2,0.3-0.3,0.5-0.4c0.2-0.1,0.4-0.1,0.6-0.1c0.2,0,0.4,0,0.6,0.1s0.4,0.2,0.5,0.4
+              c0.1,0.2,0.2,0.3,0.3,0.5l1.8,4.2c0.2,0.4,0.2,0.8,0,1.2c-0.1,0.4-0.4,0.7-0.8,0.8C41.4,35.9,41.3,35.9,41.2,35.9z"/>
+            <path class="st2" d="M39,29.1c0.3,0,0.5,0,0.7,0.1c0.2,0.1,0.4,0.3,0.5,0.6L42,34c0.1,0.1,0.1,0.3,0.1,0.5c0,0.2-0.1,0.5-0.2,0.7
+              c-0.1,0.2-0.3,0.3-0.5,0.4c-0.1,0.1-0.3,0.1-0.4,0.1c-0.2,0-0.3,0-0.4-0.1c-0.1-0.1-0.3-0.1-0.4-0.2c-0.1-0.1-0.2-0.2-0.3-0.4
+              l-1.8-4.2c-0.1-0.3-0.1-0.6,0-0.9c0.1-0.3,0.3-0.5,0.6-0.6C38.8,29.1,38.9,29.1,39,29.1L39,29.1z M38.9,28.4c-0.3,0-0.5,0.1-0.8,0.3
+              c-0.2,0.2-0.4,0.4-0.6,0.6c-0.1,0.2-0.2,0.5-0.2,0.8c0,0.3,0,0.6,0.1,0.8l1.8,4.2c0.2,0.4,0.6,0.8,1,1c0.2,0.1,0.5,0.1,0.7,0.1
+              c0.3,0,0.6-0.1,0.9-0.2c0.3-0.1,0.5-0.4,0.6-0.6c0.2-0.3,0.3-0.5,0.3-0.8c0-0.3,0-0.6-0.1-0.9l-1.8-4.2c-0.2-0.4-0.4-0.7-0.8-0.9
+              S39.3,28.4,38.9,28.4L38.9,28.4z"/>
+            <path class="st0" d="M50,32.1c-0.3,0-0.7,0-1-0.2c-0.3-0.2-0.5-0.4-0.6-0.7L46.7,27c-0.2-0.4-0.2-0.8,0-1.2c0.1-0.4,0.4-0.7,0.8-0.8
+              c0.1-0.1,0.2-0.1,0.4-0.1c0.3,0,0.7,0,0.9,0.2c0.3,0.2,0.5,0.4,0.6,0.7l1.8,4.2c0.2,0.4,0.2,0.8,0,1.1c-0.1,0.4-0.4,0.7-0.8,0.8
+              C50.3,32,50.2,32,50,32.1z"/>
+            <path class="st2" d="M47.9,25.2c0.3,0,0.5,0,0.7,0.1c0.2,0.1,0.4,0.3,0.5,0.6l1.8,4.2c0.1,0.3,0.1,0.6,0,0.9
+              c-0.1,0.3-0.3,0.5-0.6,0.6c-0.1,0-0.2,0.1-0.3,0.1c-0.3,0-0.5,0-0.7-0.1c-0.2-0.1-0.4-0.3-0.5-0.6L47,26.8c-0.1-0.1-0.1-0.3-0.1-0.5
+              c0-0.3,0.1-0.6,0.3-0.8C47.3,25.4,47.6,25.3,47.9,25.2L47.9,25.2z M47.8,24.6c-0.3,0-0.5,0.1-0.8,0.3c-0.2,0.2-0.4,0.4-0.6,0.6
+              c-0.1,0.2-0.2,0.5-0.2,0.8c0,0.3,0,0.6,0.1,0.8l1.8,4.2c0.1,0.2,0.2,0.4,0.4,0.6s0.4,0.3,0.6,0.4c0.2,0.1,0.5,0.1,0.7,0.1
+              c0.2,0,0.5-0.1,0.7-0.1c0.2-0.1,0.4-0.2,0.6-0.4c0.2-0.2,0.3-0.4,0.4-0.6c0.1-0.2,0.1-0.5,0.1-0.7c0-0.2-0.1-0.5-0.2-0.7l-1.8-4.2
+              c-0.2-0.4-0.4-0.7-0.8-0.9C48.6,24.6,48.2,24.5,47.8,24.6L47.8,24.6z"/>
+            <path class="st3" d="M19.6,48.2l36.7-15.9"/>
+            <path class="st2" d="M53.1,37.5c0.4-0.1,0.8,0,1.1,0.2c0.3,0.2,0.6,0.5,0.8,0.8l7.8,18.1c0.1,0.2,0.1,0.4,0.1,0.7
+              c0,0.2,0,0.5-0.1,0.7c-0.1,0.2-0.2,0.4-0.4,0.6c-0.2,0.2-0.4,0.3-0.6,0.4L35.3,70.5c-0.2,0.1-0.4,0.1-0.7,0.1s-0.5,0-0.7-0.1
+              c-0.2-0.1-0.4-0.2-0.6-0.4c-0.2-0.2-0.3-0.4-0.4-0.6l-7.8-18.1c-0.2-0.4-0.2-0.9,0-1.3c0.2-0.4,0.5-0.8,0.9-1l26.5-11.5
+              C52.8,37.6,53,37.6,53.1,37.5L53.1,37.5z M53,36.6c-0.2,0-0.5,0.1-0.7,0.2L25.8,48.2c-0.3,0.1-0.6,0.4-0.9,0.6
+              c-0.3,0.3-0.4,0.6-0.6,0.9c-0.1,0.3-0.2,0.7-0.2,1.1c0,0.4,0.1,0.7,0.2,1.1l7.8,18.1c0.2,0.6,0.7,1,1.2,1.3c0.5,0.3,1.1,0.4,1.7,0.3
+              c0.2,0,0.5-0.1,0.7-0.2l26.5-11.5c0.3-0.1,0.6-0.3,0.9-0.6c0.3-0.3,0.4-0.6,0.6-0.9c0.1-0.3,0.2-0.7,0.2-1.1c0-0.4-0.1-0.7-0.2-1
+              l-7.8-18.1c-0.2-0.6-0.7-1-1.2-1.3C54.2,36.6,53.6,36.5,53,36.6L53,36.6z"/>
+            <path class="st3" d="M26.6,57.1l31.5-13.7"/>
+            <path class="st3" d="M29.8,64.4l31.5-13.7"/>
+            <path class="st3" d="M41.5,68.7l-9.9-23"/>
+            <path class="st3" d="M56.7,62.2l-9.9-23"/>
+            <path class="st3" d="M48.8,65.6l-9.9-23"/>
+            <path class="st4" d="M41.6,64.5l1.6,0.2l1.2-4.7"/>
+            <path class="st4" d="M48.9,61.4l1.6,0.2l1.2-4.7"/>
+            <path class="st4" d="M45.7,53.9l1.6,0.2l1.2-4.7"/>
+            <path class="st4" d="M53.6,50.5l1.6,0.2l1.2-4.7"/>
+            <path class="st4" d="M34.2,67.7l1.6,0.2l1.2-4.7"/>
+            <path class="st0" d="M65.3,104.4L42.4,80.5l-2.1-11.3c0,0-4-6.5-3.4,1.6c0.6,8.2,1.1,7.1,1.1,7.1s-1.7-3.8-5.7-2.8
+              c-4,1.1-3.6,6.9-3.6,6.9s-1.7,5.8,2.5,6.9c4.2,1,5.1,0,5.1,0L49.4,116"/>
+            <path class="st5" d="M65.3,104.4L42.4,80.5l-2.1-11.3c0,0-4-6.5-3.4,1.6c0.6,8.2,1.1,7.1,1.1,7.1s-1.7-3.8-5.7-2.8
+              c-4,1.1-3.6,6.9-3.6,6.9s-1.7,5.8,2.5,6.9c4.2,1,5.1,0,5.1,0L49.4,116"/>
+            <path class="st2" d="M90.8,38.9c0,0-8.3-3.2-1.8-8.3c0,0-5.1-15.3,10.4-9.1c0,0,17.2-4,18.3,8.3l-5.4,28.7c0,0-1.7,4.7-8,4.8
+              c-6.3,0.1-14.9-2.1-16.4-9L90.8,38.9z"/>
+            <path class="st6" d="M92.7,33.8c0,0,8.3,5.8,17.9,1.5l-3,16.5c0,0-0.8,2.2-3.4,2s-15-2.9-15-2.9L92.7,33.8z"/>
+            <path class="st5" d="M97.8,42.9c0,0-5,6.5,0.1,7.8"/>
+            <path class="st2" d="M103.4,45.6C103.4,45.6,103.3,45.6,103.4,45.6C103.4,45.6,103.3,45.6,103.4,45.6L103.4,45.6
+              C103.3,45.6,103.4,45.6,103.4,45.6L103.4,45.6L103.4,45.6C103.3,45.6,103.3,45.6,103.4,45.6c-0.1,0-0.1,0-0.1,0l0,0l0,0l-0.1,0
+              c0,0-0.1-0.1-0.1-0.1l0,0c-0.1-0.1-0.1-0.2-0.1-0.2v0c0-0.1,0-0.1,0.1-0.2l0,0c0,0,0,0,0,0s0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0l0,0
+              c0,0,0,0,0,0c0,0,0,0,0,0h0c0,0,0,0,0,0h0l0,0c0,0,0,0,0,0s0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0l0,0
+              c0,0,0,0,0,0.1l0,0c0,0.1,0.1,0.2,0.1,0.2v0c0,0,0,0.1,0,0.1c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0.1,0,0,0
+              c0,0-0.2,0.1-0.1,0.1c0,0,0.1,0,0.1,0c0.1,0,0.1,0,0.2,0c0.1,0,0.2-0.1,0.3-0.2c0-0.1,0-0.1,0-0.2c0-0.1,0-0.1-0.1-0.2
+              c-0.1-0.1-0.1-0.1-0.2-0.1c-0.2,0-0.3,0-0.5,0.1c-0.1,0.1-0.1,0.1-0.2,0.2c0,0.1-0.1,0.2,0,0.3c0,0.1,0.1,0.2,0.1,0.2
+              c0.1,0.1,0.2,0.1,0.4,0.1c0.1,0,0.3,0,0.4,0c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0-0.1C103.6,45.5,103.4,45.5,103.4,45.6L103.4,45.6z"/>
+            <path class="st2" d="M93.5,43.9L93.5,43.9C93.5,43.9,93.5,43.9,93.5,43.9C93.5,43.8,93.5,43.8,93.5,43.9
+              C93.5,43.9,93.5,43.8,93.5,43.9C93.5,43.9,93.6,43.8,93.5,43.9C93.5,43.9,93.5,43.9,93.5,43.9C93.6,43.9,93.5,43.9,93.5,43.9
+              C93.5,43.9,93.5,43.9,93.5,43.9L93.5,43.9C93.4,43.9,93.5,43.9,93.5,43.9c-0.1,0-0.1,0-0.1,0c0,0,0,0-0.1,0h0l0,0l0,0
+              c0-0.1,0-0.2,0-0.3v0c0-0.1,0-0.2,0.1-0.2l0,0c0,0,0,0,0,0c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0-0.1,0,0,0c0,0-0.1,0,0,0h0
+              c-0.1,0,0,0,0,0s0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0.1,0.1l0,0c0,0,0,0.1,0,0.2v0
+              c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1
+              c0-0.1-0.1-0.1-0.1-0.1c-0.1,0-0.2-0.1-0.3-0.1c-0.1,0-0.2,0-0.3,0.1c-0.1,0-0.2,0.1-0.2,0.2s-0.1,0.2-0.1,0.2c0,0.1,0,0.2,0,0.2
+              c0,0,0,0.1,0,0.1c0,0,0,0,0,0.1c0,0,0,0,0.1,0c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0,0.4-0.1c0,0,0.1,0,0.1-0.1s0,0,0,0
+              C93.7,43.8,93.6,43.8,93.5,43.9L93.5,43.9z"/>
+            <path class="st5" d="M112.5,53.8c0,0-2,9.7,7.5,11c0,0,20.9-0.4,20.9,26.1"/>
+            <path class="st5" d="M134,116l6.9-25.1c0,0-9.1-5.8-18-3.6l1.3,15.1c0,0-24.3,0.8-30.8,3.7c-6.4,2.9-8.8,9-8.8,9"/>
+            <path class="st5" d="M15,116h119"/>
+            <path class="st5" d="M103.4,41.1l3.7,2.1"/>
+            <path class="st5" d="M94.2,40.4l-3.1,0.7"/>
+            <path class="st3" d="M94.8,61.7c0,0,2.5,4.6-1.3,6.3c-0.8,0.3-1.9,0.4-3.2,0.4c-5.4-0.1-14.6-1.6-18.6,8c-4.9,12-9.8,24.8-9.8,24.8"
+              />
+            <path class="st5" d="M96.7,68c0,0,2.5,17.9,17-3.1"/>
+            <path class="st5" d="M67.1,88l11.2,17.2"/>
+            </svg>
+              Book Appointment</button>
         </div>
-        <div class="timeSlots">
-          <select name="timeSlotSelect" id="timeSlotSelect" required>
-            <option disabled selected hidden value="">Time Slot</option>
-            <option value="09:00 - 10:00">09:30 - 10:00</option>
-            <option value="10:00 - 11:00">10:30 - 11:00</option>
-            <option value="11:00 - 12:00">11:30 - 12:00</option>
-            <option value="12:00 - 13:00">12:30 - 13:00</option>
-            <option value="13:00 - 14:00">13:30 - 14:00</option>
-            <option value="14:00 - 15:00">14:30 - 15:00</option>
-            <option value="15:00 - 16:00">15:30 - 16:00</option>
-            <option value="16:00 - 17:00">16:30 - 17:00</option>
-            <option value="17:00 - 18:00">17:30 - 18:00</option>
-          </select>
-        </div>
-      </form>
-    </main>
-    <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <!-- Script for pwa -->
-    <!-- <script>
-      // does the browser support service workers?
-      if ("serviceWorker" in navigator) {
-        // fires when the service worker is ready
-        navigator.serviceWorker.ready.then((reg) => {
-          // we have an active service worker working for us
-          console.log(`Service Worker ready (Scope: ${reg.scope})`);
-          // do something interesting, if you want...
-        });
-        // then register our service worker
-        navigator.serviceWorker
-          .register("./sw.js", { scope: "/" })
-          .then(function (reg) {
-            // display a success message
-            console.log(`Service Worker Registration (Scope: ${reg.scope})`);
-          })
-          .catch(function (error) {
-            // display an error message
-            console.log(`Service Worker Error (${error})`);
-          });
-      } else {
-        // happens when the app isn't served over a TLS connection (HTTPS)
-        console.warn("Service Worker not available");
-      }
-    </script> -->
-    <!-- Link to handlebars js cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+      </div>
+      <div class="options_subject hidden">
+        <input type="text" class="newReq_subject_input">
+        <button class="newReq_subject_submit hidden">NEXT</button>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <!-- Link to handlebars js cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
 
-    <script>
-      // TODO: Replace the following with your app's Firebase project configuration
-      // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-      const firebaseConfig = {
-        apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
-        authDomain: "tenex-pwa-spring2021.firebaseapp.com",
-        projectId: "tenex-pwa-spring2021",
-        storageBucket: "tenex-pwa-spring2021.appspot.com",
-        messagingSenderId: "874020516286",
-        appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
-        measurementId: "G-BB18XSR7K4",
-      };
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
+    const firebaseConfig = {
+      apiKey: "AIzaSyDisbqXy64Iebq1pbH4K_TaOmh-WBnPGWs",
+      authDomain: "tenex-pwa-spring2021.firebaseapp.com",
+      projectId: "tenex-pwa-spring2021",
+      storageBucket: "tenex-pwa-spring2021.appspot.com",
+      messagingSenderId: "874020516286",
+      appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
+      measurementId: "G-BB18XSR7K4",
+    };
 
-    <script src="assets/js/newRequestBooking.js"></script>
-  </body>
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="assets/js/newRequestBooking.js"></script>
+</body>
+
 </html>
