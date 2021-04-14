@@ -20,11 +20,9 @@ $("#loginForm").submit(function () {
 
       console.log("logged in");
       window.location.pathname = "/notificationHome.html";
-      // console.log("still logged in");
     })
     .catch((error) => {
       var errorCode = error.code;
-      // var errorMessage = error.message;
       console.log(`GOT ERROR: ` + errorCode);
       if (errorCode == "auth/weak-password") return; // password to weak. Minimal 6 characters
       if (errorCode == "auth/email-already-in-use") return; // Return a email already in use error

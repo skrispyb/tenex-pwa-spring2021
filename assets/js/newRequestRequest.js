@@ -390,10 +390,9 @@ let imageName;
 const storage = firebase.storage();
 
 document.getElementById("snapPhoto").addEventListener("click", function () {
-  console.log(video.videoWidth);
   canvas.width = 320;
   
-  canvas.height = (video.videoHeight/video.videoWidth) * 320; console.log(canvas.height);
+  canvas.height = (video.videoHeight/video.videoWidth) * 320;
   
   canvas.getContext("2d").drawImage(video, 0, 0, 320, canvas.height);
   document.querySelector(".camera_feed").classList.add("hidden");

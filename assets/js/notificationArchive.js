@@ -297,14 +297,11 @@ $(".back_btn").click(function () {
 
 // Navigating to card details page
 let cardID;
-// let getTarget;
 
 document.onclick = function (e) {
-  // console.log(e.target);
   alertDetail = [];
   notifDetail = [];
   cardID = undefined;
-  // getTarget = undefined;
   if (e.target.closest(".alertCardArchive") != undefined) {
     cardID = e.target.closest(".alertCardArchive").getAttribute("data-number");
   } else if (e.target.closest(".notifCardArchive") != undefined) {

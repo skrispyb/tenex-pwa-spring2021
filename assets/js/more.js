@@ -20,7 +20,6 @@ window.addEventListener("load", function () {
     if (user) {
       console.log("user is logged in");
       CUid = auth.currentUser.uid;
-      console.log(CUid);
     } else {
       // No user is signed in.
       console.log("user is not logged in");

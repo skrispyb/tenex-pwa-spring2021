@@ -13,6 +13,5 @@ for (i = 0; i < acc.length; i++) {
     // this.classList.toggle("active");
     this.children[0].children[1].children[0].classList.toggle("rotate");
     this.children[1].classList.toggle("hidden");
-    console.log(this.children[1]);
   });
 }
