@@ -65,23 +65,16 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-function showDiv() {
-  var x = document.getElementById("tenexform");
-  var y = document.getElementById("slideshow-container");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-    y.style.display = "none";
-  } else {
-    x.style.display = "none";
-    y.style.display = "block";
-  }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    document.getElementById("main_page_img").classList.add("hidden");
+    document.getElementById("slideshow-container").classList.remove("hidden");
+  }, 2000);
+});
 
-function mainpage() {
-  var x = document.getElementById("tenexform");
-  var y = document.getElementById("slideshow-container");
-  if (x.style.display === "block") x.style.display = "none";
-  y.style.display = "block";
+function showDiv() {
+  document.getElementById("slideshow-container").classList.add("hidden");
+  document.getElementById("tenexform").classList.remove("hidden");
 }
 
 document.getElementById("username").addEventListener("keyup", function () {
@@ -106,11 +99,3 @@ document.getElementById("password").addEventListener("keyup", function () {
   }
 });
 
-// *************************Adding Splash Screen  ****************************
-setTimeout(function () {
-  mainpage();
-  var x = document.getElementById("main_page_img");
-  var y = document.getElementById("slideshow-container");
-  if (x.style.display === "block") x.style.display = "none";
-  y.style.display = "block";
-}, 2000);

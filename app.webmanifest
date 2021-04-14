@@ -3,12 +3,12 @@
     "name": "Tenant Experience",
     "icons": [
         {
-          "src": "assets/images/android-icon-192x192",
+          "src": "assets/images/android-icon-192x192.png",
           "sizes": "192x192",
           "type": "image/png"
         },
         {
-          "src": "assets/images/android-icon-512x512",
+          "src": "assets/images/android-icon-512x512.png",
           "sizes": "512x512",
           "type": "image/png"
         }

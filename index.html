@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tenex - Onboarding</title>
-  <link rel="stylesheet" href="style.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenex - Onboarding</title>
+    <link rel="stylesheet" href="style.css" />
     <!-- Link to manifest file -->
     <link rel="manifest" href="app.webmanifest" />
   </head>
   <body>
-    <div class="tenex_image" style="display: block" id="main_page_img">
-      <img src="assets/images/tenex_image.svg" />
+    <div class="tenex_image" id="main_page_img">
+      <img src="assets/images/splashScreen.gif" />
     </div>
 
-    <div
-      class="slideshow-container"
-      id="slideshow-container"
-      style="display: none"
-    >
+    <div class="slideshow-container hidden" id="slideshow-container">
       <div class="mySlides fade">
-        <img
-          src="assets/images/alerts and notifications.svg"
-        />
+        <img src="assets/images/alerts and notifications.svg" />
         <p>
           Receive the latest alerts and updates of your residential building via
           Tenex!
@@ -37,26 +30,29 @@
           feature!
         </p>
       </div>
-    </div>
-    <div class="mySlides fade">
-      <img src="assets/images/requests and bookings.svg">
-      <p>Send requests to your building manager & book amenities via Tenex!</p>
-    </div>
-    <div style="text-align: center">
-      <span class="dot" onclick="currentSlide(1)"></span>
-      <span class="dot" onclick="currentSlide(2)"></span>
-      <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    <div class="btn_to_login">
-      <button type="button" id="btn" value="Show Div" onclick="showDiv()">
-        SIGN IN
-      </button>
-    </div>
-  </div>
 
-    <div class="tenexform" style="display: none" id="tenexform">
+      <div class="mySlides fade">
+        <img src="assets/images/requests and bookings.svg" />
+        <p>
+          Send requests to your building manager & book amenities via Tenex!
+        </p>
+      </div>
+
+      <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div class="btn_to_login">
+        <button type="button" id="btn" value="Show Div" onclick="showDiv()">
+          SIGN IN&nbsp;&nbsp; &#8594;
+        </button>
+      </div>
+    </div>
+
+    <div class="tenexform hidden" id="tenexform">
       <div class="logo_login">
         <svg
           width="95"
@@ -111,7 +107,7 @@
           </defs>
         </svg>
       </div>
-      <h2 id="welcome" onclick="mainpage()">Welcome!</h2>
+      <h2 id="welcome">Welcome!</h2>
       <form id="loginForm">
         <label for="Username"
           ><input
@@ -139,19 +135,22 @@
       </div>
       <p>New user?</p>
       <p>Contact your building manager</p>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script>
-    // does the browser support service workers?
-    if ("serviceWorker" in navigator) {
-      // fires when the service worker is ready
-      navigator.serviceWorker.ready.then((reg) => {
-        // we have an active service worker working for us
-        console.log(`Service Worker ready (Scope: ${reg.scope})`);
-        // do something interesting, if you want...
-      });
-       // then register our service worker
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // does the browser support service workers?
+      if ("serviceWorker" in navigator) {
+        // fires when the service worker is ready
+        navigator.serviceWorker.ready.then((reg) => {
+          // we have an active service worker working for us
+          console.log(`Service Worker ready (Scope: ${reg.scope})`);
+          // do something interesting, if you want...
+        });
+        // then register our service worker
         navigator.serviceWorker
           .register("./sw.js", { scope: "/" })
           .then(function (reg) {
@@ -196,4 +195,3 @@
     <script src="assets/js/onboarding.js"></script>
   </body>
 </html>
-

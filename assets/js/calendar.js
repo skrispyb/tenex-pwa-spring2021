@@ -83,8 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
   selected.value = new Date().toDateInputValue();
   currentSelect = `${selected.value}`;
   // sortDisplay(currentSelect);
-
-  isOnline();
 });
 
 // date picker current date auto fill
@@ -98,7 +96,6 @@ $("input[type=date]").change(function () {
   currentDateCards = [];
   document.getElementById("allCards").innerHTML = "";
   currentSelect = `${selected.value}`;
-  // loadDB(currentSelect);
   sortDisplay(currentSelect);
 });
 
@@ -202,13 +199,14 @@ async function sortDisplay(currentSelect) {
     }
   } else {
     document.querySelector(".no_events").classList.remove("hidden");
+    isOnline();
   }
 }
 
 function isOnline() {
   if (navigator.onLine) {
     document.getElementById("onlineStatus").classList.add("hidden");
-    clearRecentsUI();
+    clearAllUI();
   } else {
     document.querySelector(".no_events").classList.add("hidden");
     document.getElementById("onlineStatus").classList.remove("hidden");

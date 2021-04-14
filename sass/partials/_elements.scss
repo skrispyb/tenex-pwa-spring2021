@@ -17,12 +17,22 @@
     border-radius: 1.5rem;
     background-color: $color_btn_sign_in_bg;
     margin-top: 2rem;
-    box-shadow: (3px 3px 4px rgba(0, 0, 0, 0.16));
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12);
 
     &:disabled {
       opacity: 0.5;
     }
   }
+}
+
+.tenex_image {
+  img {
+    width: 100%;
+  }
+}
+
+input:focus {
+  outline: #81B7AE;
 }
 
 /* New request button styling */
@@ -298,14 +308,3 @@ canvas,
 .offline_events {
   text-align: center;
 }
-
-// ******************** Tenex Image  **********************
-
-.tenex_image {
-  display: block;
-}
-
-.slideshow-container {
-  display: none;
-}
-

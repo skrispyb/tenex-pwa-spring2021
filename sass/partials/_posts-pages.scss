@@ -870,7 +870,7 @@ svg {
     padding: 0.5rem 1rem;
     border-radius: 2rem;
     width: 100%;
-    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.16);
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -1506,7 +1506,7 @@ button:focus {
 
   main button {
     background-color: white;
-    box-shadow: 2px 2px 4px rgb(0 0 0 / 12%);
+    box-shadow: 2px 2px 4px rgba(0,0,0, 0.12);
   }
 }
 
