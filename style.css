@@ -2932,8 +2932,7 @@ canvas,
 }
 
 video {
-  width: 100vw;
-  height: auto;
+  width: 350px;
   background: black;
 }
 

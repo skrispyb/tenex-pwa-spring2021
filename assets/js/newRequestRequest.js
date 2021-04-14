@@ -310,8 +310,7 @@ document
 
 document.getElementById("openCamera").addEventListener("click", function () {
   if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
+    navigator.mediaDevices.getUserMedia({ video: true })
       .then(function (stream) {
         video.srcObject = stream;
       });

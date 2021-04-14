@@ -378,15 +378,19 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-storage.js"></script>
+
     <script>
       // TODO: Replace the following with your app's Firebase project configuration
       // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
@@ -399,9 +403,11 @@
         appId: "1:874020516286:web:7b3794806246d7e0cb09ef",
         measurementId: "G-BB18XSR7K4",
       };
+
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
+    <!-- Link to Tenexbox (booking and requests archive) JS -->
     <script src="assets/js/tenexbox.js"></script>
   </body>
 </html>

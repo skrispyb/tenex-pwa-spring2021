@@ -29,16 +29,10 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  //   console.log(`Fetching ${event.request.url}`);
-
   // Cache first then network but also update cache
   event.respondWith(
     (async () => {
       const res = await caches.match(event.request);
-      // fetch(event.request).then(async (response) => {
-      //   const newCache = await caches.open(cacheName);
-      //   newCache.put(event.request, response.clone());
-      // });
       if (res) {
         return res;
       } else {
@@ -52,18 +46,4 @@ self.addEventListener("fetch", (event) => {
       }
     })()
   );
-
-  // Cache first then network
-  // event.respondWith(
-  //   caches.match( event.request ).then( (response) => {
-  //     return response || fetch( event.request);
-  //   })
-  // );
-
-  // Network first then cache
-  // event.respondWith(
-  //   fetch(event.request).catch(function() {
-  //     return caches.match(event.request);
-  //   })
-  // );
 });
