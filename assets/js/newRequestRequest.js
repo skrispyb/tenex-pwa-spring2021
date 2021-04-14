@@ -332,7 +332,7 @@ let imageName;
 const storage = firebase.storage();
 
 document.getElementById("snapPhoto").addEventListener("click", function () {
-  canvas.getContext("2d").drawImage(video, 0, 0, 320, 240);
+  canvas.getContext("2d").drawImage(video, 0, 0);
   document.querySelector(".camera_feed").classList.add("hidden");
   document.querySelector(".clicked_camera_feed").classList.remove("hidden");
 });

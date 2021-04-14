@@ -342,7 +342,6 @@
                 d="M89.9996 88.5C89.9996 88.5 95.4565 81.22 87.9996 78C87.9996 78 86.6002 77.697 87.4996 79.5C88.399 81.303 87.3279 84.2427 84.4996 84.5C71.2779 84.6817 64.9999 86 64.9999 86C64.9999 86 61.5 87 63.9999 90.5C64.387 90.886 71.6112 92.4244 71.6112 92.4244L65.4999 95C65.4999 95 62.7564 97.342 66.9996 98.5C68.7737 98.5 73.4115 97.5727 73.4115 97.5727L69.4996 101C69.4996 101 66.9144 103.611 69.9996 104C70.6502 104.129 78.4996 102.5 78.4996 102.5L93.9996 120"
                 fill="white" />
             </svg>
-
           </div>REQUEST
         </button>
       </div>
@@ -368,8 +367,8 @@
   </div>
   <div class="body_wrapper_alert">
     <header id="alertDetailHeader">
-      <div class="topHeader">
-        <button class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+        <div class="topHeader">
+         <button class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
               stroke-linejoin="round" />
@@ -379,18 +378,20 @@
         <form action="" id="searchBar" class="searchBar">
           <input id="searchBarInput" onkeyup="displaySearchResultUI()" class="searchBarInput hidden" type="search"
             name="search" placeholder="Search">
-          <button id="search_btn" class="search_btn visuallyHidden" type="button"><svg width="18" height="18"
+          <button id="search_btn" class="search_btn visuallyHidden" type="button">
+            <svg width="18" height="18"
               viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="hidden"
                 d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
                 fill="#AAAAAA" />
-            </svg></button>
+            </svg>
+          </button>
         </form>
       </div>
     </header>
     <main id="alertDetailMain">
       <section class="detailCardSection">
-        <div id="alertDetail">
+        <div id="alertDetail"></div>
       </section>
     </main>
   </div>
@@ -404,14 +405,16 @@
           </svg>
         </button>
         <h2 id="headerTitle" class="headerTitle">Notification</h2>
-        <form action="" id="searchBar" class="searchBar">
+        <form action="" id="searchBar" class="searchBar visuallyHidden">
           <input id="searchBarInput" class="searchBarInput hidden" type="search" name="search" placeholder="Search">
-          <button id="search_btn" class="search_btn visuallyHidden" type="button"><svg width="18" height="18"
+          <button id="search_btn" class="search_btn visuallyHidden" type="button">
+            <svg width="18" height="18"
               viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="hidden"
                 d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
                 fill="#AAAAAA" />
-            </svg></button>
+            </svg>
+          </button>
         </form>
       </div>
     </header>
@@ -424,14 +427,16 @@
   <div class="body_wrapper_req">
     <header id="notifDetailHeader">
       <div class="topHeader">
-        <button class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
+        <button class="back_btn">
+          <svg width="22" height="24" viewBox="0 0 22 24" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
               stroke-linejoin="round" />
           </svg>
         </button>
         <h2 id="headerTitle" class="headerTitle">Request</h2>
-        <button id="edit_btn" class="edit_btn" type="button"><svg width="34" height="34" viewBox="0 0 34 34" fill="none"
+        <button id="edit_btn" class="edit_btn" type="button">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none"
             xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d)">
               <path
@@ -453,7 +458,8 @@
                 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
               </filter>
             </defs>
-          </svg></button>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -463,7 +469,8 @@
     </section>
     <section class="tipsInfoSection">
     </section>
-    <button id="chat_btn" class="main_btn"><svg width="70" height="70" viewBox="0 0 70 70" fill="none"
+    <button id="chat_btn" class="main_btn">
+      <svg width="70" height="70" viewBox="0 0 70 70" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_ddd)">
           <rect x="10" y="9" width="50" height="50" rx="25" fill="#DCEBE9" />
@@ -495,7 +502,8 @@
             <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape" />
           </filter>
         </defs>
-      </svg></button>
+      </svg>
+    </button>
   </div>
   <div class="body_wrapper_book">
     <header id="notifDetailHeader">
