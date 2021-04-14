@@ -1,75 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tenex - Chat with Manager</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="body_wrapper_chat">
-    <header id="chatHeader">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="body_wrapper_chat">
+      <header id="chatHeader">
         <div class="topHeader">
-            <button id="back_btn" class="back_btn"><svg width="22" height="24" viewBox="0 0 22 24" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 22L2 12L12 2" stroke="#AAAAAA" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+          <button id="back_btn" class="back_btn">
+            <svg
+              width="22"
+              height="24"
+              viewBox="0 0 22 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 22L2 12L12 2"
+                stroke="#AAAAAA"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <h2 id="headerTitle" class="headerTitle">Manager</h2>
+          <form action="" id="searchBar" class="searchBar">
+            <input
+              id="searchBarInput"
+              class="searchBarInput hidden"
+              type="search"
+              name="search"
+              placeholder="Search"
+            />
+            <button
+              id="search_btn"
+              class="search_btn visuallyHidden"
+              type="button"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="hidden"
+                  d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
             </button>
-            <h2 id="headerTitle" class="headerTitle">Manager</h2>
-            <form action="" id="searchBar" class="searchBar">
-                <input id="searchBarInput" class="searchBarInput hidden" type="search"
-                    name="search" placeholder="Search">
-                <button id="search_btn" class="search_btn visuallyHidden" type="button"><svg width="18" height="18"
-                        viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path class="hidden"
-                            d="M12.5 11H11.71L11.43 10.73C12.41 9.59 13 8.11 13 6.5C13 2.91 10.09 0 6.5 0C2.91 0 0 2.91 0 6.5C0 10.09 2.91 13 6.5 13C8.11 13 9.59 12.41 10.73 11.43L11 11.71V12.5L16 17.49L17.49 16L12.5 11ZM6.5 11C4.01 11 2 8.99 2 6.5C2 4.01 4.01 2 6.5 2C8.99 2 11 4.01 11 6.5C11 8.99 8.99 11 6.5 11Z"
-                            fill="#AAAAAA" />
-                    </svg></button>
+          </form>
+        </div>
+      </header>
+      <main id="chat_main">
+        <!-- Messages container -->
+        <div
+          id="messages-card"
+          class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop"
+        >
+          <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+            <div id="messages"></div>
+            <form id="message-form" action="#">
+              <div
+                class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label chat_input"
+              >
+                <input
+                  class="mdl-textfield__input"
+                  type="text"
+                  id="message"
+                  autocomplete="off"
+                />
+              </div>
+              <button
+                id="submit"
+                disabled
+                type="submit"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+              >
+                Send
+              </button>
             </form>
-        </div>
-    </header>
-    <main id="chat_main"><!-- Messages container -->
-      <div id="messages-card" class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--6-col-tablet mdl-cell--6-col-desktop">
-        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <div id="messages">
           </div>
-          <form id="message-form" action="#">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label chat_input">
-              <input class="mdl-textfield__input" type="text" id="message" autocomplete="off">
-            </div>
-            <button id="submit" disabled type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-              Send
-            </button>
-          </form>          
         </div>
-      </div></main>
-    <!-- <div class="chat_input_wrapper">
-      <div class="chat_input">
-        <input type="text" placeholder="Message">
-        <button class="send_chat_btn">
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_d)">
-              <path d="M5.67063 26.0068L27.6602 15.0068L5.67063 4.00684L5.66016 12.5624L21.3744 15.0068L5.66016 17.4513L5.67063 26.0068Z" fill="#F4F4F4"></path>
-              <path d="M4.67063 26.0081L4.67261 27.6242L6.11802 26.9012L28.1075 15.9012L29.8954 15.0068L28.1075 14.1125L6.11802 3.11249L4.67261 2.38945L4.67063 4.00561L4.66016 12.5612L4.65911 13.4187L5.50645 13.5505L14.8686 15.0068L5.50645 16.4632L4.65911 16.595L4.66016 17.4525L4.67063 26.0081Z" stroke="#DCDCD6" stroke-width="2"></path>
-            </g>
-            <defs>
-              <filter id="filter0_d" x="0.658203" y="0.772461" width="34.4725" height="34.4696" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
-                <feOffset dy="3"></feOffset>
-                <feGaussianBlur stdDeviation="1.5"></feGaussianBlur>
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"></feColorMatrix>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
-              </filter>
-            </defs>
-          </svg>
-        </button>
-      </div>
-    </div> -->
-  </div>
+      </main>
+    </div>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
@@ -105,6 +126,5 @@
     </script>
     <!-- Link to Chat JS -->
     <script src="assets/js/chat_with_manager.js"></script>
-</body>
-
+  </body>
 </html>

@@ -44,7 +44,6 @@ auth.onAuthStateChanged((user) => {
         });
         mergeRecentCards();
       });
-      
 
     // Retreive bookings
     db.collection("bookings")
@@ -66,16 +65,14 @@ auth.onAuthStateChanged((user) => {
 
 // Check if connected to internet or not
 function isOnline() {
-  
   if (navigator.onLine) {
-      document.getElementById(
-        "onlineStatus").classList.add("hidden");
-      clearRecentsUI();
+    document.getElementById("onlineStatus").classList.add("hidden");
+    clearRecentsUI();
   } else {
-      document.getElementById(
-        "onlineStatus").classList.remove("hidden");
-        document.getElementById(
-          "onlineStatus").innerHTML = `<div class="offline_events">
+    document.getElementById("onlineStatus").classList.remove("hidden");
+    document.getElementById(
+      "onlineStatus"
+    ).innerHTML = `<div class="offline_events">
           <div class="offline_illustration">
             <svg width="134" height="100" viewBox="0 0 134 100" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g opacity="0.7">
@@ -134,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body_wrapper_notif").addClass("hidden");
   $(".body_wrapper_book").addClass("hidden");
   $(".body_wrapper_req").addClass("hidden");
-  
+
   isOnline();
 });
 
@@ -709,7 +706,9 @@ displayAlertDetailUI = (i) => {
       </div>
   </div>
   <div class="alertDetailSub">
-      <p class="alertDetailPostedDate">${months[postDate.getMonth()]} ${postDate.getDate()}, ${postDate.getFullYear()}</p>
+      <p class="alertDetailPostedDate">${
+        months[postDate.getMonth()]
+      } ${postDate.getDate()}, ${postDate.getFullYear()}</p>
   </div>
 </div>`;
 };
@@ -811,8 +810,12 @@ displayRequestDetailUI = (i) => {
   </div>
 </div>`;
   if (requestDetail[i].requestStatus === "SENT") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressSent"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressSent"></div>`;
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="129" height="98" viewBox="0 0 129 98" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g opacity="0.5">
             <path
@@ -898,8 +901,12 @@ displayRequestDetailUI = (i) => {
 </div>
 <p>You can edit your description before the status changes to “READ”.</p>`;
   } else if (requestDetail[i].requestStatus === "READ") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressRead"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressRead"></div>`;
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -937,8 +944,12 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "COMPLETED") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressCompleted"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressCompleted"></div>`;
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -976,10 +987,16 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "REJECTED") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressRejected"></div>`;
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressRejected"></div>`;
   } else if (requestDetail[i].requestStatus === "MESSAGE") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressMessage"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressMessage"></div>`;
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -1017,10 +1034,16 @@ displayRequestDetailUI = (i) => {
 <p>Need to change your request?</p>
 <p>Please cancel this request and submit a new one.</p>`;
   } else if (requestDetail[i].requestStatus === "BOOKED") {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressBooked"></div>`;
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressBooked"></div>`;
   } else {
-    document.querySelector("#requestDetail .requestStatusBar").innerHTML = `<div class="statusProgressOngoing"></div>`;
-    document.querySelector(".tipsInfoSection").innerHTML = `<div class="illustration">
+    document.querySelector(
+      "#requestDetail .requestStatusBar"
+    ).innerHTML = `<div class="statusProgressOngoing"></div>`;
+    document.querySelector(
+      ".tipsInfoSection"
+    ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
@@ -1060,7 +1083,9 @@ displayRequestDetailUI = (i) => {
   }
 
   if (requestDetail[i].requestStatus !== "SENT") {
-    document.getElementById("edit_btn").innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    document.getElementById(
+      "edit_btn"
+    ).innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
     <circle cx="17" cy="14" r="11" fill="#828282"/>
     <g filter="url(#filter0_d)">
     <path d="M17 3C10.917 3 6 7.917 6 14C6 20.083 10.917 25 17 25C23.083 25 28 20.083 28 14C28 7.917 23.083 3 17 3ZM22.5 17.949L20.949 19.5L17 15.551L13.051 19.5L11.5 17.949L15.449 14L11.5 10.051L13.051 8.5L17 12.449L20.949 8.5L22.5 10.051L18.551 14L22.5 17.949Z" fill="#F4F4F4"/>
@@ -1079,7 +1104,9 @@ displayRequestDetailUI = (i) => {
     </defs>
     </svg>`;
   } else {
-    document.getElementById("edit_btn").innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+    document.getElementById(
+      "edit_btn"
+    ).innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d)">
               <path d="M6 20.4173V25H10.5827L24.0986 11.4841L19.5159 6.9014L6 20.4173ZM27.6426 7.94015C28.1192 7.46355 28.1192 6.69365 27.6426 6.21705L24.7829 3.35745C24.3063 2.88085 23.5365 2.88085 23.0599 3.35745L20.8235 5.59381L25.4062 10.1765L27.6426 7.94015Z"
                 fill="#828282" />
@@ -1165,7 +1192,9 @@ displayBookingDetailUI = (i) => {
       } ${postDate.getDate()}, ${postDate.getFullYear()}</p>
   </div>
 </div>`;
-  document.querySelector(".tipsInfoSectionBooking").innerHTML = `<div class="illustration">
+  document.querySelector(
+    ".tipsInfoSectionBooking"
+  ).innerHTML = `<div class="illustration">
     <svg width="106" height="99" viewBox="0 0 106 99" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g opacity="0.7">
 <path d="M59.034 30.7489C59.038 30.7197 59.038 30.6902 59.034 30.661C58.9462 30.19 58.108 25.8711 57.3496 25.7593C56.9424 25.6795 56.8386 26.2223 56.8386 26.7572C56.8352 26.8334 56.8095 26.9068 56.7648 26.9686C56.7201 27.0304 56.6584 27.0778 56.5871 27.1049C56.5159 27.132 56.4383 27.1378 56.3638 27.1214C56.2894 27.105 56.2213 27.0672 56.168 27.0127L54.3558 25.2005C54.2825 25.1343 54.1872 25.0977 54.0884 25.0977C53.9896 25.0977 53.8943 25.1343 53.821 25.2005C53.4269 25.5816 53.1393 26.0591 52.9867 26.5856C52.834 27.1122 52.8217 27.6694 52.9508 28.2022C53.2861 30.693 56.0243 32.8485 56.6949 32.6569C57.3095 32.5331 57.9365 32.4822 58.563 32.5052C58.6595 32.5077 58.7533 32.4738 58.8258 32.4101C58.8983 32.3465 58.9442 32.2579 58.9542 32.1619L59.034 30.7489Z" fill="#E6E7E8"/>
