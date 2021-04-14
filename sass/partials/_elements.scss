@@ -155,6 +155,12 @@ canvas,
   border-radius: 0.5rem;
 }
 
+video {
+  width: 100%;
+  height: 70%;
+  background: black;
+}
+
 .camera_feed,
 .clicked_camera_feed {
   position: fixed;

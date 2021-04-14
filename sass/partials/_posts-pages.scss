@@ -1338,7 +1338,7 @@ button:focus {
 .body_regulations {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: white;
   color: $color_body;
   font-family: "roboto", sans-serif;
 
@@ -1457,6 +1457,9 @@ button:focus {
     margin-bottom: 0.5rem;
     display: grid;
     transition: flex 0.3s ease-out;
+    border: 1px solid #E0E0E0;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   }
 
   .accordionTitle {
