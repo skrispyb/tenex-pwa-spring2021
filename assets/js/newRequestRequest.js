@@ -6,21 +6,22 @@ $("#back_btn").click(function goBack() {
 // Check if the user is logged in or not
 const auth = firebase.auth();
 
-window.addEventListener("load", function () {
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    console.log("user is logged in");
+  } else {
+    // No user is signed in.
+    console.log("user is not logged in");
+    window.location.pathname = "/index.html";
+  }
+});
+
+window.addEventListener("DOMContentLoaded", function () {
   $("#nav_home").css("color", "white");
   $("#nav_home > svg").children().css("fill", "white");
+  $(".acknowledgement_container").addClass("hidden");
   $(".body_wrapper_alert").addClass("hidden");
   $(".body_wrapper_notif").addClass("hidden");
-
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      console.log("user is logged in");
-    } else {
-      // No user is signed in.
-      console.log("user is not logged in");
-      window.location.pathname = "/index.html";
-    }
-  });
 });
 
 class NewReq {
@@ -476,11 +477,24 @@ document
           .set(Object.assign({}, reqObj))
           .then(() => {
             console.log("Document successfully written!");
-            setTimeout(
-              (window.location.pathname = "/notificationHome.html"),
-              300
-            );
+            document.querySelector(".acknowledgement_container").classList.remove("hidden");         
+            document.querySelector(".acknowledgement_container").innerHTML = `<div class="ack_content_wrapper">
+            <div class="ack_illustration">
+              <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.5 0C11.424 0 0 11.424 0 25.5C0 39.576 11.424 51 25.5 51C39.576 51 51 39.576 51 25.5C51 11.424 39.576 0 25.5 0ZM21.8142 36.8358C21.0332 37.6168 19.7668 37.6168 18.9858 36.8358L9.06421 26.9142C8.28316 26.1332 8.28316 24.8668 9.06421 24.0858L9.83326 23.3167C10.6135 22.5365 11.8783 22.5356 12.6597 23.3148L18.9858 29.6232C19.7672 30.4024 21.032 30.4015 21.8122 29.6213L38.3353 13.0982C39.1183 12.3152 40.3885 12.3175 41.1687 13.1032L41.9458 13.8858C42.7221 14.6677 42.7199 15.9301 41.9408 16.7092L21.8142 36.8358Z" fill="#27AE60"/>
+              </svg>
+              </div>
+            <div class="ack_header">Successful!</div>
+            <div class="ack_detail_header"><b>REQUEST DETAIL:</b></div>
+            <div class="ack_req_type"><span><b>Category: </b></span>${RCat}</div>
+            <div class="ack_req_sub"><span><b>Subject: </b></span>${RSCat}</div>
+          </div>`;         
           });
       });
     }
   });
+
+document.querySelector(".acknowledgement_container").addEventListener('click', function() {
+  document.querySelector(".acknowledgement_container").classList.add("hidden");
+  window.location.pathname = "/notificationHome.html";
+});

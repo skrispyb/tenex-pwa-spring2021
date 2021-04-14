@@ -7,7 +7,10 @@
     <title>Tenex - New Request</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body_wrapper_newReq">
+    <div class="acknowledgement_container hidden">
+      
+    </div>
     <header class="newRequest_header">
       <button id="back_btn" class="back_btn">
         <svg
@@ -1066,10 +1069,10 @@
       <!-- <video id="video" autoplay playsinline></video> -->
       <div class="snap_options"><button id="snapPhoto">Click Pic</button></div>
       <div class="controls">
-        <button id="acceptCamera">Get camera</button>
         <select id="selectCamera">
           <option></option>
         </select>
+        <button id="acceptCamera">Change Camera</button>
       </div>
     </div>
     <div class="clicked_camera_feed hidden">

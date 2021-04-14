@@ -439,11 +439,16 @@ p {
   line-height: 1.5;
 }
 
+.camera_feed button {
+  font-family: SFProDisplayRegular, serif;
+}
+
 .alert_excerpt,
 .notif_excerpt,
 .newRequestCard p,
 .alertDetailDescription,
-.notifDetaildescription, .description {
+.notifDetaildescription,
+.description {
   font-size: 14px;
   line-height: 1.5;
   color: #4f4f4f;
@@ -465,7 +470,9 @@ p {
   background-color: #81b7ae;
 }
 
-.newRequestCard .newRequestCard_status, .newRequestStatus, .newRequestDate,
+.newRequestCard .newRequestCard_status,
+.newRequestStatus,
+.newRequestDate,
 .alertDetailPostedDate,
 .notifDetailPostedDate {
   font-size: 0.75rem;
@@ -2759,11 +2766,11 @@ button:focus {
   background-color: #81B7AE;
 }
 
-.logo_login {
+#tenexform .logo_login {
   padding-top: 3.5rem;
 }
 
-.logo_login img {
+#tenexform .logo_login img {
   width: 75px;
   margin: auto;
 }
@@ -2794,7 +2801,7 @@ button:focus {
 }
 
 input:focus {
-  outline: #81B7AE;
+  outline: #81b7ae;
 }
 
 /* New request button styling */
@@ -2820,6 +2827,8 @@ input:focus {
   z-index: 100;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   -webkit-backdrop-filter: blur(0.5rem);
           backdrop-filter: blur(0.5rem);
   background-color: rgba(0, 0, 0, 0.6);
@@ -2997,6 +3006,35 @@ video {
   background-color: #ffffff;
 }
 
+.controls {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls #acceptCamera {
+  margin-top: 1rem;
+  background-color: #dcebe9;
+  border: 1px solid #e0e0e0;
+  color: #4f4f4f;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.controls #selectCamera {
+  border-radius: 2rem;
+  border: 1px solid #4f4f4f;
+  padding: 0.5rem;
+}
+
 .statusProgressSent {
   height: 25%;
   background-color: #FDAE46;
@@ -3098,6 +3136,89 @@ video {
 .rotate {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.acknowledgement_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-backdrop-filter: blur(0.5rem);
+          backdrop-filter: blur(0.5rem);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ack_content_wrapper {
+  background: #f4f4f4;
+  width: calc(100% - 2rem);
+  height: 40%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+}
+
+.ack_illustration {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.ack_header {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #219653;
+  margin-top: 0.5rem;
+  font-size: 24px;
+  font-family: SFProDisplayRegular, serif;
+}
+
+.ack_detail_header {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  text-transform: uppercase;
+  font-family: SFProDisplayRegular, serif;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ack_req_type {
+  margin-top: 1rem;
+}
+
+.ack_req_type,
+.ack_req_sub {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-family: SFProDisplayRegular, serif;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .offline_events {

@@ -25,11 +25,18 @@ p {
   line-height: 1.5;
 }
 
+.camera_feed {
+  button {
+    font-family: $font_body;
+  }
+}
+
 .alert_excerpt,
 .notif_excerpt,
 .newRequestCard p,
 .alertDetailDescription,
-.notifDetaildescription, .description {
+.notifDetaildescription,
+.description {
   font-size: 14px;
   line-height: 1.5;
   color: $color_body;
@@ -51,7 +58,9 @@ p {
   background-color: $notif_green;
 }
 
-.newRequestCard .newRequestCard_status, .newRequestStatus, .newRequestDate,
+.newRequestCard .newRequestCard_status,
+.newRequestStatus,
+.newRequestDate,
 .alertDetailPostedDate,
 .notifDetailPostedDate {
   font-size: 0.75rem;
@@ -105,7 +114,7 @@ p {
 #option_complaint,
 #option_general,
 #option_amenity,
-#option_appointment  {
+#option_appointment {
   font-family: $font_body;
   font-size: 14px;
   color: $color_btn_text;
@@ -143,11 +152,9 @@ p {
 }
 
 .newBookingCard_time_wrapper {
-
   p {
     color: $color_body;
   }
-
 }
 
 .slideshow-container {
