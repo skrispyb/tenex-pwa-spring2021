@@ -391,10 +391,10 @@ const storage = firebase.storage();
 document.getElementById("snapPhoto").addEventListener("click", function () {
   console.log(video.videoWidth);
   canvas.width = 320;
-  canvas.height = 240;
-  let snapW = (320/video.videoWidth) * video.videoWidth; console.log(snapW);
-  let snapH = (240/video.videoHeight) * video.videoHeight; console.log(snapH);
-  canvas.getContext("2d").drawImage(video, 0, 0, snapW, snapH);
+  
+  canvas.height = (video.videoHeight/video.videoWidth) * 320; console.log(canvas.height);
+  
+  canvas.getContext("2d").drawImage(video, 0, 0, 320, canvas.height);
   document.querySelector(".camera_feed").classList.add("hidden");
   document.querySelector(".clicked_camera_feed").classList.remove("hidden");
 });
