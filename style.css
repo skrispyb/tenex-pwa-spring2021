@@ -2683,10 +2683,6 @@ button:focus {
   background-color: #F4F4F4;
 }
 
-.tenexform #signInBtn {
-  margin-top: 3rem;
-}
-
 .tenexform h2 {
   margin: 0;
   padding-top: 3rem;
@@ -2765,6 +2761,11 @@ button:focus {
 
 .logo_login {
   padding-top: 3.5rem;
+}
+
+.logo_login img {
+  width: 75px;
+  margin: auto;
 }
 
 .btn_to_login {
@@ -2933,6 +2934,7 @@ canvas,
 
 video {
   width: 350px;
+  height: 300px;
   background: black;
 }
 
