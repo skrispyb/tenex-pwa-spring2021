@@ -322,7 +322,65 @@ document.getElementById("openCamera").addEventListener("click", function () {
 });
 
 const video = document.getElementById("video");
+const button = document.getElementById('acceptCamera');
+const select = document.getElementById('selectCamera');
+let currentStream;
+
+//============================================
+function stopMediaTracks(stream) {
+  stream.getTracks().forEach(track => {
+    track.stop();
+  });
+}
+
+function gotDevices(mediaDevices) {
+  select.innerHTML = '';
+  select.appendChild(document.createElement('option'));
+  let count = 1;
+  mediaDevices.forEach(mediaDevice => {
+    if (mediaDevice.kind === 'videoinput') {
+      const option = document.createElement('option');
+      option.value = mediaDevice.deviceId;
+      const label = mediaDevice.label || `Camera ${count++}`;
+      const textNode = document.createTextNode(label);
+      option.appendChild(textNode);
+      select.appendChild(option);
+    }
+  });
+}
+
+button.addEventListener('click', event => {
+  if (typeof currentStream !== 'undefined') {
+    stopMediaTracks(currentStream);
+  }
+  const videoConstraints = {};
+  if (select.value === '') {
+    videoConstraints.facingMode = 'environment';
+  } else {
+    videoConstraints.deviceId = { exact: select.value };
+  }
+  const constraints = {
+    video: videoConstraints,
+    audio: false
+  };
+  navigator.mediaDevices
+    .getUserMedia(constraints)
+    .then(stream => {
+      currentStream = stream;
+      video.srcObject = stream;
+      return navigator.mediaDevices.enumerateDevices();
+    })
+    .then(gotDevices)
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+navigator.mediaDevices.enumerateDevices().then(gotDevices);
+//====================================
+
 const canvas = document.getElementById("canvas");
+
 const attachmentList = document.getElementById("attachments_list");
 let imageElement;
 let imageName;
@@ -331,7 +389,12 @@ let imageName;
 const storage = firebase.storage();
 
 document.getElementById("snapPhoto").addEventListener("click", function () {
-  canvas.getContext("2d").drawImage(video, 0, 0);
+  console.log(video.videoWidth);
+  canvas.width = 320;
+  canvas.height = 240;
+  let snapW = (320/video.videoWidth) * video.videoWidth; console.log(snapW);
+  let snapH = (240/video.videoHeight) * video.videoHeight; console.log(snapH);
+  canvas.getContext("2d").drawImage(video, 0, 0, snapW, snapH);
   document.querySelector(".camera_feed").classList.add("hidden");
   document.querySelector(".clicked_camera_feed").classList.remove("hidden");
 });
