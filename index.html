@@ -10,81 +10,77 @@
     <link rel="manifest" href="app.webmanifest" />
   </head>
   <body>
-    <div class="tenex_image" id="main_page_img">
-      <img src="assets/images/splashScreen.gif" />
-    </div>
-
-    <div class="slideshow-container hidden" id="slideshow-container">
-      <div class="mySlides fade">
-        <img src="assets/images/alerts and notifications.svg" />
-        <p>
-          Receive the latest alerts and updates of your residential building via
-          Tenex!
-        </p>
+    <main class="index_main">
+      <div class="tenex_image" id="main_page_img">
+        <img src="assets/images/splashScreen.gif" />
       </div>
-
-      <div class="mySlides fade">
-        <img src="assets/images/calendar.svg" />
-        <p>
-          Track & find notifications, bookings, and requests via our calendar
-          feature!
-        </p>
+      <div class="slideshow-container hidden" id="slideshow-container">
+        <div class="mySlides fade">
+          <img src="assets/images/alerts and notifications.svg" />
+          <p>
+            Receive the latest alerts and updates of your residential building via
+            Tenex!
+          </p>
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/images/calendar.svg" />
+          <p>
+            Track & find notifications, bookings, and requests via our calendar
+            feature!
+          </p>
+        </div>
+        <div class="mySlides fade">
+          <img src="assets/images/requests and bookings.svg" />
+          <p>
+            Send requests to your building manager & book amenities via Tenex!
+          </p>
+        </div>
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="btn_to_login">
+          <button type="button" id="btn" value="Show Div" onclick="showDiv()">
+            SIGN IN&nbsp;&nbsp; &#8594;
+          </button>
+        </div>
       </div>
-
-      <div class="mySlides fade">
-        <img src="assets/images/requests and bookings.svg" />
-        <p>
-          Send requests to your building manager & book amenities via Tenex!
-        </p>
+      <div class="tenexform hidden" id="tenexform">
+        <div class="logo_login">
+          <img src="assets/images/android-icon-512x512.png" alt="Tenex Logo">
+        </div>
+        <h2 id="welcome">Welcome!</h2>
+        <form id="loginForm">
+          <label for="Username"
+            ><input
+              type="email"
+              value="tenexuser@gmail.com"
+              id="username"
+              placeholder="Enter Email"
+              name="email"
+              required
+          /></label>
+          <label for="password"
+            ><input
+              type="password"
+              id="password"
+              placeholder="Enter Password"
+              name="psw"
+              value="password"
+              required
+          /></label>
+        </form>
+        <p>Forgot password?</p>
+        <div class="btn_to_login">
+          <button type="submit" form="loginForm" id="signInBtn">SIGN IN</button>
+        </div>
+        <p>New user?</p>
+        <p>Contact your building manager</p>
       </div>
-
-      <div class="dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      <div class="btn_to_login">
-        <button type="button" id="btn" value="Show Div" onclick="showDiv()">
-          SIGN IN&nbsp;&nbsp; &#8594;
-        </button>
-      </div>
-    </div>
-
-    <div class="tenexform hidden" id="tenexform">
-      <div class="logo_login">
-        <img src="assets/images/android-icon-512x512.png" alt="Tenex Logo">
-      </div>
-      <h2 id="welcome">Welcome!</h2>
-      <form id="loginForm">
-        <label for="Username"
-          ><input
-            type="email"
-            value="tenexuser@gmail.com"
-            id="username"
-            placeholder="Enter Email"
-            name="email"
-            required
-        /></label>
-        <label for="password"
-          ><input
-            type="password"
-            id="password"
-            placeholder="Enter Password"
-            name="psw"
-            value="password"
-            required
-        /></label>
-      </form>
-
-      <p>Forgot password?</p>
-      <div class="btn_to_login">
-        <button type="submit" form="loginForm" id="signInBtn">SIGN IN</button>
-      </div>
-      <p>New user?</p>
-      <p>Contact your building manager</p>
-    </div>
+    </main>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="

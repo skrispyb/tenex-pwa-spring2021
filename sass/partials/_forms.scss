@@ -11,10 +11,12 @@
   form {
     display: flex;
     flex-flow: column nowrap;
-    gap: 1rem;
     align-items: center;
     margin-top: 4rem;
     width: 100%;
+    label:last-child {
+      margin-top: 1rem;
+    }
   }
   #loginForm {
     label {

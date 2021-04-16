@@ -1,4 +1,16 @@
 /******************************************************************************
+        Onboarding screen starts here
+******************************************************************************/
+.index_main {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+/******************************************************************************
+        Onboarding screen ends here
+******************************************************************************/
+
+/******************************************************************************
         Alert card home screen starts here
 ******************************************************************************/
 
@@ -8,7 +20,7 @@
 .archive_header {
   position: sticky;
   top: 0;
-  // z-index: 10;
+  z-index: 10;
   padding: 1rem 0 0.875rem;
   display: flex;
   flex-direction: column;
@@ -279,16 +291,15 @@
 }
 
 .newRequestCard_wrapper {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .newRequestCard_content_wrapper {
   display: grid;
   grid-template-columns: 0.5rem auto;
   grid-gap: 0.25rem 1rem;
-  width: 14rem;
+  width: calc(100% - 70px);
 }
 
 .newRequestCard_status_progress_wrapper {
@@ -328,6 +339,7 @@
 
 .newRequestCard_date_wrapper {
   height: 93px;
+  width: 70px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -337,10 +349,10 @@
 
 .newBookingCard_date_for {
   position: absolute;
-  top: 20%;
-  left: 46%;
-  right: 55%;
-  bottom: 80%;
+  top: 21%;
+  left: 42%;
+  right: 58%;
+  bottom: 79%;
   text-align: center;
   height: 0;
 }
@@ -934,7 +946,7 @@ svg {
 .message-container .name {
   display: inline-block;
   width: 100%;
-  color: #3F6E6A;
+  color: #3f6e6a;
   font-weight: 600;
   box-sizing: border-box;
 }
@@ -1036,19 +1048,18 @@ svg {
       margin: 0;
     }
 
-    input[type=date] {
+    input[type="date"] {
       color: #828282;
       font-family: "SFProDisplayRegular";
       border-radius: 1rem;
-      border: 1px solid #DDDDDD;
+      border: 1px solid #dddddd;
       padding: 0.25rem 0.25rem 0.25rem 0.5rem;
     }
-    
-    input[type=date]::-webkit-calendar-picker-indicator::before {
+
+    input[type="date"]::-webkit-calendar-picker-indicator::before {
       opacity: 1;
       background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16 2.62727H15V0.510254H13V2.62727H5V0.510254H3V2.62727H2C0.89 2.62727 0.00999999 3.57992 0.00999999 4.74428L0 19.5634C0 20.7277 0.89 21.6804 2 21.6804H16C17.1 21.6804 18 20.7277 18 19.5634V4.74428C18 3.57992 17.1 2.62727 16 2.62727ZM16 19.5634H2V7.91979H16V19.5634ZM4 10.0368H9V15.3293H4V10.0368Z" fill="#333333"/%3E%3C/svg%3E');
     }
-
   }
 }
 
@@ -1060,12 +1071,12 @@ svg {
   .no_events {
     margin: 4rem 4rem;
   }
-  
+
   .empty_illustration {
     display: flex;
     justify-content: center;
   }
-  
+
   .no_events p {
     font-size: 1rem;
     color: #828282;
@@ -1246,9 +1257,8 @@ button:focus {
 ******************************************************************************/
 
 .body_more {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  background-color: #f4f4f4;
   color: $color_body;
 
   header > h2 {
@@ -1341,9 +1351,8 @@ button:focus {
 ******************************************************************************/
 
 .body_regulations {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  background-color: white;
   color: $color_body;
   font-family: "roboto", sans-serif;
 
@@ -1370,8 +1379,10 @@ button:focus {
   }
 
   main {
-    padding: 1rem 0.5rem 2.5rem 0.5rem;
+    padding: 1.5rem 1rem 2.5rem 1rem;
     margin: auto;
+    min-height: 100vh;
+    background: white;
   }
 
   #back_btn {
@@ -1462,7 +1473,7 @@ button:focus {
     margin-bottom: 0.5rem;
     display: grid;
     transition: flex 0.3s ease-out;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #e0e0e0;
     background-color: white;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   }
@@ -1514,7 +1525,7 @@ button:focus {
 
   main button {
     background-color: white;
-    box-shadow: 2px 2px 4px rgba(0,0,0, 0.12);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
   }
 }
 
