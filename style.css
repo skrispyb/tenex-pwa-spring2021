@@ -415,13 +415,13 @@ template {
 
 /* 3. Typography =========================================================== */
 h2 {
-  font-family: futuraMedium, serif;
+  font-family: futuraMedium, sans-serif;
   color: #4F4F4F;
   font-weight: normal;
 }
 
 #welcome {
-  font-family: futuraBold, serif;
+  font-family: futuraBold, sans-serif;
   font-size: 2.25rem;
   font-weight: 600;
   letter-spacing: 2px;
@@ -429,7 +429,7 @@ h2 {
 }
 
 h3 {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   font-weight: 500;
   font-size: 1rem;
   margin: 0;
@@ -437,12 +437,12 @@ h3 {
 }
 
 p {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   line-height: 1.5;
 }
 
 .camera_feed button {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
 }
 
 .alert_excerpt,
@@ -482,7 +482,7 @@ p {
 
 .view_more_alert a,
 .view_more_notif a {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
 }
 
 .notifCard_duration_date_wrapper p,
@@ -517,7 +517,7 @@ p {
 
 #new_booking,
 #new_request {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
 }
@@ -527,19 +527,19 @@ p {
 #option_general,
 #option_amenity,
 #option_appointment {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 14px;
   color: #333333;
 }
 
 .requestForm_main {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 18px;
   font-weight: 400;
 }
 
 .newReq_subject_input {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 18px;
 }
 
@@ -578,38 +578,38 @@ p {
 }
 
 .slideshow-container button {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   letter-spacing: 1px;
 }
 
 .tenexform button {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   letter-spacing: 1px;
 }
 
 .tenexform label input {
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
   letter-spacing: 1px;
-  color: SFProDisplayRegular, serif;
+  color: SFProDisplayRegular, sans-serif;
 }
 
 .tenexform label input::-webkit-input-placeholder {
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
   letter-spacing: 1px;
 }
 
 .tenexform label input:-ms-input-placeholder {
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
   letter-spacing: 1px;
 }
 
 .tenexform label input::-ms-input-placeholder {
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
   letter-spacing: 1px;
 }
 
 .tenexform label input::placeholder {
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
   letter-spacing: 1px;
 }
 
@@ -621,7 +621,7 @@ p {
 
 .tenexform p:nth-of-type(2) {
   color: #4f4f4f;
-  font-family: SFProDisplayLight, serif;
+  font-family: SFProDisplayLight, sans-serif;
 }
 
 .tenexform p:nth-of-type(3) {
@@ -629,12 +629,12 @@ p {
 }
 
 .tenexform .message-container .name {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   font-size: 14px;
 }
 
 .tenexform .message-container .message {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
 }
 
 .tenexform #user-container #user-name {
@@ -642,15 +642,15 @@ p {
 }
 
 .tenexform .bottomHeader button {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
 }
 
 .textFilter_btn {
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
 }
 
 .body_wrapper_chat {
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
 }
 
 .body_wrapper_chat .name {
@@ -847,7 +847,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 0.6rem;
   color: #848484;
   background: none;
@@ -2457,7 +2457,7 @@ button:focus {
   width: calc(100% - 1rem);
   border-color: transparent;
   margin-bottom: 6rem;
-  font-family: SFProDisplaySemibold, serif;
+  font-family: SFProDisplaySemibold, sans-serif;
   letter-spacing: 1px;
   color: #4F4F4F;
 }
@@ -3222,14 +3222,14 @@ video {
   color: #219653;
   margin-top: 0.5rem;
   font-size: 24px;
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
 }
 
 .ack_detail_header {
   -ms-flex-item-align: start;
       align-self: flex-start;
   text-transform: uppercase;
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 1rem;
   margin-top: 1.5rem;
 }
@@ -3242,7 +3242,7 @@ video {
 .ack_req_sub {
   -ms-flex-item-align: start;
       align-self: flex-start;
-  font-family: SFProDisplayRegular, serif;
+  font-family: SFProDisplayRegular, sans-serif;
   font-size: 14px;
   line-height: 150%;
 }
