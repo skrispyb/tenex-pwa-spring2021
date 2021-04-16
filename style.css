@@ -1272,11 +1272,15 @@ a {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
 }
 
 .newBookingCard_date_for {
-  -webkit-transform: translate(-18px, -52px);
-          transform: translate(-18px, -52px);
+  position: absolute;
+  top: 20%;
+  left: 46%;
+  right: 55%;
+  bottom: 80%;
   text-align: center;
   height: 0;
 }
@@ -1712,9 +1716,9 @@ svg {
   margin: auto;
 }
 
-.main_btn {
+#chat_btn {
   background-color: rgba(0, 0, 0, 0);
-  right: 0;
+  right: 6px;
   bottom: 3.75rem;
   position: fixed;
 }
@@ -3223,5 +3227,7 @@ video {
 
 .offline_events {
   text-align: center;
+  margin: 3rem auto 0 auto;
+  width: 250px;
 }
 /*# sourceMappingURL=style.css.map */

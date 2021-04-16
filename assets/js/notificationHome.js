@@ -65,6 +65,7 @@ auth.onAuthStateChanged((user) => {
 // Check if connected to internet or not
 function isOnline() {
   if (navigator.onLine) {
+    document.querySelector(".view_more_card").classList.remove("hidden");
     document.getElementById("onlineStatus").classList.add("hidden");
     clearRecentsUI();
   } else {
@@ -95,9 +96,11 @@ function isOnline() {
           </div>
           <p>Looks Like you have a tiny problem with the internet!</p>
         </div>`;
+        document.querySelector(".view_more_card").classList.add("hidden");
   }
 }
 
+// On page load
 document.addEventListener("DOMContentLoaded", function () {
   $("#nav_home").css("color", "#81B7AE");
   $("#nav_home > svg").children().css("fill", "#81B7AE");
@@ -105,8 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
   $(".body_wrapper_notif").addClass("hidden");
   $(".body_wrapper_book").addClass("hidden");
   $(".body_wrapper_req").addClass("hidden");
-
-  isOnline();
 });
 
 // Navigating through pages
@@ -180,6 +181,7 @@ function mergeRecentCards() {
   bookings.forEach((card) => {
     recentUpdates.push(card);
   });
+  
   // Sorting array latest posted first
   recentUpdates.sort(function (a, b) {
     if (a.statusChangeTime < b.statusChangeTime) return 1;
@@ -193,11 +195,33 @@ function mergeRecentCards() {
     }
   } else {
     isOnline();
-  }
-  
+  } 
 }
 
-//Function to display recent cards - requests and bookings
+//Functions to clear sections
+clearRecentsUI = () => {
+  recentCards.innerHTML = "";
+};
+
+clearAlertsUI = () => {
+  alertCards.innerHTML = "";
+};
+
+clearAlertDetailUI = () => {
+  document.getElementById("alertDetail").innerHTML = "";
+};
+
+clearNotificationsUI = () => {
+  notifCards.innerHTML = "";
+};
+
+clearNotifDetailUI = () => {
+  document.getElementById("notifDetail").innerHTML = "";
+};
+
+/******************************************************************************
+        Recent cards retreival and display in order starts here
+******************************************************************************/
 displayRecenttUI = (i) => {
   temp = document.createElement("div");
   if (recentUpdates[i].cardType === "Booking") {
@@ -253,9 +277,7 @@ displayRecenttUI = (i) => {
   if (recentUpdates[i].cardType === "Booking") {
     temp = document.createElement("div");
     temp.classList.add("newBookingCard_time_wrapper");
-    recentCards.children[i].children[0].children[0].children[1].appendChild(
-      temp
-    );
+    recentCards.children[i].children[0].children[0].children[1].appendChild(temp);
 
     temp = document.createElement("p");
     temp.classList.add("newBookingCard_time");
@@ -287,12 +309,7 @@ displayRecenttUI = (i) => {
   temp.classList.add("newRequest_logo");
   recentCards.children[i].children[0].children[1].appendChild(temp);
   if (recentUpdates[i].requestStatus !== "REJECTED") {
-    if (recentUpdates[i].ReqCategory === "Service") {
-      temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
-      <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2575C28.6011 45.2575 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
-      </svg>`;
-    } else if (recentUpdates[i].ReqCategory === "Complaint") {
+    if (recentUpdates[i].ReqCategory === "Service" || recentUpdates[i].ReqCategory === "Complaint" || recentUpdates[i].ReqCategory === "General") {
       temp.innerHTML = `<svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.5" cy="27.5" r="27.5" fill="#FDAE46"/>
       <path d="M11.8844 21.9399C11.8844 21.9399 1.98501 23.7841 5.92781 33.5606C5.92781 33.5606 7.3947 38.3004 14.4875 38.4276C14.4875 38.4276 16.6158 37.639 16.6497 36.1849C16.6794 34.7265 16.7133 24.6066 16.7133 24.6066C16.7133 24.6066 17.7732 16.2801 25.7351 15.305C25.7351 15.305 32.5439 14.1815 36.0245 19.8583C36.0245 19.8583 37.8815 22.2621 37.7331 26.5059L37.7628 36.1976C37.7628 36.1976 37.8772 37.8765 35.749 38.7159C35.749 38.7159 34.9307 39.161 33.7649 39.1738C33.7649 39.1738 32.7262 37.1981 29.8856 37.5585C27.0451 37.9188 26.3965 40.7424 26.3965 40.7424C26.3965 40.7424 25.8496 44.3503 28.6011 45.2575C28.6011 45.2575 30.2842 46.5676 32.8703 44.8929L33.5359 44.3672C33.5359 44.3672 38.4538 44.257 40.7983 41.408C40.7983 41.408 42.35 39.7715 42.6637 38.0376C42.6637 38.0376 47.0178 37.3041 48.6712 33.1832C48.6712 33.1832 50.791 29.126 47.8614 25.2552C47.8614 25.2552 45.3431 21.8297 42.35 21.8381C42.35 21.8381 41.8879 18.8365 39.7893 16.2504C39.7893 16.2504 36.7326 11.8327 31.0218 10.4337C25.3111 9.03463 20.3593 11.4681 20.3593 11.4681C20.3593 11.4681 16.6878 13.4395 14.8267 15.9918C12.9655 18.544 12.6518 19.6166 11.8844 21.9399Z" fill="white"/>
@@ -340,26 +357,13 @@ displayRecenttUI = (i) => {
   recentCards.children[i].children[0].children[1].appendChild(temp);
 };
 
-//Function to clear notification archive cards
-clearRecentsUI = () => {
-  recentCards.innerHTML = "";
-};
+/******************************************************************************
+        Recent cards retreival and display in order ends here
+******************************************************************************/
 
-clearAlertsUI = () => {
-  alertCards.innerHTML = "";
-};
-
-clearAlertDetailUI = () => {
-  document.getElementById("alertDetail").innerHTML = "";
-};
-
-clearNotificationsUI = () => {
-  notifCards.innerHTML = "";
-};
-
-clearNotifDetailUI = () => {
-  document.getElementById("notifDetail").innerHTML = "";
-};
+/******************************************************************************
+        Notification cards retreival and display in order starts here
+******************************************************************************/
 
 // On status change in db update front end for notifications
 db.collection("notifications").onSnapshot((doc) => {
@@ -380,9 +384,11 @@ db.collection("notifications").onSnapshot((doc) => {
   for (i = 0; i < notificationsLength; i++) {
     displayNotificationUI(i);
   }
+
   // Adding the view more at the end of notification cards
   temp = document.createElement("div");
   temp.classList.add("notifCard");
+  temp.classList.add("view_more_card");
   document.getElementById("notificationCards").appendChild(temp);
   temp = document.createElement("div");
   temp.classList.add("view_more_notif");
@@ -472,7 +478,11 @@ displayNotificationUI = (i) => {
 };
 
 /******************************************************************************
-        Alerts cards retreival and display in order starts here
+        Notification cards retreival and display in order ends here
+******************************************************************************/
+
+/******************************************************************************
+        Alert cards retreival and display in order starts here
 ******************************************************************************/
 // On status change in db update front end for alerts
 db.collection("alerts").onSnapshot((doc) => {
@@ -570,11 +580,11 @@ displayAlertUI = (i) => {
 };
 
 /******************************************************************************
-        Alerts cards retreival and display in order ends here
+        Alert cards retreival and display in order ends here
 ******************************************************************************/
 
 /******************************************************************************
-        Different Cards Detail view JS starts here
+        All Cards Detail view JS starts here
 ******************************************************************************/
 // Back button
 $(".back_btn").click(function () {
@@ -650,7 +660,7 @@ document.onclick = function (e) {
 };
 
 /******************************************************************************
-      Different Cards Detail view JS ends here
+      All Cards Detail view JS ends here
 ******************************************************************************/
 
 /******************************************************************************
